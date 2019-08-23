@@ -1,0 +1,109 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,double,text width=2.5cm]
+
+\tikzstyle{objective} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,text width=2.5cm]
+
+\tikzstyle{system} = [rectangle, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,text width=2.5cm]
+
+\tikzstyle{pattern} = [rectangle, rounded corners, minimum width=2cm, minimum height=0.6cm,text centered, draw=black, fill=white!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{darrow} = [thick,<->,>=stealth]
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm]
+
+	
+	\node (sreq) [startstop] {Requisitos de seguridad};
+
+	
+	%Bloque: Patron de seguridad
+	\node (pattern) [objective,left of = sreq,xshift=-4cm,double] {Patrones de seguridad};
+	\node (sistema) [draw=none,fill=none, above of = pattern,yshift=0.5cm] {Modelo del sistema};
+	
+	%Bloque: Metodo de evaluacion	
+
+	\node (eval) [system,yshift=-2cm, below of = sreq,text width=2.5cm] {Evaluaci\'on de seguridad del sistema};
+	\node (resul) [objective,yshift=-1cm, below of = eval,text width=3cm,double,yshift=-1cm] {Resultado de la evaluaci\'on};
+	\node[draw=none,fill=none, below of= resul,yshift=-0.5cm] {M\'etodo de evaluaci\'on};
+	
+	
+	%Bloque: Modelo de amenazas
+	
+	\node (att1) [pattern,xshift=7cm,yshift=-2,left of = eval] {Amenaza$_{11}$};
+	\node (susp1) [draw=none,fill=none,below of=att1,] {\vdots};
+	\node (att2) [pattern, below of = susp1] {Amenaza$_{1n}$};
+	\node (modAme) [draw=none,fill=none, above of = att1] {Amenazas $_1$};
+	\node (vacio3)  [draw=none,fill=none,left of = att1,xshift=-0.5cm] {};
+	\node (uc) [startstop,above of = att1,yshift=2cm] {Caso de Uso$_1$};
+	
+	\node (att3) [pattern,xshift=4cm,right of = att1] {Amenaza$_{N1}$};
+	\node (susp2) [draw=none,fill=none,below of=att3] {\vdots};
+	\node (att4) [pattern, below of = susp2] {Amenaza$_{Nn}$};
+	\node (modAme1) [draw=none,fill=none, above of = att3] {Amenazas $_N$};
+	\node (puntos)  [draw=none,fill=none,right of = uc,xshift=1.5cm] {...};
+	\node (puntos1)  [draw=none,fill=none,right of = susp1,xshift=1.5cm] {...};
+	\node (uc1) [startstop,above of = att3,yshift=2cm] {Caso de Uso$_N$};
+
+	
+	%Flechas del diagrama
+	\draw [arrow] (uc) -- (modAme);
+	\draw [arrow] (uc1) -- (modAme1);
+	\draw [arrow] (vacio3) -- (eval);
+	\draw [arrow] (pattern) |- (eval);
+	\draw [arrow] (sreq) -- (eval);
+	\draw [arrow] (eval) -- (resul);
+
+
+	\begin{pgfonlayer}{background}
+	
+		\path (modAme.west |- modAme.north)+(-0.6,0) node (j) {};
+		\path (att4.east |- att4.south)+(+0.6,-0.9) node (k) {};
+            	\path[fill=white!20,rounded corners, draw=black!50, dotted,thick] (j) rectangle (k);  
+	
+		\path (att1.west |- att1.north)+(-0.3,0.3) node (a) {};
+		\path (att2.east |- att2.south)+(+0.3,-0.5) node (b) {};
+            	\path[fill=white!20,rounded corners, draw=black!50, dotted,thick] (a) rectangle (b);  
+	
+		\path (att3.west |- att3.north)+(-0.3,0.3) node (c) {};
+		\path (att4.east |- att4.south)+(+0.3,-0.5) node (d) {};
+            	\path[fill=white!20,rounded corners, draw=black!50, dotted,thick] (c) rectangle (d);  
+	
+		\path (eval.west |- eval.north)+(-0.5,0.3) node (e) {};
+		\path (resul.east |- resul.south)+(+0.5,-0.5) node (f) {};
+            	\path[fill=white!20,rounded corners, draw=black!50, dashdotted] (e) rectangle (f);  
+	
+		\path (pattern.west |- pattern.north)+(-0.5,0.3) node (h) {};
+		\path (uc1.east |- uc1.south)+(+0.5,-0.3) node (i) {};
+            	\path[fill=gris!20, draw=black!50] (h) rectangle (i);  
+	
+		
+		
+    	\end{pgfonlayer}
+\end{tikzpicture}
+
+
+
+\end{document}

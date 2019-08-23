@@ -1,0 +1,120 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered]
+
+\tikzstyle{n1} = [rectangle,rounded corners=7pt,draw=black, minimum height=0.6cm,text centered,  text width=1.5cm,fill=white]
+
+\tikzstyle{n2} = [ellipse,draw=black, minimum height=0.7cm,text centered]
+
+\tikzstyle{punto} = [thick,-,>=stealth,dotted,color=black]
+\tikzstyle{arr0} = [thick,-,>=stealth,dotted,color=black]
+\tikzstyle{flecha} = [thick,->,>=stealth,color=black]
+\tikzstyle{linea} = [thick,-,>=stealth,color=black]
+\tikzstyle{colores} = [thick,->,>=stealth, color=morado]
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm]
+	
+	
+	\node (nodo1) [nodo,text width=5cm,xshift=2cm,yshift=2cm] {Req 1: Hacer responsables a los clientes de sus acciones.};
+	\node (nodo2) [nodo,text width=5cm,xshift=16cm,yshift=2cm] {Req 2: Mantener el historial de transacciones confidencial.};
+	
+	
+	
+	\node (nodo3) [nodo,xshift=5cm,yshift=0cm] {Responsabilidad};
+	\node (nodo4) [nodo,xshift=13cm,yshift=0cm] {Datos confidenciales };
+	
+	\node (a1) [xshift=-5cm,yshift=-1cm]{};
+	\node (a2) [xshift=16cm,yshift=-1cm]{};
+	\draw [arr0] (a1) -- (a2);
+	
+	\node (nodo5) [nodo,xshift=-1.67cm,yshift=-2.5cm] {No repudio};
+	\node (nodo6) [nodo,xshift=5cm,yshift=-2.5cm] {Auditor\'ia};
+	\node (nodo7) [nodo,text width=2.5cm,xshift=11.63cm,yshift=-2.5cm] {Principal autenticaci\'on};
+	\node (nodo8) [nodo,text width=2.5cm,xshift=16cm,yshift=-2.5cm] {\textbf{...}};
+	
+	\node (a3) [xshift=-5cm,yshift=-3.5cm]{};
+	\node (a4) [xshift=16cm,yshift=-3.5cm]{};
+	\draw [arr0] (a3) -- (a4);
+	
+	\node (nodo9) [n2,text width=2.5cm,xshift=-1.67cm,yshift=-5cm] {Audit \\ interceptor};
+	\node (nodo10) [n2,text width=2.5cm,xshift=5cm,yshift=-5cm] {Secure \\ logger};
+	\node (nodo11) [n2,text width=2.5cm,xshift=11.63cm,yshift=-5cm] {Authentication \\ enforcer};
+	
+	\node (a6) [xshift=-5cm,yshift=-7cm]{};
+	\node (a7) [xshift=16cm,yshift=-7cm]{};
+	\draw [arr0] (a6) -- (a7);
+	
+	\node [n1,xshift=-1.75cm,yshift=-7.9cm] {};
+	\node [n1,xshift=-1.70cm,yshift=-7.95cm] {};
+	\node (nodo12) [n1,xshift=-1.67cm,yshift=-8cm] {m\'etrica};
+	
+	\node [n1,xshift=4.88cm,yshift=-7.9cm] {};
+	\node [n1,xshift=4.93cm,yshift=-7.95cm] {};
+	\node (nodo13) [n1,xshift=5cm,yshift=-8cm] {m\'etrica};
+	
+	\node [n1,xshift=11.46cm,yshift=-7.9cm] {};
+	\node [n1,xshift=11.53cm,yshift=-7.95cm] {};
+	\node (nodo14) [n1,xshift=11.63cm,yshift=-8cm] {m\'etrica};
+	
+	\draw [punto] (nodo9) -- (nodo12);
+	\draw [punto] (nodo10) -- (nodo13);
+	\draw [punto] (nodo11) -- (nodo14);
+	
+	\draw [flecha] (nodo6) -- (nodo9);
+	\draw [flecha] (nodo6) -- (nodo10);
+	
+	\draw [flecha] (nodo7) -- (nodo11);
+	
+	\draw [linea] (nodo3) -- (nodo5);
+	\draw [linea] (nodo3) -- (nodo6);
+	\draw [linea] (nodo3) -- (nodo7);
+	
+	\draw [linea] (nodo4) -- (nodo7);
+	\draw [linea] (nodo4) -- (nodo8);
+	
+	\draw [colores] (nodo1) -- (nodo3);
+	\draw [colores] (nodo2) -- (nodo4);
+	
+
+	\node (a8) [xshift=18cm,yshift=-1.5cm]{};
+	\node (a9) [xshift=18cm,yshift=-5.5cm]{};
+	\draw [colores,line width=5pt] (a8) -- (a9);
+	
+	\node (a10) [xshift=19cm,yshift=-1.5cm]{};
+	\node (a11) [xshift=19cm,yshift=-5.5cm]{};
+	\draw [colores,line width=5pt] (a11) -- (a10);
+
+
+	\node (a12) [xshift=17.6cm,yshift=-3.5cm,rotate=90]{Selecci\'on de m\'etricas};
+	\node (a13) [xshift=19.4cm,yshift=-3.5cm,rotate=90]{Interpretaci\'on de resultados};
+
+
+\end{tikzpicture}
+
+
+
+\end{document}n

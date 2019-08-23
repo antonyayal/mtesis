@@ -1,0 +1,58 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered, text width=2cm]
+
+\tikzstyle{n1} = [rectangle,cap=rect,draw=black, minimum height=0.6cm,text centered,  text width=2cm]
+
+\tikzstyle{arr0} = [thick,->,>=stealth,dotted,color=black]
+\tikzstyle{arr1} = [thick,->,>=stealth,color=black]
+\tikzstyle{arr2} = [line width=1.4pt,->,>=stealth, color=red]
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1cm]
+	
+	
+	\node (nodo1) [nodo,xshift=0cm,yshift=0cm] {\small Requisitos};
+	
+	\node (nodo2) [n1,xshift=3cm,yshift=2cm] {\small Sistemas \textbf{con} patrones de seguridad};
+	\node (nodo3) [n1,xshift=3cm,yshift=-2cm] {\small Sistemas \textbf{sin} patrones de seguridad};
+	
+	\draw [arr1] (nodo1) -- (nodo2);
+	\draw [arr1] (nodo1) -- (nodo3);
+	
+	\node (nodo4) [nodo,xshift=7cm,yshift=0cm] {\small Patrones de mal uso asociados a amenazas};
+	
+	\draw [arr2] (nodo4) -- (nodo2);
+	\draw [arr2] (nodo4) -- (nodo3);
+	
+	\node (nodo5) [nodo,xshift=7cm,yshift=2cm] {\small Amenazas};
+
+	\draw [arr0] (nodo5) -- (nodo4);
+\end{tikzpicture}
+
+
+
+\end{document}n

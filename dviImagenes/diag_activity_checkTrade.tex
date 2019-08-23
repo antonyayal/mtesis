@@ -1,0 +1,116 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usepackage{pgf-umlcd}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{ufogreen}{rgb}{0.24, 0.82, 0.44}
+
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered]
+
+\tikzstyle{n1} = [rectangle,rounded corners=7pt,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+\tikzstyle{n2} = [rectangle,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+
+\tikzstyle{decision} = [diamond,draw=black, minimum height=0.6cm]
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[node distance=1cm]
+
+	%Separacion actores
+
+	
+	%Diagrama de actividades 	
+	
+	\node (cust) [nodo,text width=5cm,xshift=0cm,yshift=2cm] {Auditor};
+
+	
+	\fill (0,1.5) circle (.15cm); %Start
+	
+	
+	\node (inspOrd) [n1,text width=2.5cm,xshift=0cm,yshift=-2cm] {Inspect order};
+	\draw [flow] (0,1.5) -- (inspOrd);
+	
+	\node (genRep) [n1,text width=2.5cm,below of=inspOrd,yshift=-2cm] {Generate report};
+	\draw [flow] (inspOrd) -- (genRep);
+	
+	\node (ord0) [n2,text width=1.5cm,xshift=2cm,yshift=0cm] {\underline{:Order}\\ \scriptsize{[]}};
+	\draw [objFlow] (ord0) -- (inspOrd);
+	\node (reg) [n2,text width=2.5cm,xshift=-2cm,yshift=0cm] {\underline{:Regulations}\\ \scriptsize{[]}};
+	\draw [objFlow] (reg) -- (inspOrd);
+		
+	\node (rep0) [n2,text width=1.5cm,right of=genRep,xshift=-3cm,yshift=-1.5cm] {\underline{:Report} \scriptsize{[created]}};
+	\draw [objFlow] (genRep)-| (rep0);
+
+	
+	\node(d1)[decision,below of=genRep,yshift=-2cm]{};
+	\draw [flow] (genRep) -- (d1);
+	\draw [flow] (d1)--  node[pos=0.2,above]{$<N$}(3,-8)--node[pos=0.5,right] {[inspect another order]} (3,-2)--   (inspOrd);
+	
+	
+	\node (hn1) [below of= d1,yshift=-2cm,draw,circle,minimum size=.5cm]{}; 
+	\fill (0,-11) circle (.15cm);
+	
+	\draw[flow](d1)--node[pos=0.5,left] {[all orders inspected]} node[pos=0.2,right]{$=N$}(hn1);
+	
+
+	
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	\node (att) [nodo,text width=5cm,xshift=-7cm,yshift=2cm] {External attacker};
+%	\draw [linea] (-3.5,3) -- (-3.5,-12);
+%	\draw [attFlow] (-7,1) -- (-7,-5.5);
+%	
+%\path (0,0.8) node [circle,draw,red] (x) {}
+%(-2,0.8) node[red](y) {\scriptsize{Impostor}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%\path (0,-3.5) node [circle,draw,red] (x) {}
+%(5,-3.5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2.5cm,fill=white] (y) {\scriptsize{Ignore goverment \\ requirements}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%\path (0,-5.6) node [circle,draw,red] (x) {}
+%(-7,-5.6) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=1.5cm,fill=white] (y) {\scriptsize{Read report info}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%\path (0,-10) node [circle,draw,red] (x) {}
+%(5,-10) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2.5cm,fill=white] (y) {\scriptsize{Send info to \\ an external person}};
+%\draw[->,attFlow] (x) -- (y);
+
+
+\end{tikzpicture}
+
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,double]
+
+\tikzstyle{objective} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,text width=2.5cm]
+
+\tikzstyle{pattern} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm,text centered, draw=black, fill=white!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+	\begin{tikzpicture}[node distance=0.8cm]
+	
+		
+		\node (rect) [rectangle, rounded corners, minimum width=1cm, minimum height=0.5cm,text centered, draw=black, fill=white!30] {};
+		\node(sim)[draw=none,fill=none,above of=rect] {\textbf{Simbolog\'ia}};
+		\node[draw=none,fill=none, right of = rect,xshift=0.9cm] {Elemento de};
+
+		\node (text) [rectangle, rounded corners, minimum width=1cm, minimum height=0.5cm,text centered, draw=black, fill=white!30,double,below of = rect] {};
+		\node(doc)[draw=none,fill=none, right of = text,xshift=1.5cm,align=left] {Documento en texto};
+
+		\node (mod) [rectangle, rounded corners,below of = text, minimum width=1cm, minimum height=0.5cm,text centered, draw=black, fill=white!30,dotted,thick] {};
+		\node[draw=none,fill=none, right of = mod,xshift=0.5cm] {Modelo};
+
+		\node (evalu) [rectangle, rounded corners,below of = mod, minimum width=1cm, minimum height=0.5cm,text centered, draw=black, fill=white!30,dashdotted] {};
+		\node(met)[draw=none,fill=none, right of = evalu,xshift=0.5cm] {M\'etodo};
+
+\begin{pgfonlayer}{background}
+		\path (rect.west |- rect.north)+(-0.5,0.3) node (a) {};
+		\path (doc.east |- met.south)+(+0.5,-0.5) node (b) {};
+            	\path[fill=gris!50,rounded corners, draw=black] (a) rectangle (b);  
+
+    	\end{pgfonlayer}
+
+	\end{tikzpicture}
+
+
+\end{document}

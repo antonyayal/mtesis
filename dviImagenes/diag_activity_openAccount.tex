@@ -1,0 +1,154 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usepackage{pgf-umlcd}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+
+
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered]
+
+\tikzstyle{n1} = [rectangle,rounded corners=7pt,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+\tikzstyle{n2} = [rectangle,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[node distance=1cm]	
+	
+\node (cust) [nodo,text width=5cm,xshift=0cm,yshift=0cm] {Customer};
+\node (manag) [nodo,text width=5cm,xshift=7cm,yshift=0cm] {Manager};
+
+\fill (0,-0.5) circle (.15cm); %Start
+	
+%Separacion actores
+\draw [linea] (3.5,1) -- (3.5,-20);
+
+	
+	
+\node (proInfo) [n1,text width=2.5cm,xshift=0cm,yshift=-2cm] {Provide \\ personal info};
+\draw [flow] (0,-0.5) -- (proInfo);
+	
+\node (cus1) [n2,text width=1.8cm,yshift=-0.8cm,xshift=-2.2cm, below of=proInfo] {\underline{:Customer} \scriptsize{[]}};
+\draw[objFlow](proInfo)-|(cus1);
+
+
+%\draw [linea,line width=2.5pt] (6.1,-3) -- (7.9,-3); %fork line
+%\node (hn1) [xshift=7cm,yshift=-3cm]{}; %hn1
+%\draw [flow] (manag) -- (hn1);
+	
+%\draw[flow] (proInfo.east)--(5,-2)--(hn1);
+	
+\node (cheCre) [n1,text width=2.5cm,below of = manag,yshift=-3.6cm] {Check credit};
+\draw[objFlow](cus1)--(5.1,-3.8)|-(cheCre);
+
+\node (creAcc) [n1,text width=2.5cm,below of = cheCre,yshift=-0.5cm] {Create account};
+\node (acc1) [n2,text width=1.8cm,xshift=-2cm, below of=creAcc,yshift=-2.9cm] {\underline{:Account} \scriptsize{[created]}};
+\draw[objFlow](creAcc)-|(acc1);
+
+%\draw[flow] (hn1)--(cheCre);
+\draw[flow] (cheCre)--(creAcc);
+\draw[flow] (proInfo)-|(cheCre);
+
+%\draw [linea,line width=2.5pt] (-2,-8.5) -- (9,-8.5); %fork line
+\draw [linea,line width=2.5pt] (6.1,-8) -- (7.9,-8); %fork line
+\node (hn2) [xshift=7cm,yshift=-8cm]{}; %hn2
+%\node (hn5) [xshift=0cm,yshift=-8cm]{}; %hn5
+\draw[flow] (creAcc)--(hn2);
+\draw[flow] (proInfo)--(0,-7)--(5.3,-7)--(hn2);
+
+\node (iniDep) [n1,text width=2.5cm,below of = proInfo,yshift=-7cm] {Initial deposit};
+\draw[flow] (hn2)--(5.3,-8.5)-|(iniDep.north);
+\draw[objFlow](iniDep)--(acc1);
+
+\draw [linea,line width=2.5pt] (6.1,-12) -- (7.9,-12); %fork line
+\node (hn3) [xshift=7cm,yshift=-12cm]{}; %hn3
+\draw[flow] (iniDep)|-(5,-11)--(hn3);
+\draw[flow] (hn2)--(hn3);
+
+\node (proDep) [n1,text width=2.5cm,below of = hn3,yshift=-1cm] {Process initial deposit};
+\node (acc2) [n2,text width=1.8cm,xshift=3cm, below of=proDep] {\underline{:Account} \scriptsize{[updated]}};
+\draw[objFlow](proDep)-|(acc2);
+\draw[flow] (hn3)--(proDep);
+\draw[objFlow](acc1)|-(proDep);
+
+\node (issCar) [n1,text width=2.5cm,below of = proDep,yshift=-1cm] {Issue card};
+\node (card1) [n2,text width=1.8cm,xshift=-2.2cm, below of=issCar] {\underline{:Card} \scriptsize{[created]}};
+\draw[objFlow](issCar)-|(card1);
+\draw[flow] (proDep)--(issCar);
+
+
+\node (hn4) [xshift=7cm,yshift=-19cm,draw,circle,minimum size=.5cm]{}; %hn4
+\fill (7,-19) circle (.15cm);
+\draw[flow](issCar)--(hn4) ;
+	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\node (att) [nodo,text width=5cm,xshift=-7cm,yshift=0cm] {External attacker};
+%\draw [linea] (-3.5,1) -- (-3.5,-20);
+%\draw [attFlow] (-7,-0.6) -- (-7,-6.4);
+%
+%\path (0,-1) node [circle,draw,red] (x) {}
+%(-2,-1) node[red](y) {\scriptsize{Impostor}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%\path (7,-2.3) node [circle,draw,red] (x) {}
+%(10,-2.3) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Illegal \\ dissemination}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%\path (2,-2) node [circle,draw,red] (x) {}
+%(2,-5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Provide \\ false  info}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%
+%\path (7,-7) node [circle,draw,red] (x) {}
+%(10,-7) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Create spurious account}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%
+%\path (7,-17) node [circle,draw,red] (x) {}
+%(10,-17) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Create spurious card}};
+%\draw[->,attFlow] (x) -- (y);
+%
+%\path (5,-6.4) node [circle,draw,red] (x) {}
+%(-7,-6.4) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Transfer \\ money}};
+%\draw[->,attFlow] (x) -- (y);
+
+
+\end{tikzpicture}
+
+\end{document}
