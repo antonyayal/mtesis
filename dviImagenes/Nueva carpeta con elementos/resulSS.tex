@@ -1,0 +1,71 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+\definecolor{rojo}{RGB}{255,0,0}
+\definecolor{amarillo}{RGB}{249,225,6}
+\definecolor{verde}{RGB}{0,255,0}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{nodo} = [ rounded corners, minimum height=0.6cm,text centered,  text width=1.5cm]
+
+\tikzstyle{arr1} = [thick,|-|,>=stealth]
+\tikzstyle{arr2} = [thick,-,>=stealth, color=morado]
+\tikzstyle{arr3} = [thick,-,>=stealth, color=rojo]
+\tikzstyle{arr4} = [thick,-,>=stealth, color=amarillo]
+\tikzstyle{arr5} = [thick,-,>=stealth, color=verde]
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=1.5cm]
+	
+	
+	\node (ns) [xshift=10cm] {};
+	\node (s) [xshift=0cm] {};
+	\draw [arr1] (s) -- (ns);
+	
+	\node [nodo,xshift=0cm,yshift=-0.5cm] {\small Seguro};
+	\node [nodo,xshift=10cm,yshift=-0.7cm] {\small Poco Seguro};
+	\node [nodo,xshift=0.2cm,yshift=0.5cm] {0};
+	\node [nodo,xshift=9.8cm,yshift=0.5cm] {1};
+	
+	\node (res1) [xshift=8.425cm,yshift=0.7cm, color=morado] {$ss=0.8425$};
+	\node (res2) [xshift=8.425cm,yshift=-0.4cm] {};
+	\draw [arr2] (res1) -- (res2);	
+	
+%	\node (res1) [xshift=8.5cm,yshift=0.7cm, color=rojo] {$ss=0.85$};
+%	\node (res2) [xshift=8.5cm,yshift=-0.4cm] {};
+%	\draw [arr3] (res1) -- (res2);	
+%	
+%	\node (res3) [xshift=6cm,yshift=0.7cm, color=amarillo] {$ss=0.6$};
+%	\node (res4) [xshift=6cm,yshift=-0.4cm] {};
+%	\draw [arr4] (res3) -- (res4);
+%	
+%	\node (res5) [xshift=1.2cm,yshift=0.7cm, color=verde] {$ss=0.12$};
+%	\node (res6) [xshift=1.2cm,yshift=-0.4cm] {};
+%	\draw [arr5] (res5) -- (res6);	
+		
+
+\end{tikzpicture}
+
+
+
+\end{document}n

@@ -1,0 +1,87 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usepackage{pgf-umlcd}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{ufogreen}{rgb}{0.24, 0.82, 0.44}
+
+\usetikzlibrary{shapes}
+\usetikzlibrary{arrows.meta}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered]
+
+\tikzstyle{n1} = [rectangle,rounded corners=7pt,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+\tikzstyle{n2} = [rectangle,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+
+\tikzstyle{decision} = [diamond,draw=black, minimum height=0.6cm]
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[node distance=2cm]
+
+	
+	\node (cir1) [draw=black,circle,radius=5mm] {};
+	\node ()[text width=3cm,above of=cir1,yshift=-1.5cm,xshift=-0.5cm]{\tiny Conceptual model with ASPs};
+	
+	\node (cir2) [draw=black,circle,radius=5mm,below of=cir1] {};
+	\node ()[text width=3cm,above of=cir2,yshift=-1.5cm,xshift=-0.5cm]{\tiny Design model with sec. patterns};
+	
+	\node (cir3) [draw=black,circle,radius=5mm,below of=cir2] {};
+	\node ()[text width=3cm,above of=cir3,yshift=-1.5cm,xshift=-0.5cm]{\tiny Design model with sec. patterns};
+
+	\node (rec1)[draw=black,rectangle,right of=cir1,minimum width=6mm,xshift=2cm,yshift=-0.5cm]{};
+	\node()[above of=rec1,yshift=-1.7cm]{\tiny Architecture};
+	
+	\node (rec2)[draw=black,rectangle,right of=cir2,minimum width=6mm,xshift=2cm,yshift=-0.5cm]{};
+	\node()[above of=rec2,yshift=-1.7cm]{\tiny Architecture v2};
+
+\node (rec3)[draw=black,rectangle,right of=cir3,minimum width=6mm,xshift=2cm,yshift=-0.5cm]{};
+\node()[above of=rec3,yshift=-1.7cm]{\tiny Final architecture};
+
+	\draw[flow,draw=lightgray](cir1)--(rec1);
+	\draw[flow,draw=lightgray](rec1)--node[sloped,pos=0.5,above]{\tiny new threats}(cir2);
+	
+	\node (dots)[below of=cir2,minimum width=6mm,xshift=2cm,yshift=0.7cm]{...};
+	
+	\draw[flow,draw=lightgray](cir2)--(rec2);
+	\draw[draw=lightgray](rec2)--(dots);
+	\draw[flow,draw=lightgray](dots)--(cir3);
+	
+	\draw[flow,draw=lightgray](cir3)--(rec3);
+
+
+
+\end{tikzpicture}
+
+\end{document}

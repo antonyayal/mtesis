@@ -1,0 +1,217 @@
+\begin{thebibliography}{}
+
+\bibitem[\protect\astroncite{Aceituno}{2017}]{Ace1709}
+Aceituno, V. (2017).
+\newblock Open information security managment maturity model (o-ism3).
+\newblock Technical Report 2.0, The Open Group.
+
+\bibitem[\protect\astroncite{Atzeni and Lioy}{2006}]{AtzLio0605}
+Atzeni, A. and Lioy, A. (2006).
+\newblock Why to adopt a security metic? a brief survey.
+
+\bibitem[\protect\astroncite{Bazavan and Lim}{2007}]{BazLim07}
+Bazavan, I.~V. and Lim, I. (2007).
+\newblock {\em Information Security Cost Management}.
+\newblock Auerbach publications.
+
+\bibitem[\protect\astroncite{Braz et~al.}{2008}]{BraFerVan08}
+Braz, F.~A., Fernandez, E.~B., and VanHilst, M. (2008).
+\newblock Eliciting security requirements through misuse activities.
+\newblock IEEE.
+
+\bibitem[\protect\astroncite{Brotby and Hinson}{2013}]{BroHin1304}
+Brotby, W.~K. and Hinson, G. (2013).
+\newblock {\em Pragmatic security metrics: Applying metametrics to information
+  security}.
+\newblock 978-1-4398-8153-8. CRC Press, Boca Raton, FL.
+
+\bibitem[\protect\astroncite{Fernandez}{2013}]{Fer13}
+Fernandez, E.~B. (2013).
+\newblock {\em Security Patterns in practice: Designing secure architectures
+  using software patterns}.
+\newblock Wiley.
+
+\bibitem[\protect\astroncite{Fernandez et~al.}{2018}]{FerYosWas18}
+Fernandez, E.~B., Yoshioka, N., and Washizaki, H. (2018).
+\newblock Evaluating the degree of security of a system built using security
+  patterns.
+\newblock {\em Association for Computing Machinery}.
+
+\bibitem[\protect\astroncite{Gupta et~al.}{2016}]{gupta2016handbook}
+Gupta, B., Agrawal, D., and Yamaguchi, S. (2016).
+\newblock {\em Handbook of Research on Modern Cryptographic Solutions for
+  Computer and Cyber Security}.
+\newblock Advances in Information Security, Privacy, and Ethics. IGI Global.
+
+\bibitem[\protect\astroncite{Halkidis et~al.}{2006}]{HalChaSte06}
+Halkidis, S.~T., Chatzigeorgiou, A., and Stephanides, G. (2006).
+\newblock A qualitative analysis of software security patterns.
+\newblock {\em ELSEVIER}, (25):379--392.
+
+\bibitem[\protect\astroncite{Heyman et~al.}{2008}]{HeyScaHuy08}
+Heyman, T., Scandariato, R., Huygens, C., and Joosen, W. (2008).
+\newblock Using security patterns to combine security metrics.
+\newblock {\em Third International Conference on Availability, Reliability and
+  Security}.
+
+\bibitem[\protect\astroncite{IEEE}{2014}]{Var14}
+IEEE (2014).
+\newblock {\em SWEBOK}.
+\newblock IEEE.
+
+\bibitem[\protect\astroncite{Jacobs}{2015}]{jacobs2015engineering}
+Jacobs, S. (2015).
+\newblock {\em Engineering Information Security: The Application of Systems
+  Engineering Concepts to Achieve Information Assurance}.
+\newblock IEEE Press Series on Information and Communication Networks Security.
+  Wiley.
+
+\bibitem[\protect\astroncite{Jahankhani et~al.}{2010}]{JahWMe10}
+Jahankhani, H., W, D.~L., Me, G., and Leonhardt, F. (2010).
+\newblock {\em Handbook of electronic security and digital forensics}.
+\newblock World Scientific.
+
+\bibitem[\protect\astroncite{Jansen}{2009}]{Jan0904}
+Jansen, W. (2009).
+\newblock Directions in security metrics research.
+\newblock In {\em Computer Security}. National Institute of Standards and
+  Technology.
+
+\bibitem[\protect\astroncite{Jouini et~al.}{2014}]{JouRabAis14}
+Jouini, M., Rabai, L. B.~A., and Aissa, A.~B. (2014).
+\newblock Classification of security threats in information systems.
+\newblock {\em 5th International Conference on Ambient Systems, Networks and
+  Technologies}, pages 489--496.
+
+\bibitem[\protect\astroncite{Kienzle et~al.}{2006}]{KieEldTyr06}
+Kienzle, D.~M., Elder, M.~C., Tyree, D., and Edwards-hewitt, J. (2006).
+\newblock Security patterns repository, version 1.0.
+
+\bibitem[\protect\astroncite{Kim and Solomon}{2018}]{KimSol18}
+Kim, D. and Solomon, M.~G. (2018).
+\newblock {\em Fundamentals of Information System Security}.
+\newblock Information Systems Security and Assurance Series. Jones and Bartlett
+  Learning, third edition edition.
+
+\bibitem[\protect\astroncite{Konrad et~al.}{2003}]{KonCamWas03}
+Konrad, B. H. C.~S., Campbell, L.~A., and Wassermann, R. (2003).
+\newblock Using security patterns to model and analyze security requirements.
+\newblock {\em IEEE Workshop on Requirements for High Assurance Systems}.
+
+\bibitem[\protect\astroncite{Landoll}{2017}]{Lan17}
+Landoll, D.~J. (2017).
+\newblock {\em Information Security Policies, Procedures, and Standars A
+  Practitioner's Reference}.
+\newblock CRC Press.
+
+\bibitem[\protect\astroncite{Meland and Jensen}{2008}]{MelJen08}
+Meland, P.~H. and Jensen, J. (2008).
+\newblock Secure software design in practice.
+\newblock {\em IEEE}.
+
+\bibitem[\protect\astroncite{Mjolsnes}{2012}]{Mjo12}
+Mjolsnes, S.~F. (2012).
+\newblock {\em A Multidisciplinary Introduction to Information Security}.
+\newblock Discrete Mathematics and its Applications. CRC Press.
+
+\bibitem[\protect\astroncite{Nombela}{1997}]{Nom97}
+Nombela, J.~J. (1997).
+\newblock {\em Seguridad inform{\'a}tica}.
+\newblock Paraninfo.
+
+\bibitem[\protect\astroncite{of~Standards and Technology}{2004}]{StaTec0409}
+of~Standards, N.~I. and Technology (2004).
+\newblock {\em Standards for Security Categorization of Federal Information and
+  Information Systems}.
+\newblock NIST.
+
+\bibitem[\protect\astroncite{Ortiz et~al.}{2011}]{OrtGarFer11}
+Ortiz, R., Garz{\'a}s, J., and Fern{\'a}ndez, E. (2011).
+\newblock Analysis of application of security patterns to build secure systems.
+\newblock {\em CAiSE}, pages 652--659.
+
+\bibitem[\protect\astroncite{Peltier}{2016}]{peltier2016information}
+Peltier, T. (2016).
+\newblock {\em Information Security Policies, Procedures, and Standards:
+  Guidelines for Effective Information Security Management}.
+\newblock CRC Press.
+
+\bibitem[\protect\astroncite{Ponde et~al.}{2016}]{PonShiKre16}
+Ponde, P., Shirwaikar, S., and Kreiner, C. (2016).
+\newblock An analytical study of security patterns.
+\newblock {\em EuroPLoP}, page~26.
+
+\bibitem[\protect\astroncite{Russel et~al.}{1991}]{RusSrLeh91}
+Russel, D., Sr, G. T.~G., and Lehtinen, R. (1991).
+\newblock {\em Computer Security Basics}.
+\newblock O'Reilly Media, second edition edition.
+
+\bibitem[\protect\astroncite{Saarela}{2016}]{Saa1603}
+Saarela, M. (2016).
+\newblock Measuring software security from the design of software.
+\newblock Master's thesis, University of Turku.
+
+\bibitem[\protect\astroncite{Scandariato et~al.}{2006}]{ScaJooYsk06}
+Scandariato, R., Joosen, W., Yskout, K., and Heyman, T. (2006).
+\newblock A system of security patterns.
+\newblock {\em Report CW 469}.
+
+\bibitem[\protect\astroncite{Schumacher et~al.}{2006}]{SchFerHyb06}
+Schumacher, M., Fernandez, E.~B., Hybertson, D., Buschmann, F., and Sommerland,
+  P. (2006).
+\newblock {\em Security Patterns: Integrating security and systems
+  Engineering}.
+\newblock Wiley.
+
+\bibitem[\protect\astroncite{Stallings}{2011}]{Sta11}
+Stallings, W. (2011).
+\newblock {\em Cryptography and Network Security: Principles and Practice}.
+\newblock Prentice Hall.
+
+\bibitem[\protect\astroncite{Urbina}{2016}]{Urb16}
+Urbina, G.~B. (2016).
+\newblock {\em Introducci{\'o}n a la Seguridad inform{\'a}tica}.
+\newblock Grupo editorial Patria, primera edici{\'o}n edition.
+
+\bibitem[\protect\astroncite{Vallabhaneni}{2019}]{Val19}
+Vallabhaneni, S.~R. (2019).
+\newblock {\em Wiley CIAexecl Exam Review 2019}.
+\newblock Jonh Wiley and Sons, Inc.
+
+\bibitem[\protect\astroncite{Varadharajan}{2011}]{Var1103}
+Varadharajan, V. (2011).
+\newblock Measuring security.
+\newblock {\em IEEE COMPUTER AND RELIABILITY SOCIETIES}, pages 60--65.
+
+\bibitem[\protect\astroncite{von Helmholtz}{1887}]{Hel87}
+von Helmholtz, H. L.~F. (1887).
+\newblock {\em Z{\"a}hlen und Messen erkenntnisstheoretisch betrachtet}.
+\newblock Verlag nicht ermittelbar.
+
+\bibitem[\protect\astroncite{Weik}{2001}]{Weik2001}
+Weik, M.~H. (2001).
+\newblock {\em system design}, pages 1717--1717.
+\newblock Springer US, Boston, MA.
+
+\bibitem[\protect\astroncite{Whitman and Mattord}{2012}]{WhiMat12}
+Whitman, M.~E. and Mattord, H.~J. (2012).
+\newblock {\em Principles of Information Security}.
+\newblock Course Technology, cuarta edici{\'o}n edition.
+
+\bibitem[\protect\astroncite{Wylder}{2003}]{Wyl03}
+Wylder, J. (2003).
+\newblock {\em Strategic information security}.
+\newblock Auerbach publications.
+
+\bibitem[\protect\astroncite{Yautsiukhin et~al.}{}]{YauScaHey}
+Yautsiukhin, A., Scandariato, R., Heyman, T., Massacci, F., and Joosen, W.
+\newblock Towards a quantitative assessment of security in software
+  architectures.
+
+\bibitem[\protect\astroncite{Zalewski et~al.}{2014}]{ZalDraMcK14}
+Zalewski, J., Drager, S., McKeever, W., and Kornecki, A.~J. (2014).
+\newblock Measuring security: A challenge for the generation.
+\newblock {\em Federated Conference on Computer Science and Information
+  Systems}, 3:131--140.
+
+\end{thebibliography}

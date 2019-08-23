@@ -1,0 +1,32 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Tri\IeC {\'a}ngulo de objetivos de seguridad \textit {CIA} \cite {Sta11}.\relax }}{8}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagramas sobre el patr\IeC {\'o}n \textbf {Autenticador} \cite {Fer13}\relax }}{20}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de clase}}}{20}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagrama de secuencia}}}{20}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Iteraciones \textit {Twin peaks} obtenida de \cite {FerYosWas18}.\relax }}{27}% 
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Descomposici\IeC {\'o}n de objetivos con patrones obtenida de \cite {YauScaHey}.\relax }}{29}% 
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Gr\IeC {\'a}fica de dependencias obtenida de \cite {HeyScaHuy08}.\relax }}{30}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagrama a bloques.\relax }}{34}% 
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Caso de uso: Auditor\IeC {\'\i }a de ordenes de comercio\relax }}{36}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Caso de uso}}}{36}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagrama de actividades}}}{36}% 
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Diagrama con actividades de mal uso\relax }}{40}% 
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Indicador del nivel de seguridad.\relax }}{44}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Casos de uso del sistema financiero.\relax }}{49}% 
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Diagramas de actividades parte 1\relax }}{50}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Abrir cuenta}}}{50}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Cerrar cuenta}}}{50}% 
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagramas de actividades parte 2\relax }}{50}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Crear y llevar a cabo orden de comercio}}}{50}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Auditor\IeC {\'\i }a de ordenes de comercio}}}{50}% 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama de clases de sistema financiero\relax }}{51}% 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama de actividades de mal uso en abrir cuenta\relax }}{55}% 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama de actividades de mal uso en cerrar cuenta\relax }}{55}% 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama de actividades de mal uso en crear y llevar a cabo orden de comercio\relax }}{56}% 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama de actividades de mal uso en auditor\IeC {\'\i }a de ordenes de comercio\relax }}{57}% 
+\addvspace {10\p@ }

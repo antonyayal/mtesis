@@ -1,0 +1,2768 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 AUG 2019 20:15
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**Tesis_AABA.tex
+(./Tesis_AABA.tex
+LaTeX2e <2018-12-01>
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2018/09/03 v1.4i Standard LaTeX document class
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/bk12.clo
+File: bk12.clo 2018/09/03 v1.4i Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@chapter=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2019/05/04 3.31 The Babel package
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2019/05/04 3.31 Babel switching mechanism
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+Language: spanish.ldf 2016/03/03 v5.0p Spanish support from the babel system
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2019/05/04 3.31 Babel common definitions
+\babel@savecnt=\count89
+\U@D=\dimen103
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count90
+)
+\es@quottoks=\toks14
+\es@quotdepth=\count91
+Package babel Info: Making " an active character on input line 561.
+Package babel Info: Making . an active character on input line 662.
+Package babel Info: Making < an active character on input line 707.
+Package babel Info: Making > an active character on input line 707.
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2018/04/16 v5.8 Page Geometry
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count92
+\Gm@cntv=\count93
+\c@Gm@tempcnt=\count94
+\Gm@bindingoffset=\dimen104
+\Gm@wd@mp=\dimen105
+\Gm@odd@mp=\dimen106
+\Gm@even@mp=\dimen107
+\Gm@layoutwidth=\dimen108
+\Gm@layoutheight=\dimen109
+\Gm@layouthoffset=\dimen110
+\Gm@layoutvoffset=\dimen111
+\Gm@dimlist=\toks18
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2018/12/01 v2.17b AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen112
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen113
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count95
+LaTeX Info: Redefining \frac on input line 223.
+\uproot@=\count96
+\leftroot@=\count97
+LaTeX Info: Redefining \overline on input line 385.
+\classnum@=\count98
+\DOTSCASE@=\count99
+LaTeX Info: Redefining \ldots on input line 482.
+LaTeX Info: Redefining \dots on input line 485.
+LaTeX Info: Redefining \cdots on input line 606.
+\Mathstrutbox@=\box27
+\strutbox@=\box28
+\big@size=\dimen114
+LaTeX Font Info:    Redeclaring font encoding OML on input line 729.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 730.
+\macc@depth=\count100
+\c@MaxMatrixCols=\count101
+\dotsspace@=\muskip10
+\c@parentequation=\count102
+\dspbrk@lvl=\count103
+\tag@help=\toks20
+\row@=\count104
+\column@=\count105
+\maxfields@=\count106
+\andhelp@=\toks21
+\eqnshift@=\dimen115
+\alignsep@=\dimen116
+\tagshift@=\dimen117
+\tagwidth@=\dimen118
+\totwidth@=\dimen119
+\lineht@=\dimen120
+\@envbody=\toks22
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2844.
+LaTeX Info: Redefining \] on input line 2845.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/srcltx/srcltx.sty
+Package: srcltx 2006/11/12 v1.6 Source specials for inverse search in DVI files
+
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\src@lastline=\count107
+\src@new@everypar=\toks24
+\src@new@output=\toks25
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/12/30 v2.4k Tabular extension package (FMi)
+\col@sep=\dimen121
+\ar@mcellbox=\box29
+\extrarowheight=\dimen122
+\NC@list=\toks26
+\extratabsurround=\skip46
+\backup@length=\skip47
+\ar@cellbox=\box30
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count108
+\float@exts=\toks27
+\float@box=\box31
+\@float@everytoks=\toks28
+\@floatcapt=\box32
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+Package srcltx Info: Expanded filename `pdftex.def' to `pdftex.def.tex' on inpu
+t line 100.
+
+:<+ pdftex.def.tex
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+)
+:<-
+)
+\Gin@req@height=\dimen123
+\Gin@req@width=\dimen124
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/setspace/setspace.sty
+Package: setspace 2011/12/19 v6.7a set line spacing
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip48
+\bibsep=\skip49
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count109
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2019-05-07 L3 programming layer (loader) 
+Package srcltx Info: Expanded filename `expl3-code.tex' to `expl3-code.tex' on 
+input line 78.
+
+:<+ expl3-code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2019-05-07 L3 programming layer (code)
+\c_max_int=\count110
+\l_tmpa_int=\count111
+\l_tmpb_int=\count112
+\g_tmpa_int=\count113
+\g_tmpb_int=\count114
+\g__kernel_prg_map_int=\count115
+\c__ior_term_ior=\count116
+\c_log_iow=\count117
+\l_iow_line_count_int=\count118
+\l__iow_line_target_int=\count119
+\l__iow_one_indent_int=\count120
+\l__iow_indent_int=\count121
+\c_zero_dim=\dimen125
+\c_max_dim=\dimen126
+\l_tmpa_dim=\dimen127
+\l_tmpb_dim=\dimen128
+\g_tmpa_dim=\dimen129
+\g_tmpb_dim=\dimen130
+\c_zero_skip=\skip50
+\c_max_skip=\skip51
+\l_tmpa_skip=\skip52
+\l_tmpb_skip=\skip53
+\g_tmpa_skip=\skip54
+\g_tmpb_skip=\skip55
+\c_zero_muskip=\muskip11
+\c_max_muskip=\muskip12
+\l_tmpa_muskip=\muskip13
+\l_tmpb_muskip=\muskip14
+\g_tmpa_muskip=\muskip15
+\g_tmpb_muskip=\muskip16
+\l_keys_choice_int=\count122
+\l__intarray_loop_int=\count123
+\c__intarray_sp_dim=\dimen131
+\g__intarray_font_int=\count124
+\c__fp_leading_shift_int=\count125
+\c__fp_middle_shift_int=\count126
+\c__fp_trailing_shift_int=\count127
+\c__fp_big_leading_shift_int=\count128
+\c__fp_big_middle_shift_int=\count129
+\c__fp_big_trailing_shift_int=\count130
+\c__fp_Bigg_leading_shift_int=\count131
+\c__fp_Bigg_middle_shift_int=\count132
+\c__fp_Bigg_trailing_shift_int=\count133
+\c__kernel_randint_max_int=\count134
+\g__fp_array_int=\count135
+\l__fp_array_loop_int=\count136
+\l__sort_length_int=\count137
+\l__sort_min_int=\count138
+\l__sort_top_int=\count139
+\l__sort_max_int=\count140
+\l__sort_true_max_int=\count141
+\l__sort_block_int=\count142
+\l__sort_begin_int=\count143
+\l__sort_end_int=\count144
+\l__sort_A_int=\count145
+\l__sort_B_int=\count146
+\l__sort_C_int=\count147
+\l__tl_analysis_normal_int=\count148
+\l__tl_analysis_index_int=\count149
+\l__tl_analysis_nesting_int=\count150
+\l__tl_analysis_type_int=\count151
+\l__regex_internal_a_int=\count152
+\l__regex_internal_b_int=\count153
+\l__regex_internal_c_int=\count154
+\l__regex_balance_int=\count155
+\l__regex_group_level_int=\count156
+\l__regex_mode_int=\count157
+\c__regex_cs_in_class_mode_int=\count158
+\c__regex_cs_mode_int=\count159
+\l__regex_catcodes_int=\count160
+\l__regex_default_catcodes_int=\count161
+\c__regex_catcode_D_int=\count162
+\c__regex_catcode_S_int=\count163
+\c__regex_catcode_L_int=\count164
+\c__regex_catcode_O_int=\count165
+\c__regex_catcode_A_int=\count166
+\c__regex_all_catcodes_int=\count167
+\l__regex_show_lines_int=\count168
+\l__regex_min_state_int=\count169
+\l__regex_max_state_int=\count170
+\l__regex_left_state_int=\count171
+\l__regex_right_state_int=\count172
+\l__regex_capturing_group_int=\count173
+\l__regex_min_pos_int=\count174
+\l__regex_max_pos_int=\count175
+\l__regex_curr_pos_int=\count176
+\l__regex_start_pos_int=\count177
+\l__regex_success_pos_int=\count178
+\l__regex_curr_char_int=\count179
+\l__regex_curr_catcode_int=\count180
+\l__regex_last_char_int=\count181
+\l__regex_case_changed_char_int=\count182
+\l__regex_curr_state_int=\count183
+\l__regex_step_int=\count184
+\l__regex_min_active_int=\count185
+\l__regex_max_active_int=\count186
+\l__regex_replacement_csnames_int=\count187
+\l__regex_match_count_int=\count188
+\l__regex_min_submatch_int=\count189
+\l__regex_submatch_int=\count190
+\l__regex_zeroth_submatch_int=\count191
+\g__regex_trace_regex_int=\count192
+\c_empty_box=\box33
+\l_tmpa_box=\box34
+\l_tmpb_box=\box35
+\g_tmpa_box=\box36
+\g_tmpb_box=\box37
+\l__box_top_dim=\dimen132
+\l__box_bottom_dim=\dimen133
+\l__box_left_dim=\dimen134
+\l__box_right_dim=\dimen135
+\l__box_top_new_dim=\dimen136
+\l__box_bottom_new_dim=\dimen137
+\l__box_left_new_dim=\dimen138
+\l__box_right_new_dim=\dimen139
+\l__box_internal_box=\box38
+\l__coffin_internal_box=\box39
+\l__coffin_internal_dim=\dimen140
+\l__coffin_offset_x_dim=\dimen141
+\l__coffin_offset_y_dim=\dimen142
+\l__coffin_x_dim=\dimen143
+\l__coffin_y_dim=\dimen144
+\l__coffin_x_prime_dim=\dimen145
+\l__coffin_y_prime_dim=\dimen146
+\c_empty_coffin=\box40
+\l__coffin_aligned_coffin=\box41
+\l__coffin_aligned_internal_coffin=\box42
+\l_tmpa_coffin=\box43
+\l_tmpb_coffin=\box44
+\g_tmpa_coffin=\box45
+\g_tmpb_coffin=\box46
+\l__coffin_bounding_shift_dim=\dimen147
+\l__coffin_left_corner_dim=\dimen148
+\l__coffin_right_corner_dim=\dimen149
+\l__coffin_bottom_corner_dim=\dimen150
+\l__coffin_top_corner_dim=\dimen151
+\l__coffin_scaled_total_height_dim=\dimen152
+\l__coffin_scaled_width_dim=\dimen153
+\c__coffin_empty_coffin=\box47
+\l__coffin_display_coffin=\box48
+\l__coffin_display_coord_coffin=\box49
+\l__coffin_display_pole_coffin=\box50
+\l__coffin_display_offset_dim=\dimen154
+\l__coffin_display_x_dim=\dimen155
+\l__coffin_display_y_dim=\dimen156
+\g__file_internal_ior=\read1
+\l__seq_internal_a_int=\count193
+\l__seq_internal_b_int=\count194
+\c__deprecation_minus_one=\count195
+)
+:<-
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2019-04-06 v L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count196
+\l__driver_pdf_tmp_box=\box51
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2019-05-03 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count197
+\g__xparse_grabber_int=\count198
+\l__xparse_m_args_int=\count199
+\l__xparse_v_nesting_int=\count266
+)
+Package: lipsum 2019/01/02 v2.2 150 paragraphs of Lorem Ipsum dummy text
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex
+File: lipsum.ltd.tex 2019/01/02 v2.2 The Lorem ipsum dummy text
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
+\TX@col@width=\dimen157
+\TX@old@table=\dimen158
+\TX@old@col=\dimen159
+\TX@target=\dimen160
+\TX@delta=\dimen161
+\TX@cols=\count267
+\TX@ftn=\toks29
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xtab/xtab.sty
+Package: xtab 2011/07/31 v2.3f Extended supertabular package
+\c@tracingst=\count268
+\PWSTcapht=\dimen162
+\ST@wd=\dimen163
+\ST@rightskip=\skip56
+\ST@leftskip=\skip57
+\ST@parfillskip=\skip58
+\c@PWSTtable=\count269
+\PWSTlastpage=\count270
+\PWSTpenultimate=\count271
+\PWSTcurpage=\count272
+\PWSTtempc=\count273
+\PWSTlines=\count274
+\PWST@lastht=\dimen164
+\PWST@generalht=\dimen165
+\PWST@ht=\dimen166
+\ST@pageleft=\dimen167
+\ST@headht=\dimen168
+\ST@tailht=\dimen169
+\ST@pagesofar=\dimen170
+\ST@pboxht=\dimen171
+\ST@lineht=\dimen172
+\ST@stretchht=\dimen173
+\ST@prevht=\dimen174
+\ST@toadd=\dimen175
+\ST@dimen=\dimen176
+\ST@pbox=\box52
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip59
+\plpartopsep=\skip60
+\plitemsep=\skip61
+\plparsep=\skip62
+\pl@lab=\toks30
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/rotating.sty
+Package: rotating 2016/08/11 v2.16d rotated objects in LaTeX
+\c@r@tfl@t=\count275
+\rotFPtop=\skip63
+\rotFPbot=\skip64
+\rot@float@box=\box53
+\rot@mess@toks=\toks31
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count276
+\lst@gtempboxa=\box54
+\lst@token=\toks32
+\lst@length=\count277
+\lst@currlwidth=\dimen177
+\lst@column=\count278
+\lst@pos=\count279
+\lst@lostspace=\dimen178
+\lst@width=\dimen179
+\lst@newlines=\count280
+\lst@lineno=\count281
+\lst@maxwidth=\dimen180
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2019/02/27 1.8b (Carsten Heinz)
+\c@lstnumber=\count282
+\lst@skipnumbers=\count283
+\lst@framebox=\box55
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2019/02/27 1.8b listings configuration
+))
+Package: listings 2019/02/27 1.8b (Carsten Heinz)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/emptypage/emptypage.sty
+Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty 
+pages
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count284
+\c@@ppsavesec=\count285
+\c@@ppsaveapp=\count286
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count287
+\calc@Bcount=\count288
+\calc@Adimen=\dimen181
+\calc@Bdimen=\dimen182
+\calc@Askip=\skip65
+\calc@Bskip=\skip66
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count289
+\calc@Cskip=\skip67
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+\AM@pagewidth=\dimen183
+\AM@pageheight=\dimen184
+Package srcltx Info: Expanded filename `pppdftex.def' to `pppdftex.def.tex' on 
+input line 78.
+
+:<+ pppdftex.def.tex
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2017/10/31 v0.5l Pdfpages driver for pdfTeX (AM)
+)
+:<-
+\AM@pagebox=\box56
+\AM@global@opts=\toks33
+\AM@toc@title=\toks34
+\c@AM@survey=\count290
+\AM@templatesizebox=\box57
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2018/08/11 v2.0j Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+Package srcltx Info: Expanded filename `ts1enc.def' to `ts1enc.def.tex' on inpu
+t line 330.
+
+:<+ ts1enc.def.tex
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.def
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+Now handling font encoding TS1 ...
+... processing UTF-8 mapping file for font encoding TS1
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1enc.dfu
+File: ts1enc.dfu 2018/10/05 v1.2f UTF-8 support for inputenc
+   defining Unicode char U+00A2 (decimal 162)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00A4 (decimal 164)
+   defining Unicode char U+00A5 (decimal 165)
+   defining Unicode char U+00A6 (decimal 166)
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00A8 (decimal 168)
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AC (decimal 172)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00AF (decimal 175)
+   defining Unicode char U+00B0 (decimal 176)
+   defining Unicode char U+00B1 (decimal 177)
+   defining Unicode char U+00B2 (decimal 178)
+   defining Unicode char U+00B3 (decimal 179)
+   defining Unicode char U+00B4 (decimal 180)
+   defining Unicode char U+00B5 (decimal 181)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+00B9 (decimal 185)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+00BC (decimal 188)
+   defining Unicode char U+00BD (decimal 189)
+   defining Unicode char U+00BE (decimal 190)
+   defining Unicode char U+00D7 (decimal 215)
+   defining Unicode char U+00F7 (decimal 247)
+   defining Unicode char U+0192 (decimal 402)
+   defining Unicode char U+02C7 (decimal 711)
+   defining Unicode char U+02D8 (decimal 728)
+   defining Unicode char U+02DD (decimal 733)
+   defining Unicode char U+0E3F (decimal 3647)
+   defining Unicode char U+2016 (decimal 8214)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+203B (decimal 8251)
+   defining Unicode char U+203D (decimal 8253)
+   defining Unicode char U+2044 (decimal 8260)
+   defining Unicode char U+204E (decimal 8270)
+   defining Unicode char U+2052 (decimal 8274)
+   defining Unicode char U+20A1 (decimal 8353)
+   defining Unicode char U+20A4 (decimal 8356)
+   defining Unicode char U+20A6 (decimal 8358)
+   defining Unicode char U+20A9 (decimal 8361)
+   defining Unicode char U+20AB (decimal 8363)
+   defining Unicode char U+20AC (decimal 8364)
+   defining Unicode char U+20B1 (decimal 8369)
+   defining Unicode char U+2103 (decimal 8451)
+   defining Unicode char U+2116 (decimal 8470)
+   defining Unicode char U+2117 (decimal 8471)
+   defining Unicode char U+211E (decimal 8478)
+   defining Unicode char U+2120 (decimal 8480)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2126 (decimal 8486)
+   defining Unicode char U+2127 (decimal 8487)
+   defining Unicode char U+212E (decimal 8494)
+   defining Unicode char U+2190 (decimal 8592)
+   defining Unicode char U+2191 (decimal 8593)
+   defining Unicode char U+2192 (decimal 8594)
+   defining Unicode char U+2193 (decimal 8595)
+   defining Unicode char U+2329 (decimal 9001)
+   defining Unicode char U+232A (decimal 9002)
+   defining Unicode char U+2422 (decimal 9250)
+   defining Unicode char U+25E6 (decimal 9702)
+   defining Unicode char U+25EF (decimal 9711)
+   defining Unicode char U+266A (decimal 9834)
+   defining Unicode char U+FEFF (decimal 65279)
+))
+:<-
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/colortbl/colortbl.sty
+Package: colortbl 2018/12/12 v1.0d Color table columns (DPC)
+\everycr=\toks35
+\minrowclearance=\skip68
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2019/02/04 v3.8 Customized lists
+\labelindent=\skip69
+\enit@outerparindent=\dimen185
+\enit@toks=\toks36
+\enit@inbox=\box58
+\enit@count@id=\count291
+\enitdp@description=\count292
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen186
+\lightrulewidth=\dimen187
+\cmidrulewidth=\dimen188
+\belowrulesep=\dimen189
+\belowbottomsep=\dimen190
+\aboverulesep=\dimen191
+\abovetopsep=\dimen192
+\cmidrulesep=\dimen193
+\cmidrulekern=\dimen194
+\defaultaddspace=\dimen195
+\@cmidla=\count293
+\@cmidlb=\count294
+\@aboverulesep=\dimen196
+\@belowrulesep=\dimen197
+\@thisruleclass=\count295
+\@lastruleclass=\count296
+\@thisrulewidth=\dimen198
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/marginnote/marginnote.sty
+Package: marginnote 2018/08/09 v1.4b non floating margin notes for LaTeX
+\c@mn@abspage=\count297
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2019/01/01 v2.4 Span multiple rows of a table
+\multirow@colwidth=\skip70
+\multirow@cntb=\count298
+\multirow@dima=\skip71
+\bigstrutjot=\dimen199
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.te
+x
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen256
+\pgfutil@tempdimb=\dimen257
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-li
+sts.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+\pgfutil@abb=\box59
+(/usr/local/texlive/2019/texmf-dist/tex/latex/ms/everyshi.sty
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+Package srcltx Info: Expanded filename `pgfrcs.code.tex' to `pgfrcs.code.tex' o
+n input line 13.
+
+:<+ pgfrcs.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/pgf.revision.tex)
+Package: pgfrcs 2019/04/04 v3.1.2 (3.1.2)
+)
+:<-
+)
+Package: pgf 2019/04/04 v3.1.2 (3.1.2)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+Package srcltx Info: Expanded filename `pgfsys.code.tex' to `pgfsys.code.tex' o
+n input line 16.
+
+:<+ pgfsys.code.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+Package: pgfsys 2019/04/04 v3.1.2 (3.1.2)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.c
+ode.tex
+\pgfkeys@tmptoks=\toks40
+))
+\pgf@x=\dimen258
+\pgf@y=\dimen259
+\pgf@xa=\dimen260
+\pgf@ya=\dimen261
+\pgf@xb=\dimen262
+\pgf@yb=\dimen263
+\pgf@xc=\dimen264
+\pgf@yc=\dimen265
+\w@pgf@writea=\write3
+\r@pgf@reada=\read2
+\c@pgf@counta=\count299
+\c@pgf@countb=\count300
+\c@pgf@countc=\count301
+\c@pgf@countd=\count302
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count303
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
+File: pgf.cfg 2019/04/04 v3.1.2 (3.1.2)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.d
+ef
+File: pgfsys-pdftex.def 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-p
+df.def
+File: pgfsys-common-pdf.def 2019/04/04 v3.1.2 (3.1.2)
+)))
+:<-
+Package srcltx Info: Expanded filename `pgfsyssoftpath.code.tex' to `pgfsyssoft
+path.code.tex' on input line 17.
+:<+ pgfsyssoftpath.code.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.
+code.tex
+File: pgfsyssoftpath.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfsyssoftpath@smallbuffer@items=\count304
+\pgfsyssoftpath@bigbuffer@items=\count305
+)
+:<-
+Package srcltx Info: Expanded filename `pgfsysprotocol.code.tex' to `pgfsysprot
+ocol.code.tex' on input line 18.
+:<+ pgfsysprotocol.code.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.
+code.tex
+File: pgfsysprotocol.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+:<-
+)
+Package srcltx Info: Expanded filename `pgfcore.code.tex' to `pgfcore.code.tex'
+ on input line 17.
+
+:<+ pgfcore.code.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+Package: pgfcore 2019/04/04 v3.1.2 (3.1.2)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
+\pgfmath@dimen=\dimen266
+\pgfmath@count=\count306
+\pgfmath@box=\box60
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.
+tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic
+.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigo
+nometric.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.rando
+m.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.compa
+rison.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.
+code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round
+.code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.
+code.tex)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integ
+erarithmetics.code.tex)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count307
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.co
+de.tex
+File: pgfcorepoints.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgf@picminx=\dimen267
+\pgf@picmaxx=\dimen268
+\pgf@picminy=\dimen269
+\pgf@picmaxy=\dimen270
+\pgf@pathminx=\dimen271
+\pgf@pathmaxx=\dimen272
+\pgf@pathminy=\dimen273
+\pgf@pathmaxy=\dimen274
+\pgf@xx=\dimen275
+\pgf@xy=\dimen276
+\pgf@yx=\dimen277
+\pgf@yy=\dimen278
+\pgf@zx=\dimen279
+\pgf@zy=\dimen280
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconst
+ruct.code.tex
+File: pgfcorepathconstruct.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgf@path@lastx=\dimen281
+\pgf@path@lasty=\dimen282
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage
+.code.tex
+File: pgfcorepathusage.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgf@shorten@end@additional=\dimen283
+\pgf@shorten@start@additional=\dimen284
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.co
+de.tex
+File: pgfcorescopes.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count308
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicst
+ate.code.tex
+File: pgfcoregraphicstate.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgflinewidth=\dimen285
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransform
+ations.code.tex
+File: pgfcoretransformations.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgf@pt@x=\dimen286
+\pgf@pt@y=\dimen287
+\pgf@pt@temp=\dimen288
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.cod
+e.tex
+File: pgfcorequick.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.c
+ode.tex
+File: pgfcoreobjects.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathproce
+ssing.code.tex
+File: pgfcorepathprocessing.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.co
+de.tex
+File: pgfcorearrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfarrowsep=\dimen289
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.cod
+e.tex
+File: pgfcoreshade.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgf@max=\dimen290
+\pgf@sys@shading@range@num=\count309
+\pgf@shadingcount=\count310
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.cod
+e.tex
+File: pgfcoreimage.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.
+code.tex
+File: pgfcoreexternal.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfexternal@startupbox=\box64
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.co
+de.tex
+File: pgfcorelayers.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretranspare
+ncy.code.tex
+File: pgfcoretransparency.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.
+code.tex
+File: pgfcorepatterns.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/basiclayer/pgfcorerdf.code.
+tex
+File: pgfcorerdf.code.tex 2019/04/04 v3.1.2 (3.1.2)
+))
+:<-
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.cod
+e.tex
+File: pgfmoduleshapes.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfnodeparttextbox=\box65
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.
+tex
+File: pgfmoduleplot.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-0-65.sty
+Package: pgfcomp-version-0-65 2019/04/04 v3.1.2 (3.1.2)
+\pgf@nodesepstart=\dimen291
+\pgf@nodesepend=\dimen292
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version
+-1-18.sty
+Package: pgfcomp-version-1-18 2019/04/04 v3.1.2 (3.1.2)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+Package srcltx Info: Expanded filename `pgfkeys.code.tex' to `pgfkeys.code.tex'
+ on input line 10.
+
+:<+ pgfkeys.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)
+:<-
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+Package srcltx Info: Expanded filename `pgfmath.code.tex' to `pgfmath.code.tex'
+ on input line 11.
+
+:<+ pgfmath.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+:<-
+)
+Package srcltx Info: Expanded filename `pgffor.code.tex' to `pgffor.code.tex' o
+n input line 14.
+
+:<+ pgffor.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+Package: pgffor 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
+\pgffor@iter=\dimen293
+\pgffor@skip=\dimen294
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
+)
+:<-
+)
+Package srcltx Info: Expanded filename `tikz.code.tex' to `tikz.code.tex' on in
+put line 13.
+
+:<+ tikz.code.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.cod
+e.tex
+Package: tikz 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothan
+dlers.code.tex
+File: pgflibraryplothandlers.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgf@plot@mark@count=\count311
+\pgfplotmarksize=\dimen295
+)
+\tikz@lastx=\dimen296
+\tikz@lasty=\dimen297
+\tikz@lastxsaved=\dimen298
+\tikz@lastysaved=\dimen299
+\tikzleveldistance=\dimen300
+\tikzsiblingdistance=\dimen301
+\tikz@figbox=\box66
+\tikz@figbox@bg=\box67
+\tikz@tempbox=\box68
+\tikz@tempbox@bg=\box69
+\tikztreelevel=\count312
+\tikznumberofchildren=\count313
+\tikznumberofcurrentchild=\count314
+\tikz@fig@count=\count315
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.cod
+e.tex
+File: pgfmodulematrix.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfmatrixcurrentrow=\count316
+\pgfmatrixcurrentcolumn=\count317
+\pgf@matrix@numberofcolumns=\count318
+)
+\tikz@expandcount=\count319
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2019/04/04 v3.1.2 (3.1.2)
+))
+:<-
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2019/03/02 version 4.20 text color boxes
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks49
+\verbatim@line=\toks50
+\verbatim@in@stream=\read3
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2014/05/04 v0.3 A new way to define environments
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count320
+)
+\tcb@titlebox=\box70
+\tcb@upperbox=\box71
+\tcb@lowerbox=\box72
+\tcb@phantombox=\box73
+\c@tcbbreakpart=\count321
+\c@tcblayer=\count322
+\tcolorbox@number=\count323
+\tcb@temp=\box74
+\tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+\tcb@out=\write4
+\tcb@record@out=\write5
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
+Library (tcolorbox): 'tcbraster.code.tex' version '4.20'
+\c@tcbrastercolumn=\count324
+\c@tcbrasterrow=\count325
+\c@tcbraster=\count326
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
+Library (tcolorbox): 'tcbskins.code.tex' version '4.20'
+\tcb@waterbox=\box78
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
+Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.20'
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
+Library (tcolorbox): 'tcbbreakable.code.tex' version '4.20'
+\tcb@testbox=\box79
+\tcb@totalupperbox=\box80
+\tcb@totallowerbox=\box81
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
+Library (tcolorbox): 'tcbhooks.code.tex' version '4.20'
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
+Library (tcolorbox): 'tcbtheorems.code.tex' version '4.20'
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
+Library (tcolorbox): 'tcbfitting.code.tex' version '4.20'
+\tcbfitdim=\dimen302
+\tcb@lowerfitdim=\dimen303
+\tcb@upperfitdim=\dimen304
+\tcb@cur@hbadness=\count327
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
+Library (tcolorbox): 'tcbxparse.code.tex' version '4.20'
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.te
+x
+Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.20'
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/listingsutf8.sty
+Package: listingsutf8 2016/05/16 v1.3 Allow UTF-8 in listings input (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/stringenc.sty
+Package: stringenc 2016/05/16 v1.11 Convert strings between diff. encodings (HO
+)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/pdfescape.sty
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
+Library (tcolorbox): 'tcblistings.code.tex' version '4.20'
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcblistingscore.code.te
+x
+Library (tcolorbox): 'tcblistingscore.code.tex' version '4.20'
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
+Library (tcolorbox): 'tcbprocessing.code.tex' version '4.20'
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+))
+\c@tcblisting=\count328
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
+Library (tcolorbox): 'tcbexternal.code.tex' version '4.20'
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
+Library (tcolorbox): 'tcbmagazine.code.tex' version '4.20'
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbvignette.code.tex
+Library (tcolorbox): 'tcbvignette.code.tex' version '4.20'
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryfadings.code.tex
+File: tikzlibraryfadings.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryfadings
+.code.tex
+File: pgflibraryfadings.code.tex 2019/04/04 v3.1.2 (3.1.2)
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
+Library (tcolorbox): 'tcbposter.code.tex' version '4.20'
+)) (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/xr.sty
+Package: xr 2019/01/05 v5.04 eXternal References (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.code.tex
+File: tikzlibraryshapes.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.geometric.code.tex
+File: tikzlibraryshapes.geometric.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.geometric.code.tex
+File: pgflibraryshapes.geometric.code.tex 2019/04/04 v3.1.2 (3.1.2)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.misc.code.tex
+File: tikzlibraryshapes.misc.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.misc.code.tex
+File: pgflibraryshapes.misc.code.tex 2019/04/04 v3.1.2 (3.1.2)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.symbols.code.tex
+File: tikzlibraryshapes.symbols.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.symbols.code.tex
+File: pgflibraryshapes.symbols.code.tex 2019/04/04 v3.1.2 (3.1.2)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.arrows.code.tex
+File: tikzlibraryshapes.arrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.arrows.code.tex
+File: pgflibraryshapes.arrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.callouts.code.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.callouts.code.tex))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryshapes.multipart.code.tex
+File: tikzlibraryshapes.multipart.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
+shapes.multipart.code.tex
+File: pgflibraryshapes.multipart.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\pgfnodepartlowerbox=\box82
+\pgfnodeparttwobox=\box83
+\pgfnodepartthreebox=\box84
+\pgfnodepartfourbox=\box85
+\pgfnodeparttwentybox=\box86
+\pgfnodepartnineteenbox=\box87
+\pgfnodeparteighteenbox=\box88
+\pgfnodepartseventeenbox=\box89
+\pgfnodepartsixteenbox=\box90
+\pgfnodepartfifteenbox=\box91
+\pgfnodepartfourteenbox=\box92
+\pgfnodepartthirteenbox=\box93
+\pgfnodeparttwelvebox=\box94
+\pgfnodepartelevenbox=\box95
+\pgfnodeparttenbox=\box96
+\pgfnodepartninebox=\box97
+\pgfnodeparteightbox=\box98
+\pgfnodepartsevenbox=\box99
+\pgfnodepartsixbox=\box100
+\pgfnodepartfivebox=\box101
+)))
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
+s/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
+code.tex
+File: pgflibraryarrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
+\arrowsize=\dimen305
+))
+\pgf@layerbox@background=\box102
+\pgf@layerboxsaved@background=\box103
+\pgf@layerbox@foreground=\box104
+\pgf@layerboxsaved@foreground=\box105
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
+s
+\f@nch@headwidth=\skip72
+\f@nch@O@elh=\skip73
+\f@nch@O@erh=\skip74
+\f@nch@O@olh=\skip75
+\f@nch@O@orh=\skip76
+\f@nch@O@elf=\skip77
+\f@nch@O@erf=\skip78
+\f@nch@O@olf=\skip79
+\f@nch@O@orf=\skip80
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 64.
+\captionmargin=\dimen306
+\captionmargin@=\dimen307
+\captionwidth=\dimen308
+\caption@tempdima=\dimen309
+\caption@indent=\dimen310
+\caption@parindent=\dimen311
+\caption@hangindent=\dimen312
+)
+\c@caption@flags=\count329
+\c@ContinuedFloat=\count330
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
+Package caption Info: rotating package is loaded.
+Package caption Info: xtab package is loaded.
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count331
+\sf@farskip=\skip81
+\sf@captopadj=\dimen313
+\sf@capskip=\skip82
+\sf@nearskip=\skip83
+\c@subfigure=\count332
+\c@subfigure@save=\count333
+\c@lofdepth=\count334
+\c@subtable=\count335
+\c@subtable@save=\count336
+\c@lotdepth=\count337
+\sf@top=\skip84
+\sf@bottom=\skip85
+)
+(./Tesis_AABA.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+
+
+LaTeX Warning: Label `useCase_check' multiply defined.
+
+
+LaTeX Warning: Label `sub@useCase_check' multiply defined.
+
+
+LaTeX Warning: Label `actDiag_check' multiply defined.
+
+
+LaTeX Warning: Label `sub@actDiag_check' multiply defined.
+
+)
+\openout1 = `Tesis_AABA.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 158.
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 158.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 158.
+
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 158.
+LaTeX Info: Redefining \. on input line 158.
+LaTeX Info: Redefining \% on input line 158.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+Package geometry Warning: The marginal notes overrun the paper.
+     Add 32.7302pt and more to the right margin.
+
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(72.2698pt, 469.75539pt, 72.2698pt)
+* v-part:(T,H,B)=(72.2698pt, 650.43037pt, 72.2698pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=469.75539pt
+* \textheight=650.43037pt
+* \oddsidemargin=-0.00018pt
+* \evensidemargin=-0.00018pt
+* \topmargin=-31.87398pt
+* \headheight=12.0pt
+* \headsep=19.8738pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=98.0pt
+* \marginparsep=7.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count338
+\scratchdimen=\dimen314
+\scratchbox=\box106
+\nofMPsegments=\count339
+\nofMParguments=\count340
+\everyMPshowfont=\toks51
+\MPscratchCnt=\count341
+\MPscratchDim=\dimen315
+\MPnumerator=\count342
+\makeMPintoPDFobject=\count343
+\everyMPtoPDFconversion=\toks52
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count344
+\AtBeginShipoutBox=\box107
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+ABD: EveryShipout initializing macros
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
+Package caption Info: End \AtBeginDocument code.
+<portada_Oficial.pdf, id=41, 614.295pt x 794.97pt>
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf>
+Package pdftex.def Info: portada_Oficial.pdf  used on input line 230.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf>
+Package pdftex.def Info: portada_Oficial.pdf  used on input line 230.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+<portada_Oficial.pdf, id=44, page=1, 614.295pt x 794.97pt>
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf, page 1>
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 230.
+(pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf, page 1>
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 230.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf, page 1>
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 230.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf, page 1>
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 230.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+File: portada_Oficial.pdf Graphic file (type pdf)
+<use portada_Oficial.pdf, page 1>
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 230.
+(pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
+ [1
+
+ <./portada_Oficial.pdf>] [2
+
+]
+(./Tesis_AABA.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+ [1
+
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+\tf@toc=\write6
+\openout6 = `Tesis_AABA.toc'.
+
+ [2] (./Tesis_AABA.lof
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
+
+Package natbib Warning: Citation `Sta11' on page \es@scroman {iii} undefined on
+ input line 4.
+
+
+Package natbib Warning: Citation `Fer13' on page \es@scroman {iii} undefined on
+ input line 5.
+
+
+Package natbib Warning: Citation `FerYosWas18' on page \es@scroman {iii} undefi
+ned on input line 9.
+
+
+Package natbib Warning: Citation `YauScaHey' on page \es@scroman {iii} undefine
+d on input line 10.
+
+
+Package natbib Warning: Citation `HeyScaHuy08' on page \es@scroman {iii} undefi
+ned on input line 11.
+
+)
+\tf@lof=\write7
+\openout7 = `Tesis_AABA.lof'.
+
+ [3
+
+] [4
+
+] (./Tesis_AABA.lot
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+
+
+Package natbib Warning: Citation `Fer1908' on page \es@scroman {v} undefined on
+ input line 4.
+
+
+Package natbib Warning: Citation `PonShiKre16' on page \es@scroman {v} undefine
+d on input line 5.
+
+
+Package natbib Warning: Citation `Fer13' on page \es@scroman {v} undefined on i
+nput line 6.
+
+)
+\tf@lot=\write8
+\openout8 = `Tesis_AABA.lot'.
+
+ [5] [6
+
+]
+Package srcltx Info: Expanded filename `Resumen.tex' to `Resumen.tex' on input 
+line 248.
+
+:<+ Resumen.tex
+(./Resumen.tex)
+:<-
+[7] [8
+
+]
+Cap\'{\i }tulo 1.
+Package srcltx Info: Expanded filename `Capitulo1-Introduccion.tex' to `Capitul
+o1-Introduccion.tex' on input line 261.
+:<+ Capitulo1-Introduccion.tex
+(./Capitulo1-Introduccion.tex
+
+Package natbib Warning: Citation `Var14' on page 1 undefined on input line 10.
+
+
+Package natbib Warning: Citation `Wyl03' on page 1 undefined on input line 10.
+
+
+Package natbib Warning: Citation `Urb16' on page 1 undefined on input line 10.
+
+
+Package natbib Warning: Citation `OrtGarFer11' on page 1 undefined on input lin
+e 18.
+
+
+Package natbib Warning: Citation `Var1103' on page 1 undefined on input line 18
+.
+
+
+Package natbib Warning: Citation `JahWMe10' on page 1 undefined on input line 1
+8.
+
+
+Package natbib Warning: Citation `AtzLio0605' on page 1 undefined on input line
+ 22.
+
+
+Package natbib Warning: Citation `Var1103' on page 1 undefined on input line 22
+.
+
+
+Package natbib Warning: Citation `BroHin1304' on page 1 undefined on input line
+ 22.
+
+[1
+
+]
+
+Package natbib Warning: Citation `SchFerHyb06' on page 2 undefined on input lin
+e 30.
+
+
+Package natbib Warning: Citation `AtzLio0605' on page 2 undefined on input line
+ 34.
+
+[2] [3] [4])
+:<-
+[5] [6
+
+]
+Cap\'{\i }tulo 2.
+Package srcltx Info: Expanded filename `Capitulo2-Antecedentes.tex' to `Capitul
+o2-Antecedentes.tex' on input line 267.
+:<+ Capitulo2-Antecedentes.tex
+(./Capitulo2-Antecedentes.tex
+
+Package natbib Warning: Citation `peltier2016information' on page 7 undefined o
+n input line 11.
+
+
+Package natbib Warning: Citation `Sta11' on page 7 undefined on input line 16.
+
+
+Package natbib Warning: Citation `StaTec0409' on page 7 undefined on input line
+ 16.
+
+[7]
+
+Package natbib Warning: Citation `Val19' on page 8 undefined on input line 35.
+
+Package epstopdf Info: Source file: <Imagenes/ciaObj.eps>
+(epstopdf)                    date: 2018-09-17 16:13:22
+(epstopdf)                    size: 54869 bytes
+(epstopdf)             Output file: <Imagenes/ciaObj-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-09-17 16:16:30
+(epstopdf)                    size: 8884 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/ciaObj-eps-conver
+ted-to.pdf Imagenes/ciaObj.eps>
+(epstopdf)             \includegraphics on input line 39.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/ciaObj-eps-converted-to.pdf, id=132, 263.22339pt x 112.22928pt>
+File: Imagenes/ciaObj-eps-converted-to.pdf Graphic file (type pdf)
+<use Imagenes/ciaObj-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/ciaObj-eps-converted-to.pdf  used on input li
+ne 39.
+(pdftex.def)             Requested size: 263.22273pt x 112.22899pt.
+
+Package natbib Warning: Citation `Sta11' on page 8 undefined on input line 40.
+
+
+Package natbib Warning: Citation `Sta11' on page 8 undefined on input line 40.
+
+
+Package natbib Warning: Citation `Ace1709' on page 8 undefined on input line 46
+.
+
+[8 <./Imagenes/ciaObj-eps-converted-to.pdf>]
+
+Package natbib Warning: Citation `WhiMat12' on page 9 undefined on input line 5
+8.
+
+
+Package natbib Warning: Citation `peltier2016information' on page 9 undefined o
+n input line 68.
+
+
+Package natbib Warning: Citation `Lan17' on page 9 undefined on input line 68.
+
+[9]
+
+Package natbib Warning: Citation `jacobs2015engineering' on page 10 undefined o
+n input line 90.
+
+
+Package natbib Warning: Citation `Nom97' on page 10 undefined on input line 100
+.
+
+
+Package natbib Warning: Citation `RusSrLeh91' on page 10 undefined on input lin
+e 100.
+
+[10]
+
+Package natbib Warning: Citation `KimSol18' on page 11 undefined on input line 
+107.
+
+
+Package natbib Warning: Citation `JouRabAis14' on page 11 undefined on input li
+ne 111.
+
+
+Package natbib Warning: Citation `gupta2016handbook' on page 11 undefined on in
+put line 111.
+
+
+Package natbib Warning: Citation `gupta2016handbook' on page 11 undefined on in
+put line 115.
+
+[11]
+
+Package natbib Warning: Citation `gupta2016handbook' on page 12 undefined on in
+put line 126.
+
+
+Package natbib Warning: Citation `BraFerVan08' on page 12 undefined on input li
+ne 138.
+
+[12]
+
+Package natbib Warning: Citation `Weik2001' on page 13 undefined on input line 
+157.
+
+[13]
+
+Package natbib Warning: Citation `BazLim07' on page 14 undefined on input line 
+161.
+
+
+Package natbib Warning: Citation `BazLim07' on page 14 undefined on input line 
+161.
+
+
+Package natbib Warning: Citation `Mjo12' on page 14 undefined on input line 169
+.
+
+[14]
+
+Package natbib Warning: Citation `Fer1908' on page 15 undefined on input line 1
+83.
+
+
+Package natbib Warning: Citation `Fer1908' on page 15 undefined on input line 1
+83.
+
+
+Underfull \hbox (badness 3199) in paragraph at lines 197--197
+[]|\T1/cmr/m/n/8 Propiedad y ad-mi-nis-tra-
+ []
+
+
+Package natbib Warning: Citation `SchFerHyb06' on page 15 undefined on input li
+ne 245.
+
+
+Package natbib Warning: Citation `SchFerHyb06' on page 15 undefined on input li
+ne 251.
+
+
+Package natbib Warning: Citation `SchFerHyb06' on page 15 undefined on input li
+ne 255.
+
+[15] [16]
+
+Package natbib Warning: Citation `SchFerHyb06' on page 17 undefined on input li
+ne 264.
+
+
+Package natbib Warning: Citation `PonShiKre16' on page 17 undefined on input li
+ne 272.
+
+
+Package natbib Warning: Citation `PonShiKre16' on page 17 undefined on input li
+ne 304.
+
+
+Package natbib Warning: Citation `PonShiKre16' on page 17 undefined on input li
+ne 304.
+
+
+Package natbib Warning: Citation `KonCamWas03' on page 17 undefined on input li
+ne 318.
+
+
+Package natbib Warning: Citation `KieEldTyr06' on page 17 undefined on input li
+ne 318.
+
+[17]
+
+Package natbib Warning: Citation `MelJen08' on page 18 undefined on input line 
+329.
+
+
+Package natbib Warning: Citation `ScaJooYsk06' on page 18 undefined on input li
+ne 339.
+
+[18]
+Overfull \hbox (16.7664pt too wide) in paragraph at lines 347--348
+[][]\T1/cmr/bx/n/12 Control de ac-ce-so\T1/cmr/m/n/12 . \T1/cmr/m/it/12 Aut-hen
+-ti-ca-tion en-for-cer, Aut-ho-ri-za-tion En-for-cer, Container-Managed
+ []
+
+
+Package natbib Warning: Citation `ScaJooYsk06' on page 19 undefined on input li
+ne 354.
+
+
+Package natbib Warning: Citation `Fer13' on page 19 undefined on input line 369
+.
+
+
+Package natbib Warning: Citation `Fer13' on page 19 undefined on input line 369
+.
+
+[19]
+Package epstopdf Info: Source file: <Imagenes/diag_class_Authenticator_pt.eps>
+(epstopdf)                    date: 2019-03-15 08:53:34
+(epstopdf)                    size: 78179 bytes
+(epstopdf)             Output file: <Imagenes/diag_class_Authenticator_pt-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2019-03-15 08:53:50
+(epstopdf)                    size: 10295 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_class_Authen
+ticator_pt-eps-converted-to.pdf Imagenes/diag_class_Authenticator_pt.eps>
+(epstopdf)             \includegraphics on input line 401.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf, id=189, 276.62346pt
+ x 150.11081pt>
+File: Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_class_Authenticator_pt-eps-converted-to.
+pdf  used on input line 401.
+(pdftex.def)             Requested size: 187.89928pt x 101.96863pt.
+Package epstopdf Info: Source file: <Imagenes/diag_seq_Authenticator_pt.eps>
+(epstopdf)                    date: 2019-03-15 09:31:24
+(epstopdf)                    size: 80631 bytes
+(epstopdf)             Output file: <Imagenes/diag_seq_Authenticator_pt-eps-con
+verted-to.pdf>
+(epstopdf)                    date: 2019-03-15 09:31:36
+(epstopdf)                    size: 11202 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_seq_Authenti
+cator_pt-eps-converted-to.pdf Imagenes/diag_seq_Authenticator_pt.eps>
+(epstopdf)             \includegraphics on input line 405.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf, id=190, 399.74344pt x
+ 243.24876pt>
+File: Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf Graphic file (typ
+e pdf)
+<use Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pd
+f  used on input line 405.
+(pdftex.def)             Requested size: 234.87769pt x 142.92537pt.
+
+
+Package natbib Warning: Citation `Fer13' on page 20 undefined on input line 406
+.
+
+
+Package natbib Warning: Citation `Fer13' on page 20 undefined on input line 406
+.
+
+
+Package natbib Warning: Citation `Hel87' on page 20 undefined on input line 414
+.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20 <./Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf> <./Imagenes/
+diag_seq_Authenticator_pt-eps-converted-to.pdf>]
+
+Package natbib Warning: Citation `ZalDraMcK14' on page 21 undefined on input li
+ne 420.
+
+
+Package natbib Warning: Citation `ZalDraMcK14' on page 21 undefined on input li
+ne 428.
+
+
+Package natbib Warning: Citation `Var1103' on page 21 undefined on input line 4
+34.
+
+
+Package natbib Warning: Citation `Jan0904' on page 21 undefined on input line 4
+34.
+
+[21]
+
+Package natbib Warning: Citation `Saa1603' on page 22 undefined on input line 4
+46.
+
+[22]
+
+Package natbib Warning: Citation `YauScaHey' on page 23 undefined on input line
+ 466.
+
+
+Package natbib Warning: Citation `HalChaSte06' on page 23 undefined on input li
+ne 467.
+
+)
+:<-
+[23] [24
+
+]
+Cap\'{\i }tulo 3.
+Package srcltx Info: Expanded filename `Capitulo3-Descripcion_Novedades.tex' to
+ `Capitulo3-Descripcion_Novedades.tex' on input line 275.
+:<+ Capitulo3-Descripcion_Novedades.tex
+(./Capitulo3-Descripcion_Novedades.tex
+
+Package natbib Warning: Citation `FerYosWas18' on page 25 undefined on input li
+ne 13.
+
+[25]
+
+Package natbib Warning: Citation `FerYosWas18' on page 26 undefined on input li
+ne 21.
+
+<Imagenes/fig_iteTwinPeaks.png, id=236, 380.42125pt x 220.825pt>
+File: Imagenes/fig_iteTwinPeaks.png Graphic file (type png)
+<use Imagenes/fig_iteTwinPeaks.png>
+Package pdftex.def Info: Imagenes/fig_iteTwinPeaks.png  used on input line 45.
+(pdftex.def)             Requested size: 190.21014pt x 110.41222pt.
+
+Package natbib Warning: Citation `FerYosWas18' on page 26 undefined on input li
+ne 46.
+
+
+Package natbib Warning: Citation `FerYosWas18' on page 26 undefined on input li
+ne 46.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26]
+
+Package natbib Warning: Citation `YauScaHey' on page 27 undefined on input line
+ 113.
+
+
+Package natbib Warning: Citation `YauScaHey' on page 27 undefined on input line
+ 117.
+
+[27 <./Imagenes/fig_iteTwinPeaks.png>]
+<Imagenes/fig_reqTree.png, id=251, 550.055pt x 399.4925pt>
+File: Imagenes/fig_reqTree.png Graphic file (type png)
+<use Imagenes/fig_reqTree.png>
+Package pdftex.def Info: Imagenes/fig_reqTree.png  used on input line 134.
+(pdftex.def)             Requested size: 247.52246pt x 179.76996pt.
+
+
+Package natbib Warning: Citation `YauScaHey' on page 28 undefined on input line
+ 135.
+
+
+Package natbib Warning: Citation `YauScaHey' on page 28 undefined on input line
+ 135.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `HeyScaHuy08' on page 28 undefined on input li
+ne 168.
+
+
+Package natbib Warning: Citation `HeyScaHuy08' on page 28 undefined on input li
+ne 171.
+
+
+Underfull \vbox (badness 5316) has occurred while \output is active []
+
+ [28]
+[29 <./Imagenes/fig_reqTree.png>]
+<Imagenes/fig_depGraph.png, id=259, 367.3725pt x 347.2975pt>
+File: Imagenes/fig_depGraph.png Graphic file (type png)
+<use Imagenes/fig_depGraph.png>
+Package pdftex.def Info: Imagenes/fig_depGraph.png  used on input line 186.
+(pdftex.def)             Requested size: 165.31609pt x 156.28242pt.
+
+
+Package natbib Warning: Citation `HeyScaHuy08' on page 30 undefined on input li
+ne 187.
+
+
+Package natbib Warning: Citation `HeyScaHuy08' on page 30 undefined on input li
+ne 187.
+
+[30 <./Imagenes/fig_depGraph.png>])
+:<-
+[31] [32
+
+]
+Cap\'{\i }tulo 4.
+Package srcltx Info: Expanded filename `Capitulo4-Metodologia.tex' to `Capitulo
+4-Metodologia.tex' on input line 279.
+:<+ Capitulo4-Metodologia.tex
+(./Capitulo4-Metodologia.tex
+
+Package natbib Warning: Citation `FerYosWas18' on page 33 undefined on input li
+ne 1.
+
+Package epstopdf Info: Source file: <Imagenes/diag_block_method.eps>
+(epstopdf)                    date: 2019-05-27 17:01:10
+(epstopdf)                    size: 88110 bytes
+(epstopdf)             Output file: <Imagenes/diag_block_method-eps-converted-t
+o.pdf>
+(epstopdf)                    date: 2019-05-27 17:03:14
+(epstopdf)                    size: 11209 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_block_method
+-eps-converted-to.pdf Imagenes/diag_block_method.eps>
+(epstopdf)             \includegraphics on input line 14.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_block_method-eps-converted-to.pdf, id=270, 577.12611pt x 270.691
+3pt>
+File: Imagenes/diag_block_method-eps-converted-to.pdf Graphic file (type pdf)
+<use Imagenes/diag_block_method-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_block_method-eps-converted-to.pdf  used 
+on input line 14.
+(pdftex.def)             Requested size: 403.98553pt x 189.4826pt.
+[33] [34 <./Imagenes/diag_block_method-eps-converted-to.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 49--49
+[]|[]\T1/cmr/m/n/8 Pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--55
+[]|[]\T1/cmr/m/n/8 Post-
+ []
+
+
+Overfull \hbox (2.3321pt too wide) in paragraph at lines 56--56
+[]|[]\T1/cmr/m/n/8 Excepciones| 
+ []
+
+
+Overfull \hbox (3.87756pt too wide) in paragraph at lines 58--58
+[]|[]\T1/cmr/m/n/8 Comentarios| 
+ []
+
+Package epstopdf Info: Source file: <Imagenes/diag_useCase_checkTrade_esp.eps>
+(epstopdf)                    date: 2019-06-03 17:15:40
+(epstopdf)                    size: 94398 bytes
+(epstopdf)             Output file: <Imagenes/diag_useCase_checkTrade_esp-eps-c
+onverted-to.pdf>
+(epstopdf)                    date: 2019-06-03 17:15:46
+(epstopdf)                    size: 10821 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_useCase_chec
+kTrade_esp-eps-converted-to.pdf Imagenes/diag_useCase_checkTrade_esp.eps>
+(epstopdf)             \includegraphics on input line 71.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf, id=287, 223.93663pt
+ x 212.24294pt>
+File: Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf Graphic file (t
+ype pdf)
+<use Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.
+pdf  used on input line 71.
+(pdftex.def)             Requested size: 187.89928pt x 178.09824pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_checkTrade_esp.eps>
+
+(epstopdf)                    date: 2019-06-03 17:48:40
+(epstopdf)                    size: 78328 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_checkTrade_esp-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2019-06-03 17:48:54
+(epstopdf)                    size: 10373 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
+ckTrade_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_esp.eps>
+(epstopdf)             \includegraphics on input line 74.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf, id=288, 356.37141p
+t x 386.73485pt>
+File: Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf Graphic file (
+type pdf)
+<use Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_checkTrade_esp-eps-converted-to
+.pdf  used on input line 74.
+(pdftex.def)             Requested size: 140.92804pt x 152.93857pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[35]
+Underfull \vbox (badness 1147) has occurred while \output is active []
+
+ [36 <./Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf> <./Imagenes/
+diag_activity_checkTrade_esp-eps-converted-to.pdf>]
+
+Package natbib Warning: Citation `BraFerVan08' on page 37 undefined on input li
+ne 113.
+
+[37]
+Overfull \hbox (6.17976pt too wide) in paragraph at lines 137--137
+[]|\T1/cmr/bx/n/8 Atri.
+ []
+
+
+Overfull \hbox (1.7464pt too wide) in paragraph at lines 137--137
+\T1/cmr/bx/n/8 seg.| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 137--137
+[]|\T1/cmr/bx/n/8 Origen
+ []
+
+
+Overfull \hbox (1.73929pt too wide) in paragraph at lines 137--137
+[]|\T1/cmr/bx/n/8 Descripción| 
+ []
+
+
+Package natbib Warning: Citation `BraFerVan08' on page 38 undefined on input li
+ne 145.
+
+[38]
+Overfull \hbox (6.17976pt too wide) in paragraph at lines 167--167
+ []|\T1/cmr/bx/n/8 Atri. 
+ []
+
+
+Overfull \hbox (1.7464pt too wide) in paragraph at lines 167--167
+ \T1/cmr/bx/n/8 seg.| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 167--167
+ []|\T1/cmr/bx/n/8 Origen 
+ []
+
+
+Overfull \hbox (0.58044pt too wide) in paragraph at lines 168--168
+ []|[][]| 
+ []
+
+
+Overfull \hbox (3.63318pt too wide) in paragraph at lines 168--168
+[]|[]| 
+ []
+
+
+Overfull \hbox (4.08931pt too wide) in paragraph at lines 169--169
+ []|\T1/cmr/m/n/8 InA/InN| 
+ []
+
+
+Overfull \hbox (3.41309pt too wide) in paragraph at lines 170--170
+ []|[][]| 
+ []
+
+Package epstopdf Info: Source file: <Imagenes/diag_activity_checkTrade_misuse_e
+sp.eps>
+(epstopdf)                    date: 2019-06-12 17:09:44
+(epstopdf)                    size: 95882 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_checkTrade_misuse_e
+sp-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-12 17:09:50
+(epstopdf)                    size: 13658 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
+ckTrade_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_misus
+e_esp.eps>
+(epstopdf)             \includegraphics on input line 182.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf, id=323, 531
+.95735pt x 428.79196pt>
+File: Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf Graphic
+ file (type pdf)
+<use Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_checkTrade_misuse_esp-eps-conve
+rted-to.pdf  used on input line 182.
+(pdftex.def)             Requested size: 372.36761pt x 300.15231pt.
+Package epstopdf Info: Source file: <Imagenes/simAct_diag_check_trade.eps>
+(epstopdf)                    date: 2019-03-14 07:49:42
+(epstopdf)                    size: 67685 bytes
+(epstopdf)             Output file: <Imagenes/simAct_diag_check_trade-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2019-03-14 07:50:20
+(epstopdf)                    size: 8561 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/simAct_diag_check
+_trade-eps-converted-to.pdf Imagenes/simAct_diag_check_trade.eps>
+(epstopdf)             \includegraphics on input line 183.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/simAct_diag_check_trade-eps-converted-to.pdf, id=324, 169.0616pt x 17
+0.88844pt>
+File: Imagenes/simAct_diag_check_trade-eps-converted-to.pdf Graphic file (type 
+pdf)
+<use Imagenes/simAct_diag_check_trade-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/simAct_diag_check_trade-eps-converted-to.pdf 
+ used on input line 183.
+(pdftex.def)             Requested size: 84.53058pt x 85.444pt.
+[39]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [40 <./Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf> <./I
+magenes/simAct_diag_check_trade-eps-converted-to.pdf>] [41] [42]
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+[43]
+Package epstopdf Info: Source file: <Imagenes/fig_resultSS.eps>
+(epstopdf)                    date: 2019-04-23 09:58:50
+(epstopdf)                    size: 65773 bytes
+(epstopdf)             Output file: <Imagenes/fig_resultSS-eps-converted-to.pdf
+>
+(epstopdf)                    date: 2019-04-23 09:59:36
+(epstopdf)                    size: 7752 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/fig_resultSS-eps-
+converted-to.pdf Imagenes/fig_resultSS.eps>
+(epstopdf)             \includegraphics on input line 344.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/fig_resultSS-eps-converted-to.pdf, id=361, 334.88112pt x 60.67668pt>
+File: Imagenes/fig_resultSS-eps-converted-to.pdf Graphic file (type pdf)
+<use Imagenes/fig_resultSS-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/fig_resultSS-eps-converted-to.pdf  used on in
+put line 344.
+(pdftex.def)             Requested size: 334.8803pt x 60.67653pt.
+ [44 <./Imagenes/fig_resultSS-eps-converted-to.pdf>])
+:<-
+[45] [46
+
+]
+Cap\'{\i }tulo 5.
+Package srcltx Info: Expanded filename `Capitulo5-Ejemplo.tex' to `Capitulo5-Ej
+emplo.tex' on input line 282.
+:<+ Capitulo5-Ejemplo.tex
+(./Capitulo5-Ejemplo.tex [47] [48]
+Package epstopdf Info: Source file: <Imagenes/diag_useCase_financialSystem_esp.
+eps>
+(epstopdf)                    date: 2019-06-12 16:54:24
+(epstopdf)                    size: 52383 bytes
+(epstopdf)             Output file: <Imagenes/diag_useCase_financialSystem_esp-
+eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-12 16:55:48
+(epstopdf)                    size: 8238 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_useCase_fina
+ncialSystem_esp-eps-converted-to.pdf Imagenes/diag_useCase_financialSystem_esp.
+eps>
+(epstopdf)             \includegraphics on input line 45.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf, id=388, 341.15
+456pt x 343.1219pt>
+File: Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf Graphic fi
+le (type pdf)
+<use Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_useCase_financialSystem_esp-eps-converte
+d-to.pdf  used on input line 45.
+(pdftex.def)             Requested size: 204.6943pt x 205.87473pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_openAccount_esp.eps
+>
+(epstopdf)                    date: 2019-06-03 18:19:12
+(epstopdf)                    size: 72104 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_openAccount_esp-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2019-06-03 18:23:42
+(epstopdf)                    size: 10886 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_ope
+nAccount_esp-eps-converted-to.pdf Imagenes/diag_activity_openAccount_esp.eps>
+(epstopdf)             \includegraphics on input line 54.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf, id=389, 406.40836
+pt x 599.50978pt>
+File: Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf Graphic file 
+(type pdf)
+<use Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_openAccount_esp-eps-converted-t
+o.pdf  used on input line 54.
+(pdftex.def)             Requested size: 162.56046pt x 239.79965pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_closeAccount_esp.ep
+s>
+(epstopdf)                    date: 2019-06-12 17:02:30
+(epstopdf)                    size: 65478 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_closeAccount_esp-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2019-06-12 17:02:40
+(epstopdf)                    size: 9629 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_clo
+seAccount_esp-eps-converted-to.pdf Imagenes/diag_activity_closeAccount_esp.eps>
+
+(epstopdf)             \includegraphics on input line 57.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_closeAccount_esp-eps-converted-to.pdf, id=390, 360.6875
+2pt x 414.56882pt>
+File: Imagenes/diag_activity_closeAccount_esp-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Imagenes/diag_activity_closeAccount_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_closeAccount_esp-eps-converted-
+to.pdf  used on input line 57.
+(pdftex.def)             Requested size: 180.3433pt x 207.28389pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_createOrder_esp.eps
+>
+(epstopdf)                    date: 2019-06-03 18:38:02
+(epstopdf)                    size: 74612 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_createOrder_esp-eps
+-converted-to.pdf>
+(epstopdf)                    date: 2019-06-03 18:38:28
+(epstopdf)                    size: 11468 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_cre
+ateOrder_esp-eps-converted-to.pdf Imagenes/diag_activity_createOrder_esp.eps>
+(epstopdf)             \includegraphics on input line 65.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_createOrder_esp-eps-converted-to.pdf, id=391, 391.98444
+pt x 656.41237pt>
+File: Imagenes/diag_activity_createOrder_esp-eps-converted-to.pdf Graphic file 
+(type pdf)
+<use Imagenes/diag_activity_createOrder_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_createOrder_esp-eps-converted-t
+o.pdf  used on input line 65.
+(pdftex.def)             Requested size: 156.79099pt x 262.56029pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_checkTrade_esp.eps>
+
+(epstopdf)                    date: 2019-06-03 17:48:40
+(epstopdf)                    size: 78328 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_checkTrade_esp-eps-
+converted-to.pdf>
+(epstopdf)                    date: 2019-06-03 17:48:54
+(epstopdf)                    size: 10373 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
+ckTrade_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_esp.eps>
+(epstopdf)             \includegraphics on input line 68.
+Package epstopdf Info: Output file is already uptodate.
+File: Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf Graphic file (
+type pdf)
+<use Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_checkTrade_esp-eps-converted-to
+.pdf  used on input line 68.
+(pdftex.def)             Requested size: 213.8245pt x 232.04268pt.
+Package epstopdf Info: Source file: <Imagenes/diag_class_financialSystem_esp.ep
+s>
+(epstopdf)                    date: 2019-07-08 17:15:00
+(epstopdf)                    size: 109555 bytes
+(epstopdf)             Output file: <Imagenes/diag_class_financialSystem_esp-ep
+s-converted-to.pdf>
+(epstopdf)                    date: 2019-07-08 17:15:12
+(epstopdf)                    size: 16947 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_class_financ
+ialSystem_esp-eps-converted-to.pdf Imagenes/diag_class_financialSystem_esp.eps>
+
+(epstopdf)             \includegraphics on input line 79.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_class_financialSystem_esp-eps-converted-to.pdf, id=392, 848.2691
+pt x 714.83057pt>
+File: Imagenes/diag_class_financialSystem_esp-eps-converted-to.pdf Graphic file
+ (type pdf)
+<use Imagenes/diag_class_financialSystem_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_class_financialSystem_esp-eps-converted-
+to.pdf  used on input line 79.
+(pdftex.def)             Requested size: 848.26704pt x 714.82883pt.
+
+
+LaTeX Warning: Float too large for page by 23.60777pt on input line 82.
+
+[49 <./Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf>]
+[50 <./Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf> <./Imagenes
+/diag_activity_closeAccount_esp-eps-converted-to.pdf> <./Imagenes/diag_activity
+_createOrder_esp-eps-converted-to.pdf>] [51 <./Imagenes/diag_class_financialSys
+tem_esp-eps-converted-to.pdf>]
+Overfull \hbox (3.4582pt too wide) in paragraph at lines 135--135
+ []|\T1/cmr/bx/n/8 Atri 
+ []
+
+
+Overfull \hbox (0.73943pt too wide) in paragraph at lines 135--135
+ \T1/cmr/bx/n/8 Seg| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 135--135
+ []|\T1/cmr/bx/n/8 Origen 
+ []
+
+
+Overfull \hbox (3.4582pt too wide) in paragraph at lines 135--135
+ []|\T1/cmr/bx/n/8 Atri 
+ []
+
+
+Overfull \hbox (0.73943pt too wide) in paragraph at lines 135--135
+ \T1/cmr/bx/n/8 Seg| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 135--135
+ []|\T1/cmr/bx/n/8 Origen 
+ []
+
+
+Overfull \hbox (3.4582pt too wide) in paragraph at lines 135--135
+ []\T1/cmr/bx/n/8 Atri 
+ []
+
+
+Overfull \hbox (0.73943pt too wide) in paragraph at lines 135--135
+ \T1/cmr/bx/n/8 Seg| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 135--135
+ []\T1/cmr/bx/n/8 Origen 
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 141--141
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+
+Overfull \hbox (0.6457pt too wide) in paragraph at lines 145--145
+[][]|\T1/cmr/m/n/8 Gerente|  
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 148--148
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+[52]
+Overfull \hbox (3.4582pt too wide) in paragraph at lines 149--149
+ []\T1/cmr/bx/n/8 Atri 
+ []
+
+
+Overfull \hbox (0.73943pt too wide) in paragraph at lines 149--149
+ \T1/cmr/bx/n/8 Seg| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 149--149
+ []\T1/cmr/bx/n/8 Origen 
+ []
+
+
+Overfull \hbox (0.6457pt too wide) in paragraph at lines 152--152
+[][]|\T1/cmr/m/n/8 Gerente|  
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 155--155
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--158
+[]\T1/cmr/m/n/8 Depósito
+ []
+
+
+Overfull \hbox (0.6457pt too wide) in paragraph at lines 160--160
+ [][]\T1/cmr/m/n/8 Gerente| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 160--160
+[]\T1/cmr/m/n/8 Expedir
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 164--164
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+
+Overfull \vbox (13.45003pt too high) detected at line 168
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 169--169
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+
+Overfull \hbox (0.6457pt too wide) in paragraph at lines 171--171
+ [][]\T1/cmr/m/n/8 Gerente| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+[]\T1/cmr/m/n/8 Revisar
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 171--171
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+
+Overfull \hbox (0.6457pt too wide) in paragraph at lines 173--173
+ [][]\T1/cmr/m/n/8 Gerente| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]\T1/cmr/m/n/8 Cerrar
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 177--177
+ []\T1/cmr/m/n/8 InA/Ext| 
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 179--179
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+[53]
+Overfull \hbox (3.4582pt too wide) in paragraph at lines 183--183
+ []\T1/cmr/bx/n/8 Atri 
+ []
+
+
+Overfull \hbox (0.73943pt too wide) in paragraph at lines 183--183
+ \T1/cmr/bx/n/8 Seg| 
+ []
+
+
+Overfull \hbox (0.50685pt too wide) in paragraph at lines 183--183
+ []\T1/cmr/bx/n/8 Origen 
+ []
+
+
+Overfull \hbox (6.89905pt too wide) in paragraph at lines 187--187
+[]\T1/cmr/m/n/8 Confirmación| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--189
+[]\T1/cmr/m/n/8 Actualizar
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 189--189
+ []\T1/cmr/m/n/8 InA/Ext| 
+ []
+
+
+Overfull \hbox (3.51167pt too wide) in paragraph at lines 192--192
+ []\T1/cmr/m/n/8 InN/Ext| 
+ []
+
+
+Overfull \hbox (0.58044pt too wide) in paragraph at lines 197--197
+[][]|\T1/cmr/m/n/8 Auditor|  
+ []
+
+
+Overfull \hbox (3.63318pt too wide) in paragraph at lines 197--197
+[]|\T1/cmr/m/n/8 Inspeccionar 
+ []
+
+
+Overfull \hbox (4.08931pt too wide) in paragraph at lines 198--198
+ []\T1/cmr/m/n/8 InA/InN| 
+ []
+
+
+Overfull \hbox (0.58044pt too wide) in paragraph at lines 200--200
+[][]|\T1/cmr/m/n/8 Auditor|  
+ []
+
+
+Overfull \hbox (4.08931pt too wide) in paragraph at lines 201--201
+ []\T1/cmr/m/n/8 InA/InN| 
+ []
+
+Package epstopdf Info: Source file: <Imagenes/diag_activity_openAccount_misuse_
+esp.eps>
+(epstopdf)                    date: 2019-06-03 18:21:10
+(epstopdf)                    size: 94034 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_openAccount_misuse_
+esp-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-03 18:23:44
+(epstopdf)                    size: 14623 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_ope
+nAccount_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_openAccount_mis
+use_esp.eps>
+(epstopdf)             \includegraphics on input line 212.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf, id=441, 59
+1.14853pt x 599.50978pt>
+File: Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf Graphi
+c file (type pdf)
+<use Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_openAccount_misuse_esp-eps-conv
+erted-to.pdf  used on input line 212.
+(pdftex.def)             Requested size: 325.13269pt x 329.7314pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_closeAccount_misuse
+_esp.eps>
+(epstopdf)                    date: 2019-06-12 17:01:54
+(epstopdf)                    size: 86067 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_closeAccount_misuse
+_esp-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-12 17:02:00
+(epstopdf)                    size: 13359 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_clo
+seAccount_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_closeAccount_m
+isuse_esp.eps>
+(epstopdf)             \includegraphics on input line 219.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf, id=442, 5
+91.14853pt x 414.56882pt>
+File: Imagenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf Graph
+ic file (type pdf)
+<use Imagenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_closeAccount_misuse_esp-eps-con
+verted-to.pdf  used on input line 219.
+(pdftex.def)             Requested size: 325.13269pt x 228.01355pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_createOrder_misuse_
+esp.eps>
+(epstopdf)                    date: 2019-06-12 17:07:10
+(epstopdf)                    size: 97913 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_createOrder_misuse_
+esp-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-12 17:07:46
+(epstopdf)                    size: 15228 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_cre
+ateOrder_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_createOrder_mis
+use_esp.eps>
+(epstopdf)             \includegraphics on input line 226.
+Package epstopdf Info: Output file is already uptodate.
+<Imagenes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf, id=443, 59
+8.26514pt x 656.41237pt>
+File: Imagenes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf Graphi
+c file (type pdf)
+<use Imagenes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_createOrder_misuse_esp-eps-conv
+erted-to.pdf  used on input line 226.
+(pdftex.def)             Requested size: 329.04684pt x 361.02791pt.
+Package epstopdf Info: Source file: <Imagenes/diag_activity_checkTrade_misuse_e
+sp.eps>
+(epstopdf)                    date: 2019-06-12 17:09:44
+(epstopdf)                    size: 95882 bytes
+(epstopdf)             Output file: <Imagenes/diag_activity_checkTrade_misuse_e
+sp-eps-converted-to.pdf>
+(epstopdf)                    date: 2019-06-12 17:09:50
+(epstopdf)                    size: 13658 bytes
+(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
+ckTrade_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_misus
+e_esp.eps>
+(epstopdf)             \includegraphics on input line 233.
+Package epstopdf Info: Output file is already uptodate.
+File: Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf Graphic
+ file (type pdf)
+<use Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf>
+Package pdftex.def Info: Imagenes/diag_activity_checkTrade_misuse_esp-eps-conve
+rted-to.pdf  used on input line 233.
+(pdftex.def)             Requested size: 292.57744pt x 235.83629pt.
+
+Overfull \hbox (2.21169pt too wide) in paragraph at lines 253--253
+ []|[]| 
+ []
+
+
+Overfull \hbox (2.21169pt too wide) in paragraph at lines 288--288
+ []|[]| 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54]
+[55 <./Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf> <./I
+magenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf>] [56 <./Ima
+genes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf>]
+
+LaTeX Warning: Text page 57 contains only floats.
+
+
+Underfull \vbox (badness 2189) has occurred while \output is active []
+
+ [57]
+[58])
+:<-
+[59] [60
+
+]
+Cap\'{\i }tulo 6.
+Package srcltx Info: Expanded filename `Capitulo6-Conclusiones.tex' to `Capitul
+o6-Conclusiones.tex' on input line 286.
+:<+ Capitulo6-Conclusiones.tex
+(./Capitulo6-Conclusiones.tex [61] [62])
+:<-
+[63] [64
+
+] [65] [66]
+Package srcltx Info: Expanded filename `ApendiceA.tex' to `ApendiceA.tex' on in
+put line 294.
+
+:<+ ApendiceA.tex
+(./ApendiceA.tex)
+:<-
+:<+ Tesis_AABA.bbl
+No file Tesis_AABA.bbl.
+:<-
+
+Package natbib Warning: There were undefined citations.
+
+(./Tesis_AABA.aux
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 36664 strings out of 492616
+ 755444 string characters out of 6129482
+ 986037 words of memory out of 5000000
+ 39962 multiletter control sequences out of 15000+600000
+ 553698 words of font info for 62 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 63i,18n,101p,1097b,751s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></
+usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
+r/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texliv
+e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2019
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2019/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2019/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2019/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2019/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2019/texmf-dist/
+fonts/type1/public/cm-super/sfbi1095.pfb></usr/local/texlive/2019/texmf-dist/fo
+nts/type1/public/cm-super/sfbi1200.pfb></usr/local/texlive/2019/texmf-dist/font
+s/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/
+type1/public/cm-super/sfbx1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/ty
+pe1/public/cm-super/sfbx1095.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
+1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/
+public/cm-super/sfbx1440.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/pu
+blic/cm-super/sfbx1728.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/publ
+ic/cm-super/sfbx2488.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public
+/cm-super/sfcc1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/c
+m-super/sfrm0600.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-
+super/sfrm0700.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-su
+per/sfrm0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-supe
+r/sfrm1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/
+sfrm1200.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sf
+ti0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti
+1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti10
+95.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1200
+.pfb>
+Output written on Tesis_AABA.pdf (76 pages, 1106597 bytes).
+PDF statistics:
+ 608 PDF objects out of 1000 (max. 8388607)
+ 430 compressed objects within 5 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 277 words of extra memory for PDF output out of 10000 (max. 10000000)
+
