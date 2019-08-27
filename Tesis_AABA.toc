@@ -1,5 +1,5 @@
 \babel@toc {spanish}{}
-\contentsline {section}{\textbf {Resumen}}{\es@scroman {vii}}% 
+\contentsline {section}{\textbf {Resumen}}{\es@scroman {ix}}% 
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}% 
 \contentsline {section}{\numberline {1.1}Contexto}{1}% 
 \contentsline {section}{\numberline {1.2}Problema}{2}% 
@@ -8,13 +8,13 @@
 \contentsline {section}{\numberline {1.5}Contribuciones}{3}% 
 \contentsline {section}{\numberline {1.6}Estructura de la tesis}{4}% 
 \contentsline {chapter}{\numberline {2}Antecedentes}{7}% 
-\contentsline {section}{\numberline {2.1}\IeC {\textquestiondown }Qu\IeC {\'e} es seguridad de la informaci\IeC {\'o}n?}{7}% 
+\contentsline {section}{\numberline {2.1}\IeC {\textquestiondown }Qu\IeC {\'e} son los sistemas en tiempo real ?}{7}% 
 \contentsline {section}{\numberline {2.2}Amenazas a sistemas de informaci\IeC {\'o}n}{11}% 
 \contentsline {subsection}{\numberline {2.2.1}Modelos basados en t\IeC {\'e}cnicas de ataque}{11}% 
 \contentsline {subsection}{\numberline {2.2.2}Modelo basados en el impacto de las amenazas}{12}% 
 \contentsline {section}{\numberline {2.3}Seguridad en la etapa de dise\IeC {\~n}o de un sistema}{14}% 
 \contentsline {section}{\numberline {2.4}Patrones de seguridad}{15}% 
-\contentsline {section}{\numberline {2.5}Medici\IeC {\'o}n de la seguridad como propiedad de un sistema}{21}% 
+\contentsline {section}{\numberline {2.5}Medici\IeC {\'o}n de la seguridad como propiedad de un sistema}{20}% 
 \contentsline {subsection}{\numberline {2.5.1}Medici\IeC {\'o}n de la seguridad al implementar patrones de seguridad}{22}% 
 \contentsline {section}{\numberline {2.6}Resumen}{23}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{25}% 
@@ -41,3 +41,5 @@
 \contentsline {section}{\numberline {6.1}Resumen}{61}% 
 \contentsline {section}{\numberline {6.2}Contribuciones}{62}% 
 \contentsline {section}{\numberline {6.3}Trabajo futuro}{63}% 
+\contentsline {chapter}{Ap\IeC {\'e}ndice}{67}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{67}% 

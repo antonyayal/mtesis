@@ -1,0 +1,88 @@
+This is BibTeX, Version 0.99d (TeX Live 2019)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: Tesis_AABA.aux
+The style file: apa.bst
+Database file #1: bibTesis.bib
+Warning--I didn't find a database entry for "Sta11"
+Warning--I didn't find a database entry for "Fer13"
+Warning--I didn't find a database entry for "FerYosWas18"
+Warning--I didn't find a database entry for "YauScaHey"
+Warning--I didn't find a database entry for "HeyScaHuy08"
+Warning--I didn't find a database entry for "Fer1908"
+Warning--I didn't find a database entry for "PonShiKre16"
+Warning--I didn't find a database entry for "Var14"
+Warning--I didn't find a database entry for "Wyl03"
+Warning--I didn't find a database entry for "Urb16"
+Warning--I didn't find a database entry for "OrtGarFer11"
+Warning--I didn't find a database entry for "Var1103"
+Warning--I didn't find a database entry for "JahWMe10"
+Warning--I didn't find a database entry for "AtzLio0605"
+Warning--I didn't find a database entry for "BroHin1304"
+Warning--I didn't find a database entry for "SchFerHyb06"
+Warning--I didn't find a database entry for "peltier2016information"
+Warning--I didn't find a database entry for "StaTec0409"
+Warning--I didn't find a database entry for "Val19"
+Warning--I didn't find a database entry for "Ace1709"
+Warning--I didn't find a database entry for "WhiMat12"
+Warning--I didn't find a database entry for "Lan17"
+Warning--I didn't find a database entry for "jacobs2015engineering"
+Warning--I didn't find a database entry for "Nom97"
+Warning--I didn't find a database entry for "RusSrLeh91"
+Warning--I didn't find a database entry for "KimSol18"
+Warning--I didn't find a database entry for "JouRabAis14"
+Warning--I didn't find a database entry for "gupta2016handbook"
+Warning--I didn't find a database entry for "BraFerVan08"
+Warning--I didn't find a database entry for "Weik2001"
+Warning--I didn't find a database entry for "BazLim07"
+Warning--I didn't find a database entry for "Mjo12"
+Warning--I didn't find a database entry for "KonCamWas03"
+Warning--I didn't find a database entry for "KieEldTyr06"
+Warning--I didn't find a database entry for "MelJen08"
+Warning--I didn't find a database entry for "ScaJooYsk06"
+Warning--I didn't find a database entry for "Hel87"
+Warning--I didn't find a database entry for "ZalDraMcK14"
+Warning--I didn't find a database entry for "Jan0904"
+Warning--I didn't find a database entry for "Saa1603"
+Warning--I didn't find a database entry for "HalChaSte06"
+You've used 1 entry,
+            1940 wiz_defined-function locations,
+            558 strings with 4541 characters,
+and the built_in function-call counts, 295 in all, are:
+= -- 25
+> -- 7
+< -- 1
++ -- 2
+- -- 2
+* -- 19
+:= -- 58
+add.period$ -- 3
+call.type$ -- 1
+change.case$ -- 5
+chr.to.int$ -- 1
+cite$ -- 1
+duplicate$ -- 14
+empty$ -- 24
+format.name$ -- 3
+if$ -- 55
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 2
+newline$ -- 8
+num.names$ -- 3
+pop$ -- 8
+preamble$ -- 1
+purify$ -- 6
+quote$ -- 0
+skip$ -- 11
+stack$ -- 0
+substring$ -- 12
+swap$ -- 2
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 4
+warning$ -- 0
+while$ -- 2
+width$ -- 0
+write$ -- 14
+(There were 41 warnings)

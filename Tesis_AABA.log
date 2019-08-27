@@ -1,6 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  22 AUG 2019 20:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  27 AUG 2019 12:21
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **Tesis_AABA.tex
@@ -1174,7 +1174,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '4.20'
 Library (tcolorbox): 'tcbprocessing.code.tex' version '4.20'
 (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/shellesc.sty
 Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
-Package shellesc Info: Restricted shell escape enabled on input line 69.
+Package shellesc Info: Unrestricted shell escape enabled on input line 67.
 ))
 \c@tcblisting=\count328
 )))
@@ -1504,63 +1504,63 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
 \tf@toc=\write6
 \openout6 = `Tesis_AABA.toc'.
 
- [2] (./Tesis_AABA.lof
+ [3] [4
+
+] (./Tesis_AABA.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
 
-Package natbib Warning: Citation `Sta11' on page \es@scroman {iii} undefined on
- input line 4.
+Package natbib Warning: Citation `Sta11' on page \es@scroman {v} undefined on i
+nput line 4.
 
 
-Package natbib Warning: Citation `Fer13' on page \es@scroman {iii} undefined on
- input line 5.
+Package natbib Warning: Citation `Fer13' on page \es@scroman {v} undefined on i
+nput line 5.
 
 
-Package natbib Warning: Citation `FerYosWas18' on page \es@scroman {iii} undefi
-ned on input line 9.
+Package natbib Warning: Citation `FerYosWas18' on page \es@scroman {v} undefine
+d on input line 9.
 
 
-Package natbib Warning: Citation `YauScaHey' on page \es@scroman {iii} undefine
-d on input line 10.
+Package natbib Warning: Citation `YauScaHey' on page \es@scroman {v} undefined 
+on input line 10.
 
 
-Package natbib Warning: Citation `HeyScaHuy08' on page \es@scroman {iii} undefi
-ned on input line 11.
+Package natbib Warning: Citation `HeyScaHuy08' on page \es@scroman {v} undefine
+d on input line 11.
 
 )
 \tf@lof=\write7
 \openout7 = `Tesis_AABA.lof'.
 
- [3
-
-] [4
+ [5] [6
 
 ] (./Tesis_AABA.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 
 
-Package natbib Warning: Citation `Fer1908' on page \es@scroman {v} undefined on
- input line 4.
+Package natbib Warning: Citation `Fer1908' on page \es@scroman {vii} undefined 
+on input line 4.
 
 
-Package natbib Warning: Citation `PonShiKre16' on page \es@scroman {v} undefine
-d on input line 5.
+Package natbib Warning: Citation `PonShiKre16' on page \es@scroman {vii} undefi
+ned on input line 5.
 
 
-Package natbib Warning: Citation `Fer13' on page \es@scroman {v} undefined on i
-nput line 6.
+Package natbib Warning: Citation `Fer13' on page \es@scroman {vii} undefined on
+ input line 6.
 
 )
 \tf@lot=\write8
 \openout8 = `Tesis_AABA.lot'.
 
- [5] [6
+ [7] [8
 
 ]
 Package srcltx Info: Expanded filename `Resumen.tex' to `Resumen.tex' on input 
@@ -1569,7 +1569,7 @@ line 248.
 :<+ Resumen.tex
 (./Resumen.tex)
 :<-
-[7] [8
+[9] [10
 
 ]
 Cap\'{\i }tulo 1.
@@ -1633,18 +1633,18 @@ o2-Antecedentes.tex' on input line 267.
 (./Capitulo2-Antecedentes.tex
 
 Package natbib Warning: Citation `peltier2016information' on page 7 undefined o
-n input line 11.
+n input line 12.
 
 
-Package natbib Warning: Citation `Sta11' on page 7 undefined on input line 16.
+Package natbib Warning: Citation `Sta11' on page 7 undefined on input line 17.
 
 
 Package natbib Warning: Citation `StaTec0409' on page 7 undefined on input line
- 16.
+ 17.
 
 [7]
 
-Package natbib Warning: Citation `Val19' on page 8 undefined on input line 35.
+Package natbib Warning: Citation `Val19' on page 8 undefined on input line 36.
 
 Package epstopdf Info: Source file: <Imagenes/ciaObj.eps>
 (epstopdf)                    date: 2018-09-17 16:13:22
@@ -1652,171 +1652,172 @@ Package epstopdf Info: Source file: <Imagenes/ciaObj.eps>
 (epstopdf)             Output file: <Imagenes/ciaObj-eps-converted-to.pdf>
 (epstopdf)                    date: 2018-09-17 16:16:30
 (epstopdf)                    size: 8884 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/ciaObj-eps-conver
-ted-to.pdf Imagenes/ciaObj.eps>
-(epstopdf)             \includegraphics on input line 39.
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/ciaObj-eps-convert
+ed-to.pdf Imagenes/ciaObj.eps>
+(epstopdf)             \includegraphics on input line 40.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/ciaObj-eps-converted-to.pdf, id=132, 263.22339pt x 112.22928pt>
+<Imagenes/ciaObj-eps-converted-to.pdf, id=139, 263.22339pt x 112.22928pt>
 File: Imagenes/ciaObj-eps-converted-to.pdf Graphic file (type pdf)
 <use Imagenes/ciaObj-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/ciaObj-eps-converted-to.pdf  used on input li
-ne 39.
+ne 40.
 (pdftex.def)             Requested size: 263.22273pt x 112.22899pt.
 
-Package natbib Warning: Citation `Sta11' on page 8 undefined on input line 40.
+Package natbib Warning: Citation `Sta11' on page 8 undefined on input line 41.
 
 
-Package natbib Warning: Citation `Sta11' on page 8 undefined on input line 40.
+Package natbib Warning: Citation `Sta11' on page 8 undefined on input line 41.
 
 
-Package natbib Warning: Citation `Ace1709' on page 8 undefined on input line 46
+Package natbib Warning: Citation `Ace1709' on page 8 undefined on input line 47
 .
 
 [8 <./Imagenes/ciaObj-eps-converted-to.pdf>]
 
 Package natbib Warning: Citation `WhiMat12' on page 9 undefined on input line 5
-8.
+9.
 
 
 Package natbib Warning: Citation `peltier2016information' on page 9 undefined o
-n input line 68.
+n input line 69.
 
 
-Package natbib Warning: Citation `Lan17' on page 9 undefined on input line 68.
+Package natbib Warning: Citation `Lan17' on page 9 undefined on input line 69.
 
 [9]
 
 Package natbib Warning: Citation `jacobs2015engineering' on page 10 undefined o
-n input line 90.
-
-
-Package natbib Warning: Citation `Nom97' on page 10 undefined on input line 100
-.
-
-
-Package natbib Warning: Citation `RusSrLeh91' on page 10 undefined on input lin
-e 100.
+n input line 91.
 
 [10]
 
+Package natbib Warning: Citation `Nom97' on page 11 undefined on input line 101
+.
+
+
+Package natbib Warning: Citation `RusSrLeh91' on page 11 undefined on input lin
+e 101.
+
+
 Package natbib Warning: Citation `KimSol18' on page 11 undefined on input line 
-107.
+108.
 
 
 Package natbib Warning: Citation `JouRabAis14' on page 11 undefined on input li
-ne 111.
+ne 112.
 
 
 Package natbib Warning: Citation `gupta2016handbook' on page 11 undefined on in
-put line 111.
+put line 112.
 
 
 Package natbib Warning: Citation `gupta2016handbook' on page 11 undefined on in
-put line 115.
+put line 116.
 
 [11]
 
 Package natbib Warning: Citation `gupta2016handbook' on page 12 undefined on in
-put line 126.
-
-
-Package natbib Warning: Citation `BraFerVan08' on page 12 undefined on input li
-ne 138.
+put line 127.
 
 [12]
 
-Package natbib Warning: Citation `Weik2001' on page 13 undefined on input line 
-157.
+Package natbib Warning: Citation `BraFerVan08' on page 13 undefined on input li
+ne 139.
 
 [13]
 
-Package natbib Warning: Citation `BazLim07' on page 14 undefined on input line 
-161.
+Package natbib Warning: Citation `Weik2001' on page 14 undefined on input line 
+158.
 
 
 Package natbib Warning: Citation `BazLim07' on page 14 undefined on input line 
-161.
+162.
 
 
-Package natbib Warning: Citation `Mjo12' on page 14 undefined on input line 169
+Package natbib Warning: Citation `BazLim07' on page 14 undefined on input line 
+162.
+
+
+Package natbib Warning: Citation `Mjo12' on page 14 undefined on input line 170
 .
 
 [14]
 
 Package natbib Warning: Citation `Fer1908' on page 15 undefined on input line 1
-83.
+84.
 
 
 Package natbib Warning: Citation `Fer1908' on page 15 undefined on input line 1
-83.
+84.
 
 
-Underfull \hbox (badness 3199) in paragraph at lines 197--197
+Underfull \hbox (badness 3199) in paragraph at lines 198--198
 []|\T1/cmr/m/n/8 Propiedad y ad-mi-nis-tra-
  []
 
 
 Package natbib Warning: Citation `SchFerHyb06' on page 15 undefined on input li
-ne 245.
+ne 246.
 
 
 Package natbib Warning: Citation `SchFerHyb06' on page 15 undefined on input li
-ne 251.
+ne 252.
 
+[15]
 
-Package natbib Warning: Citation `SchFerHyb06' on page 15 undefined on input li
-ne 255.
+Package natbib Warning: Citation `SchFerHyb06' on page 16 undefined on input li
+ne 256.
 
-[15] [16]
+[16]
 
 Package natbib Warning: Citation `SchFerHyb06' on page 17 undefined on input li
-ne 264.
+ne 265.
 
 
 Package natbib Warning: Citation `PonShiKre16' on page 17 undefined on input li
-ne 272.
+ne 273.
 
 
 Package natbib Warning: Citation `PonShiKre16' on page 17 undefined on input li
-ne 304.
+ne 305.
 
 
 Package natbib Warning: Citation `PonShiKre16' on page 17 undefined on input li
-ne 304.
+ne 305.
 
 
 Package natbib Warning: Citation `KonCamWas03' on page 17 undefined on input li
-ne 318.
+ne 319.
 
 
 Package natbib Warning: Citation `KieEldTyr06' on page 17 undefined on input li
-ne 318.
+ne 319.
 
 [17]
 
 Package natbib Warning: Citation `MelJen08' on page 18 undefined on input line 
-329.
+330.
 
 
 Package natbib Warning: Citation `ScaJooYsk06' on page 18 undefined on input li
-ne 339.
+ne 340.
 
 [18]
-Overfull \hbox (16.7664pt too wide) in paragraph at lines 347--348
+Overfull \hbox (16.7664pt too wide) in paragraph at lines 348--349
 [][]\T1/cmr/bx/n/12 Control de ac-ce-so\T1/cmr/m/n/12 . \T1/cmr/m/it/12 Aut-hen
 -ti-ca-tion en-for-cer, Aut-ho-ri-za-tion En-for-cer, Container-Managed
  []
 
 
 Package natbib Warning: Citation `ScaJooYsk06' on page 19 undefined on input li
-ne 354.
+ne 355.
 
 
-Package natbib Warning: Citation `Fer13' on page 19 undefined on input line 369
+Package natbib Warning: Citation `Fer13' on page 19 undefined on input line 370
 .
 
 
-Package natbib Warning: Citation `Fer13' on page 19 undefined on input line 369
+Package natbib Warning: Citation `Fer13' on page 19 undefined on input line 370
 .
 
 [19]
@@ -1827,17 +1828,17 @@ Package epstopdf Info: Source file: <Imagenes/diag_class_Authenticator_pt.eps>
 onverted-to.pdf>
 (epstopdf)                    date: 2019-03-15 08:53:50
 (epstopdf)                    size: 10295 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_class_Authen
-ticator_pt-eps-converted-to.pdf Imagenes/diag_class_Authenticator_pt.eps>
-(epstopdf)             \includegraphics on input line 401.
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_class_Authent
+icator_pt-eps-converted-to.pdf Imagenes/diag_class_Authenticator_pt.eps>
+(epstopdf)             \includegraphics on input line 402.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf, id=189, 276.62346pt
+<Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf, id=196, 276.62346pt
  x 150.11081pt>
 File: Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf Graphic file (t
 ype pdf)
 <use Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/diag_class_Authenticator_pt-eps-converted-to.
-pdf  used on input line 401.
+pdf  used on input line 402.
 (pdftex.def)             Requested size: 187.89928pt x 101.96863pt.
 Package epstopdf Info: Source file: <Imagenes/diag_seq_Authenticator_pt.eps>
 (epstopdf)                    date: 2019-03-15 09:31:24
@@ -1846,65 +1847,65 @@ Package epstopdf Info: Source file: <Imagenes/diag_seq_Authenticator_pt.eps>
 verted-to.pdf>
 (epstopdf)                    date: 2019-03-15 09:31:36
 (epstopdf)                    size: 11202 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_seq_Authenti
-cator_pt-eps-converted-to.pdf Imagenes/diag_seq_Authenticator_pt.eps>
-(epstopdf)             \includegraphics on input line 405.
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_seq_Authentic
+ator_pt-eps-converted-to.pdf Imagenes/diag_seq_Authenticator_pt.eps>
+(epstopdf)             \includegraphics on input line 406.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf, id=190, 399.74344pt x
+<Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf, id=197, 399.74344pt x
  243.24876pt>
 File: Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf Graphic file (typ
 e pdf)
 <use Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/diag_seq_Authenticator_pt-eps-converted-to.pd
-f  used on input line 405.
+f  used on input line 406.
 (pdftex.def)             Requested size: 234.87769pt x 142.92537pt.
 
 
-Package natbib Warning: Citation `Fer13' on page 20 undefined on input line 406
+Package natbib Warning: Citation `Fer13' on page 20 undefined on input line 407
 .
 
 
-Package natbib Warning: Citation `Fer13' on page 20 undefined on input line 406
+Package natbib Warning: Citation `Fer13' on page 20 undefined on input line 407
 .
 
 
-Package natbib Warning: Citation `Hel87' on page 20 undefined on input line 414
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Package natbib Warning: Citation `Hel87' on page 20 undefined on input line 415
 .
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [20 <./Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf> <./Imagenes/
-diag_seq_Authenticator_pt-eps-converted-to.pdf>]
+[20]
 
 Package natbib Warning: Citation `ZalDraMcK14' on page 21 undefined on input li
-ne 420.
+ne 421.
 
 
 Package natbib Warning: Citation `ZalDraMcK14' on page 21 undefined on input li
-ne 428.
+ne 429.
 
 
 Package natbib Warning: Citation `Var1103' on page 21 undefined on input line 4
-34.
+35.
 
 
 Package natbib Warning: Citation `Jan0904' on page 21 undefined on input line 4
-34.
+35.
 
-[21]
+[21 <./Imagenes/diag_class_Authenticator_pt-eps-converted-to.pdf> <./Imagenes/d
+iag_seq_Authenticator_pt-eps-converted-to.pdf>]
 
 Package natbib Warning: Citation `Saa1603' on page 22 undefined on input line 4
-46.
+47.
 
 [22]
 
 Package natbib Warning: Citation `YauScaHey' on page 23 undefined on input line
- 466.
+ 467.
 
 
 Package natbib Warning: Citation `HalChaSte06' on page 23 undefined on input li
-ne 467.
+ne 468.
 
 )
 :<-
@@ -1925,7 +1926,7 @@ ne 13.
 Package natbib Warning: Citation `FerYosWas18' on page 26 undefined on input li
 ne 21.
 
-<Imagenes/fig_iteTwinPeaks.png, id=236, 380.42125pt x 220.825pt>
+<Imagenes/fig_iteTwinPeaks.png, id=243, 380.42125pt x 220.825pt>
 File: Imagenes/fig_iteTwinPeaks.png Graphic file (type png)
 <use Imagenes/fig_iteTwinPeaks.png>
 Package pdftex.def Info: Imagenes/fig_iteTwinPeaks.png  used on input line 45.
@@ -1951,7 +1952,7 @@ Package natbib Warning: Citation `YauScaHey' on page 27 undefined on input line
  117.
 
 [27 <./Imagenes/fig_iteTwinPeaks.png>]
-<Imagenes/fig_reqTree.png, id=251, 550.055pt x 399.4925pt>
+<Imagenes/fig_reqTree.png, id=257, 550.055pt x 399.4925pt>
 File: Imagenes/fig_reqTree.png Graphic file (type png)
 <use Imagenes/fig_reqTree.png>
 Package pdftex.def Info: Imagenes/fig_reqTree.png  used on input line 134.
@@ -1981,7 +1982,7 @@ Underfull \vbox (badness 5316) has occurred while \output is active []
 
  [28]
 [29 <./Imagenes/fig_reqTree.png>]
-<Imagenes/fig_depGraph.png, id=259, 367.3725pt x 347.2975pt>
+<Imagenes/fig_depGraph.png, id=265, 367.3725pt x 347.2975pt>
 File: Imagenes/fig_depGraph.png Graphic file (type png)
 <use Imagenes/fig_depGraph.png>
 Package pdftex.def Info: Imagenes/fig_depGraph.png  used on input line 186.
@@ -2016,11 +2017,11 @@ Package epstopdf Info: Source file: <Imagenes/diag_block_method.eps>
 o.pdf>
 (epstopdf)                    date: 2019-05-27 17:03:14
 (epstopdf)                    size: 11209 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_block_method
--eps-converted-to.pdf Imagenes/diag_block_method.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_block_method-
+eps-converted-to.pdf Imagenes/diag_block_method.eps>
 (epstopdf)             \includegraphics on input line 14.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_block_method-eps-converted-to.pdf, id=270, 577.12611pt x 270.691
+<Imagenes/diag_block_method-eps-converted-to.pdf, id=277, 577.12611pt x 270.691
 3pt>
 File: Imagenes/diag_block_method-eps-converted-to.pdf Graphic file (type pdf)
 <use Imagenes/diag_block_method-eps-converted-to.pdf>
@@ -2054,11 +2055,11 @@ Package epstopdf Info: Source file: <Imagenes/diag_useCase_checkTrade_esp.eps>
 onverted-to.pdf>
 (epstopdf)                    date: 2019-06-03 17:15:46
 (epstopdf)                    size: 10821 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_useCase_chec
-kTrade_esp-eps-converted-to.pdf Imagenes/diag_useCase_checkTrade_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_useCase_check
+Trade_esp-eps-converted-to.pdf Imagenes/diag_useCase_checkTrade_esp.eps>
 (epstopdf)             \includegraphics on input line 71.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf, id=287, 223.93663pt
+<Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf, id=293, 223.93663pt
  x 212.24294pt>
 File: Imagenes/diag_useCase_checkTrade_esp-eps-converted-to.pdf Graphic file (t
 ype pdf)
@@ -2074,11 +2075,11 @@ Package epstopdf Info: Source file: <Imagenes/diag_activity_checkTrade_esp.eps>
 converted-to.pdf>
 (epstopdf)                    date: 2019-06-03 17:48:54
 (epstopdf)                    size: 10373 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
-ckTrade_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_chec
+kTrade_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_esp.eps>
 (epstopdf)             \includegraphics on input line 74.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf, id=288, 356.37141p
+<Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf, id=294, 356.37141p
 t x 386.73485pt>
 File: Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf Graphic file (
 type pdf)
@@ -2165,12 +2166,12 @@ sp.eps>
 sp-eps-converted-to.pdf>
 (epstopdf)                    date: 2019-06-12 17:09:50
 (epstopdf)                    size: 13658 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
-ckTrade_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_misus
-e_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_chec
+kTrade_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_misuse
+_esp.eps>
 (epstopdf)             \includegraphics on input line 182.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf, id=323, 531
+<Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf, id=330, 531
 .95735pt x 428.79196pt>
 File: Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf Graphic
  file (type pdf)
@@ -2185,11 +2186,11 @@ Package epstopdf Info: Source file: <Imagenes/simAct_diag_check_trade.eps>
 rted-to.pdf>
 (epstopdf)                    date: 2019-03-14 07:50:20
 (epstopdf)                    size: 8561 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/simAct_diag_check
-_trade-eps-converted-to.pdf Imagenes/simAct_diag_check_trade.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/simAct_diag_check_
+trade-eps-converted-to.pdf Imagenes/simAct_diag_check_trade.eps>
 (epstopdf)             \includegraphics on input line 183.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/simAct_diag_check_trade-eps-converted-to.pdf, id=324, 169.0616pt x 17
+<Imagenes/simAct_diag_check_trade-eps-converted-to.pdf, id=331, 169.0616pt x 17
 0.88844pt>
 File: Imagenes/simAct_diag_check_trade-eps-converted-to.pdf Graphic file (type 
 pdf)
@@ -2214,11 +2215,11 @@ Package epstopdf Info: Source file: <Imagenes/fig_resultSS.eps>
 >
 (epstopdf)                    date: 2019-04-23 09:59:36
 (epstopdf)                    size: 7752 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/fig_resultSS-eps-
-converted-to.pdf Imagenes/fig_resultSS.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/fig_resultSS-eps-c
+onverted-to.pdf Imagenes/fig_resultSS.eps>
 (epstopdf)             \includegraphics on input line 344.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/fig_resultSS-eps-converted-to.pdf, id=361, 334.88112pt x 60.67668pt>
+<Imagenes/fig_resultSS-eps-converted-to.pdf, id=368, 334.88112pt x 60.67668pt>
 File: Imagenes/fig_resultSS-eps-converted-to.pdf Graphic file (type pdf)
 <use Imagenes/fig_resultSS-eps-converted-to.pdf>
 Package pdftex.def Info: Imagenes/fig_resultSS-eps-converted-to.pdf  used on in
@@ -2242,12 +2243,12 @@ eps>
 eps-converted-to.pdf>
 (epstopdf)                    date: 2019-06-12 16:55:48
 (epstopdf)                    size: 8238 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_useCase_fina
-ncialSystem_esp-eps-converted-to.pdf Imagenes/diag_useCase_financialSystem_esp.
-eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_useCase_finan
+cialSystem_esp-eps-converted-to.pdf Imagenes/diag_useCase_financialSystem_esp.e
+ps>
 (epstopdf)             \includegraphics on input line 45.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf, id=388, 341.15
+<Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf, id=394, 341.15
 456pt x 343.1219pt>
 File: Imagenes/diag_useCase_financialSystem_esp-eps-converted-to.pdf Graphic fi
 le (type pdf)
@@ -2263,11 +2264,11 @@ Package epstopdf Info: Source file: <Imagenes/diag_activity_openAccount_esp.eps
 -converted-to.pdf>
 (epstopdf)                    date: 2019-06-03 18:23:42
 (epstopdf)                    size: 10886 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_ope
-nAccount_esp-eps-converted-to.pdf Imagenes/diag_activity_openAccount_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_open
+Account_esp-eps-converted-to.pdf Imagenes/diag_activity_openAccount_esp.eps>
 (epstopdf)             \includegraphics on input line 54.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf, id=389, 406.40836
+<Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf, id=395, 406.40836
 pt x 599.50978pt>
 File: Imagenes/diag_activity_openAccount_esp-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -2283,12 +2284,11 @@ s>
 s-converted-to.pdf>
 (epstopdf)                    date: 2019-06-12 17:02:40
 (epstopdf)                    size: 9629 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_clo
-seAccount_esp-eps-converted-to.pdf Imagenes/diag_activity_closeAccount_esp.eps>
-
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_clos
+eAccount_esp-eps-converted-to.pdf Imagenes/diag_activity_closeAccount_esp.eps>
 (epstopdf)             \includegraphics on input line 57.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_closeAccount_esp-eps-converted-to.pdf, id=390, 360.6875
+<Imagenes/diag_activity_closeAccount_esp-eps-converted-to.pdf, id=396, 360.6875
 2pt x 414.56882pt>
 File: Imagenes/diag_activity_closeAccount_esp-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2304,11 +2304,11 @@ Package epstopdf Info: Source file: <Imagenes/diag_activity_createOrder_esp.eps
 -converted-to.pdf>
 (epstopdf)                    date: 2019-06-03 18:38:28
 (epstopdf)                    size: 11468 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_cre
-ateOrder_esp-eps-converted-to.pdf Imagenes/diag_activity_createOrder_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_crea
+teOrder_esp-eps-converted-to.pdf Imagenes/diag_activity_createOrder_esp.eps>
 (epstopdf)             \includegraphics on input line 65.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_createOrder_esp-eps-converted-to.pdf, id=391, 391.98444
+<Imagenes/diag_activity_createOrder_esp-eps-converted-to.pdf, id=397, 391.98444
 pt x 656.41237pt>
 File: Imagenes/diag_activity_createOrder_esp-eps-converted-to.pdf Graphic file 
 (type pdf)
@@ -2324,8 +2324,8 @@ Package epstopdf Info: Source file: <Imagenes/diag_activity_checkTrade_esp.eps>
 converted-to.pdf>
 (epstopdf)                    date: 2019-06-03 17:48:54
 (epstopdf)                    size: 10373 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
-ckTrade_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_chec
+kTrade_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_esp.eps>
 (epstopdf)             \includegraphics on input line 68.
 Package epstopdf Info: Output file is already uptodate.
 File: Imagenes/diag_activity_checkTrade_esp-eps-converted-to.pdf Graphic file (
@@ -2342,12 +2342,11 @@ s>
 s-converted-to.pdf>
 (epstopdf)                    date: 2019-07-08 17:15:12
 (epstopdf)                    size: 16947 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_class_financ
-ialSystem_esp-eps-converted-to.pdf Imagenes/diag_class_financialSystem_esp.eps>
-
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_class_financi
+alSystem_esp-eps-converted-to.pdf Imagenes/diag_class_financialSystem_esp.eps>
 (epstopdf)             \includegraphics on input line 79.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_class_financialSystem_esp-eps-converted-to.pdf, id=392, 848.2691
+<Imagenes/diag_class_financialSystem_esp-eps-converted-to.pdf, id=398, 848.2691
 pt x 714.83057pt>
 File: Imagenes/diag_class_financialSystem_esp-eps-converted-to.pdf Graphic file
  (type pdf)
@@ -2580,12 +2579,12 @@ esp.eps>
 esp-eps-converted-to.pdf>
 (epstopdf)                    date: 2019-06-03 18:23:44
 (epstopdf)                    size: 14623 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_ope
-nAccount_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_openAccount_mis
-use_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_open
+Account_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_openAccount_misu
+se_esp.eps>
 (epstopdf)             \includegraphics on input line 212.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf, id=441, 59
+<Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf, id=447, 59
 1.14853pt x 599.50978pt>
 File: Imagenes/diag_activity_openAccount_misuse_esp-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -2601,12 +2600,12 @@ _esp.eps>
 _esp-eps-converted-to.pdf>
 (epstopdf)                    date: 2019-06-12 17:02:00
 (epstopdf)                    size: 13359 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_clo
-seAccount_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_closeAccount_m
-isuse_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_clos
+eAccount_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_closeAccount_mi
+suse_esp.eps>
 (epstopdf)             \includegraphics on input line 219.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf, id=442, 5
+<Imagenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf, id=448, 5
 91.14853pt x 414.56882pt>
 File: Imagenes/diag_activity_closeAccount_misuse_esp-eps-converted-to.pdf Graph
 ic file (type pdf)
@@ -2622,12 +2621,12 @@ esp.eps>
 esp-eps-converted-to.pdf>
 (epstopdf)                    date: 2019-06-12 17:07:46
 (epstopdf)                    size: 15228 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_cre
-ateOrder_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_createOrder_mis
-use_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_crea
+teOrder_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_createOrder_misu
+se_esp.eps>
 (epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
-<Imagenes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf, id=443, 59
+<Imagenes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf, id=449, 59
 8.26514pt x 656.41237pt>
 File: Imagenes/diag_activity_createOrder_misuse_esp-eps-converted-to.pdf Graphi
 c file (type pdf)
@@ -2643,9 +2642,9 @@ sp.eps>
 sp-eps-converted-to.pdf>
 (epstopdf)                    date: 2019-06-12 17:09:50
 (epstopdf)                    size: 13658 bytes
-(epstopdf)             Command: <repstopdf --outfile=Imagenes/diag_activity_che
-ckTrade_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_misus
-e_esp.eps>
+(epstopdf)             Command: <epstopdf --outfile=Imagenes/diag_activity_chec
+kTrade_misuse_esp-eps-converted-to.pdf Imagenes/diag_activity_checkTrade_misuse
+_esp.eps>
 (epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
 File: Imagenes/diag_activity_checkTrade_misuse_esp-eps-converted-to.pdf Graphic
@@ -2699,24 +2698,42 @@ put line 294.
 (./ApendiceA.tex)
 :<-
 :<+ Tesis_AABA.bbl
-No file Tesis_AABA.bbl.
+(./Tesis_AABA.bbl
+./Tesis_AABA.bbl:7: Misplaced alignment tab character &.
+l.7 \newblock Springer Science &
+                                 Business Media.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+)
 :<-
 
 Package natbib Warning: There were undefined citations.
 
-(./Tesis_AABA.aux
+[67
+
+] (./Tesis_AABA.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
+
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
 )
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36664 strings out of 492616
- 755444 string characters out of 6129482
- 986037 words of memory out of 5000000
- 39962 multiletter control sequences out of 15000+600000
+ 36669 strings out of 492616
+ 755522 string characters out of 6129482
+ 986058 words of memory out of 5000000
+ 39965 multiletter control sequences out of 15000+600000
  553698 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,18n,101p,1097b,751s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2759,10 +2776,10 @@ ti0800.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti
 1000.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti10
 95.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfti1200
 .pfb>
-Output written on Tesis_AABA.pdf (76 pages, 1106597 bytes).
+Output written on Tesis_AABA.pdf (79 pages, 1111282 bytes).
 PDF statistics:
- 608 PDF objects out of 1000 (max. 8388607)
- 430 compressed objects within 5 object streams
+ 618 PDF objects out of 1000 (max. 8388607)
+ 437 compressed objects within 5 object streams
  0 named destinations out of 1000 (max. 500000)
  277 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -2,9 +2,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Tri\IeC {\'a}ngulo de objetivos de seguridad \textit {CIA} \cite {Sta11}.\relax }}{8}% 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagramas sobre el patr\IeC {\'o}n \textbf {Autenticador} \cite {Fer13}\relax }}{20}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de clase}}}{20}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagrama de secuencia}}}{20}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagramas sobre el patr\IeC {\'o}n \textbf {Autenticador} \cite {Fer13}\relax }}{21}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {Diagrama de clase}}}{21}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {Diagrama de secuencia}}}{21}% 
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Iteraciones \textit {Twin peaks} obtenida de \cite {FerYosWas18}.\relax }}{27}% 
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Descomposici\IeC {\'o}n de objetivos con patrones obtenida de \cite {YauScaHey}.\relax }}{29}% 
