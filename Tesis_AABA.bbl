@@ -1,9 +1,33 @@
 \begin{thebibliography}{}
 
+\bibitem[\protect\astroncite{TX2}{}]{TX2Intro}
+Nvidia jetson tx2: High performance ai at the edge.
+
+\bibitem[\protect\astroncite{Bertogna and Baruah}{2010}]{LimPree}
+Bertogna, M. and Baruah, S. (2010).
+\newblock Limited preemption edf scheduling of sporadic task systems.
+\newblock {\em IEEE Transactions on Industrial Informatics}, 6(4):579--591.
+
 \bibitem[\protect\astroncite{Butazzo}{2011}]{Buta2011}
 Butazzo, G.~C. (2011).
 \newblock {\em Hard real-time computing systems: predictable scheduling
   algorithms and applications}.
 \newblock Springer Science & Business Media.
+
+\bibitem[\protect\astroncite{Hartmann and Margull}{2018}]{GPUArt}
+Hartmann, C. and Margull, U. (2018).
+\newblock Gpuart - an application-based limited preemptive gpu real-time
+  scheduler for embedded systems.
+\newblock {\em Journal of Systems Architecture}.
+
+\bibitem[\protect\astroncite{Heath}{2003}]{EmbSysDes}
+Heath, S. (2003).
+\newblock {\em Embedded systems design}.
+\newblock EDN Series For Design Engineers.
+
+\bibitem[\protect\astroncite{NVIDIA}{}]{GPU}
+NVIDIA.
+\newblock Nvidia sobre la computaci{\'o}n de gpu y la diferencia entre gpu y
+  cpu.
 
 \end{thebibliography}
