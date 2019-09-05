@@ -19,13 +19,12 @@ Warning--I didn't find a database entry for "JahWMe10"
 Warning--I didn't find a database entry for "AtzLio0605"
 Warning--I didn't find a database entry for "BroHin1304"
 Warning--I didn't find a database entry for "SchFerHyb06"
-Warning--I didn't find a database entry for "BraFerVan08"
 Warning--to sort, need author or key in TX2Intro
 Warning--empty year in TX2Intro
 Warning--empty year in GPU
 You've used 6 entries,
             1940 wiz_defined-function locations,
-            532 strings with 4646 characters,
+            530 strings with 4624 characters,
 and the built_in function-call counts, 1722 in all, are:
 = -- 166
 > -- 47
@@ -64,4 +63,4 @@ warning$ -- 3
 while$ -- 12
 width$ -- 0
 write$ -- 67
-(There were 18 warnings)
+(There were 17 warnings)
