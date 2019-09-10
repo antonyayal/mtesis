@@ -1,66 +1,61 @@
 This is BibTeX, Version 0.99d (TeX Live 2019)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: Tesis_AABA.aux
-The style file: apa.bst
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibTesis.bib
-Warning--entry type for "TX2Intro" isn't style-file defined
---line 47 of file bibTesis.bib
-Warning--entry type for "GPU" isn't style-file defined
---line 55 of file bibTesis.bib
-Warning--I didn't find a database entry for "FerYosWas18"
-Warning--I didn't find a database entry for "YauScaHey"
-Warning--I didn't find a database entry for "HeyScaHuy08"
-Warning--I didn't find a database entry for "Var14"
-Warning--I didn't find a database entry for "Wyl03"
-Warning--I didn't find a database entry for "Urb16"
-Warning--I didn't find a database entry for "OrtGarFer11"
-Warning--I didn't find a database entry for "Var1103"
-Warning--I didn't find a database entry for "JahWMe10"
-Warning--I didn't find a database entry for "AtzLio0605"
-Warning--I didn't find a database entry for "BroHin1304"
-Warning--I didn't find a database entry for "SchFerHyb06"
-Warning--to sort, need author or key in TX2Intro
-Warning--empty year in TX2Intro
-Warning--empty year in GPU
+Warning--entry type for "GpuCpu" isn't style-file defined
+--line 54 of file bibTesis.bib
+Warning--entry type for "TX2I" isn't style-file defined
+--line 175 of file bibTesis.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
 You've used 6 entries,
-            1940 wiz_defined-function locations,
-            530 strings with 4624 characters,
-and the built_in function-call counts, 1722 in all, are:
-= -- 166
-> -- 47
-< -- 5
-+ -- 14
-- -- 14
-* -- 132
-:= -- 309
-add.period$ -- 15
+            4087 wiz_defined-function locations,
+            855 strings with 8141 characters,
+and the built_in function-call counts, 2765 in all, are:
+= -- 208
+> -- 42
+< -- 11
++ -- 22
+- -- 8
+* -- 121
+:= -- 483
+add.period$ -- 12
 call.type$ -- 6
-change.case$ -- 35
-chr.to.int$ -- 6
-cite$ -- 10
-duplicate$ -- 75
-empty$ -- 130
-format.name$ -- 23
-if$ -- 328
-int.to.chr$ -- 1
-int.to.str$ -- 0
-missing$ -- 6
-newline$ -- 30
-num.names$ -- 15
-pop$ -- 39
+change.case$ -- 4
+chr.to.int$ -- 24
+cite$ -- 6
+duplicate$ -- 211
+empty$ -- 263
+format.name$ -- 10
+if$ -- 612
+int.to.chr$ -- 0
+int.to.str$ -- 6
+missing$ -- 39
+newline$ -- 45
+num.names$ -- 6
+pop$ -- 110
 preamble$ -- 1
-purify$ -- 37
-quote$ -- 0
-skip$ -- 56
+purify$ -- 0
+quote$ -- 2
+skip$ -- 215
 stack$ -- 0
-substring$ -- 98
-swap$ -- 10
-text.length$ -- 0
+substring$ -- 60
+swap$ -- 133
+text.length$ -- 3
 text.prefix$ -- 0
-top$ -- 0
-type$ -- 32
-warning$ -- 3
-while$ -- 12
-width$ -- 0
-write$ -- 67
-(There were 17 warnings)
+top$ -- 5
+type$ -- 6
+warning$ -- 0
+while$ -- 10
+width$ -- 7
+write$ -- 74
+(There were 2 warnings)
