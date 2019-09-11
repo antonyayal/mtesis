@@ -8,54 +8,60 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibTesis.bib
+Warning--entry type for "gpgpu" isn't style-file defined
+--line 11 of file bibTesis.bib
+Warning--entry type for "PasAna" isn't style-file defined
+--line 33 of file bibTesis.bib
+Warning--entry type for "AnPasc" isn't style-file defined
+--line 42 of file bibTesis.bib
 Warning--entry type for "GpuCpu" isn't style-file defined
---line 54 of file bibTesis.bib
+--line 85 of file bibTesis.bib
 Warning--entry type for "TX2I" isn't style-file defined
---line 175 of file bibTesis.bib
+--line 206 of file bibTesis.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 
 Done.
-You've used 6 entries,
+You've used 10 entries,
             4087 wiz_defined-function locations,
-            855 strings with 8141 characters,
-and the built_in function-call counts, 2765 in all, are:
-= -- 208
-> -- 42
+            872 strings with 8819 characters,
+and the built_in function-call counts, 4119 in all, are:
+= -- 311
+> -- 58
 < -- 11
-+ -- 22
-- -- 8
-* -- 121
-:= -- 483
-add.period$ -- 12
-call.type$ -- 6
-change.case$ -- 4
++ -- 30
+- -- 12
+* -- 165
+:= -- 740
+add.period$ -- 19
+call.type$ -- 10
+change.case$ -- 7
 chr.to.int$ -- 24
-cite$ -- 6
-duplicate$ -- 211
-empty$ -- 263
-format.name$ -- 10
-if$ -- 612
+cite$ -- 10
+duplicate$ -- 327
+empty$ -- 398
+format.name$ -- 14
+if$ -- 907
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 39
-newline$ -- 45
-num.names$ -- 6
-pop$ -- 110
+int.to.str$ -- 10
+missing$ -- 67
+newline$ -- 63
+num.names$ -- 10
+pop$ -- 194
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 215
+skip$ -- 318
 stack$ -- 0
-substring$ -- 60
-swap$ -- 133
+substring$ -- 63
+swap$ -- 194
 text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 6
+type$ -- 10
 warning$ -- 0
-while$ -- 10
-width$ -- 7
-write$ -- 74
-(There were 2 warnings)
+while$ -- 14
+width$ -- 12
+write$ -- 110
+(There were 5 warnings)

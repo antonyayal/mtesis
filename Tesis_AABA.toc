@@ -5,13 +5,19 @@
 \contentsline {section}{\numberline {2.1}Sistemas en tiempo real}{3}% 
 \contentsline {subsection}{\numberline {2.1.1}Tipos de ejecuci\IeC {\'o}n de tareas}{3}% 
 \contentsline {subsection}{\numberline {2.1.2}Algoritmos de planificaci\IeC {\'o}n}{4}% 
-\contentsline {section}{\numberline {2.2}GPU}{4}% 
-\contentsline {subsection}{\numberline {2.2.1}Arquitectura Pascal}{4}% 
-\contentsline {subsection}{\numberline {2.2.2}GPGPU}{4}% 
-\contentsline {section}{\numberline {2.3}Sistemas embebidos}{4}% 
-\contentsline {subsection}{\numberline {2.3.1}Sistemas embebidos heterog\IeC {\'e}neos}{4}% 
-\contentsline {subsubsection}{\numberline {2.3.1.1}Jetson TX2}{5}% 
-\contentsline {section}{\numberline {2.4}Resumen}{5}% 
-\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{7}% 
-\contentsline {chapter}{Ap\IeC {\'e}ndice}{11}% 
-\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{11}% 
+\contentsline {section}{\numberline {2.2}CPU}{4}% 
+\contentsline {section}{\numberline {2.3}GPU}{4}% 
+\contentsline {subsection}{\numberline {2.3.1}Manycore y Multicore}{4}% 
+\contentsline {subsection}{\numberline {2.3.2}Arquitectura Pascal}{5}% 
+\contentsline {subsubsection}{\numberline {2.3.2.1}Memoria unificada}{5}% 
+\contentsline {subsubsection}{\numberline {2.3.2.2}Computaci\IeC {\'o}n preemptive}{5}% 
+\contentsline {subsubsection}{\numberline {2.3.2.3}Balanceo de carga din\IeC {\'a}mico}{6}% 
+\contentsline {subsubsection}{\numberline {2.3.2.4}Operaciones at\IeC {\'o}micas}{6}% 
+\contentsline {subsection}{\numberline {2.3.3}GPGPU}{6}% 
+\contentsline {section}{\numberline {2.4}Sistemas embebidos}{7}% 
+\contentsline {subsection}{\numberline {2.4.1}Sistemas embebidos heterog\IeC {\'e}neos}{7}% 
+\contentsline {subsubsection}{\numberline {2.4.1.1}Jetson TX2}{7}% 
+\contentsline {section}{\numberline {2.5}Resumen}{8}% 
+\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{9}% 
+\contentsline {chapter}{Ap\IeC {\'e}ndice}{13}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{13}% 
