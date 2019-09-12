@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 SEP 2019 17:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 SEP 2019 17:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1538,51 +1538,6 @@ o2-Antecedentes.tex' on input line 201.
 :<+ Capitulo2-Antecedentes.tex
 (./Capitulo2-Antecedentes.tex
 
-./Capitulo2-Antecedentes.tex:20: Package inputenc Error: Unicode character ́ (
-U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20  El Instituto de Ingenierí
-                                 a Eléctrica y Electrónica (Institute of...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Capitulo2-Antecedentes.tex:20: Package inputenc Error: Unicode character ́ (
-U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20  El Instituto de Ingeniería Elé
-                                        ctrica y Electrónica (Institute of...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Capitulo2-Antecedentes.tex:20: Package inputenc Error: Unicode character ́ (
-U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.20 ...to de Ingeniería Eléctrica y Electró
-                                                  nica (Institute of Electri...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
 ./Capitulo2-Antecedentes.tex:23: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
@@ -1591,53 +1546,8 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 ...ento de software; es decir, la aplicació
-                                                  n de la ingeniería al sof...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Capitulo2-Antecedentes.tex:26: Package inputenc Error: Unicode character ́ (
-U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
+l.23 ...icación de la ingeniería al software."}
                                                   
-l.26 ... objetivos fundamentales de la Ingenierí
-                                                  a de Software. Entre los o...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Capitulo2-Antecedentes.tex:26: Package inputenc Error: Unicode character ́ (
-U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 ...are. Entre los objetivos de la Ingenierí
-                                                  a de Software están\cite...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
-./Capitulo2-Antecedentes.tex:26: Package inputenc Error: Unicode character ́ (
-U+0301)
-(inputenc)                not set up for use with LaTeX.
-
-See the inputenc package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.26 ...ivos de la Ingeniería de Software está
-                                                  n\cite{enSWE}:
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
@@ -1781,10 +1691,10 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 36547 strings out of 492616
- 749091 string characters out of 6129482
+ 36554 strings out of 492616
+ 749193 string characters out of 6129482
  938822 words of memory out of 5000000
- 39882 multiletter control sequences out of 15000+600000
+ 39889 multiletter control sequences out of 15000+600000
  547988 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,18n,101p,995b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1801,7 +1711,7 @@ live/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (28 pages, 375575 bytes).
+Output written on Tesis_AABA.pdf (28 pages, 377433 bytes).
 PDF statistics:
  217 PDF objects out of 1000 (max. 8388607)
  136 compressed objects within 2 object streams
