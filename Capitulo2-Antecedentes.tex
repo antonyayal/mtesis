@@ -3,8 +3,44 @@
 
     %----------------------------------------------------------------------
     %RESUMEN
-    El objetivo de este capítulo es introducir los conceptos de: 1) sistemas en tiempo real; 2) tipos de ejecución de tareas; 3) el algoritmo por defecto de los sistemas en tiempo real 4) sistemas embebidos heterogéneos; 5) arquitecturas de hardware y software de tarjetas gráficas; y 6) cómputo de propósito general en en unidades de procesamiento de gráficos.
+    El objetivo de este capítulo es introducir los conceptos de: 
+    \begin{inparaenum}
+    \item framework;
+    \item sistemas en tiempo real;
+    \item tipos de ejecución de tareas; 
+    \item el algoritmo por defecto de los sistemas en tiempo real; 
+    \item sistemas embebidos heterogéneos; 
+    \item arquitecturas de hardware y software de tarjetas gráficas; y 
+    \item cómputo de propósito general en en unidades de procesamiento de gráficos.
+    \end{inparaenum}
     %----------------------------------------------------------------------
+     %INGENIERIA DE SOFTWARE
+     \section{Ingeniería de Software}
+
+ El Instituto de Ingeniería Eléctrica y Electrónica (Institute of Electrical and Electronics Engineers – IEEE) define a la Ingeniería de Software como:
+
+\begin{quote}
+La Ingeniería de Software\cite{IeeeSG} es la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento de software; es decir, la aplicación de la ingeniería al software
+\end{quote}
+
+La Ingeniería de Software aplica diferentes técnicas, normas y métodos que permiten obtener mejores resultados al desarrollar y usar piezas software, al tratar con muchas de las áreas de Ciencias de la Computación es posible llegar a cumplir de manera satisfactoria con los objetivos fundamentales de la Ingeniería de Software. Entre los objetivos de la Ingeniería de Software están\cite{enSWE}:
+
+\begin{itemize}
+\item Mejorar el diseño de aplicaciones o software de tal modo que se adapten de mejor manera a las necesidades de las organizaciones o finalidades para las cuales fueron creadas.
+\item Promover mayor calidad al desarrollar aplicaciones complejas.
+\item Brindar mayor exactitud en los costos de proyectos y tiempo de desarrollo de los mismos.
+\item Aumentar la eficiencia de los sistemas al introducir procesos que permitan medir mediante normas específicas la calidad del software desarrollado, buscando siempre la mejor calidad posible según las necesidades y resultados que se quieren generar.
+\item Una mejor organización de equipos de trabajo, en el área de desarrollo y mantenimiento de software.
+\item Detectar a través de pruebas, posibles mejoras para un mejor funcionamiento del software desarrollado     
+\end{itemize}     
+     
+     \subsection{Framework}
+Un framework o marco de trabajo es la estructura que se establece para normalizar, controlar y organizar, ya sea, una aplicación completa, o bien, una parte de ella. Esto representa una ventaja para los participantes en el desarrollo del sistema, ya que automatiza procesos y funciones habituales, además agiliza la codificación de ciertos mecanismo ya implementados al reutilizar código.
+Un framework puede ser considerada como un molde configurable, al que podemos añadirle atributos especiales para finalmente construir una solución completa.
+
+\vspace{0.3cm}
+La utilización de un framework siempre conlleva una curva de de aprendizaje, pero a largo plazo facilita la programación, escalabilidad, y el mantenimiento de los sistemas.
+
     %SISTEMAS EN TIEMPO REAL
     \section{Sistemas en tiempo real}\label{sec:sistr}
 
@@ -27,10 +63,11 @@
     La unidad de procesamiento gráfico o GPU es un procesador especializado para tareas que requieren de un alto grado de paralelismo. La tarjeta gráfica en su interior puede contener una cantidad de núcleos de un orden de cientos hasta miles de unidades que son más pequeñas y que por ende, individualmente realizan un menor número de operaciones. Esto hace que la GPU esté optimizada para procesar cantidades enormes de datos pero con programas más específicos\cite{gpgpu}. Lo más común al utilizar la aceleración por GPU es ejecutar una misma instrucción a múltiples datos para aprovechar su arquitectura.
 
     \subsection{Manycore y Multicore}
-    Es necesario destacar que los \textit{manycore} y los \textit{multicore} son utilizados para etiquetar a los CPU y los GPU, pero entre ellos existen diferencias. 
-    Un core de CPU es relativamente más potente, está diseñado para realizar un control lógico muy complejo para buscar y optimizar la ejecución secuencial de programas.
+    Es necesario destacar que los \textit{manycore} y los \textit{multicore} son utilizados para etiquetar a los CPU y los GPU, pero entre ellos existen diferencias. Un core de CPU es relativamente más potente, está diseñado para realizar un control lógico muy complejo para buscar y optimizar la ejecución secuencial de programas.
+   
     \vspace{0.3cm}
     En cambio un core de GPU es más ligero y está optimizado para realizar tareas de paralelismo de datos como un control lógico simple enfocándose en la tasa de transferencia (\textit{throughput}) de los programas paralelos.
+    
     \vspace{0.3cm}
     Con aplicaciones computacionales intensivas, las secciones del programa a menudo muestran una gran cantidad de paralelismo de datos. Las GPU se usan para acelerar la ejecución de esta porción código. Cuando un componente de hardware que está físicamente separado de la CPU y se utiliza para acelerar secciones computacionalmente intensivas de una aplicación, se le denomina acelerador de hardware. Se puede decir que las GPU son el ejemplo más común de un acelerador de hardware.
 
@@ -44,13 +81,13 @@
     %Asignar memoria unificada es tan simple como reemplazar llamadas a malloc o cudaMalloc con llamadas a cudaMallocManaged\cite{}.
      
     \subsubsection{Computación preemptive}
-    Permite que las tareas de cómputo se reemplacen con granularidad a nivel de instrucción, en lugar de bloque de subprocesos, evitando el funcionamiento prolongado de aplicaciones que monopolizan el sistema y no dejan ejecutar terceras tareas. Obteniendo así, que las tareas puedan ejecutarse todo el tiempo que requieran ya sea para procesar grandes volúmenes de datos o qué esperen a que ocurran varias condiciones, mientras otras aplicaciones son computadas concurrentemente\cite{WPNV}.
+    Permite que las tareas de cómputo se reemplacen con granularidad a nivel de instrucción, en lugar de bloque de subprocesos, evitando el funcionamiento prolongado de aplicaciones que monopolizan el sistema y no dejan ejecutar terceras tareas\cite{WPNV}. Obteniendo así, que las tareas puedan ejecutarse todo el tiempo que requieran ya sea para procesar grandes volúmenes de datos o qué esperen a que ocurran varias condiciones, mientras otras aplicaciones son computadas concurrentemente.
 
     \subsubsection{Balanceo de carga dinámico}
         La arquitectura Pascal introdujo el soporte para balanceo de carga dinámico \cite{AnPasc},  ayudando a la aceleración del cómputo de tareas asíncronas.
         
         \vspace{0.3cm}
-    En versiones anteriores de las tarjetas, la asignación de recursos en las colas de cálculos y de gráficos debía decidirse antes de la ejecución, por lo que, una vez que se lanzaba la tarea, no era posible reasignarla sobre la marcha. Un problema añadido que existía, era que si una de las colas se quedaba sin trabajo antes que la otra no podía iniciar un nuevo trabajo hasta que ambas colas terminen completamente\cite{PasAna}.
+    En versiones anteriores de las tarjetas, la asignación de recursos en las colas de cálculos y de gráficos debía decidirse antes de la ejecución, por lo que, una vez que se lanzaba la tarea, no era posible reasignarla sobre la marcha. Un problema añadido que existía era, que, si una de las colas se quedaba sin trabajo antes que la otra no podía iniciar un nuevo trabajo hasta que ambas colas terminen completamente\cite{PasAna}.
     
     \subsubsection{Operaciones atómicas} 
     Las operaciones atómicas de memoria frecuentemente son importantes el cómputo de alto rendimiento ya que permiten que los hilos concurrentemente lean, escriban y modifiquen variables compartidas. La arquitectura Pascal nos permite realizar estas operaciones pero ahora con la ventaja de trabajar sobre memoria unificada.
@@ -82,11 +119,12 @@
 
     Actualmente la empresa NVIDIA tiene en su catálogo sistemas embebidos heterogéneos con un gran soporte y bibliotecas para el cómputo de alto rendimiento. Dichos sistemas cuentan con la arquitectura pascal de última generación \cite{GPUArt}, la cual permite compartir memoria entre CPU y GPU.
 
-    \subsubsection{Jetson TX2}
+   
 
     % Framework
     Debido a que la mayoría de las GPU en sistemas embebidos no son de naturaleza preemptive, es importante programar los recursos de GPU de manera eficiente en múltiples tareas \cite{TX2I} ya sea de planificación o memoria, lo que permite pensar en un framework que ayude a la administración de sus características. 
 
+ \subsubsection{Jetson TX2}
     Las especificaciones del sistema son:
 
     \begin{table}[h!]

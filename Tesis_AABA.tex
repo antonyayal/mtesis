@@ -49,6 +49,9 @@
 \usepackage[most]{tcolorbox}
 \usepackage{xr}
 \usepackage{url}
+\usepackage{paralist}
+
+
 \decimalpoint
 
 
@@ -158,76 +161,6 @@
 %Comienzo del documento
 \begin{document}
 
-%% Primera portada 
-%\thispagestyle{empty}
-%\begin{table}[H]
-%	\noindent\fcolorbox{white}{white}{
-%	\begin{minipage}[t][0.75\paperheight][t]{0.19\columnwidth}
-%		\noindent \vspace{0cm}
-%		\begin{center}
-%			\includegraphics[scale=0.19]{escudo}
-%			\noindent 
-%			\includegraphics[scale=0.8]{barra2}
-%		\end{center}
-%	\end{minipage}}
-%	\hfill{}
-%	\fcolorbox{white}{white}{
-%	\begin{minipage}[t][0.75\paperheight][s]{0.81\columnwidth}
-%		\noindent \begin{center}
-%			\vspace{0.5cm}
-%			\textbf{\Large{\vspace{0cm}UNIVERSIDAD NACIONAL AUTÓNOMA DE MÉXICO}}{\Large{\medskip{}}}\break
-%			\makebox[0pt][l]{\rule[4.5pt]{13cm}{2pt}}\rule{13cm}{3pt}
-%		\par\end{center}
-%		
-%		\begin{doublespace}
-%			\noindent \begin{center}
-%			\textbf{\large{DIVISIÓN DE ESTUDIOS DE POSGRADO}}
-%			\par\end{center}{\Large \par}
-%		\end{doublespace}
-%		
-%		\begin{center}
-%			\textbf{\large{TESIS}}
-%		\par\end{center}{\large \par}
-%		
-%		\noindent \begin{center}
-%			{\large{``Evaluación de seguridad en sistemas implementados con patrones de seguridad '' }}
-%		\par\end{center}{\large \par}
-%		
-%		\noindent \begin{center}
-%			\emph{QUE PARA OBTENER EL TÍTULO DE:}
-%		\par\end{center}
-%
-%		\noindent \begin{center}
-%			\textbf{\large{``MAESTRO EN CIENCIAS''}}
-%		\par\end{center}{\large \par}
-%
-%		\noindent \begin{center}
-%			\emph{PRESENTA:}
-%		\par\end{center}
-%
-%		\begin{onehalfspace}
-%			\noindent \begin{center}
-%				{\large{OLGA VILLAGRÁN VELASCO}}\\
-%			\par\end{center}{\large \par}
-%			\noindent \begin{center}
-%				\emph{ASESOR:}
-%			\par\end{center}
-%		\end{onehalfspace}
-%		
-%		\noindent \begin{center}
-%			{\large{Dr. Jorge L. Ortega Arjona}}\\
-%		\par\end{center}{\large \par}
-%
-%		\noindent \begin{center}
-%			{\large{}}
-%		\par\end{center}{\large \par}
-%
-%		\noindent \begin{flushright}
-%			{\large{\vspace{7mm}}}{\small{Ciudad de México, Julio de 2019.}}
-%		\par\end{flushright}
-%	\end{minipage}}
-%\end{table}
-
 \includepdf{portada_Oficial.pdf}
 
 \newpage{}
@@ -259,7 +192,7 @@
 %%--------------CAPITULO : Introducción-----------
 \chapter{Introducción}
 % Brevemente resuma la pregunta, describa algunas de las razones porqué es una pregunta que vale la pena e incluya una apreciación global de sus principales resultados. La introducción es una vista panorámica acerca de las respuestas a las principales preguntas contestadas en la tesis.
-%\input{Capitulo1-Introduccion.tex}
+\input{Capitulo1-Introduccion.tex}
 
 %%--------------CAPITULO : Antecedentes-----------
 \chapter{Antecedentes}
@@ -287,11 +220,13 @@
 %\input{Capitulo6-Conclusiones.tex}
 
 %%Asignación de un nivel de seguridad a un patrón de seguridad con una métrica asociada. 
+
+
 \appendixpage
-\addcontentsline{toc}{chapter}{Apéndice}
+\addcontentsline{toc}{chapter}{Anexos}
 %%--------------APÉNDICES: Apéndice A-----------
 \begin{appendices}
-%\chapter{Información del sistema financiero}
+\section{Glosario de terminos}
 \input{ApendiceA.tex}
 \end{appendices}
 

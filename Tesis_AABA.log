@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 SEP 2019 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 SEP 2019 17:25
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1338,27 +1338,27 @@ LaTeX Info: Redefining \% on input line 6.
 )
 \openout1 = `Tesis_AABA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 159.
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 159.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 159.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 162.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 159.
-LaTeX Info: Redefining \. on input line 159.
-LaTeX Info: Redefining \% on input line 159.
+LaTeX Font Info:    ... okay on input line 162.
+LaTeX Info: Redefining \. on input line 162.
+LaTeX Info: Redefining \% on input line 162.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1458,32 +1458,32 @@ Package caption Info: End \AtBeginDocument code.
 <portada_Oficial.pdf, id=41, 614.295pt x 794.97pt>
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf>
-Package pdftex.def Info: portada_Oficial.pdf  used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf  used on input line 164.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf>
-Package pdftex.def Info: portada_Oficial.pdf  used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf  used on input line 164.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 <portada_Oficial.pdf, id=44, page=1, 614.295pt x 794.97pt>
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 231.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [1
 
@@ -1524,21 +1524,21 @@ LaTeX Info: Redefining \% on input line 1.
 
 ]
 Cap\'{\i }tulo 1.
-[1
+Package srcltx Info: Expanded filename `Capitulo1-Introduccion.tex' to `Capitul
+o1-Introduccion.tex' on input line 195.
+:<+ Capitulo1-Introduccion.tex
+(./Capitulo1-Introduccion.tex [1
 
-] [2
-
-]
+])
+:<-
+[2]
 Cap\'{\i }tulo 2.
 Package srcltx Info: Expanded filename `Capitulo2-Antecedentes.tex' to `Capitul
-o2-Antecedentes.tex' on input line 268.
+o2-Antecedentes.tex' on input line 201.
 :<+ Capitulo2-Antecedentes.tex
-(./Capitulo2-Antecedentes.tex [3] [4]
-Underfull \vbox (badness 1360) has occurred while \output is active []
+(./Capitulo2-Antecedentes.tex
 
- [5]
-
-./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:20: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1546,14 +1546,129 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59     El có
+l.20  El Instituto de Ingenierí
+                                 a Eléctrica y Electrónica (Institute of...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo2-Antecedentes.tex:20: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20  El Instituto de Ingeniería Elé
+                                        ctrica y Electrónica (Institute of...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo2-Antecedentes.tex:20: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.20 ...to de Ingeniería Eléctrica y Electró
+                                                  nica (Institute of Electri...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo2-Antecedentes.tex:23: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.23 ...ento de software; es decir, la aplicació
+                                                  n de la ingeniería al sof...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo2-Antecedentes.tex:26: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ... objetivos fundamentales de la Ingenierí
+                                                  a de Software. Entre los o...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo2-Antecedentes.tex:26: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...are. Entre los objetivos de la Ingenierí
+                                                  a de Software están\cite...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo2-Antecedentes.tex:26: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.26 ...ivos de la Ingeniería de Software está
+                                                  n\cite{enSWE}:
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[3
+
+]
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+ [4]
+[5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6]
+[7]
+
+./Capitulo2-Antecedentes.tex:96: Package inputenc Error: Unicode character ́ (
+U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96     El có
                 mputo de propósito general en unidades de procesamiento de...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:96: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1561,14 +1676,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59     El cómputo de propó
+l.96     El cómputo de propó
                                 sito general en unidades de procesamiento de...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:96: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1576,14 +1691,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...eral en unidades de procesamiento de grá
+l.96 ...eral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:96: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1591,14 +1706,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ... realizado tradicionalmente por la CPU ú
+l.96 ... realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:96: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1606,40 +1721,41 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.59 ...r la CPU únicamente, donde la GPU actú
+l.96 ...r la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<img/gpgpu.png, id=128, 247.6452pt x 175.3752pt>
+<img/gpgpu.png, id=134, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 63.
+Package pdftex.def Info: img/gpgpu.png  used on input line 100.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
-[6 <./img/gpgpu.png>]
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \vbox (badness 4217) has occurred while \output is active []
 
-)
+ [8 <./img/gpgpu.png>])
 :<-
-[7] [8]
+[9] [10
+
+]
 Cap\'{\i }tulo 3.
-[9
+[11] [12
 
-] [10
-
-] [11] [12]
+] [13] [14]
 Package srcltx Info: Expanded filename `ApendiceA.tex' to `ApendiceA.tex' on in
-put line 295.
+put line 230.
 
 :<+ ApendiceA.tex
 (./ApendiceA.tex)
 :<-
 :<+ Tesis_AABA.bbl
-(./Tesis_AABA.bbl
-./Tesis_AABA.bbl:40: Misplaced alignment tab character &.
-l.40   Science &
+(./Tesis_AABA.bbl [15] [16
+
+]
+./Tesis_AABA.bbl:50: Misplaced alignment tab character &.
+l.50   Science &
                  Business Media, 2011.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1648,8 +1764,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./Tesis_AABA.bbl:53: Misplaced alignment tab character &.
-l.53 R.~Smith, ``The nvidia geforce gtx 1080 &
+./Tesis_AABA.bbl:70: Misplaced alignment tab character &.
+l.70 R.~Smith, ``The nvidia geforce gtx 1080 &
                                                gtx 1070 founders editions re...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1658,22 +1774,20 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[13
-
-])
+[17])
 :<-
-[14] (./Tesis_AABA.aux
+[18] (./Tesis_AABA.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 36531 strings out of 492616
- 748786 string characters out of 6129482
- 939790 words of memory out of 5000000
- 39869 multiletter control sequences out of 15000+600000
+ 36547 strings out of 492616
+ 749091 string characters out of 6129482
+ 938822 words of memory out of 5000000
+ 39882 multiletter control sequences out of 15000+600000
  547988 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,18n,101p,828b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,101p,995b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 }</usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></u
@@ -1687,10 +1801,10 @@ live/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (24 pages, 359011 bytes).
+Output written on Tesis_AABA.pdf (28 pages, 375575 bytes).
 PDF statistics:
- 204 PDF objects out of 1000 (max. 8388607)
- 127 compressed objects within 2 object streams
+ 217 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  182 words of extra memory for PDF output out of 10000 (max. 10000000)
 

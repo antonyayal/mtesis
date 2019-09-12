@@ -34,6 +34,16 @@ NVIDIA, ``Computaci{\'o}n acelerada: Supera los desaf{\'\i}os m{\'a}s
   \url{https://developer.nvidia.com/embedded/jetson-tx2-developer-kit}
 \BIBentrySTDinterwordspacing
 
+\bibitem{IeeeSG}
+``Ieee standard glossary of software engineering terminology,'' \emph{IEEE Std
+  610.12-1990}, pp. 1--84, Dec 1990.
+
+\bibitem{enSWE}
+S.~S{\'A}NCHEZ~ALONSO, M.~{\'A}. SICILIA~URBAN, and D.~RODRIGUEZ~GARCIA,
+  \emph{Ingenier{\'\i}a del software - un enfoque desde la gu{\'\i}a
+  swebok}.\hskip 1em plus 0.5em minus 0.4em\relax Alfaomega Grupo Editor, S.A.
+  de C.V, 2012.
+
 \bibitem{Buta2011}
 G.~C. Butazzo, \emph{Hard real-time computing systems: predictable scheduling
   algorithms and applications}.\hskip 1em plus 0.5em minus 0.4em\relax Springer
@@ -48,18 +58,18 @@ NVIDIA, \emph{NVIDIA Tesla P100 The Most Advanced Datacenter Accelerator Ever
   Built Featuring Pascal GP100, the World's Fastest GPU}, NVIDIA Corporation,
   2016.
 
-\bibitem{PasAna}
-\BIBentryALTinterwordspacing
-R.~Smith, ``The nvidia geforce gtx 1080 & gtx 1070 founders editions review:
-  Kicking off the finfet generation.'' [Online]. Available:
-  \url{https://www.anandtech.com/show/10325/the-nvidia-geforce-gtx-1080-and-1070-founders-edition-review/9}
-\BIBentrySTDinterwordspacing
-
 \bibitem{AnPasc}
 \BIBentryALTinterwordspacing
 J.~P. HURTADO~V., ``An{\'a}lisis a fondo: Arquitectura gpu nvidia pascal --
   dise{\~n}ada para la velocidad,'' 2016. [Online]. Available:
   \url{https://www.ozeros.com/2016/05/analisis-a-fondo-arquitectura-gpu-nvidia-pascal-disenada-para-la-velocidad/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{PasAna}
+\BIBentryALTinterwordspacing
+R.~Smith, ``The nvidia geforce gtx 1080 & gtx 1070 founders editions review:
+  Kicking off the finfet generation.'' [Online]. Available:
+  \url{https://www.anandtech.com/show/10325/the-nvidia-geforce-gtx-1080-and-1070-founders-edition-review/9}
 \BIBentrySTDinterwordspacing
 
 \bibitem{GpuCpu}

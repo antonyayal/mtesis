@@ -9,21 +9,32 @@ Para explotar completamente el poder de los sistemas heterogéneos actuales de C
 
 \section{Problema}
 
+El problema abordado en esta tesis es el diseño de un framework que permita la ejecución de tareas en modo preemptive en sistemas embebidos heterogéneos ya su implementación es poco relevante actualmente en la literatura, pero la creciente necesidad por su incorporación en estos sistemas brinda la oportunidad de mejorar la aplicabilidad y desarrollo. 
 
 \section{Hipótesis}
 
 La hipótesis del presente trabajo es:
 
 \begin{quote}
-%	\textit{Se puede evaluar la seguridad de un sistema de forma sistemática de tal manera que se proporcione una métrica la cual indique bajo cierto criterio si es seguro o no, si previamente se sabe que ha sido construido usando patrones de seguridad.}
+\textit{Es posible diseñar un framework que que permita la ejecución de tareas en modo preemptive sobre sistemas embebidos heterogéneos para una mejor administración de sus recursos de cómputo.}
 \end{quote}
 
+%\begin{quote}
+%	\textit{Se puede evaluar la seguridad de un sistema de forma sistemática de tal manera que se proporcione una métrica la cual indique bajo cierto criterio si es seguro o no, si previamente se sabe que ha sido construido usando patrones de seguridad.}
+%\end{quote}
 
 \section{Aproximación}
+
+Mediante el análisis de los elementos inherentes a la estructura de ejecución de procesos híbridos (CPU + GPU) que corren sobre sistemas embebidos heterogéneos, se realiza un diseño de la arquitectura del framework que permite la utilización de tareas preemptive.
 
 %Mediante el análisis de los elementos inherentes a un sistema como los diagramas UML, requisitos de seguridad y políticas de seguridad, el presente trabajo presenta un método para evaluar la seguridad de los sistemas de información que previamente han sido construidos con patrones de seguridad. Se realiza la evaluación de un sistema que consiste en aplicar el método presentado y se proporciona un valor que indica cuán seguro puede ser considerado. 
 
 \section{Contribuciones}
+
+Tener un planificador que permita la ejecución de tareas preemptive (tareas con privilegio), ya que al implementar puntos preemptive con planificación dinámica se pueden disminuir los plazos vencidos de tareas con alta prioridad y mejorar el desempeño del sistema.
+
+La implementación en sistemas embebidos heterogéneos es poco relevante en la literatura, pero la creciente necesidad por su incorporación en los sistemas embebidos brinda la oportunidad de mejorar la aplicabilidad y desarrollo. 
+
 
 %El objetivo principal del presente trabajo es proporcionar una evaluación que contribuya a definir un nivel de seguridad de un sistema que utiliza patrones de seguridad y considerar que los requisitos y políticas de seguridad también son una parte importante de la evaluación de seguridad de cualquier sistema. El análisis de un sistema utilizando esta evaluación apoyaría a  diseñadores y desarrolladores en conocer cuál es la cobertura de amenazas, requisitos de seguridad y políticas de seguridad del sistema para aplicar acciones de ser necesario. 
 
@@ -38,21 +49,21 @@ La hipótesis del presente trabajo es:
 	
 		\vspace{0.3cm}
 	
-		Aquí se presentan los conceptos básicos necesarios para entender el objetivo de la tesis y sus contribuciones, explicando de manera detallada por qué la hipótesis presentada. Primero, se describe la importancia de proteger la información manipulada por un sistema informático. Después, se describe cómo se encuentra inmersa la seguridad en el diseño de un sistema, donde se explica cómo los patrones de seguridad ayudan a prevenir ataques conocidos. Se da una descripción breve de los patrones de seguridad y finalmente, se muestran las mediciones relacionadas con la seguridad de los sistemas y las mediciones de seguridad sobre sistemas.
+		%Aquí se presentan los conceptos básicos necesarios para entender el objetivo de la tesis y sus contribuciones, explicando de manera detallada por qué la hipótesis presentada. Primero, se describe la importancia de proteger la información manipulada por un sistema informático. Después, se describe cómo se encuentra inmersa la seguridad en el diseño de un sistema, donde se explica cómo los patrones de seguridad ayudan a prevenir ataques conocidos. Se da una descripción breve de los patrones de seguridad y finalmente, se muestran las mediciones relacionadas con la seguridad de los sistemas y las mediciones de seguridad sobre sistemas.
 	\item \textbf{Trabajo relacionado}
 	
 	\vspace{0.3cm}
 	
-		En este capítulo, se describe el trabajo relacionado a las métricas asociadas con sistemas que usan patrones de seguridad. Primero, se presenta el artículo titulado ``\textit{Measuring the level of security introduced by security pattern}''. En el cual presenta una metodología para comparar dos sistemas sobre el nivel de seguridad que les otorgan los patrones de seguridad al ser aplicados. Posteriormente, se presenta el artículo titulado ``\textit{Towards a quantitative assessment of security in software architectures}'', donde el principal objetivo es proporcionar un valor cuantitativo sobre el nivel de seguridad de un sistema mediante el uso de árboles de requisitos. Finalmente, se presenta el artículo titulado ``\textit{Using security patterns to combine security metrics}''. En este trabajo, se enfocan en seleccionar las métricas correctas relacionadas a los patrones de seguridad y cómo interpretar sus resultados. 
+		%En este capítulo, se describe el trabajo relacionado a las métricas asociadas con sistemas que usan patrones de seguridad. Primero, se presenta el artículo titulado ``\textit{Measuring the level of security introduced by security pattern}''. En el cual presenta una metodología para comparar dos sistemas sobre el nivel de seguridad que les otorgan los patrones de seguridad al ser aplicados. Posteriormente, se presenta el artículo titulado ``\textit{Towards a quantitative assessment of security in software architectures}'', donde el principal objetivo es proporcionar un valor cuantitativo sobre el nivel de seguridad de un sistema mediante el uso de árboles de requisitos. Finalmente, se presenta el artículo titulado ``\textit{Using security patterns to combine security metrics}''. En este trabajo, se enfocan en seleccionar las métricas correctas relacionadas a los patrones de seguridad y cómo interpretar sus resultados. 
 		  
 		\item \textbf{Evaluación de seguridad al implementar patrones de seguridad}
 		
-		En esta parte de la tesis se presenta de forma general los elementos necesarios para la evaluación propuesta, así como las características que se deben considerar y cómo se debe manipular la información previa requerida. De manera más detallada, en las subsecciones se presenta la propuesta de evaluación y cómo interpretar los resultados obtenidos.
+		%En esta parte de la tesis se presenta de forma general los elementos necesarios para la evaluación propuesta, así como las características que se deben considerar y cómo se debe manipular la información previa requerida. De manera más detallada, en las subsecciones se presenta la propuesta de evaluación y cómo interpretar los resultados obtenidos.
 		\item \textbf{Caso de estudio del método propuesto}
 		
-		En este capítulo se utiliza como ejemplo un sistema financiero básico sobre el cual se aplica el método planteado en el Capítulo 4.
+		%En este capítulo se utiliza como ejemplo un sistema financiero básico sobre el cual se aplica el método planteado en el Capítulo 4.
 		\item \textbf{Conclusiones}
 		
-		Luego de presentar el método de evaluación, se discuten y analizan los resultados obtenidos en la tesis. Además, se proponen trabajos futuros que den continuidad al trabajo presentado.
+		%Luego de presentar el método de evaluación, se discuten y analizan los resultados obtenidos en la tesis. Además, se proponen trabajos futuros que den continuidad al trabajo presentado.
 		
 \end{enumerate}
