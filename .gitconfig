@@ -1,0 +1,8 @@
+[user]
+	name = Antonio Ayala
+	email = antony_ayal@hotmail.com
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	interactive = auto
