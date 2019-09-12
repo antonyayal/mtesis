@@ -17,7 +17,7 @@
 \contentsline {section}{\numberline {2.4}Sistemas embebidos}{7}% 
 \contentsline {subsection}{\numberline {2.4.1}Sistemas embebidos heterog\IeC {\'e}neos}{7}% 
 \contentsline {subsubsection}{\numberline {2.4.1.1}Jetson TX2}{7}% 
-\contentsline {section}{\numberline {2.5}Resumen}{8}% 
+\contentsline {section}{\numberline {2.5}Resumen}{7}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{9}% 
 \contentsline {chapter}{Ap\IeC {\'e}ndice}{13}% 
 \contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{13}% 

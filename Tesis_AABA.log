@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 SEP 2019 20:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  10 SEP 2019 21:46
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1538,7 +1538,7 @@ Underfull \vbox (badness 1360) has occurred while \output is active []
 
  [5]
 
-./Capitulo2-Antecedentes.tex:58: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1546,14 +1546,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58     El có
+l.59     El có
                 mputo de propósito general en unidades de procesamiento de...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:58: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1561,14 +1561,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58     El cómputo de propó
+l.59     El cómputo de propó
                                 sito general en unidades de procesamiento de...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:58: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1576,14 +1576,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58 ...eral en unidades de procesamiento de grá
+l.59 ...eral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:58: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1591,14 +1591,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58 ... realizado tradicionalmente por la CPU ú
+l.59 ... realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:58: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:59: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1606,7 +1606,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.58 ...r la CPU únicamente, donde la GPU actú
+l.59 ...r la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
@@ -1615,7 +1615,7 @@ You may provide a definition with
 <img/gpgpu.png, id=128, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 62.
+Package pdftex.def Info: img/gpgpu.png  used on input line 63.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
 [6 <./img/gpgpu.png>]
 
@@ -1638,8 +1638,8 @@ put line 295.
 :<-
 :<+ Tesis_AABA.bbl
 (./Tesis_AABA.bbl
-./Tesis_AABA.bbl:27: Misplaced alignment tab character &.
-l.27   Science &
+./Tesis_AABA.bbl:40: Misplaced alignment tab character &.
+l.40   Science &
                  Business Media, 2011.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1648,8 +1648,8 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-./Tesis_AABA.bbl:40: Misplaced alignment tab character &.
-l.40 R.~Smith, ``The nvidia geforce gtx 1080 &
+./Tesis_AABA.bbl:53: Misplaced alignment tab character &.
+l.53 R.~Smith, ``The nvidia geforce gtx 1080 &
                                                gtx 1070 founders editions re...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1667,13 +1667,13 @@ LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 ) ) 
 Here is how much of TeX's memory you used:
- 36528 strings out of 492616
- 748744 string characters out of 6129482
- 939774 words of memory out of 5000000
- 39866 multiletter control sequences out of 15000+600000
+ 36531 strings out of 492616
+ 748786 string characters out of 6129482
+ 939790 words of memory out of 5000000
+ 39869 multiletter control sequences out of 15000+600000
  547988 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,18n,101p,828b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,101p,828b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 }</usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></u
@@ -1687,7 +1687,7 @@ live/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texli
 ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (24 pages, 358894 bytes).
+Output written on Tesis_AABA.pdf (24 pages, 359011 bytes).
 PDF statistics:
  204 PDF objects out of 1000 (max. 8388607)
  127 compressed objects within 2 object streams

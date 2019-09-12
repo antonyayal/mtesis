@@ -21,6 +21,19 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{gpgpu}
+\BIBentryALTinterwordspacing
+NVIDIA, ``Computaci{\'o}n acelerada: Supera los desaf{\'\i}os m{\'a}s
+  importantes del mundo.'' [Online]. Available:
+  \url{https://la.nvidia.com/object/what-is-gpu-computing-la.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{jtx2dk}
+\BIBentryALTinterwordspacing
+------, ``Jetson tx2 developer kit.'' [Online]. Available:
+  \url{https://developer.nvidia.com/embedded/jetson-tx2-developer-kit}
+\BIBentrySTDinterwordspacing
+
 \bibitem{Buta2011}
 G.~C. Butazzo, \emph{Hard real-time computing systems: predictable scheduling
   algorithms and applications}.\hskip 1em plus 0.5em minus 0.4em\relax Springer
@@ -53,13 +66,6 @@ J.~P. HURTADO~V., ``An{\'a}lisis a fondo: Arquitectura gpu nvidia pascal --
 \BIBentryALTinterwordspacing
 NVIDIA, ``Nvidia sobre la computaci{\'o}n de gpu y la diferencia entre gpu y
   cpu,'' 2018. [Online]. Available:
-  \url{https://la.nvidia.com/object/what-is-gpu-computing-la.html}
-\BIBentrySTDinterwordspacing
-
-\bibitem{gpgpu}
-\BIBentryALTinterwordspacing
-------, ``Computaci{\'o}n acelerada: Supera los desaf{\'\i}os m{\'a}s
-  importantes del mundo.'' [Online]. Available:
   \url{https://la.nvidia.com/object/what-is-gpu-computing-la.html}
 \BIBentrySTDinterwordspacing
 
