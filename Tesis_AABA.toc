@@ -14,18 +14,19 @@
 \contentsline {subsection}{\numberline {2.2.1}Tipos de ejecuci\IeC {\'o}n de tareas}{5}% 
 \contentsline {subsection}{\numberline {2.2.2}Algoritmos de planificaci\IeC {\'o}n}{5}% 
 \contentsline {section}{\numberline {2.3}CPU}{5}% 
+\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{6}% 
 \contentsline {section}{\numberline {2.4}GPU}{6}% 
 \contentsline {subsection}{\numberline {2.4.1}Manycore y Multicore}{6}% 
 \contentsline {subsection}{\numberline {2.4.2}Arquitectura Pascal}{7}% 
 \contentsline {subsubsection}{\numberline {2.4.2.1}Memoria unificada}{7}% 
-\contentsline {subsubsection}{\numberline {2.4.2.2}Computaci\IeC {\'o}n preemptive}{7}% 
-\contentsline {subsubsection}{\numberline {2.4.2.3}Balanceo de carga din\IeC {\'a}mico}{7}% 
-\contentsline {subsubsection}{\numberline {2.4.2.4}Operaciones at\IeC {\'o}micas}{7}% 
+\contentsline {subsubsection}{\numberline {2.4.2.2}Computaci\IeC {\'o}n preemptive}{8}% 
+\contentsline {subsubsection}{\numberline {2.4.2.3}Balanceo de carga din\IeC {\'a}mico}{8}% 
+\contentsline {subsubsection}{\numberline {2.4.2.4}Operaciones at\IeC {\'o}micas}{8}% 
 \contentsline {subsection}{\numberline {2.4.3}GPGPU}{8}% 
-\contentsline {section}{\numberline {2.5}Sistemas embebidos}{8}% 
+\contentsline {section}{\numberline {2.5}Sistemas embebidos}{9}% 
 \contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{9}% 
-\contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{9}% 
-\contentsline {section}{\numberline {2.6}Resumen}{9}% 
+\contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{10}% 
+\contentsline {section}{\numberline {2.6}Resumen}{10}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{11}% 
 \contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n de EDF preemptive limitado de sistemas con tareas espor\IeC {\'a}dicas}{12}% 
 \contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n de recursos espaciales compartidos con prioridad para unidades de gr\IeC {\'a}ficos embebidos}{12}% 

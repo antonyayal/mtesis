@@ -21,9 +21,13 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{NCUDA}
+NVIDIA, \emph{NVIDIA CUDA Compute Unified Device Architecture: Programming
+  Guide}, version 2.0~ed., NVIDIA, Julio 2008.
+
 \bibitem{gpgpu}
 \BIBentryALTinterwordspacing
-NVIDIA, ``Computaci{\'o}n acelerada: Supera los desaf{\'\i}os m{\'a}s
+------, ``Computaci{\'o}n acelerada: Supera los desaf{\'\i}os m{\'a}s
   importantes del mundo.'' [Online]. Available:
   \url{https://la.nvidia.com/object/what-is-gpu-computing-la.html}
 \BIBentrySTDinterwordspacing
@@ -52,6 +56,10 @@ G.~C. Butazzo, \emph{Hard real-time computing systems: predictable scheduling
 \bibitem{EmbSysDes}
 S.~Heath, \emph{Embedded systems design}.\hskip 1em plus 0.5em minus
   0.4em\relax EDN Series For Design Engineers, 2003.
+
+\bibitem{TX2CU}
+A.~STANCU, E.~CODRES, and M.~M. Guerrero, \emph{Jetson TX2 and CUDA
+  Programming}, second edition~ed., NVIDIA, 2018.
 
 \bibitem{WPNV}
 NVIDIA, \emph{NVIDIA Tesla P100 The Most Advanced Datacenter Accelerator Ever
@@ -97,9 +105,9 @@ NVIDIA, ``Nvidia jetson tx2: High performance ai at the edge.'' [Online].
 \BIBentrySTDinterwordspacing
 
 \bibitem{Pridriven}
-Y.~K. . W. J. S. L. .~D. Shin, ``Priority-driven spatial resource sharing
-  scheduling for embedded graphics processing units,'' \emph{Journal of Systems
-  Architecture}, vol.~76, pp. 17--27, mayo 2017.
+Y.~Kang, W.~Joo, S.~Lee, and D.~Shin, ``Priority-driven spatial resource
+  sharing scheduling for embedded graphics processing units,'' \emph{Journal of
+  Systems Architecture}, vol.~76, pp. 17--27, mayo 2017.
 
 \bibitem{RTFG}
 H.~Lee and M.~A.~A. Faruque, ``Run-time scheduling framework for event-driven
