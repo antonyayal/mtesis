@@ -27,7 +27,13 @@
 \contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{9}% 
 \contentsline {section}{\numberline {2.6}Resumen}{9}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{11}% 
-\contentsline {section}{\numberline {3.1}Resumen}{11}% 
-\contentsline {chapter}{Anexos}{15}% 
-\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{15}% 
-\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{15}% 
+\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n de EDF preemptive limitado de sistemas con tareas espor\IeC {\'a}dicas}{12}% 
+\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n de recursos espaciales compartidos con prioridad para unidades de gr\IeC {\'a}ficos embebidos}{12}% 
+\contentsline {section}{\numberline {3.3}Framework para planificaci\IeC {\'o}n en tiempo de ejecuci\IeC {\'o}n de aplicaciones con manejo de eventos en sistemas embebidos basados en GPU }{13}% 
+\contentsline {section}{\numberline {3.4}Sobre planificaci\IeC {\'o}n din\IeC {\'a}mica para el GPU, sus aplicaciones en computaci\IeC {\'o}n gr\IeC {\'a}fica y m\IeC {\'a}s}{13}% 
+\contentsline {section}{\numberline {3.5}REGM: Un modelo de ejecuci\IeC {\'o}n GPGPU responsivo para soluciones en tiempo de ejecuci\IeC {\'o}n}{14}% 
+\contentsline {section}{\numberline {3.6}Planificaci\IeC {\'o}n conjunta con GPU y aseguramiento de la memoria intra-nodo}{15}% 
+\contentsline {section}{\numberline {3.7}Resumen}{16}% 
+\contentsline {chapter}{Anexos}{19}% 
+\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{19}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{19}% 

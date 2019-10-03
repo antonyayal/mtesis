@@ -96,4 +96,25 @@ NVIDIA, ``Nvidia jetson tx2: High performance ai at the edge.'' [Online].
   \url{www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-tx2/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{Pridriven}
+Y.~K. . W. J. S. L. .~D. Shin, ``Priority-driven spatial resource sharing
+  scheduling for embedded graphics processing units,'' \emph{Journal of Systems
+  Architecture}, vol.~76, pp. 17--27, mayo 2017.
+
+\bibitem{RTFG}
+H.~Lee and M.~A.~A. Faruque, ``Run-time scheduling framework for event-driven
+  applications on a gpu-based embedded system,'' \emph{IEEE Transactions on
+  Computer-Aided Design of Integrated Circuits and Systems}, vol.~35, no.~12,
+  pp. 1956--1967, 2016.
+
+\bibitem{DynSche}
+M.~Steinberger, ``On dynamic scheduling for the gpu and its applications in
+  computer graphics and beyond,'' \emph{IEEE Computer Graphics and
+  Applications}, vol.~38, no.~3, pp. 119--130, 2018.
+
+\bibitem{IntraNode}
+C.~Rea{\~n}o, F.~Silla, D.~S. Nikolopoulos, and B.~Varghese, ``Intra-node
+  memory safe gpu co-scheduling,'' \emph{IEEE TRANSACTIONS ON PARALLEL AND
+  DISTRIBUTED SYSTEMS}, vol.~29, no.~5, 2018.
+
 \end{thebibliography}

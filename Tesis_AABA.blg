@@ -9,62 +9,63 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibTesis.bib
 Warning--entry type for "jtx2dk" isn't style-file defined
---line 29 of file bibTesis.bib
+--line 40 of file bibTesis.bib
 Warning--entry type for "gpgpu" isn't style-file defined
---line 39 of file bibTesis.bib
+--line 50 of file bibTesis.bib
 Warning--entry type for "PasAna" isn't style-file defined
---line 62 of file bibTesis.bib
+--line 73 of file bibTesis.bib
 Warning--entry type for "AnPasc" isn't style-file defined
---line 72 of file bibTesis.bib
+--line 83 of file bibTesis.bib
 Warning--entry type for "GpuCpu" isn't style-file defined
---line 115 of file bibTesis.bib
+--line 126 of file bibTesis.bib
 Warning--entry type for "TX2I" isn't style-file defined
---line 236 of file bibTesis.bib
+--line 247 of file bibTesis.bib
+Warning--I didn't find a database entry for "REGM"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--empty author in IeeeSG
 
 Done.
-You've used 13 entries,
+You've used 17 entries,
             4087 wiz_defined-function locations,
-            888 strings with 9221 characters,
-and the built_in function-call counts, 5407 in all, are:
-= -- 403
-> -- 80
-< -- 16
-+ -- 42
-- -- 16
-* -- 218
-:= -- 947
-add.period$ -- 25
-call.type$ -- 13
-change.case$ -- 9
-chr.to.int$ -- 36
-cite$ -- 14
-duplicate$ -- 432
-empty$ -- 531
-format.name$ -- 19
-if$ -- 1206
+            919 strings with 9981 characters,
+and the built_in function-call counts, 8468 in all, are:
+= -- 672
+> -- 136
+< -- 48
++ -- 76
+- -- 24
+* -- 364
+:= -- 1425
+add.period$ -- 33
+call.type$ -- 17
+change.case$ -- 13
+chr.to.int$ -- 102
+cite$ -- 18
+duplicate$ -- 654
+empty$ -- 754
+format.name$ -- 29
+if$ -- 1920
 int.to.chr$ -- 0
-int.to.str$ -- 13
-missing$ -- 86
-newline$ -- 74
-num.names$ -- 12
-pop$ -- 253
+int.to.str$ -- 17
+missing$ -- 120
+newline$ -- 86
+num.names$ -- 16
+pop$ -- 311
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 417
+skip$ -- 661
 stack$ -- 0
-substring$ -- 92
-swap$ -- 259
-text.length$ -- 4
+substring$ -- 250
+swap$ -- 454
+text.length$ -- 14
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 13
+type$ -- 17
 warning$ -- 1
-while$ -- 19
-width$ -- 15
-write$ -- 134
-(There were 7 warnings)
+while$ -- 33
+width$ -- 19
+write$ -- 176
+(There were 8 warnings)
