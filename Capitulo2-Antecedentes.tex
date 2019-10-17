@@ -45,6 +45,8 @@ La utilización de un framework siempre conlleva una curva de de aprendizaje, pe
     \section{Sistemas en tiempo real}\label{sec:sistr}
 
     Los sistemas en tiempo real son sistemas de cómputo cuyas tareas deben actuar dentro de limitaciones de tiempo precisas ante eventos en su entorno. Por lo que el comportamiento del sistema depende, no solo del resultado del cálculo, sino también del momento (tiempo) en que se produce \cite{Buta2011}.
+    
+    
 
     \subsection{Tipos de ejecución de tareas}
 
@@ -76,12 +78,53 @@ Un CPU está compuesto principalmente por:
    
     La unidad de procesamiento gráfico o GPU es un procesador especializado para tareas que requieren de un alto grado de paralelismo. Su uso más extendido es el del procesamiento de instrucciones aplicadas a campo de imágenes 2D y 3D, realizando cálculos con pixeles y texeles\cite{TX2CU}.
     
-    
-    
    \vspace{0.3cm}
    
    La tarjeta gráfica en su interior puede contener una cantidad de núcleos de un orden de cientos hasta miles de unidades que son más pequeñas y que por ende, individualmente realizan un menor número de operaciones. Esto hace que la GPU esté optimizada para procesar cantidades enormes de datos pero con programas más específicos\cite{gpgpu}. Lo más común al utilizar la aceleración por GPU es ejecutar una misma instrucción a múltiples datos para aprovechar su arquitectura.
+   
+    \subsection{Arquitectura del GPU}
 
+La arquitectura de las tarjetas gráficas ha ido experimentando ciertas evoluciones en su desarrollo para permitir a los programadores hacer un uso más eficiente de su poder de procesamiento. Contienen en su interior componentes no de cómputo no especializado para procesar todo tipo de información.
+
+Una tarjeta gráfica es básicamente un multiprocesador compuesto de una gran cantidad de núcleos de procesamiento que trabajan en paralelo, junto con los componentes de un CPU, las GPU incorporan:
+
+\begin{itemize}
+\item Memoria: cuentan con diferentes tipos de memoria y principalente compuesta por el tipo DRAM (Memoria dinámica de acceso aleatorio).
+	\begin{itemize}
+	\item Memoria global: Almacena los datos enviados desde el CPU.
+	\item Memoria constante de sólo lectura.
+	\item Memoria de texturas de sólo lectura.
+	\item Registros locales por núcleo de 32 bits. 
+	\end{itemize}
+Donde las memorias constantes y de textura son de acceso más rápidas que la memoria global, ya que actúan como una especie de caché.
+
+\item Programación en streams: La arquitectura de una GPU está diseñada con base en la programación de streams, el cual involucra a múltiples cálculos en paralelo para un stream de datos\cite{stream}. 
+
+	\begin{itemize}
+	\item Stream: Conjunto de elementos que tendrán un tratamiento similar.
+	\item Kernel: Tratamiento aplicado a cada elemento del stream.
+	\item Thread: Tratamiento ejecutado por procesador aplicado a un elemento del stream.
+	\end{itemize} 
+	
+\item Gather y Scatter: Cuando se aplica un kernel a un stream, este aplica todas sus instrucciones a cada elemento, por lo que cada elemento se almacena en un una posición bien definida dentro de la memoria utilizando indices que auxilian a localizarlo, a esta acción se le conoce como Scatter. 
+
+        \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=1]{img/scatter}
+        \caption{Escritura en DRAM\cite{NCUDA}.}
+        \label{fig:scatter}
+    \end{figure}
+   
+En cambio el Gather es la lectura o recolección de un stream en memoria para ser procesado por una unidad de procesamiento.
+
+        \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=1]{img/gather}
+        \caption{Lectura en DRAM\cite{NCUDA}.}
+        \label{fig:gather}
+    \end{figure}
+
+\end{itemize} 
     \subsection{Manycore y Multicore}
     Es necesario destacar que los \textit{manycore} y los \textit{multicore} son utilizados para etiquetar a los CPU y los GPU, pero entre ellos existen diferencias. Un core de CPU es relativamente más potente, está diseñado para realizar un control lógico muy complejo para buscar y optimizar la ejecución secuencial de programas.
    
@@ -159,21 +202,29 @@ Un CPU está compuesto principalmente por:
     \begin{table}[h!]
       \begin{center}
             \scriptsize
-        \begin{tabular}{|m{3.5cm}|m{6.5cm}|}
+        \begin{tabular}{|m{2.5cm}|m{6cm}|m{6.5cm}|}
          \hline
-        \cellcolor{lightgray}\textbf{Componentes} & \cellcolor{lightgray} \textbf{Descripción}\\ 
+        \cellcolor{lightgray}\textbf{Elemento} & \cellcolor{lightgray} \textbf{Componentes} & \cellcolor{lightgray} \textbf{Descripción}\\ 
          \hline
-         \textbf{Arquitectura} & NVIDIA Pascal GPU\\
+         \textbf{Arquitectura} & NVIDIA Pascal GPU & 256 núcleos Optimizados para un mejor rendimiento en sistemas embebidos.\\
          \hline
-         \textbf{CPU} & 2 Denver 64-bit CPUs + Quad-Core A57 Complex\\
+         \textbf{CPU} & Dual-Core Denver 2 64-bit CPUs + Quad-Core A57 Complex & Contiene dos clústers de procesamiento, el Denver 2 de 64 bits que se utiliza para tareas pesadas o de un sólo thread; y el ARMv8 Cortex-A57 Complex que actúa en tareas multi-thread y en cargas ligeras.\\
          \hline
-         \textbf{Memoria} & 8 GB L128 bit DDR4 Memory\\
+         \textbf{Memoria} & 8 GB L128 bit DDR4 Memory & DRAM de 128 bits que da soporte con un gran ancho de banda para una interfaz LPDDR4.  \\
           \hline
-    	\textbf{Almacenamiento} & 32 GB eMMC 5.1 Flash Storage\\
+    	\textbf{Almacenamiento} & 32 GB eMMC 5.1 Flash Storage & Integrada en el módulo.\\
          \hline
-    	\textbf{Conectividad} & 802.11ac Wi-Fi and Bluetooth-Enabled Devices\\
+    	\textbf{Conectividad} & 802.11ac Wi-Fi and Bluetooth-Enabled Devices & \\
          \hline
-   	 \textbf{Ethernet} &10/100/1000 BASE-T Ethernet\\
+   	 \textbf{Ethernet} &10/100/1000 BASE-T Ethernet & \\
+	  \hline
+   	 \textbf{Procesador de señales} &1.4Gpix/s Advanced image signal processing & Acelerador por hardware para captura de video y de imágenes.\\
+	 &Audio Processing Engine & Subsistema que permite el completo soporte de audio multicanal por las diversas interfaces.\\
+	 \hline
+   	 \textbf{Video} & Codificador avanzado de video HD & Permite la grabación de video ultra-high-definition a 60 fps, soporta los estándares H.265 and H.264 BP/MP/HP/MVC, VP9 y VP8. \\
+	  & Decodificador avanzado de video HD & Reproducciónde video ultra-high-definition a 60 fps con pixeles de 12 bits, soporta los estandares H.265, H.264, VP9, VP8 VC-1, MPEG-2, y MPEG-4. \\
+         \hline
+   	 \textbf{Controlador de la pantalla} &eDP/DP/HDMI Multimodal & Realiza un almacenamiento multilinea de pixeles, lo que permite mayor eficiencia de memoria al momento de aplicar operaciones de escalamiento o de búsqueda de pixeles. Permite la reducción del ancho de banda en aplicaciones móviles.\\
          \hline
         \end{tabular}
         \caption{Especificaciones del sistema Jetson TX2\cite{jtx2dk}.}

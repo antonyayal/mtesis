@@ -16,25 +16,26 @@
 \contentsline {section}{\numberline {2.3}CPU}{5}% 
 \contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{6}% 
 \contentsline {section}{\numberline {2.4}GPU}{6}% 
-\contentsline {subsection}{\numberline {2.4.1}Manycore y Multicore}{6}% 
-\contentsline {subsection}{\numberline {2.4.2}Arquitectura Pascal}{7}% 
-\contentsline {subsubsection}{\numberline {2.4.2.1}Memoria unificada}{7}% 
-\contentsline {subsubsection}{\numberline {2.4.2.2}Computaci\IeC {\'o}n preemptive}{8}% 
-\contentsline {subsubsection}{\numberline {2.4.2.3}Balanceo de carga din\IeC {\'a}mico}{8}% 
-\contentsline {subsubsection}{\numberline {2.4.2.4}Operaciones at\IeC {\'o}micas}{8}% 
-\contentsline {subsection}{\numberline {2.4.3}GPGPU}{8}% 
-\contentsline {section}{\numberline {2.5}Sistemas embebidos}{9}% 
-\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{9}% 
-\contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{10}% 
-\contentsline {section}{\numberline {2.6}Resumen}{10}% 
-\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{11}% 
-\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n de EDF preemptive limitado de sistemas con tareas espor\IeC {\'a}dicas}{12}% 
-\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n de recursos espaciales compartidos con prioridad para unidades de gr\IeC {\'a}ficos embebidos}{12}% 
-\contentsline {section}{\numberline {3.3}Framework para planificaci\IeC {\'o}n en tiempo de ejecuci\IeC {\'o}n de aplicaciones con manejo de eventos en sistemas embebidos basados en GPU }{13}% 
-\contentsline {section}{\numberline {3.4}Sobre planificaci\IeC {\'o}n din\IeC {\'a}mica para el GPU, sus aplicaciones en computaci\IeC {\'o}n gr\IeC {\'a}fica y m\IeC {\'a}s}{13}% 
-\contentsline {section}{\numberline {3.5}REGM: Un modelo de ejecuci\IeC {\'o}n GPGPU responsivo para soluciones en tiempo de ejecuci\IeC {\'o}n}{14}% 
-\contentsline {section}{\numberline {3.6}Planificaci\IeC {\'o}n conjunta con GPU y aseguramiento de la memoria intra-nodo}{15}% 
-\contentsline {section}{\numberline {3.7}Resumen}{16}% 
-\contentsline {chapter}{Anexos}{19}% 
-\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{19}% 
-\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{19}% 
+\contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{6}% 
+\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{8}% 
+\contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{9}% 
+\contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{9}% 
+\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{9}% 
+\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{9}% 
+\contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{10}% 
+\contentsline {subsection}{\numberline {2.4.4}GPGPU}{10}% 
+\contentsline {section}{\numberline {2.5}Sistemas embebidos}{11}% 
+\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{11}% 
+\contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{11}% 
+\contentsline {section}{\numberline {2.6}Resumen}{11}% 
+\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{13}% 
+\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n de EDF preemptive limitado de sistemas con tareas espor\IeC {\'a}dicas}{14}% 
+\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n de recursos espaciales compartidos con prioridad para unidades de gr\IeC {\'a}ficos embebidos}{14}% 
+\contentsline {section}{\numberline {3.3}Framework para planificaci\IeC {\'o}n en tiempo de ejecuci\IeC {\'o}n de aplicaciones con manejo de eventos en sistemas embebidos basados en GPU }{15}% 
+\contentsline {section}{\numberline {3.4}Sobre planificaci\IeC {\'o}n din\IeC {\'a}mica para el GPU, sus aplicaciones en computaci\IeC {\'o}n gr\IeC {\'a}fica y m\IeC {\'a}s}{15}% 
+\contentsline {section}{\numberline {3.5}REGM: Un modelo de ejecuci\IeC {\'o}n GPGPU responsivo para soluciones en tiempo de ejecuci\IeC {\'o}n}{16}% 
+\contentsline {section}{\numberline {3.6}Planificaci\IeC {\'o}n conjunta con GPU y aseguramiento de la memoria intra-nodo}{17}% 
+\contentsline {section}{\numberline {3.7}Resumen}{18}% 
+\contentsline {chapter}{Anexos}{21}% 
+\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{21}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{21}% 

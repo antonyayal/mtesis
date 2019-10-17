@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 OCT 2019 13:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 OCT 2019 17:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1562,14 +1562,26 @@ Underfull \vbox (badness 1496) has occurred while \output is active []
 
  [4]
 [5] [6]
-<img/repCPUGPU.png, id=131, 888.31876pt x 327.2225pt>
+<img/scatter.png, id=131, 341.1144pt x 105.0324pt>
+File: img/scatter.png Graphic file (type png)
+<use img/scatter.png>
+Package pdftex.def Info: img/scatter.png  used on input line 111.
+(pdftex.def)             Requested size: 341.11354pt x 105.03214pt.
+<img/gather.png, id=133, 343.0416pt x 105.996pt>
+File: img/gather.png Graphic file (type png)
+<use img/gather.png>
+Package pdftex.def Info: img/gather.png  used on input line 120.
+(pdftex.def)             Requested size: 343.04074pt x 105.99573pt.
+ [7]
+<img/repCPUGPU.png, id=138, 888.31876pt x 327.2225pt>
 File: img/repCPUGPU.png Graphic file (type png)
 <use img/repCPUGPU.png>
-Package pdftex.def Info: img/repCPUGPU.png  used on input line 93.
+Package pdftex.def Info: img/repCPUGPU.png  used on input line 134.
 (pdftex.def)             Requested size: 310.91621pt x 114.52959pt.
- [7 <./img/repCPUGPU.png>]
+ [8 <./img/scatter.png> <./img/gather.png> <./img/repCPUGPU.png>]
+[9]
 
-./Capitulo2-Antecedentes.tex:126: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1577,14 +1589,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126     El có
+l.167     El có
                  mputo de propósito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:126: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1592,14 +1604,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126     El cómputo de propó
+l.167     El cómputo de propó
                                  sito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:126: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1607,14 +1619,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 ...ral en unidades de procesamiento de grá
+l.167 ...ral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:126: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1622,14 +1634,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 ...realizado tradicionalmente por la CPU ú
+l.167 ...realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:126: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1637,21 +1649,33 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.126 ... la CPU únicamente, donde la GPU actú
+l.167 ... la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-[8]
-<img/gpgpu.png, id=142, 247.6452pt x 175.3752pt>
+<img/gpgpu.png, id=151, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 130.
+Package pdftex.def Info: img/gpgpu.png  used on input line 171.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
- [9 <./img/gpgpu.png>])
+[10 <./img/gpgpu.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 219--219
+[]|[]\T1/cmr/bx/n/8 Procesador de
+ []
+
+
+Underfull \hbox (badness 5345) in paragraph at lines 225--225
+[]|[]\T1/cmr/bx/n/8 Controlador de
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
 :<-
-[10]
+[11] [12]
 Cap\'{\i }tulo 3.
 Package srcltx Info: Expanded filename `Capitulo3-Trabajo_Relacionado.tex' to `
 Capitulo3-Trabajo_Relacionado.tex' on input line 210.
@@ -1659,18 +1683,18 @@ Capitulo3-Trabajo_Relacionado.tex' on input line 210.
 (./Capitulo3-Trabajo_Relacionado.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11
+ [13
 
 ]
-[12] [13]
+[14] [15]
 
-Package natbib Warning: Citation `REGM' on page 14 undefined on input line 74.
+Package natbib Warning: Citation `REGM' on page 16 undefined on input line 74.
 
-[14] [15])
+[16] [17])
 :<-
-[16] [17
+[18] [19
 
-] [18]
+] [20]
 Package srcltx Info: Expanded filename `ApendiceA.tex' to `ApendiceA.tex' on in
 put line 230.
 
@@ -1678,7 +1702,7 @@ put line 230.
 (./ApendiceA.tex)
 :<-
 :<+ Tesis_AABA.bbl
-(./Tesis_AABA.bbl [19] [20
+(./Tesis_AABA.bbl [21] [22
 
 ]
 ./Tesis_AABA.bbl:54: Misplaced alignment tab character &.
@@ -1691,9 +1715,15 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[21]
-./Tesis_AABA.bbl:78: Misplaced alignment tab character &.
-l.78 R.~Smith, ``The nvidia geforce gtx 1080 &
+
+Underfull \hbox (badness 1137) in paragraph at lines 66--70
+[][]\T1/cmr/m/n/12 S. Ren-nich, ``Cu-da c/c++ streams and con-cu-rrency,'' NVI-
+DIA,
+ []
+
+[23]
+./Tesis_AABA.bbl:85: Misplaced alignment tab character &.
+l.85 R.~Smith, ``The nvidia geforce gtx 1080 &
                                                gtx 1070 founders editions re...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1702,12 +1732,12 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-)
+[24])
 :<-
 
 Package natbib Warning: There were undefined citations.
 
-[22] (./Tesis_AABA.aux
+[25] (./Tesis_AABA.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
@@ -1716,30 +1746,31 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36581 strings out of 492616
- 749666 string characters out of 6129482
- 939959 words of memory out of 5000000
- 39912 multiletter control sequences out of 15000+600000
- 547988 words of font info for 53 fonts, out of 8000000 for 9000
+ 36598 strings out of 492616
+ 749937 string characters out of 6129482
+ 943996 words of memory out of 5000000
+ 39927 multiletter control sequences out of 15000+600000
+ 548325 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,18n,101p,995b,500s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,101p,995b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></
-usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></us
-r/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/
-local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/lo
-cal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/
-texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/te
-xlive/2019/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texl
-ive/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texliv
-e/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/
-2019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (32 pages, 427067 bytes).
+{/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></u
+sr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr
+/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1095.pfb></usr/l
+ocal/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/loc
+al/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local
+/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/t
+exlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/tex
+live/2019/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texli
+ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
+/2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
+019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on Tesis_AABA.pdf (35 pages, 850136 bytes).
 PDF statistics:
- 232 PDF objects out of 1000 (max. 8388607)
- 145 compressed objects within 2 object streams
+ 248 PDF objects out of 1000 (max. 8388607)
+ 154 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 197 words of extra memory for PDF output out of 10000 (max. 10000000)
 

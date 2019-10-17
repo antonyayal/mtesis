@@ -61,6 +61,13 @@ S.~Heath, \emph{Embedded systems design}.\hskip 1em plus 0.5em minus
 A.~STANCU, E.~CODRES, and M.~M. Guerrero, \emph{Jetson TX2 and CUDA
   Programming}, second edition~ed., NVIDIA, 2018.
 
+\bibitem{stream}
+\BIBentryALTinterwordspacing
+S.~Rennich, ``Cuda c/c++ streams and concurrency,'' NVIDIA, 2011. [Online].
+  Available:
+  \url{https://developer.download.nvidia.com/CUDA/training/StreamsAndConcurrencyWebinar.pdf}
+\BIBentrySTDinterwordspacing
+
 \bibitem{WPNV}
 NVIDIA, \emph{NVIDIA Tesla P100 The Most Advanced Datacenter Accelerator Ever
   Built Featuring Pascal GP100, the World's Fastest GPU}, NVIDIA Corporation,
