@@ -46,14 +46,41 @@ La utilización de un framework siempre conlleva una curva de de aprendizaje, pe
 
     Los sistemas en tiempo real son sistemas de cómputo cuyas tareas deben actuar dentro de limitaciones de tiempo precisas ante eventos en su entorno. Por lo que el comportamiento del sistema depende, no solo del resultado del cálculo, sino también del momento (tiempo) en que se produce \cite{Buta2011}.
     
-    
+    Un sistema en tiempo real debe  responder a entradas generadas dentro de un periodo de tiempo especifico para evitar posibles fallas. El deadline o tiempo límite es el momento justo antes en que la tarea debe completar su ejecución. Existen tres tipos de plazos: 
+%time constrains: plazos de tiempo
+%deadline: tiempo limite
+\begin{itemize}
+\item Soft Deadline: En este tipo se pueden superar algunos tiempos límites y el sistema puede aún funcionar correctamente.
+\item Firm Deadline: Aquí los resultados obtenidos en los plazos vencidos no son útiles, pero los plazos son tolerados frecuentemente.
+\item Hard Deadline: Si una tarea no se cumple en el tiempo límite, se producirán resultados catastróficos. Este tipo de límites se utilizan comúnmente en tareas que realizan operaciones críticas.
+\end{itemize}   
+
+\subsection{Tipos de tarea}
+
+Existen tres tipos de tareas que están presentes en los sistemas en tiempo real:
+
+\begin{itemize}
+\item Tareas periódicas: Se ejecutan en cada intervalo fijo de tiempo conocido. Normalmente, las tareas periódicas tienen restricciones que indican sus plazos de tiempo.
+\item Tareas aperiódicas: Se ejecutan aleatoriamente en cualquier plazo de tiempo y no tienen una secuencia de tiempo predefinida.
+\item Tareas esporádicas: Son una combinación de tareas periódicas y aperiódicas, donde, en tiempo de ejecución actúan como aperiódicas pero la tasa de ejecución es de naturaleza periódica.
+\end{itemize}   
+
+La mayoría del tiempo los plazos de tiempo se dan por el tiempo límite de una tarea
 
     \subsection{Tipos de ejecución de tareas}
 
     Existen dos tipo de ejecución de tareas, las \textit{\textbf{preemptive}}, donde es necesario interrumpir temporalmente una tarea que está realizando un sistema de cómputo, para darle la oportunidad a otra con mayor prioridad, con el compromiso de reanudar la rezagada más adelante, y las \textit{\textbf{non-preemptive}} donde se requiere que termine la tarea actual para que posteriormente inicie una con mayor prioridad.
 
     \subsection{Algoritmos de planificación}
-
+    
+    Un algoritmo de planificación es una estrategia en la cual un sistema decide ejecutar una tarea en un momento dado, debe garantizar que se asigne el tiempo suficiente a todas las tareas del sistema para que puedan cumplir su tiempo límite en la medida de lo posible.
+    
+    La planificación en tiempo real se puede dividir en:
+    \begin{itemize}
+    \item Estática:  todas las prioridades se asignan en el momento del diseño del sistema y esas prioridades se mantienen constantes durante el tiempo de vida de una tarea.
+    \item Dinámica: Se las asignan prioridades en tiempo de ejecución, en función de los parámetros de las tareas.
+    \end{itemize}   
+    
     Earliest Deadline First (EDF) es un algoritmo óptimo de planificación para sistemas de tiempo real, y acepta tareas en modo preemptive. Es un algoritmo muy extendido en sistemas en tiempo real debido a su optimalidad teórica en el campo no-preemptive, pero al momento de implementarlo en un planificador preemptive, el resultado puede acarrear un exceso de ejecución si se toma el peor caso \cite{EmbSysDes}. Por ello es necesario buscar alternativas de algoritmos que tengan un mejor desempeño en tareas específicas.
 
 %Aunque existen protocolos más simples y fáciles de implementar, como lo es la planificación non-preemtive, pueden llegar a provocarse bloqueos en el sistema en tareas críticas de seguridad. 
