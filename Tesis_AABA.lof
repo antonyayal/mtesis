@@ -1,8 +1,8 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Escritura en DRAM\cite {NCUDA}.\relax }}{8}% 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Lectura en DRAM\cite {NCUDA}.\relax }}{8}% 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Representaci\IeC {\'o}n de un CPU y un GPU\cite {NCUDA}.\relax }}{8}% 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Aceleraci\IeC {\'o}n de programas en GPUs\cite {gpgpu}.\relax }}{10}% 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Escritura en DRAM\cite {NCUDA}.\relax }}{9}% 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Lectura en DRAM\cite {NCUDA}.\relax }}{9}% 
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Representaci\IeC {\'o}n de un CPU y un GPU\cite {NCUDA}.\relax }}{10}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Aceleraci\IeC {\'o}n de programas en GPUs\cite {gpgpu}.\relax }}{12}% 
 \addvspace {10\p@ }

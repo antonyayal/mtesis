@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  17 OCT 2019 17:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 OCT 2019 06:51
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1561,27 +1561,29 @@ You may provide a definition with
 Underfull \vbox (badness 1496) has occurred while \output is active []
 
  [4]
-[5] [6]
-<img/scatter.png, id=131, 341.1144pt x 105.0324pt>
+[5] [6] [7]
+<img/scatter.png, id=134, 341.1144pt x 105.0324pt>
 File: img/scatter.png Graphic file (type png)
 <use img/scatter.png>
-Package pdftex.def Info: img/scatter.png  used on input line 111.
+Package pdftex.def Info: img/scatter.png  used on input line 140.
 (pdftex.def)             Requested size: 341.11354pt x 105.03214pt.
-<img/gather.png, id=133, 343.0416pt x 105.996pt>
+ [8]
+<img/gather.png, id=140, 343.0416pt x 105.996pt>
 File: img/gather.png Graphic file (type png)
 <use img/gather.png>
-Package pdftex.def Info: img/gather.png  used on input line 120.
+Package pdftex.def Info: img/gather.png  used on input line 149.
 (pdftex.def)             Requested size: 343.04074pt x 105.99573pt.
- [7]
-<img/repCPUGPU.png, id=138, 888.31876pt x 327.2225pt>
+<img/repCPUGPU.png, id=141, 888.31876pt x 327.2225pt>
 File: img/repCPUGPU.png Graphic file (type png)
 <use img/repCPUGPU.png>
-Package pdftex.def Info: img/repCPUGPU.png  used on input line 134.
+Package pdftex.def Info: img/repCPUGPU.png  used on input line 163.
 (pdftex.def)             Requested size: 310.91621pt x 114.52959pt.
- [8 <./img/scatter.png> <./img/gather.png> <./img/repCPUGPU.png>]
-[9]
+ [9 <./img/scatter.png> <./img/gather.png>]
+Underfull \vbox (badness 5345) has occurred while \output is active []
 
-./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
+ [10 <./img/repCPUGPU.png>]
+
+./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1589,14 +1591,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167     El có
+l.196     El có
                  mputo de propósito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1604,14 +1606,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167     El cómputo de propó
+l.196     El cómputo de propó
                                  sito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1619,14 +1621,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 ...ral en unidades de procesamiento de grá
+l.196 ...ral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1634,14 +1636,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 ...realizado tradicionalmente por la CPU ú
+l.196 ...realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:167: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1649,33 +1651,35 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.167 ... la CPU únicamente, donde la GPU actú
+l.196 ... la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<img/gpgpu.png, id=151, 247.6452pt x 175.3752pt>
+<img/gpgpu.png, id=154, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 171.
+Package pdftex.def Info: img/gpgpu.png  used on input line 200.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
-[10 <./img/gpgpu.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 219--219
+
+Underfull \vbox (badness 2828) has occurred while \output is active []
+
+ [11]
+Underfull \hbox (badness 10000) in paragraph at lines 248--248
 []|[]\T1/cmr/bx/n/8 Procesador de
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 225--225
+Underfull \hbox (badness 5345) in paragraph at lines 254--254
 []|[]\T1/cmr/bx/n/8 Controlador de
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-)
+[12 <./img/gpgpu.png>])
 :<-
-[11] [12]
+[13] [14
+
+]
 Cap\'{\i }tulo 3.
 Package srcltx Info: Expanded filename `Capitulo3-Trabajo_Relacionado.tex' to `
 Capitulo3-Trabajo_Relacionado.tex' on input line 210.
@@ -1683,18 +1687,16 @@ Capitulo3-Trabajo_Relacionado.tex' on input line 210.
 (./Capitulo3-Trabajo_Relacionado.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13
+ [15]
+[16] [17]
 
-]
-[14] [15]
+Package natbib Warning: Citation `REGM' on page 18 undefined on input line 74.
 
-Package natbib Warning: Citation `REGM' on page 16 undefined on input line 74.
-
-[16] [17])
+[18] [19])
 :<-
-[18] [19
+[20] [21
 
-] [20]
+] [22]
 Package srcltx Info: Expanded filename `ApendiceA.tex' to `ApendiceA.tex' on in
 put line 230.
 
@@ -1702,7 +1704,7 @@ put line 230.
 (./ApendiceA.tex)
 :<-
 :<+ Tesis_AABA.bbl
-(./Tesis_AABA.bbl [21] [22
+(./Tesis_AABA.bbl [23] [24
 
 ]
 ./Tesis_AABA.bbl:54: Misplaced alignment tab character &.
@@ -1721,7 +1723,7 @@ Underfull \hbox (badness 1137) in paragraph at lines 66--70
 DIA,
  []
 
-[23]
+[25]
 ./Tesis_AABA.bbl:85: Misplaced alignment tab character &.
 l.85 R.~Smith, ``The nvidia geforce gtx 1080 &
                                                gtx 1070 founders editions re...
@@ -1732,12 +1734,12 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[24])
+[26])
 :<-
 
 Package natbib Warning: There were undefined citations.
 
-[25] (./Tesis_AABA.aux
+[27] (./Tesis_AABA.aux
 LaTeX Info: Redefining \. on input line 6.
 LaTeX Info: Redefining \% on input line 6.
 )
@@ -1748,7 +1750,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  36598 strings out of 492616
  749937 string characters out of 6129482
- 943996 words of memory out of 5000000
+ 943995 words of memory out of 5000000
  39927 multiletter control sequences out of 15000+600000
  548325 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1767,10 +1769,10 @@ ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (35 pages, 850136 bytes).
+Output written on Tesis_AABA.pdf (37 pages, 852799 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
- 154 compressed objects within 2 object streams
+ 257 PDF objects out of 1000 (max. 8388607)
+ 161 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  197 words of extra memory for PDF output out of 10000 (max. 10000000)
 
