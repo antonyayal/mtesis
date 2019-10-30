@@ -51,6 +51,9 @@
 \usepackage{url}
 \usepackage{paralist}
 
+\usepackage[toc]{glossaries}
+
+\makeglossaries
 
 \decimalpoint
 
@@ -224,13 +227,19 @@
 
 \appendixpage
 \addcontentsline{toc}{chapter}{Anexos}
-%%--------------APÉNDICES: Apéndice A-----------
+%--------------APÉNDICES: Apéndice A-----------
 \begin{appendices}
 \section{Glosario de términos}
+%\backmatter
 \input{ApendiceA.tex}
+%\printglossary
+%\clearpage
 \end{appendices}
 
+
+
 %%--------------APARTADO : Referencias-----------
+
 \addcontentsline{toc}{chapter}{\textbf{Bibliografía}} 
 \bibliographystyle{IEEEtran}
 \bibliography{bibTesis}

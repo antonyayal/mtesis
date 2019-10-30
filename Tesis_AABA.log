@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 OCT 2019 06:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 OCT 2019 16:50
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1202,6 +1202,342 @@ Package: xr 2019/01/05 v5.04 eXternal References (DPC)
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+Package: glossaries 2019/01/06 v4.42 (NLCT)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks51
+\XKV@tempa@toks=\toks52
+)
+\XKV@depth=\count329
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+Package: mfirstuc 2017/11/14 v2.06 (NLCT)
+\@glsmfirst=\toks53
+\@glsmrest=\toks54
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/textcase/textcase.sty
+Package: textcase 2004/10/07 v0.07 Text only upper/lower case changing (DPC)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/xfor/xfor.sty
+Package: xfor 2009/02/05 v1.05 (NLCT)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/datatool/datatool-base.sty
+Package: datatool-base 2018/12/07 v2.31 (NLCT)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/substr/substr.sty
+Package: substr 2009/10/20 v1.2 Handle substrings
+\c@su@anzahl=\count330
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/datatool/datatool-fp.sty
+Package: datatool-fp 2018/12/07 v2.31 (NLCT)
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp.sty
+Package: fp 1995/04/02
+
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/defpattern.sty
+Package: defpattern 1994/10/12
+\actioncount=\count331
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-basic.sty
+Package: fp-basic 1996/05/13
+\FP@xs=\count332
+\FP@xia=\count333
+\FP@xib=\count334
+\FP@xfa=\count335
+\FP@xfb=\count336
+\FP@rega=\count337
+\FP@regb=\count338
+\FP@regs=\count339
+\FP@times=\count340
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-addons.sty
+Package: fp-addons 1995/03/15
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-snap.sty
+Package: fp-snap 1995/04/05
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-exp.sty
+Package: fp-exp 1995/04/03
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-trigo.sty
+Package: fp-trigo 1995/04/14
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-pas.sty
+Package: fp-pas 1994/08/29
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-random.sty
+Package: fp-random 1995/02/23
+\FPseed=\count341
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-eqn.sty
+Package: fp-eqn 1995/04/03
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-upn.sty
+Package: fp-upn 1996/10/21
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/fp/fp-eval.sty
+Package: fp-eval 1995/04/03
+)))
+\@dtl@toks=\toks55
+\@dtl@tmpcount=\count342
+\dtl@tmplength=\skip72
+\dtl@sortresult=\count343
+\@dtl@numgrpsepcount=\count344
+\@dtl@datatype=\count345
+\dtl@codeA=\count346
+\dtl@codeB=\count347
+\@dtl@foreach@level=\count348
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/base/glossaries-compat
+ible-307.sty
+Package: glossaries-compatible-307 2019/01/06 v4.42 (NLCT)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2018/05/13 v1.3.6 (NLCT) Track Languages
+Package srcltx Info: Expanded filename `tracklang' to `tracklang.tex' on input 
+line 58.
+
+:<+ tracklang.tex
+(/usr/local/texlive/2019/texmf-dist/tex/generic/tracklang/tracklang.tex)
+:<-
+) (/usr/local/texlive/2019/texmf-dist/tex/latex/translator/translator.sty
+Package: translator 2018/01/04 v1.12 Easy translation of strings in LaTeX
+)
+Package srcltx Info: Expanded filename `glossaries-spanish.ldf' to `glossaries-
+spanish.ldf.tex' on input line 1098.
+
+:<+ glossaries-spanish.ldf.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries-spanish/glossaries-spa
+nish.ldf
+File: glossaries-spanish.ldf 2014/11/23 v1.0
+Package srcltx Info: Expanded filename `glossaries-spanish-utf8.ldf' to `glossa
+ries-spanish-utf8.ldf.tex' on input line 75.
+
+:<+ glossaries-spanish-utf8.ldf.tex
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries-spanish/glossaries-spa
+nish-utf8.ldf)
+:<-
+)
+:<-
+\gls@level=\count349
+\@gls@tmpb=\toks56
+\gls@tmplen=\skip73
+\glskeylisttok=\toks57
+\glslabeltok=\toks58
+\glsshorttok=\toks59
+\glslongtok=\toks60
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/styles/glossary-hypern
+av.sty
+Package: glossary-hypernav 2019/01/06 v4.42 (NLCT)
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/styles/glossary-list.s
+ty
+Package: glossary-list 2019/01/06 v4.42 (NLCT)
+\glslistdottedwidth=\skip74
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/styles/glossary-long.s
+ty
+Package: glossary-long 2019/01/06 v4.42 (NLCT)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip75
+\LTright=\skip76
+\LTpre=\skip77
+\LTpost=\skip78
+\LTchunksize=\count350
+\LTcapwidth=\dimen305
+\LT@head=\box82
+\LT@firsthead=\box83
+\LT@foot=\box84
+\LT@lastfoot=\box85
+\LT@cols=\count351
+\LT@rows=\count352
+\c@LT@tables=\count353
+\c@LT@chunks=\count354
+\LT@p@ftn=\toks61
+)
+\glsdescwidth=\skip79
+\glspagelistwidth=\skip80
+)
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/styles/glossary-super.
+sty
+Package: glossary-super 2019/01/06 v4.42 (NLCT)
+ (/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty
+Package: supertabular 2004/02/20 v4.1e the supertabular environment
+\c@tracingst=\count355
+\ST@wd=\dimen306
+\ST@rightskip=\skip81
+\ST@leftskip=\skip82
+\ST@parfillskip=\skip83
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:83: 
+LaTeX Error: Command \tablehead already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.83     \noalign{\global\let\\=\@savcr}}}
+                                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:85: 
+LaTeX Error: Command \tablefirsthead already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.85 ...efirsthead[1]{\gdef\@table@first@head{#1}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:92: 
+LaTeX Error: Command \tabletail already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.92     \noalign{\global\let\\=\@savcr}}}
+                                          
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:94: 
+LaTeX Error: Command \tablelasttail already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.94 ...blelasttail[1]{\gdef\@table@last@tail{#1}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:95: 
+LaTeX Error: Command \sttraceon already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 \newcommand\sttraceon{\c@tracingst5\relax}
+                                               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:96: 
+LaTeX Error: Command \sttraceoff already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96 \newcommand\sttraceoff{\c@tracingst\z@}
+                                            
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:103:
+ LaTeX Error: Command \ST@trace already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.103   }
+         
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\ST@pageleft=\dimen307
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:106:
+ LaTeX Error: Command \shrinkheight already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.106 ...gn{\global\advance\ST@pageleft-#1\relax}}
+                                                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+/usr/local/texlive/2019/texmf-dist/tex/latex/supertabular/supertabular.sty:108:
+ LaTeX Error: Command \setSTheight already defined.
+               Or name \end... illegal, see p.192 of the manual.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.108   \noalign{\global\ST@pageleft=#1\relax}}
+                                               
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+\ST@headht=\dimen308
+\ST@tailht=\dimen309
+\ST@pagesofar=\dimen310
+\ST@pboxht=\dimen311
+\ST@lineht=\dimen312
+\ST@stretchht=\dimen313
+\ST@prevht=\dimen314
+\ST@toadd=\dimen315
+\ST@dimen=\dimen316
+\ST@pbox=\box86
+))
+(/usr/local/texlive/2019/texmf-dist/tex/latex/glossaries/styles/glossary-tree.s
+ty
+Package: glossary-tree 2019/01/06 v4.42 (NLCT)
+\glstreeindent=\skip84
+))
+\glswrite=\write6
+\glo@main@file=\write7
+\openout7 = `Tesis_AABA.glo'.
+
+Package glossaries Info: Writing glossary file Tesis_AABA.glo on input line 56.
+
+
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryshapes.code.tex
 File: tikzlibraryshapes.code.tex 2019/04/04 v3.1.2 (3.1.2)
@@ -1249,26 +1585,26 @@ File: tikzlibraryshapes.multipart.code.tex 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibrary
 shapes.multipart.code.tex
 File: pgflibraryshapes.multipart.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\pgfnodepartlowerbox=\box82
-\pgfnodeparttwobox=\box83
-\pgfnodepartthreebox=\box84
-\pgfnodepartfourbox=\box85
-\pgfnodeparttwentybox=\box86
-\pgfnodepartnineteenbox=\box87
-\pgfnodeparteighteenbox=\box88
-\pgfnodepartseventeenbox=\box89
-\pgfnodepartsixteenbox=\box90
-\pgfnodepartfifteenbox=\box91
-\pgfnodepartfourteenbox=\box92
-\pgfnodepartthirteenbox=\box93
-\pgfnodeparttwelvebox=\box94
-\pgfnodepartelevenbox=\box95
-\pgfnodeparttenbox=\box96
-\pgfnodepartninebox=\box97
-\pgfnodeparteightbox=\box98
-\pgfnodepartsevenbox=\box99
-\pgfnodepartsixbox=\box100
-\pgfnodepartfivebox=\box101
+\pgfnodepartlowerbox=\box87
+\pgfnodeparttwobox=\box88
+\pgfnodepartthreebox=\box89
+\pgfnodepartfourbox=\box90
+\pgfnodeparttwentybox=\box91
+\pgfnodepartnineteenbox=\box92
+\pgfnodeparteighteenbox=\box93
+\pgfnodepartseventeenbox=\box94
+\pgfnodepartsixteenbox=\box95
+\pgfnodepartfifteenbox=\box96
+\pgfnodepartfourteenbox=\box97
+\pgfnodepartthirteenbox=\box98
+\pgfnodeparttwelvebox=\box99
+\pgfnodepartelevenbox=\box100
+\pgfnodeparttenbox=\box101
+\pgfnodepartninebox=\box102
+\pgfnodeparteightbox=\box103
+\pgfnodepartsevenbox=\box104
+\pgfnodepartsixbox=\box105
+\pgfnodepartfivebox=\box106
 )))
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
 s/tikzlibraryarrows.code.tex
@@ -1277,64 +1613,70 @@ File: tikzlibraryarrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.
 code.tex
 File: pgflibraryarrows.code.tex 2019/04/04 v3.1.2 (3.1.2)
-\arrowsize=\dimen305
+\arrowsize=\dimen317
 ))
-\pgf@layerbox@background=\box102
-\pgf@layerboxsaved@background=\box103
-\pgf@layerbox@foreground=\box104
-\pgf@layerboxsaved@foreground=\box105
+\pgf@layerbox@background=\box107
+\pgf@layerboxsaved@background=\box108
+\pgf@layerbox@foreground=\box109
+\pgf@layerboxsaved@foreground=\box110
  (/usr/local/texlive/2019/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip72
-\f@nch@O@elh=\skip73
-\f@nch@O@erh=\skip74
-\f@nch@O@olh=\skip75
-\f@nch@O@orh=\skip76
-\f@nch@O@elf=\skip77
-\f@nch@O@erf=\skip78
-\f@nch@O@olf=\skip79
-\f@nch@O@orf=\skip80
+\f@nch@headwidth=\skip85
+\f@nch@O@elh=\skip86
+\f@nch@O@erh=\skip87
+\f@nch@O@olh=\skip88
+\f@nch@O@orh=\skip89
+\f@nch@O@elf=\skip90
+\f@nch@O@erf=\skip91
+\f@nch@O@olf=\skip92
+\f@nch@O@orf=\skip93
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 64.
-\captionmargin=\dimen306
-\captionmargin@=\dimen307
-\captionwidth=\dimen308
-\caption@tempdima=\dimen309
-\caption@indent=\dimen310
-\caption@parindent=\dimen311
-\caption@hangindent=\dimen312
+\captionmargin=\dimen318
+\captionmargin@=\dimen319
+\captionwidth=\dimen320
+\caption@tempdima=\dimen321
+\caption@indent=\dimen322
+\caption@parindent=\dimen323
+\caption@hangindent=\dimen324
 )
-\c@caption@flags=\count329
-\c@ContinuedFloat=\count330
+\c@caption@flags=\count356
+\c@ContinuedFloat=\count357
 Package caption Info: float package is loaded.
 Package caption Info: listings package is loaded.
+Package caption Info: longtable package is loaded.
+
+(/usr/local/texlive/2019/texmf-dist/tex/latex/caption/ltcaption.sty
+Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
+)
 Package caption Info: rotating package is loaded.
+Package caption Info: supertabular package is loaded.
 Package caption Info: xtab package is loaded.
 )
 (/usr/local/texlive/2019/texmf-dist/tex/latex/subfig/subfig.sty
 Package: subfig 2005/06/28 ver: 1.3 subfig package
-\c@KVtest=\count331
-\sf@farskip=\skip81
-\sf@captopadj=\dimen313
-\sf@capskip=\skip82
-\sf@nearskip=\skip83
-\c@subfigure=\count332
-\c@subfigure@save=\count333
-\c@lofdepth=\count334
-\c@subtable=\count335
-\c@subtable@save=\count336
-\c@lotdepth=\count337
-\sf@top=\skip84
-\sf@bottom=\skip85
+\c@KVtest=\count358
+\sf@farskip=\skip94
+\sf@captopadj=\dimen325
+\sf@capskip=\skip95
+\sf@nearskip=\skip96
+\c@subfigure=\count359
+\c@subfigure@save=\count360
+\c@lofdepth=\count361
+\c@subtable=\count362
+\c@subtable@save=\count363
+\c@lotdepth=\count364
+\sf@top=\skip97
+\sf@bottom=\skip98
 )
 (./Tesis_AABA.aux
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 
 
 LaTeX Warning: Label `fig:gpgpu' multiply defined.
@@ -1342,27 +1684,27 @@ LaTeX Warning: Label `fig:gpgpu' multiply defined.
 )
 \openout1 = `Tesis_AABA.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 162.
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 162.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 162.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 165.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 165.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 165.
 
  (/usr/local/texlive/2019/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 162.
-LaTeX Info: Redefining \. on input line 162.
-LaTeX Info: Redefining \% on input line 162.
+LaTeX Font Info:    ... okay on input line 165.
+LaTeX Info: Redefining \. on input line 165.
+LaTeX Info: Redefining \% on input line 165.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1404,17 +1746,17 @@ Package geometry Warning: The marginal notes overrun the paper.
 
 (/usr/local/texlive/2019/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count338
-\scratchdimen=\dimen314
-\scratchbox=\box106
-\nofMPsegments=\count339
-\nofMParguments=\count340
-\everyMPshowfont=\toks51
-\MPscratchCnt=\count341
-\MPscratchDim=\dimen315
-\MPnumerator=\count342
-\makeMPintoPDFobject=\count343
-\everyMPtoPDFconversion=\toks52
+\scratchcounter=\count365
+\scratchdimen=\dimen326
+\scratchbox=\box111
+\nofMPsegments=\count366
+\nofMParguments=\count367
+\everyMPshowfont=\toks62
+\MPscratchCnt=\count368
+\MPscratchDim=\dimen327
+\MPnumerator=\count369
+\makeMPintoPDFobject=\count370
+\everyMPtoPDFconversion=\toks63
 ) (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1444,8 +1786,8 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count344
-\AtBeginShipoutBox=\box107
+\c@lstlisting=\count371
+\AtBeginShipoutBox=\box112
 
 (/usr/local/texlive/2019/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
@@ -1455,60 +1797,61 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
-ABD: EveryShipout initializing macros
+ABD: EveryShipout initializing macros (./Tesis_AABA.glsdefs)
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
 <portada_Oficial.pdf, id=41, 614.295pt x 794.97pt>
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf>
-Package pdftex.def Info: portada_Oficial.pdf  used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf  used on input line 167.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf>
-Package pdftex.def Info: portada_Oficial.pdf  used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf  used on input line 167.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 <portada_Oficial.pdf, id=44, page=1, 614.295pt x 794.97pt>
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 167.
 (pdftex.def)             Requested size: 614.29349pt x 794.96806pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 167.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 167.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 167.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
 File: portada_Oficial.pdf Graphic file (type pdf)
 <use portada_Oficial.pdf, page 1>
-Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 164.
+Package pdftex.def Info: portada_Oficial.pdf , page1 used on input line 167.
 (pdftex.def)             Requested size: 614.58406pt x 795.3441pt.
  [1
 
+\openout6 = `Tesis_AABA.ist'.
+
  <./portada_Oficial.pdf>] [2
 
-]
-(./Tesis_AABA.toc
+] (./Tesis_AABA.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [1
 
 {/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
-\tf@toc=\write6
-\openout6 = `Tesis_AABA.toc'.
+\tf@toc=\write8
+\openout8 = `Tesis_AABA.toc'.
 
  [2] (./Tesis_AABA.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lof=\write7
-\openout7 = `Tesis_AABA.lof'.
+\tf@lof=\write9
+\openout9 = `Tesis_AABA.lof'.
 
  [3
 
@@ -1518,18 +1861,18 @@ LaTeX Info: Redefining \% on input line 1.
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
-\tf@lot=\write8
-\openout8 = `Tesis_AABA.lot'.
+\tf@lot=\write10
+\openout10 = `Tesis_AABA.lot'.
 
- [5] [6
 
-]
-[7] [8
+[5] [6
+
+] [7] [8
 
 ]
 Cap\'{\i }tulo 1.
 Package srcltx Info: Expanded filename `Capitulo1-Introduccion.tex' to `Capitul
-o1-Introduccion.tex' on input line 195.
+o1-Introduccion.tex' on input line 198.
 :<+ Capitulo1-Introduccion.tex
 (./Capitulo1-Introduccion.tex [1
 
@@ -1538,7 +1881,7 @@ o1-Introduccion.tex' on input line 195.
 [2]
 Cap\'{\i }tulo 2.
 Package srcltx Info: Expanded filename `Capitulo2-Antecedentes.tex' to `Capitul
-o2-Antecedentes.tex' on input line 201.
+o2-Antecedentes.tex' on input line 204.
 :<+ Capitulo2-Antecedentes.tex
 (./Capitulo2-Antecedentes.tex
 
@@ -1557,33 +1900,29 @@ You may provide a definition with
 
 [3
 
-]
-Underfull \vbox (badness 1496) has occurred while \output is active []
-
- [4]
-[5] [6] [7]
-<img/scatter.png, id=134, 341.1144pt x 105.0324pt>
+] [4] [5] [6] [7] [8]
+<img/scatter.png, id=138, 341.1144pt x 105.0324pt>
 File: img/scatter.png Graphic file (type png)
 <use img/scatter.png>
-Package pdftex.def Info: img/scatter.png  used on input line 140.
+Package pdftex.def Info: img/scatter.png  used on input line 143.
 (pdftex.def)             Requested size: 341.11354pt x 105.03214pt.
- [8]
 <img/gather.png, id=140, 343.0416pt x 105.996pt>
 File: img/gather.png Graphic file (type png)
 <use img/gather.png>
-Package pdftex.def Info: img/gather.png  used on input line 149.
+Package pdftex.def Info: img/gather.png  used on input line 152.
 (pdftex.def)             Requested size: 343.04074pt x 105.99573pt.
-<img/repCPUGPU.png, id=141, 888.31876pt x 327.2225pt>
+ [9 <./img/scatter.png> <./img/gather.png>]
+<img/repCPUGPU.png, id=149, 888.31876pt x 327.2225pt>
 File: img/repCPUGPU.png Graphic file (type png)
 <use img/repCPUGPU.png>
-Package pdftex.def Info: img/repCPUGPU.png  used on input line 163.
+Package pdftex.def Info: img/repCPUGPU.png  used on input line 166.
 (pdftex.def)             Requested size: 310.91621pt x 114.52959pt.
- [9 <./img/scatter.png> <./img/gather.png>]
-Underfull \vbox (badness 5345) has occurred while \output is active []
-
  [10 <./img/repCPUGPU.png>]
+Underfull \vbox (badness 2884) has occurred while \output is active []
 
-./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
+ [11]
+
+./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1591,14 +1930,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196     El có
+l.199     El có
                  mputo de propósito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1606,14 +1945,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196     El cómputo de propó
+l.199     El cómputo de propó
                                  sito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1621,14 +1960,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 ...ral en unidades de procesamiento de grá
+l.199 ...ral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1636,14 +1975,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 ...realizado tradicionalmente por la CPU ú
+l.199 ...realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:196: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1651,43 +1990,46 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.196 ... la CPU únicamente, donde la GPU actú
+l.199 ... la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<img/gpgpu.png, id=154, 247.6452pt x 175.3752pt>
+<img/gpgpu.png, id=157, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 200.
+Package pdftex.def Info: img/gpgpu.png  used on input line 203.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
 
-Underfull \vbox (badness 2828) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
-Underfull \hbox (badness 10000) in paragraph at lines 248--248
+ [12 <./img/gpgpu.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 251--251
 []|[]\T1/cmr/bx/n/8 Procesador de
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 254--254
+Underfull \hbox (badness 5345) in paragraph at lines 257--257
 []|[]\T1/cmr/bx/n/8 Controlador de
  []
 
-[12 <./img/gpgpu.png>])
-:<-
-[13] [14
 
-]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+)
+:<-
+[13] [14]
 Cap\'{\i }tulo 3.
 Package srcltx Info: Expanded filename `Capitulo3-Trabajo_Relacionado.tex' to `
-Capitulo3-Trabajo_Relacionado.tex' on input line 210.
+Capitulo3-Trabajo_Relacionado.tex' on input line 213.
 :<+ Capitulo3-Trabajo_Relacionado.tex
 (./Capitulo3-Trabajo_Relacionado.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+ [15
+
+]
 [16] [17]
 
 Package natbib Warning: Citation `REGM' on page 18 undefined on input line 74.
@@ -1698,17 +2040,21 @@ Package natbib Warning: Citation `REGM' on page 18 undefined on input line 74.
 
 ] [22]
 Package srcltx Info: Expanded filename `ApendiceA.tex' to `ApendiceA.tex' on in
-put line 230.
+put line 234.
 
 :<+ ApendiceA.tex
-(./ApendiceA.tex)
+(./ApendiceA.tex
+\@gls@deffile=\write11
+\openout11 = `Tesis_AABA.glsdefs'.
+
+)
 :<-
 :<+ Tesis_AABA.bbl
 (./Tesis_AABA.bbl [23] [24
 
 ]
-./Tesis_AABA.bbl:54: Misplaced alignment tab character &.
-l.54   Science &
+./Tesis_AABA.bbl:59: Misplaced alignment tab character &.
+l.59   Science &
                  Business Media, 2011.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1718,14 +2064,14 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 1137) in paragraph at lines 66--70
+Underfull \hbox (badness 1137) in paragraph at lines 71--75
 [][]\T1/cmr/m/n/12 S. Ren-nich, ``Cu-da c/c++ streams and con-cu-rrency,'' NVI-
 DIA,
  []
 
 [25]
-./Tesis_AABA.bbl:85: Misplaced alignment tab character &.
-l.85 R.~Smith, ``The nvidia geforce gtx 1080 &
+./Tesis_AABA.bbl:90: Misplaced alignment tab character &.
+l.90 R.~Smith, ``The nvidia geforce gtx 1080 &
                                                gtx 1070 founders editions re...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1739,22 +2085,27 @@ might try typing `S' now just to see what is salvageable.
 
 Package natbib Warning: There were undefined citations.
 
+
+Package glossaries Warning: No \printglossary or \printglossaries found. 
+(Remove \makeglossaries if you don't want any glossaries.) 
+This document will not have a glossary.
+
 [27] (./Tesis_AABA.aux
-LaTeX Info: Redefining \. on input line 6.
-LaTeX Info: Redefining \% on input line 6.
+LaTeX Info: Redefining \. on input line 12.
+LaTeX Info: Redefining \% on input line 12.
 )
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36598 strings out of 492616
- 749937 string characters out of 6129482
- 943995 words of memory out of 5000000
- 39927 multiletter control sequences out of 15000+600000
+ 42187 strings out of 492616
+ 857351 string characters out of 6129482
+ 1090407 words of memory out of 5000000
+ 45388 multiletter control sequences out of 15000+600000
  548325 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,18n,101p,995b,525s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,101p,1975b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></u
@@ -1769,7 +2120,7 @@ ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (37 pages, 852799 bytes).
+Output written on Tesis_AABA.pdf (37 pages, 854262 bytes).
 PDF statistics:
  257 PDF objects out of 1000 (max. 8388607)
  161 compressed objects within 2 object streams

@@ -1,6 +1,7 @@
     %CPU y GPU -> femeninos
     %Schedule -> planificación
-
+    %Preemptive -> preventivo
+    %Preemption -> prevención
     %----------------------------------------------------------------------
     %RESUMEN
     El objetivo de este capítulo es introducir los conceptos de: 
@@ -40,7 +41,10 @@ Un framework puede ser considerada como un molde configurable, al que podemos a�
 
 \vspace{0.3cm}
 La utilización de un framework siempre conlleva una curva de de aprendizaje, pero a largo plazo facilita la programación, escalabilidad, y el mantenimiento de los sistemas.
-
+	
+	\subsection{Cómputación preemptive}
+	La mayoría de los sistemas operativos modernos utilizan el cómputo preemption para planificar tareas, en una computadora que no utiliza tareas preemptive sólo se puede ejecutar un proceso a la vez con tofos los demás esperando en una cola hasta que se complete el proceso actual en ejecución. Por otra parte, una planificación de tareas preemptive elige un proceso y lo deja ejecutar durante un tiempo máximo llamado cuanto\cite{PreeK}, al llegar ese momento, se suspende y el planificador escoge otro dependiendo de las prioridades dadas o del algoritmo.
+	
     %SISTEMAS EN TIEMPO REAL
     \section{Sistemas en tiempo real}\label{sec:sistr}
 
@@ -260,7 +264,7 @@ En cambio el Gather es la lectura o recolección de un stream en memoria para se
     \end{table}
    
     \section{Resumen}
-
+\gls{maths}
 Los CPU están diseñados para obtener el máximo rendimiento en un flujo de instrucciones ejecutando las tareas lo más rápido posible, pero un GPU está diseñado para procesar el mayor número de tareas tan rápido como sea posible en un tiempo reducido, por lo que se hace uso el cómputo paralelo en distintos dispositivos.
 
     %En este capítulo se presenta una breve introducción a la seguridad de la información, la importancia de incluirla en los sistemas de software y las amenazas a las que están expuestos los sistemas. Se hace un énfasis en la inclusión de la seguridad en la etapa de diseño de un sistema, donde se explica que utilizar guías para proporcionar un nivel de seguridad a un sistema en diseño disminuye las posibilidades de una amenaza al sistema ya implementado. 

@@ -3,6 +3,12 @@
 \catcode `<\active 
 \catcode `>\active 
 \@nameuse{es@quoting}
+\providecommand\@newglossary[4]{}
+\@newglossary{main}{glg}{gls}{glo}
+\providecommand\@glsorder[1]{}
+\providecommand\@istfilename[1]{}
+\@istfilename{Tesis_AABA.ist}
+\@glsorder{word}
 \babel@aux{spanish}{}
 \citation{NCUDA}
 \citation{NCUDA}
@@ -25,22 +31,22 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}Ingenier\IeC {\'\i }a de Software}{3}\protected@file@percent }
-\citation{Buta2011}
+\citation{PreeK}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Framework}{4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}C\IeC {\'o}mputaci\IeC {\'o}n preemptive}{4}\protected@file@percent }
+\citation{Buta2011}
 \@writefile{toc}{\contentsline {section}{\numberline {2.2}Sistemas en tiempo real}{5}\protected@file@percent }
 \newlabel{sec:sistr}{{2.2}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Tipos de tarea}{5}\protected@file@percent }
 \citation{EmbSysDes}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Tipos de ejecuci\IeC {\'o}n de tareas}{6}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}Algoritmos de planificaci\IeC {\'o}n}{6}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}CPU}{6}\protected@file@percent }
 \citation{TX2CU}
-\citation{gpgpu}
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}CPU}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{7}\protected@file@percent }
 \@writefile{toc}{\contentsline {section}{\numberline {2.4}GPU}{7}\protected@file@percent }
+\citation{gpgpu}
 \citation{stream}
-\citation{NCUDA}
-\citation{NCUDA}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{8}\protected@file@percent }
 \citation{NCUDA}
 \citation{NCUDA}
@@ -51,36 +57,38 @@
 \newlabel{fig:scatter}{{2.1}{9}}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Lectura en DRAM\cite  {NCUDA}.\relax }}{9}\protected@file@percent }
 \newlabel{fig:gather}{{2.2}{9}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{9}\protected@file@percent }
+\citation{NCUDA}
+\citation{NCUDA}
 \citation{WPNV}
-\citation{WPNV}
-\citation{AnPasc}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{10}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Representaci\IeC {\'o}n de un CPU y un GPU\cite  {NCUDA}.\relax }}{10}\protected@file@percent }
 \newlabel{fig:gpgpu}{{2.3}{10}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{10}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{10}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{10}\protected@file@percent }
+\citation{WPNV}
+\citation{AnPasc}
 \citation{PasAna}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{11}\protected@file@percent }
 \citation{GpuCpu}
 \citation{gpgpu}
 \citation{gpgpu}
 \citation{LimPree}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{11}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}GPGPU}{11}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.4}GPGPU}{12}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Aceleraci\IeC {\'o}n de programas en GPUs\cite  {gpgpu}.\relax }}{12}\protected@file@percent }
+\newlabel{fig:gpgpu}{{2.4}{12}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.5}Sistemas embebidos}{12}\protected@file@percent }
 \citation{GPUArt}
 \citation{TX2I}
 \citation{jtx2dk}
 \citation{jtx2dk}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Aceleraci\IeC {\'o}n de programas en GPUs\cite  {gpgpu}.\relax }}{12}\protected@file@percent }
-\newlabel{fig:gpgpu}{{2.4}{12}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.5}Sistemas embebidos}{12}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{12}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{13}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{13}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Especificaciones del sistema Jetson TX2\cite  {jtx2dk}.\relax }}{13}\protected@file@percent }
-\newlabel{tab:table1}{{2.1}{13}}
 \@writefile{toc}{\contentsline {section}{\numberline {2.6}Resumen}{13}\protected@file@percent }
 \newlabel{ch:antecedentes}{{2.6}{13}}
+\@writefile{lot}{\contentsline {table}{\numberline {2.1}{\ignorespaces Especificaciones del sistema Jetson TX2\cite  {jtx2dk}.\relax }}{14}\protected@file@percent }
+\newlabel{tab:table1}{{2.1}{14}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{15}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -108,19 +116,20 @@
 \bibcite{jtx2dk}{{3}{}{{}}{{}}}
 \bibcite{IeeeSG}{{4}{}{{}}{{}}}
 \bibcite{enSWE}{{5}{}{{}}{{}}}
-\bibcite{Buta2011}{{6}{}{{}}{{}}}
-\bibcite{EmbSysDes}{{7}{}{{}}{{}}}
-\bibcite{TX2CU}{{8}{}{{}}{{}}}
-\bibcite{stream}{{9}{}{{}}{{}}}
-\bibcite{WPNV}{{10}{}{{}}{{}}}
-\bibcite{AnPasc}{{11}{}{{}}{{}}}
-\bibcite{PasAna}{{12}{}{{}}{{}}}
-\bibcite{GpuCpu}{{13}{}{{}}{{}}}
-\bibcite{LimPree}{{14}{}{{}}{{}}}
-\bibcite{GPUArt}{{15}{}{{}}{{}}}
-\bibcite{TX2I}{{16}{}{{}}{{}}}
-\bibcite{Pridriven}{{17}{}{{}}{{}}}
-\bibcite{RTFG}{{18}{}{{}}{{}}}
-\bibcite{DynSche}{{19}{}{{}}{{}}}
-\bibcite{IntraNode}{{20}{}{{}}{{}}}
+\bibcite{PreeK}{{6}{}{{}}{{}}}
+\bibcite{Buta2011}{{7}{}{{}}{{}}}
+\bibcite{EmbSysDes}{{8}{}{{}}{{}}}
+\bibcite{TX2CU}{{9}{}{{}}{{}}}
+\bibcite{stream}{{10}{}{{}}{{}}}
+\bibcite{WPNV}{{11}{}{{}}{{}}}
+\bibcite{AnPasc}{{12}{}{{}}{{}}}
+\bibcite{PasAna}{{13}{}{{}}{{}}}
+\bibcite{GpuCpu}{{14}{}{{}}{{}}}
+\bibcite{LimPree}{{15}{}{{}}{{}}}
+\bibcite{GPUArt}{{16}{}{{}}{{}}}
+\bibcite{TX2I}{{17}{}{{}}{{}}}
+\bibcite{Pridriven}{{18}{}{{}}{{}}}
+\bibcite{RTFG}{{19}{}{{}}{{}}}
+\bibcite{DynSche}{{20}{}{{}}{{}}}
+\bibcite{IntraNode}{{21}{}{{}}{{}}}
 \providecommand\NAT@force@numbers{}\NAT@force@numbers

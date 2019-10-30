@@ -10,23 +10,24 @@
 \contentsline {chapter}{\numberline {2}Antecedentes}{3}% 
 \contentsline {section}{\numberline {2.1}Ingenier\IeC {\'\i }a de Software}{3}% 
 \contentsline {subsection}{\numberline {2.1.1}Framework}{4}% 
+\contentsline {subsection}{\numberline {2.1.2}C\IeC {\'o}mputaci\IeC {\'o}n preemptive}{4}% 
 \contentsline {section}{\numberline {2.2}Sistemas en tiempo real}{5}% 
 \contentsline {subsection}{\numberline {2.2.1}Tipos de tarea}{5}% 
 \contentsline {subsection}{\numberline {2.2.2}Tipos de ejecuci\IeC {\'o}n de tareas}{6}% 
 \contentsline {subsection}{\numberline {2.2.3}Algoritmos de planificaci\IeC {\'o}n}{6}% 
-\contentsline {section}{\numberline {2.3}CPU}{6}% 
+\contentsline {section}{\numberline {2.3}CPU}{7}% 
 \contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{7}% 
 \contentsline {section}{\numberline {2.4}GPU}{7}% 
 \contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{8}% 
-\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{9}% 
+\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{10}% 
 \contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{10}% 
 \contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{10}% 
-\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{10}% 
+\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{11}% 
 \contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{11}% 
 \contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{11}% 
-\contentsline {subsection}{\numberline {2.4.4}GPGPU}{11}% 
+\contentsline {subsection}{\numberline {2.4.4}GPGPU}{12}% 
 \contentsline {section}{\numberline {2.5}Sistemas embebidos}{12}% 
-\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{12}% 
+\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{13}% 
 \contentsline {subsubsection}{\numberline {2.5.1.1}Jetson TX2}{13}% 
 \contentsline {section}{\numberline {2.6}Resumen}{13}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{15}% 
