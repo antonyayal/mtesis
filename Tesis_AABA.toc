@@ -21,7 +21,7 @@
 \contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{10}% 
 \contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{12}% 
 \contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{12}% 
-\contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{12}% 
+\contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{13}% 
 \contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{13}% 
 \contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{13}% 
 \contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{13}% 

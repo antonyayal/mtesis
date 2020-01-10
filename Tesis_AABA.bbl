@@ -46,7 +46,7 @@ NVIDIA, \emph{NVIDIA CUDA Compute Unified Device Architecture: Programming
 
 \bibitem{ArqTX2}
 \BIBentryALTinterwordspacing
-------. Nvidia jetson tx2 delivers twice the intelligence to the edge.
+------, ``Nvidia jetson tx2 delivers twice the intelligence to the edge.''
   [Online]. Available:
   \url{https://devblogs.nvidia.com/jetson-tx2-delivers-twice-intelligence-edge/}
 \BIBentrySTDinterwordspacing
@@ -90,6 +90,13 @@ A.~STANCU, E.~CODRES, and M.~M. Guerrero, \emph{Jetson TX2 and CUDA
 S.~Rennich, ``Cuda c/c++ streams and concurrency,'' NVIDIA, 2011. [Online].
   Available:
   \url{https://developer.download.nvidia.com/CUDA/training/StreamsAndConcurrencyWebinar.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{PasGPU}
+\BIBentryALTinterwordspacing
+``Arquitectura pascal de nvidia computaci{\'o}n infinita para oportunidades
+  infinitas.'' [Online]. Available:
+  \url{https://www.nvidia.com/es-la/data-center/pascal-gpu-architecture/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{WPNV}

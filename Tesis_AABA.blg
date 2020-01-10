@@ -8,20 +8,24 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibTesis.bib
+Warning--entry type for "PasGPU" isn't style-file defined
+--line 11 of file bibTesis.bib
+Warning--entry type for "ArqTX2" isn't style-file defined
+--line 19 of file bibTesis.bib
 Warning--entry type for "medium" isn't style-file defined
---line 20 of file bibTesis.bib
+--line 28 of file bibTesis.bib
 Warning--entry type for "jtx2dk" isn't style-file defined
---line 217 of file bibTesis.bib
+--line 225 of file bibTesis.bib
 Warning--entry type for "gpgpu" isn't style-file defined
---line 227 of file bibTesis.bib
+--line 235 of file bibTesis.bib
 Warning--entry type for "PasAna" isn't style-file defined
---line 251 of file bibTesis.bib
+--line 259 of file bibTesis.bib
 Warning--entry type for "AnPasc" isn't style-file defined
---line 261 of file bibTesis.bib
+--line 269 of file bibTesis.bib
 Warning--entry type for "GpuCpu" isn't style-file defined
---line 304 of file bibTesis.bib
+--line 312 of file bibTesis.bib
 Warning--entry type for "TX2I" isn't style-file defined
---line 425 of file bibTesis.bib
+--line 433 of file bibTesis.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -30,45 +34,45 @@ Warning--empty author in IeeeSG
 Warning--edition ordinal word "Second Edition" may be too high (or improper) for conversion in TX2CU
 
 Done.
-You've used 27 entries,
+You've used 28 entries,
             4087 wiz_defined-function locations,
-            969 strings with 11597 characters,
-and the built_in function-call counts, 13112 in all, are:
-= -- 1042
-> -- 260
+            973 strings with 11757 characters,
+and the built_in function-call counts, 13406 in all, are:
+= -- 1059
+> -- 261
 < -- 60
-+ -- 134
++ -- 135
 - -- 51
-* -- 571
-:= -- 2200
-add.period$ -- 51
-call.type$ -- 27
-change.case$ -- 25
+* -- 585
+:= -- 2246
+add.period$ -- 53
+call.type$ -- 28
+change.case$ -- 26
 chr.to.int$ -- 129
-cite$ -- 30
-duplicate$ -- 1037
-empty$ -- 1149
+cite$ -- 31
+duplicate$ -- 1067
+empty$ -- 1184
 format.name$ -- 63
-if$ -- 2970
+if$ -- 3034
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 200
-newline$ -- 122
+int.to.str$ -- 28
+missing$ -- 206
+newline$ -- 127
 num.names$ -- 26
-pop$ -- 530
+pop$ -- 554
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 6
-skip$ -- 1019
+skip$ -- 1040
 stack$ -- 0
-substring$ -- 296
-swap$ -- 695
+substring$ -- 298
+swap$ -- 707
 text.length$ -- 17
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 27
+type$ -- 28
 warning$ -- 3
 while$ -- 46
-width$ -- 29
-write$ -- 264
-(There were 10 warnings)
+width$ -- 30
+write$ -- 272
+(There were 12 warnings)
