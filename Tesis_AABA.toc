@@ -48,6 +48,9 @@
 \contentsline {section}{\numberline {4.4}Prioridad y Planificaci\IeC {\'o}n est\IeC {\'a}tica}{27}% 
 \contentsline {section}{\numberline {4.5}Asignaci\IeC {\'o}n de Prioridades y Planificaci\IeC {\'o}n din\IeC {\'a}mica}{28}% 
 \contentsline {section}{\numberline {4.6}Resumen}{28}% 
-\contentsline {chapter}{Anexos}{31}% 
-\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{31}% 
-\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{31}% 
+\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{29}% 
+\contentsline {section}{\numberline {5.1}Contribuciones}{29}% 
+\contentsline {section}{\numberline {5.2}Trabajo futuro}{29}% 
+\contentsline {chapter}{Anexos}{33}% 
+\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{33}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{33}% 

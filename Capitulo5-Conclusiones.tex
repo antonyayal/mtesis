@@ -1,50 +1,34 @@
-Este capítulo presenta un resumen del trabajo propuesto, las conclusiones a partir de los resultados obtenidos en el Capítulo 5, las contribuciones del trabajo realizado y el trabajo futuro.
+Este capítulo presenta un resumen del trabajo propuesto, las conclusiones a partir de los resultados obtenidos en el Capítulo \ref{cap:Diseño}, recapitula las contribuciones del trabajo realizado y el trabajo futuro.
 
-\section{Resumen}
+%\section{Resumen}
 
-De acuerdo a lo descrito en el presente trabajo, se da una solución al problema planteado en el Capítulo 1 a través de la evaluación mostrada en el Capítulo 4. A continuación se hace un análisis de los elementos utilizados para llegar a dicha solución.
-
-\vspace{0.3cm}
-
-Partiendo de la hipótesis presentada en el Capítulo 1:
-
-\begin{quote}
-	\textit{Se puede evaluar la seguridad de un sistema de forma sistemática de tal manera que se proporcione una métrica la cual indique bajo cierto criterio si es seguro o no, si previamente se sabe que ha sido construido usando patrones de seguridad.}
-\end{quote}
-
-Los elementos inherentes que componen un sistema nos indican qué es lo que realiza el sistema y qué necesita el sistema en cuestiones de seguridad. Utilizando estos elementos, en efecto, se puede realizar una evaluación sistemática independientemente de si el sistema es básico o robusto.
+%De acuerdo a lo descrito en el presente trabajo, se da una solución al problema planteado en el Capítulo 1 a través de la evaluación mostrada en el Capítulo 4. A continuación se hace un análisis de los elementos utilizados para llegar a dicha solución.
 
 \vspace{0.3cm}
 
-Realizando un análisis de dichos elementos inherentes de un sistema, se consigue identificar las amenazas y conociendo los patrones de seguridad que han sido utilizados en la construcción del sistema se puede definir cuáles de dichas amenazas están siendo mitigadas. Con esto, se define una métrica que indica ante que amenazas está protegido el sistema y cuales requisitos y políticas están siendo atendidas a través de los patrones de seguridad. 
+Partiendo de la hipótesis presentada en el Capítulo \ref{cap:Intro}:
 
-\vspace{0.3cm}
+%\begin{quote}
+%	\textit{Se puede evaluar la seguridad de un sistema de forma sistemática de tal manera que se proporcione una métrica la cual indique bajo cierto criterio si es seguro o no, si previamente se sabe que ha sido construido usando patrones de seguridad.}
+%\end{quote}
 
-El resultado obtenido en el Capítulo 5 muestra que la hipótesis presentada sí es viable. En efecto, utilizando los elementos inherentes de un sistema se puede obtener una evaluación de la seguridad de manera sistemática e identificando cierto criterio se obtiene una métrica que indique si el sistema es seguro o no.
+%Los elementos inherentes que componen un sistema nos indican qué es lo que realiza el sistema y qué necesita el sistema en cuestiones de seguridad. Utilizando estos elementos, en efecto, se puede realizar una evaluación sistemática independientemente de si el sistema es básico o robusto.
 
-\vspace{0.3cm}
 
-Este indicador le proporciona a los diseñadores y desarrolladores de un sistema un panorama de las amenazas que están y no siendo consideradas, los requisitos y políticas de seguridad que están y no siendo atendidas para que, en caso de ser necesario se apliquen soluciones. 
 
 \section{Contribuciones}
 
 Las contribuciones del presente trabajo son:
 
 \begin{itemize}
-	\item La evaluación de seguridad propuesta contempla además de las amenazas a las que un sistema está expuesto, los requisitos y políticas de seguridad.
-	\item Se identifica de manera sistemática las amenazas de seguridad a las que está expuesto el sistema agregando un parámetro de impacto de cada una y se indica cuales de ellas están mitigadas por al menos un patrón de seguridad. 
-	\item Se indica cuales de los requisitos y políticas de seguridad están siendo atendidos por patrones de seguridad tomando en cuenta el parámetro de prioridad de cada uno. 
-	\item El valor \textbf{ss} muestra el nivel de seguridad del sistema con respecto a las amenazas mitigadas y los requisitos y políticas de seguridad atendidas. Pero además, las variables $w_{ame}$ y $w_{req}$ pueden ser utilizadas por los diseñadores para identificar en qué parte del sistema se tiene un menor nivel de seguridad. 
-	\item El método de evaluación propuesto puede ser aplicado en sistemas que no han sido construidos utilizando métodos orientados a objetos, puesto que aún es posible identificar los casos de uso. 
 	
 \end{itemize}
+
 \section{Trabajo futuro}
 
 A continuación se muestran algunos temas de trabajos futuros:
 
 \begin{itemize}
-	\item Evaluar la seguridad de un sistema sin que se conozca que previamente se han utilizado patrones de seguridad en su diseño, utilizando la aproximación de \textit{security tactics} se puede identificar a través del código del sistema los patrones de seguridad que han sido implementados y posterior a esto poder utilizar la evaluación presentada. 
-	\item Se puede utilizar otra forma de enumeración de amenazas antes de pasar a la fase de identificación de los patrones que las mitigan, si es que se requiriera una manera particular de enumerarlas.
-	\item La métrica presentada es aplicable para sistemas construidos con patrones de seguridad, una mejora para verificar su eficiencia es aplicarla a todas las etapas del ciclo de vida del sistema. 
+
 \end{itemize}
 
