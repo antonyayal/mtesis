@@ -21,6 +21,18 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{medium}
+\BIBentryALTinterwordspacing
+B.~Priambodo, ``Cooperative vs. preemptive: a quest to maximize concurrency
+  power.'' [Online]. Available:
+  \url{https://medium.com/traveloka-engineering/cooperative-vs-preemptive-a-quest-to-maximize-concurrency-power-3b10c5a920fe}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ComRTT}
+V.~Shinde and S.~C. Biday, ``Comparison of real time task scheduling
+  algorithms,'' \emph{International Journal of Computer Applications}, vol.
+  158, no.~6, pp. 37--41, enero 2017.
+
 \bibitem{NCUDA}
 NVIDIA, \emph{NVIDIA CUDA Compute Unified Device Architecture: Programming
   Guide}, version 2.0~ed., NVIDIA, Julio 2008.
@@ -30,6 +42,13 @@ NVIDIA, \emph{NVIDIA CUDA Compute Unified Device Architecture: Programming
 ------, ``Computaci{\'o}n acelerada: Supera los desaf{\'\i}os m{\'a}s
   importantes del mundo.'' [Online]. Available:
   \url{https://la.nvidia.com/object/what-is-gpu-computing-la.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ArqTX2}
+\BIBentryALTinterwordspacing
+------. Nvidia jetson tx2 delivers twice the intelligence to the edge.
+  [Online]. Available:
+  \url{https://devblogs.nvidia.com/jetson-tx2-delivers-twice-intelligence-edge/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{jtx2dk}
@@ -48,15 +67,15 @@ S.~S{\'A}NCHEZ~ALONSO, M.~{\'A}. SICILIA~URBAN, and D.~RODRIGUEZ~GARCIA,
   swebok}.\hskip 1em plus 0.5em minus 0.4em\relax Alfaomega Grupo Editor, S.A.
   de C.V, 2012.
 
-\bibitem{PreeK}
-J.~Calhoun and H.~J. and, ``Preemption of a cuda kernel function,'' \emph{13th
-  ACIS International Conference on Software Engineering, Artificial
-  Intelligence, Networking and Parallel/Distributed Computing}, 2012.
-
 \bibitem{Buta2011}
 G.~C. Butazzo, \emph{Hard real-time computing systems: predictable scheduling
   algorithms and applications}.\hskip 1em plus 0.5em minus 0.4em\relax Springer
   Science & Business Media, 2011.
+
+\bibitem{PreeK}
+J.~Calhoun and H.~J. and, ``Preemption of a cuda kernel function,'' \emph{13th
+  ACIS International Conference on Software Engineering, Artificial
+  Intelligence, Networking and Parallel/Distributed Computing}, 2012.
 
 \bibitem{EmbSysDes}
 S.~Heath, \emph{Embedded systems design}.\hskip 1em plus 0.5em minus
@@ -132,9 +151,23 @@ M.~Steinberger, ``On dynamic scheduling for the gpu and its applications in
   computer graphics and beyond,'' \emph{IEEE Computer Graphics and
   Applications}, vol.~38, no.~3, pp. 119--130, 2018.
 
+\bibitem{RGEM}
+S.~Kato, K.~Lakshmanan, A.~Kumar, M.~Kelkar, Y.~Ishikawa, and R.~R. Rajkumar,
+  ``Rgem: A responsive gpgpu execution model for runtime engines,'' \emph{32nd
+  IEEE Real-Time Systems Symposium}, 2011.
+
 \bibitem{IntraNode}
 C.~Rea{\~n}o, F.~Silla, D.~S. Nikolopoulos, and B.~Varghese, ``Intra-node
   memory safe gpu co-scheduling,'' \emph{IEEE TRANSACTIONS ON PARALLEL AND
   DISTRIBUTED SYSTEMS}, vol.~29, no.~5, 2018.
+
+\bibitem{GPES}
+H.~Zhou, G.~Tong, and C.~Liu, ``Gpes: A preemptive execution system for gpgpu
+  computing,'' \emph{21st IEEE Real-Time and Embedded Technology and
+  Applications Symposium}, 2015.
+
+\bibitem{EffiSha}
+G.~Chen, Y.~Zhao, X.~Shen, and H.~Zhou, ``Effisha: A software framework for
+  enabling efficient preemptive scheduling of gpu,'' \emph{AMC}, 2017.
 
 \end{thebibliography}

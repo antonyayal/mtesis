@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  29 OCT 2019 16:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  9 JAN 2020 23:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1842,20 +1842,63 @@ LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
  [1
 
-{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}])
+{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2])
 \tf@toc=\write8
 \openout8 = `Tesis_AABA.toc'.
 
- [2] (./Tesis_AABA.lof
+ [3] [4
+
+] (./Tesis_AABA.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
+
+
+./Tesis_AABA.lof:15: Package inputenc Error: Unicode character \GenericError {(
+inputenc)                }{Package inputenc Error: Unicode character ́ (U+0301
+)
+(inputenc) not set up for use with LaTeX}{See the inputenc package documentatio
+n for explanation.}{You may provide a definition with
+(inputenc) \DeclareUnicodeCharacter } (U+0301)
+(inputenc) not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ...o continue without it.}}neos.\relax }}{26}
+                                                  %
+You may provide a definition with
+\GenericError { }{LaTeX Error: Can be used only in preamble}{See the LaTeX manu
+al or LaTeX Companion for explanation.}{Your command was ignored.
+Type I <command> <return> to replace it with another command,
+or <return> to continue without it.}
+
+
+./Tesis_AABA.lof:15: Package inputenc Error: Unicode character \GenericError {(
+inputenc)                }{Package inputenc Error: Unicode character ́ (U+0301
+)
+(inputenc) not set up for use with LaTeX}{See the inputenc package documentatio
+n for explanation.}{You may provide a definition with
+(inputenc) \DeclareUnicodeCharacter } (U+0301)
+(inputenc) not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.15 ...o continue without it.}}neos.\relax }}{26}
+                                                  %
+You may provide a definition with
+\GenericError { }{LaTeX Error: Can be used only in preamble}{See the LaTeX manu
+al or LaTeX Companion for explanation.}{Your command was ignored.
+Type I <command> <return> to replace it with another command,
+or <return> to continue without it.}
+
 )
 \tf@lof=\write9
 \openout9 = `Tesis_AABA.lof'.
 
- [3
-
-] [4
+ [5] [6
 
 ] (./Tesis_AABA.lot
 LaTeX Info: Redefining \. on input line 1.
@@ -1864,10 +1907,9 @@ LaTeX Info: Redefining \% on input line 1.
 \tf@lot=\write10
 \openout10 = `Tesis_AABA.lot'.
 
+ [7] [8
 
-[5] [6
-
-] [7] [8
+] [9] [10
 
 ]
 Cap\'{\i }tulo 1.
@@ -1885,7 +1927,7 @@ o2-Antecedentes.tex' on input line 204.
 :<+ Capitulo2-Antecedentes.tex
 (./Capitulo2-Antecedentes.tex
 
-./Capitulo2-Antecedentes.tex:23: Package inputenc Error: Unicode character ́ (
+./Capitulo2-Antecedentes.tex:24: Package inputenc Error: Unicode character ́ (
 U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1893,36 +1935,70 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.23 ...icación de la ingeniería al software."}
+l.24 ...icación de la ingeniería al software."}
                                                   
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 [3
 
-] [4] [5] [6] [7] [8]
-<img/scatter.png, id=138, 341.1144pt x 105.0324pt>
+]
+Underfull \vbox (badness 1496) has occurred while \output is active []
+
+ [4]
+[5]
+<img/schedCoo.png, id=124, 295.8252pt x 166.221pt>
+File: img/schedCoo.png Graphic file (type png)
+<use img/schedCoo.png>
+Package pdftex.def Info: img/schedCoo.png  used on input line 79.
+(pdftex.def)             Requested size: 443.7367pt x 249.33084pt.
+<img/schedCooDead.png, id=126, 295.8252pt x 162.3666pt>
+File: img/schedCooDead.png Graphic file (type png)
+<use img/schedCooDead.png>
+Package pdftex.def Info: img/schedCooDead.png  used on input line 88.
+(pdftex.def)             Requested size: 443.7367pt x 243.54929pt.
+<img/schedPre.png, id=127, 294.8616pt x 163.3302pt>
+File: img/schedPre.png Graphic file (type png)
+<use img/schedPre.png>
+Package pdftex.def Info: img/schedPre.png  used on input line 99.
+(pdftex.def)             Requested size: 442.2913pt x 244.99467pt.
+ [6 <./img/schedCoo.png>]
+<img/matrizAlgPla.png, id=135, 811.03pt x 497.86pt>
+File: img/matrizAlgPla.png Graphic file (type png)
+<use img/matrizAlgPla.png>
+Package pdftex.def Info: img/matrizAlgPla.png  used on input line 120.
+(pdftex.def)             Requested size: 502.8334pt x 308.67pt.
+
+Overfull \hbox (33.07802pt too wide) in paragraph at lines 120--121
+ [][][] 
+ []
+
+[7 <./img/schedCooDead.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./img/schedPre.png>] [9 <./img/matrizAlgPla.png>] [10]
+<img/scatter.png, id=153, 341.1144pt x 105.0324pt>
 File: img/scatter.png Graphic file (type png)
 <use img/scatter.png>
-Package pdftex.def Info: img/scatter.png  used on input line 143.
+Package pdftex.def Info: img/scatter.png  used on input line 181.
 (pdftex.def)             Requested size: 341.11354pt x 105.03214pt.
-<img/gather.png, id=140, 343.0416pt x 105.996pt>
+<img/gather.png, id=154, 343.0416pt x 105.996pt>
 File: img/gather.png Graphic file (type png)
 <use img/gather.png>
-Package pdftex.def Info: img/gather.png  used on input line 152.
+Package pdftex.def Info: img/gather.png  used on input line 190.
 (pdftex.def)             Requested size: 343.04074pt x 105.99573pt.
- [9 <./img/scatter.png> <./img/gather.png>]
-<img/repCPUGPU.png, id=149, 888.31876pt x 327.2225pt>
+ [11 <./img/scatter.png> <./img/gather.png>]
+<img/repCPUGPU.png, id=160, 888.31876pt x 327.2225pt>
 File: img/repCPUGPU.png Graphic file (type png)
 <use img/repCPUGPU.png>
-Package pdftex.def Info: img/repCPUGPU.png  used on input line 166.
+Package pdftex.def Info: img/repCPUGPU.png  used on input line 204.
 (pdftex.def)             Requested size: 310.91621pt x 114.52959pt.
- [10 <./img/repCPUGPU.png>]
+ [12 <./img/repCPUGPU.png>]
 Underfull \vbox (badness 2884) has occurred while \output is active []
 
- [11]
+ [13]
 
-./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:237: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1930,14 +2006,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.199     El có
+l.237     El có
                  mputo de propósito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:237: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1945,14 +2021,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.199     El cómputo de propó
+l.237     El cómputo de propó
                                  sito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:237: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1960,14 +2036,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.199 ...ral en unidades de procesamiento de grá
+l.237 ...ral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:237: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1975,14 +2051,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.199 ...realizado tradicionalmente por la CPU ú
+l.237 ...realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:199: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:237: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -1990,36 +2066,47 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.199 ... la CPU únicamente, donde la GPU actú
+l.237 ... la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
-<img/gpgpu.png, id=157, 247.6452pt x 175.3752pt>
+<img/gpgpu.png, id=169, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 203.
+Package pdftex.def Info: img/gpgpu.png  used on input line 241.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <./img/gpgpu.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 251--251
+ [14 <./img/gpgpu.png>]
+<img/arqutecturaTX2.png, id=174, 1078.78032pt x 630.10406pt>
+File: img/arqutecturaTX2.png Graphic file (type png)
+<use img/arqutecturaTX2.png>
+Package pdftex.def Info: img/arqutecturaTX2.png  used on input line 274.
+(pdftex.def)             Requested size: 485.44666pt x 283.5442pt.
+
+Overfull \hbox (15.69127pt too wide) in paragraph at lines 274--275
+ [][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--302
 []|[]\T1/cmr/bx/n/8 Procesador de
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 257--257
+Underfull \hbox (badness 5345) in paragraph at lines 308--308
 []|[]\T1/cmr/bx/n/8 Controlador de
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-)
+[15] [16 <./img/arqutecturaTX2.png>])
 :<-
-[13] [14]
+[17] [18]
 Cap\'{\i }tulo 3.
 Package srcltx Info: Expanded filename `Capitulo3-Trabajo_Relacionado.tex' to `
 Capitulo3-Trabajo_Relacionado.tex' on input line 213.
@@ -2027,20 +2114,113 @@ Capitulo3-Trabajo_Relacionado.tex' on input line 213.
 (./Capitulo3-Trabajo_Relacionado.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15
+ [19
 
 ]
-[16] [17]
-
-Package natbib Warning: Citation `REGM' on page 18 undefined on input line 74.
-
-[18] [19])
+[20] [21] [22] [23])
 :<-
-[20] [21
+[24]
+Cap\'{\i }tulo 4.
+Package srcltx Info: Expanded filename `Capitulo4-Diseno.tex' to `Capitulo4-Dis
+eno.tex' on input line 217.
+:<+ Capitulo4-Diseno.tex
+(./Capitulo4-Diseno.tex
+<img/diagrama_framework.png, id=208, 774.895pt x 162.6075pt>
+File: img/diagrama_framework.png Graphic file (type png)
+<use img/diagrama_framework.png>
+Package pdftex.def Info: img/diagrama_framework.png  used on input line 12.
+(pdftex.def)             Requested size: 503.67578pt x 105.69362pt.
 
-] [22]
+Overfull \hbox (33.9204pt too wide) in paragraph at lines 12--13
+ [][][] 
+ []
+
+
+./Capitulo4-Diseno.tex:13: Package inputenc Error: Unicode character ́ (U+0301
+)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ive en sistemas embebidos heterogéneos.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo4-Diseno.tex:13: Package inputenc Error: Unicode character ́ (U+0301
+)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ive en sistemas embebidos heterogéneos.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo4-Diseno.tex:13: Package inputenc Error: Unicode character ́ (U+0301
+)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ive en sistemas embebidos heterogéneos.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo4-Diseno.tex:13: Package inputenc Error: Unicode character ́ (U+0301
+)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 ...ive en sistemas embebidos heterogéneos.}
+                                                  
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+[25
+
+] [26 <./img/diagrama_framework.png>]
+./Capitulo4-Diseno.tex:44: Misplaced alignment tab character &.
+l.44 ... de memoria y transferencia entre device &
+                                                   host.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+<img/direcMem.png, id=218, 1044.90375pt x 352.31625pt>
+File: img/direcMem.png Graphic file (type png)
+<use img/direcMem.png>
+Package pdftex.def Info: img/direcMem.png  used on input line 56.
+(pdftex.def)             Requested size: 522.45059pt x 176.15768pt.
+
+Overfull \hbox (52.6952pt too wide) in paragraph at lines 56--57
+ [][][] 
+ []
+
+[27 <./img/direcMem.png>])
+:<-
+[28] [29
+
+] [30]
 Package srcltx Info: Expanded filename `ApendiceA.tex' to `ApendiceA.tex' on in
-put line 234.
+put line 231.
 
 :<+ ApendiceA.tex
 (./ApendiceA.tex
@@ -2050,11 +2230,11 @@ put line 234.
 )
 :<-
 :<+ Tesis_AABA.bbl
-(./Tesis_AABA.bbl [23] [24
+(./Tesis_AABA.bbl [31] [32
 
 ]
-./Tesis_AABA.bbl:59: Misplaced alignment tab character &.
-l.59   Science &
+./Tesis_AABA.bbl:73: Misplaced alignment tab character &.
+l.73   Science &
                  Business Media, 2011.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -2063,16 +2243,15 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-
-Underfull \hbox (badness 1137) in paragraph at lines 71--75
+[33]
+Underfull \hbox (badness 1137) in paragraph at lines 90--94
 [][]\T1/cmr/m/n/12 S. Ren-nich, ``Cu-da c/c++ streams and con-cu-rrency,'' NVI-
 DIA,
  []
 
-[25]
-./Tesis_AABA.bbl:90: Misplaced alignment tab character &.
-l.90 R.~Smith, ``The nvidia geforce gtx 1080 &
-                                               gtx 1070 founders editions re...
+./Tesis_AABA.bbl:109: Misplaced alignment tab character &.
+l.109 R.~Smith, ``The nvidia geforce gtx 1080 &
+                                                gtx 1070 founders editions r...
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -2080,17 +2259,14 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[26])
+[34])
 :<-
-
-Package natbib Warning: There were undefined citations.
-
 
 Package glossaries Warning: No \printglossary or \printglossaries found. 
 (Remove \makeglossaries if you don't want any glossaries.) 
 This document will not have a glossary.
 
-[27] (./Tesis_AABA.aux
+[35] (./Tesis_AABA.aux
 LaTeX Info: Redefining \. on input line 12.
 LaTeX Info: Redefining \% on input line 12.
 )
@@ -2099,13 +2275,13 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 42187 strings out of 492616
- 857351 string characters out of 6129482
- 1090407 words of memory out of 5000000
- 45388 multiletter control sequences out of 15000+600000
+ 42248 strings out of 492616
+ 858474 string characters out of 6129482
+ 1091618 words of memory out of 5000000
+ 45439 multiletter control sequences out of 15000+600000
  548325 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,18n,101p,1975b,598s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 63i,18n,101p,1975b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}<
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/cm-super/sfbi1200.pfb></u
@@ -2120,10 +2296,10 @@ ve/2019/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive
 /2019/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2
 019/texmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/201
 9/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (37 pages, 854262 bytes).
+Output written on Tesis_AABA.pdf (47 pages, 1263809 bytes).
 PDF statistics:
- 257 PDF objects out of 1000 (max. 8388607)
- 161 compressed objects within 2 object streams
+ 292 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 197 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 232 words of extra memory for PDF output out of 10000 (max. 10000000)
 

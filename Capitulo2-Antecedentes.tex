@@ -41,14 +41,11 @@ Un framework puede ser considerada como un molde configurable, al que podemos a�
 
 \vspace{0.3cm}
 La utilización de un framework siempre conlleva una curva de de aprendizaje, pero a largo plazo facilita la programación, escalabilidad, y el mantenimiento de los sistemas.
-	
-	\subsection{Cómputación preemptive}
-	La mayoría de los sistemas operativos modernos utilizan el cómputo preemption para planificar tareas, en una computadora que no utiliza tareas preemptive sólo se puede ejecutar un proceso a la vez con tofos los demás esperando en una cola hasta que se complete el proceso actual en ejecución. Por otra parte, una planificación de tareas preemptive elige un proceso y lo deja ejecutar durante un tiempo máximo llamado cuanto\cite{PreeK}, al llegar ese momento, se suspende y el planificador escoge otro dependiendo de las prioridades dadas o del algoritmo.
-	
+		
     %SISTEMAS EN TIEMPO REAL
     \section{Sistemas en tiempo real}\label{sec:sistr}
 
-    Los sistemas en tiempo real son sistemas de cómputo cuyas tareas deben actuar dentro de limitaciones de tiempo precisas ante eventos en su entorno. Por lo que el comportamiento del sistema depende, no solo del resultado del cálculo, sino también del momento (tiempo) en que se produce \cite{Buta2011}.
+    Los sistemas en tiempo real son sistemas de cómputo cuyas tareas deben actuar dentro de limitaciones de tiempo precisas ante eventos en su entorno. Por lo que el comportamiento del sistema depende, no solo del resultado del cálculo, sino también del momento (tiempo) en qué se produce \cite{Buta2011}.
     
     Un sistema en tiempo real debe  responder a entradas generadas dentro de un periodo de tiempo especifico para evitar posibles fallas. El deadline o tiempo límite es el momento justo antes en que la tarea debe completar su ejecución. Existen tres tipos de plazos: 
 %time constrains: plazos de tiempo
@@ -69,13 +66,46 @@ Existen tres tipos de tareas que están presentes en los sistemas en tiempo real
 \item Tareas esporádicas: Son una combinación de tareas periódicas y aperiódicas, donde, en tiempo de ejecución actúan como aperiódicas pero la tasa de ejecución es de naturaleza periódica.
 \end{itemize}   
 
-La mayoría del tiempo los plazos de tiempo se dan por el tiempo límite de una tarea
+La mayoría del tiempo los plazos de tiempo se dan por el tiempo límite de una tarea.
 
-    \subsection{Tipos de ejecución de tareas}
+    \subsection{Esquemas de planificación}
+    
+        \subsubsection{Planificación cooperativa}
 
-    Existen dos tipo de ejecución de tareas, las \textit{\textbf{preemptive}}, donde es necesario interrumpir temporalmente una tarea que está realizando un sistema de cómputo, para darle la oportunidad a otra con mayor prioridad, con el compromiso de reanudar la rezagada más adelante, y las \textit{\textbf{non-preemptive}} donde se requiere que termine la tarea actual para que posteriormente inicie una con mayor prioridad.
+En en el esquema de planificación \textit{\textbf{cooperativa}} o non-preemptive las tareas deciden el tiempo que utilizarán los recursos de cómputo, el trabajo del planificador es únicamente el de asignar tareas a los nodos de procesamiento disponibles.      
 
-    \subsection{Algoritmos de planificación}
+  \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=1.5]{img/schedCoo}
+        \caption{Planificación cooperativa.\cite{medium}}
+        \label{fig:schedcoo}
+    \end{figure}
+    
+El problema de esto es que una tarea puede absorber todos los recursos del sistema generando plazos vencidos en las demás tareas.
+
+  \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=1.5]{img/schedCooDead}
+        \caption{Planificación cooperativa con plazos vencidos.\cite{medium}}
+        \label{fig:schedcoodead}
+    \end{figure}
+    
+\subsubsection{Planificación preemptive}
+
+En este esquema, el planificador es el que tiene la batuta ante las tareas, las asigna a los recursos disponibles, y les define un tiempo de ejecución máximo, comúnmente llamado quantum\cite{PreeK}. Superado este punto, el planificador interrumpe (preempts) la tarea para que otra sea ejecutada en su lugar, y la tarea interrumpida debe esperar hasta que le toque su turno nuevamente.
+
+  \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=1.5]{img/schedPre}
+        \caption{Planificación preemptive.\cite{medium}}
+        \label{fig:schedpree}
+    \end{figure}
+
+Debido a que muchas veces se interrumpen tareas a la mitad de un proceso, es necesario almacenar y restaurar el estado que se tenia antes de dicha interrupción para continuar justo en el punto en donde se quedó.
+
+A este proceso de almacenamiento, intercambio y restauración del estado de las tareas se le denomina \textbf{cambio de contexto} (\textbf{context switch}).
+
+    \subsection{Algoritmos de planificación}\label{sec:AlgoPlan}. 
     
     Un algoritmo de planificación es una estrategia en la cual un sistema decide ejecutar una tarea en un momento dado, debe garantizar que se asigne el tiempo suficiente a todas las tareas del sistema para que puedan cumplir su tiempo límite en la medida de lo posible.
     
@@ -84,6 +114,13 @@ La mayoría del tiempo los plazos de tiempo se dan por el tiempo límite de una 
     \item Estática:  todas las prioridades se asignan en el momento del diseño del sistema y esas prioridades se mantienen constantes durante el tiempo de vida de una tarea.
     \item Dinámica: Se las asignan prioridades en tiempo de ejecución, en función de los parámetros de las tareas.
     \end{itemize}   
+    
+      \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.62]{img/matrizAlgPla}
+        \caption{Matriz de comparación de algoritmos de planificación\cite{ComRTT}.}
+        \label{matrizAlgPla}
+    \end{figure}
     
     Earliest Deadline First (EDF) es un algoritmo óptimo de planificación para sistemas de tiempo real, y acepta tareas en modo preemptive. Es un algoritmo muy extendido en sistemas en tiempo real debido a su optimalidad teórica en el campo no-preemptive, pero al momento de implementarlo en un planificador preemptive, el resultado puede acarrear un exceso de ejecución si se toma el peor caso \cite{EmbSysDes}. Por ello es necesario buscar alternativas de algoritmos que tengan un mejor desempeño en tareas específicas.
 
@@ -176,7 +213,7 @@ En cambio el Gather es la lectura o recolección de un stream en memoria para se
 
     %
      
-    \subsubsection{Memoria unificada} 
+    \subsubsection{Memoria unificada} \label{sec:MemUni}
      La memoria unificada proporciona un único espacio de direcciones virtuales para la memoria de la CPU y GPU, permitiendo la migración transparente de datos entre los espacios de direcciones virtuales completos tanto de la tarjeta gráfica como del procesador. Esto simplifica la programación en GPUs y su portabilidad ya que no es necesario el  preocuparse por administrar el intercambio de datos entre dos sistemas de memoria virtual diferentes\cite{WPNV}.
      
     %Asignar memoria unificada es tan simple como reemplazar llamadas a malloc o cudaMalloc con llamadas a cudaMallocManaged\cite{}.
@@ -218,18 +255,31 @@ En cambio el Gather es la lectura o recolección de un stream en memoria para se
     \subsection{Sistemas embebidos heterogéneos}
     %
     \vspace{0.3cm}
-    En los últimos años los sistemas embebidos han ido demandando nuevas características debido a su rápida adopción en el mercado. Con lo que surge el desarrollo de sistemas embebidos heterogéneos, donde está contemplado realizar una gran cantidad de cómputo pero con una gran eficiencia tanto energética como en espacio.
+    En los últimos años los sistemas embebidos han ido demandando nuevas características debido a su rápida adopción en el mercado. Con lo que surge el desarrollo de sistemas embebidos heterogéneos, dónde está contemplado realizar una gran cantidad de cómputo pero con una gran eficiencia tanto energética como en espacio.
     \vspace{0.3cm}
 
     Actualmente la empresa NVIDIA tiene en su catálogo sistemas embebidos heterogéneos con un gran soporte y bibliotecas para el cómputo de alto rendimiento. Dichos sistemas cuentan con la arquitectura Pascal de última generación \cite{GPUArt}, la cual permite compartir memoria entre CPU y GPU.
-
    
     % Framework
     Debido a que la mayoría de las GPU en sistemas embebidos no son de naturaleza preemptive, es importante programar los recursos de GPU de manera eficiente en múltiples tareas \cite{TX2I} ya sea de planificación o memoria, lo que permite pensar en un framework que ayude a la administración de sus características. 
 
- \subsubsection{Jetson TX2}
-    Las especificaciones del sistema son:
+ \section{Material de trabajo}
+ 
+Para realizar la presente tesis, se tuvo acceso al sistema embebido heterogéneo NVIDIA Jetson TX2, en el cual se realizaron algunas pruebas para la familiarización con esté tipo de dispositivos, así como la programación en tarjetas gráficas.
 
+En la figura \ref{fig:arqutecturaTX2} se muestra diagrama de bloques de la arquitectura del sistema Jetson TX2.
+
+      \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.45]{img/arqutecturaTX2}
+        \caption{Diagrama de la arquitectura del sistema Jetson TX2\cite{ArqTX2}.}
+        \label{fig:arqutecturaTX2}
+    \end{figure}
+
+ \subsection{Jetson TX2}
+ 
+    Las especificaciones del sistema están descritas en la tabla \ref{tab:table1}.
+    
     \begin{table}[h!]
       \begin{center}
             \scriptsize
@@ -253,9 +303,9 @@ En cambio el Gather es la lectura o recolección de un stream en memoria para se
 	 &Audio Processing Engine & Subsistema que permite el completo soporte de audio multicanal por las diversas interfaces.\\
 	 \hline
    	 \textbf{Video} & Codificador avanzado de video HD & Permite la grabación de video ultra-high-definition a 60 fps, soporta los estándares H.265 and H.264 BP/MP/HP/MVC, VP9 y VP8. \\
-	  & Decodificador avanzado de video HD & Reproducciónde video ultra-high-definition a 60 fps con pixeles de 12 bits, soporta los estandares H.265, H.264, VP9, VP8 VC-1, MPEG-2, y MPEG-4. \\
+	  & Decodificador avanzado de video HD & Reproducciónde video ultra-high-definition a 60 fps con pixeles de 12 bits, soporta los estándares H.265, H.264, VP9, VP8 VC-1, MPEG-2, y MPEG-4. \\
          \hline
-   	 \textbf{Controlador de la pantalla} &eDP/DP/HDMI Multimodal & Realiza un almacenamiento multilinea de pixeles, lo que permite mayor eficiencia de memoria al momento de aplicar operaciones de escalamiento o de búsqueda de pixeles. Permite la reducción del ancho de banda en aplicaciones móviles.\\
+   	 \textbf{Controlador de la pantalla} &eDP/DP/HDMI Multimodal & Realiza un almacenamiento multilínea de pixeles, lo que permite mayor eficiencia de memoria al momento de aplicar operaciones de escalamiento o de búsqueda de pixeles. Permite la reducción del ancho de banda en aplicaciones móviles.\\
          \hline
         \end{tabular}
         \caption{Especificaciones del sistema Jetson TX2\cite{jtx2dk}.}
@@ -263,10 +313,27 @@ En cambio el Gather es la lectura o recolección de un stream en memoria para se
       \end{center}
     \end{table}
    
+   Algunas de las tareas realizadas con el dispositivo incluyen desde la familiarización hasta la puesta a punto, como son:
+   \begin{itemize}
+    \item Instalación del Sistema Operativo Ubuntu 18 para procesadores ARM.
+     \item Instalación de CUDA manager.
+     \item Actualización de bibliotecas compatibles.
+     \item Configuración de área local y conexión a travez de computadora remota.
+      \item Investigación e implementación de ejercicios de GPGPU.
+       \item Realización y modificación de ejercicios para la familiarización con la arquitectura Pascal, estructura de la tarjeta y su memoria.
+    \end{itemize}   
+   
     \section{Resumen}
 \gls{maths}
 Los CPU están diseñados para obtener el máximo rendimiento en un flujo de instrucciones ejecutando las tareas lo más rápido posible, pero un GPU está diseñado para procesar el mayor número de tareas tan rápido como sea posible en un tiempo reducido, por lo que se hace uso el cómputo paralelo en distintos dispositivos.
 
+\subsection{Computación preemptive}
+	La mayoría de los sistemas operativos modernos utilizan el cómputo preemption para planificar tareas, en una computadora que no utiliza tareas preemptive sólo se puede ejecutar un proceso a la vez con tofos los demás esperando en una cola hasta que se complete el proceso actual en ejecución. Por otra parte, una planificación de tareas preemptive elige un proceso y lo deja ejecutar durante un tiempo máximo llamado cuanto\cite{PreeK}, al llegar ese momento, se suspende y el planificador escoge otro dependiendo de las prioridades dadas o del algoritmo.
+
     %En este capítulo se presenta una breve introducción a la seguridad de la información, la importancia de incluirla en los sistemas de software y las amenazas a las que están expuestos los sistemas. Se hace un énfasis en la inclusión de la seguridad en la etapa de diseño de un sistema, donde se explica que utilizar guías para proporcionar un nivel de seguridad a un sistema en diseño disminuye las posibilidades de una amenaza al sistema ya implementado. 
+
+    \subsection{Tipos de ejecución de tareas}
+
+    Existen dos tipo de ejecución de tareas, las \textit{\textbf{preemptive}}, donde es necesario interrumpir temporalmente una tarea que está realizando un sistema de cómputo, para darle la oportunidad a otra con mayor prioridad, con el compromiso de reanudar la rezagada más adelante, y las \textit{\textbf{non-preemptive}} donde se requiere que termine la tarea actual para que posteriormente inicie una con mayor prioridad.
 
 
