@@ -10,7 +10,7 @@
     \item Sistemas en tiempo real;
     \item Tipos de ejecución de tareas; 
     \item El algoritmo por defecto de los sistemas en tiempo real; 
-    \item Eistemas embebidos heterogéneos; 
+    \item Sstemas embebidos heterogéneos; 
     \item Arquitecturas de hardware y software de tarjetas gráficas; y 
     \item Cómputo de propósito general en unidades de procesamiento de gráficos.
     \end{inparaenum}
@@ -100,6 +100,8 @@ En este esquema, el planificador es el que tiene la batuta ante las tareas, las 
         \caption{Planificación preemptive.\cite{medium}}
         \label{fig:schedpree}
     \end{figure}
+    
+    
 
 Debido a que muchas veces se interrumpen tareas a la mitad de un proceso, es necesario almacenar y restaurar el estado que se tenia antes de dicha interrupción para continuar justo en el punto en donde se quedó.
 
@@ -112,17 +114,58 @@ A este proceso de almacenamiento, intercambio y restauración del estado de las 
     La planificación en tiempo real se puede dividir en:
     \begin{itemize}
     \item Estática:  todas las prioridades se asignan en el momento del diseño del sistema y esas prioridades se mantienen constantes durante el tiempo de vida de una tarea.
-    \item Dinámica: Se las asignan prioridades en tiempo de ejecución, en función de los parámetros de las tareas.
+    \item Dinámica: Se las asignan prioridades en tiempo de ejecución, en función de los parámetros de las tareas. Su objetivo es adaptarse al progreso del sistema para buscar la configuración óptima de planificación.
     \end{itemize}   
+
+        \begin{table}[h!]
+      \begin{center}
+            \scriptsize
+        \begin{tabular}{|m{1.5cm}|m{2cm}|m{2cm}|m{2cm}|m{2cm}|m{3cm}|}
+         \hline
+        \cellcolor{lightgray}\textbf{Algoritmo} & \cellcolor{lightgray} \textbf{Asignación de prioridad} & \cellcolor{lightgray} \textbf{Criterio de planificación} & \cellcolor{lightgray} \textbf{Preemptive/ Non-preemptive} & \cellcolor{lightgray} \textbf{Utilización de CPU} & \cellcolor{lightgray} \textbf{Eficiencia}  \\ 
+         \hline
+          \textbf{SJF} & Estática & Tiempo de Ejecución & Non-preemptive & 100\% & Eficiente con tareas de finalización oportuna \\
+         \hline
+         \textbf{EDF} & Dinámica & Plazo Límite & Preemptive & 100\% & Eficiente en condiciones subcargadas \\
+         \hline 
+         \textbf{RM} & Estática & Periodo & Preemptive & < 100\% & Eficiente en condiciones sobrecargadas \\
+         \hline
+          \textbf{DM} & Estática & Plazo Límite Relativo & Preemptive & > a RM & Eficiente \\
+         \hline
+          \textbf{LLF} & Dinámica & Laxitud & Preemptive & 100\% & Eficiente \\
+         \hline
+          \textbf{GEDF} & Dinámica & Plazo Límite y Tiempo de ejecución & Non-preemptive & 100\%& Eficiente en ambientes Non-preemptive \\
+         \hline
+                \end{tabular}
+        \caption{Matriz de comparación de algoritmos de planificación.}
+        \label{tab:table2}
+      \end{center}
+    \end{table}
     
-      \begin{figure}[ht]
-      \centering
-        \includegraphics[scale=.62]{img/matrizAlgPla}
-        \caption{Matriz de comparación de algoritmos de planificación\cite{ComRTT}.}
-        \label{matrizAlgPla}
-    \end{figure}
+    \subsubsection{Shortest Job First}
+    Shortest Job First (SJF) es el algoritmo de planificación que asigna la prioridad mayor a la tarea con el menor tiempo de ejecución. SJF es el algoritmo más utilizado cuando se comienzan a estudiar los sistemas en tiempo real debido a su simplicidad y porque minimiza la cantidad promedio de tiempo que cada tarea debe esperar hasta que se complete su ejecución \cite{Tanenbaum}. Este algoritmo funciona únicamente con tareas non-preemptive, por lo que fácilmente puede llegarse a un estado de inanición de tareas que requieren mucho tiempo para completarse si se agregan continuamente tareas pequeñas.
     
-    Earliest Deadline First (EDF) es un algoritmo óptimo de planificación para sistemas de tiempo real, y acepta tareas en modo preemptive. Es un algoritmo muy extendido en sistemas en tiempo real debido a su optimalidad teórica en el campo no-preemptive, pero al momento de implementarlo en un planificador preemptive, el resultado puede acarrear un exceso de ejecución si se toma el peor caso \cite{EmbSysDes}. Por ello es necesario buscar alternativas de algoritmos que tengan un mejor desempeño en tareas específicas.
+    \subsubsection{Earliest Deadline First} 
+    Earliest Deadline First (EDF) es un algoritmo con prioridad dinámica, en el que la tarea con el plazo fijo más próximo tiene la máxima prioridad. Este algoritmo es óptimo para implementación sobre un único procesador, y cuando el sistema se encuentra en bajos y moderados niveles de contención de recursos y datos\cite{Liu}. Ya que cuando se sobrecarga el sistema, la mayoría de las tareas obtienen una alta prioridad, lo que termina en un rendimiento disminuido.
+    
+     \vspace{0.3cm}
+     
+    Es un algoritmo muy extendido en sistemas en tiempo real debido a su optimalidad teórica en el campo no-preemptive, pero al momento de implementarlo en un planificador preemptive, el resultado puede acarrear un exceso de ejecución si se toma el peor caso \cite{EmbSysDes}. Por ello es necesario buscar alternativas de algoritmos que tengan un mejor desempeño en tareas específicas.
+    
+     \subsubsection{Rate Monotonic}
+    Rate Monotonic (RM) es un algoritmo de planificación preemptive con prioridad estática para un solo procesador\cite{Liu}. RM asigna la prioridad más alta a la tarea con el periodo más corto, suponiendo que los periodos sean igual a los plazos \( (P_{i} = D_{i}) \), esto porque si la tasa de demanda es mayor, el periodo sería más corto y por ende, la prioridad aumentaría. Por ello es optimo para usarse en tareas periódicas. La mayor limitación de su implementación, es que al utilizar tareas de prioridad fija no siempre se utiliza el 100\%  del CPU, lo que conlleva al posible desperdicio de recursos\cite{RM}.
+
+\subsubsection{Deadline Monotonic}
+Deadline Monotonic (DM) es el algoritmo óptimo de planificación con prioridad fija donde las prioridades son asignadas inversamente proporcionales a los plazos fijos, con esto cuando se cumple que el plazo es menor al tiempo de la tarea (D < T) cuando el periodo es igual que el plazo limite (P = D) podemos ver a RM como un caso especial de DM \cite{NPr}. DM ejecuta en cada instante de tiempo la tarea con el plazo más corto, por lo que si dos más tareas tienen el mismo plazo limite se debe elegir aleatoriamente la siguiente en ejecutarse.
+
+\subsubsection{Least Laxity First}
+Least Laxity First (LLF) es un algoritmo óptimo de planificación con prioridad dinámica. La laxitud de una tarea está definida como el plazo límite menos el tiempo de ejecución restante, está laxitud es la cantidad máxima de tiempo que un trabajo puede esperar cumpliendo su plazo límite. En este algoritmo, se otorga la máxima prioridad al trabajo con la menor laxitud, se permite que la tarea actualmente en ejecución sea intercambiada por otra con menor laxitud en cualquier momento \cite{NPr}.
+  \vspace{0.3cm}
+  
+  El punto débil de este algoritmo se presenta cuando dos tareas presentan la misma laxitud, ya que un proceso se ejecutará durante un período corto de tiempo y luego será reemplazado por el otro y viceversa, obteniendo numerosos cambios de contexto durante la vida útil de las tareas mermando el rendimiento del sistema en general. Este algoritmo es óptimo para sistemas con tareas periódicas \cite{ComRTT}.
+
+\subsubsection{Group Earliest Deadline First}
+Group Earliest Deadline First (GEDF) está pensado para mejorar el desempeño de EDF durante condiciones de sobrecarga. La idea principal de su funcionamiento es agrupar las tareas con plazo límite similares y dentro de cada grupo planificar las tareas con SJF \cite{ComRTT}. El parámetro rango de grupo (Gr) determina qué tarea ingresa a qué grupo el cuál es un porcentaje de la tarea al comienzo del plazo absoluto de cada cola.
 
 %Aunque existen protocolos más simples y fáciles de implementar, como lo es la planificación non-preemtive, pueden llegar a provocarse bloqueos en el sistema en tareas críticas de seguridad. 
 

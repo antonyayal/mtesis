@@ -77,9 +77,28 @@ J.~Calhoun and H.~J. and, ``Preemption of a cuda kernel function,'' \emph{13th
   ACIS International Conference on Software Engineering, Artificial
   Intelligence, Networking and Parallel/Distributed Computing}, 2012.
 
+\bibitem{Tanenbaum}
+A.~S. Tanenbaum, \emph{Modern Operating Systems}.\hskip 1em plus 0.5em minus
+  0.4em\relax Pearson Education, Inc., 2008.
+
+\bibitem{Liu}
+C.~Liu and J.~Leyland, ``Scheduling algorithm for multiprogramming in a hard
+  real-time environment,'' \emph{Journal of the Association for Computing
+  Machinery}, pp. 46--61, January 1973.
+
 \bibitem{EmbSysDes}
 S.~Heath, \emph{Embedded systems design}.\hskip 1em plus 0.5em minus
   0.4em\relax EDN Series For Design Engineers, 2003.
+
+\bibitem{RM}
+J.~Lehoczky, L.~Sha, and Y.~Ding, ``he rate monotonic scheduling algorithm:
+  Exact characterization and average case behavior,'' \emph{IEEE International
+  symposium on real time system}, 1989.
+
+\bibitem{NPr}
+W.~Li, K.~Kavi, and R.~Akl, ``A non-preemptive scheduling algorithm for soft
+  real-time systems,'' \emph{Computers and Electrical Engineering}, vol. vol
+  33, no.~1, pp. 12--29, 2007.
 
 \bibitem{TX2CU}
 A.~STANCU, E.~CODRES, and M.~M. Guerrero, \emph{Jetson TX2 and CUDA
@@ -94,13 +113,13 @@ S.~Rennich, ``Cuda c/c++ streams and concurrency,'' NVIDIA, 2011. [Online].
 
 \bibitem{PasGPU}
 \BIBentryALTinterwordspacing
-``Arquitectura pascal de nvidia computaci{\'o}n infinita para oportunidades
-  infinitas.'' [Online]. Available:
+NVIDIA, ``Arquitectura pascal de nvidia computaci{\'o}n infinita para
+  oportunidades infinitas.'' [Online]. Available:
   \url{https://www.nvidia.com/es-la/data-center/pascal-gpu-architecture/}
 \BIBentrySTDinterwordspacing
 
 \bibitem{WPNV}
-NVIDIA, \emph{NVIDIA Tesla P100 The Most Advanced Datacenter Accelerator Ever
+------, \emph{NVIDIA Tesla P100 The Most Advanced Datacenter Accelerator Ever
   Built Featuring Pascal GP100, the World's Fastest GPU}, NVIDIA Corporation,
   2016.
 

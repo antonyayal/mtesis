@@ -15,42 +15,55 @@
 \contentsline {subsubsection}{\numberline {2.2.2.1}Planificaci\IeC {\'o}n cooperativa}{6}% 
 \contentsline {subsubsection}{\numberline {2.2.2.2}Planificaci\IeC {\'o}n preemptive}{6}% 
 \contentsline {subsection}{\numberline {2.2.3}Algoritmos de planificaci\IeC {\'o}n}{7}% 
-\contentsline {section}{\numberline {2.3}CPU}{8}% 
-\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{9}% 
-\contentsline {section}{\numberline {2.4}GPU}{10}% 
-\contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{10}% 
-\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{12}% 
-\contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{12}% 
-\contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{13}% 
-\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{13}% 
-\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{13}% 
-\contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{13}% 
-\contentsline {subsection}{\numberline {2.4.4}GPGPU}{14}% 
-\contentsline {section}{\numberline {2.5}Sistemas embebidos}{14}% 
-\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{15}% 
-\contentsline {section}{\numberline {2.6}Material de trabajo}{15}% 
-\contentsline {subsection}{\numberline {2.6.1}Jetson TX2}{15}% 
-\contentsline {section}{\numberline {2.7}Resumen}{16}% 
-\contentsline {subsection}{\numberline {2.7.1}Computaci\IeC {\'o}n preemptive}{17}% 
-\contentsline {subsection}{\numberline {2.7.2}Tipos de ejecuci\IeC {\'o}n de tareas}{17}% 
-\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{19}% 
-\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n de EDF preemptive limitado de sistemas con tareas espor\IeC {\'a}dicas}{20}% 
-\contentsline {section}{\numberline {3.2}Planificaci\IeC {\'o}n de recursos espaciales compartidos con prioridad para unidades de gr\IeC {\'a}ficos embebidos}{20}% 
-\contentsline {section}{\numberline {3.3}Framework para planificaci\IeC {\'o}n en tiempo de ejecuci\IeC {\'o}n de aplicaciones con manejo de eventos en sistemas embebidos basados en GPU }{21}% 
-\contentsline {section}{\numberline {3.4}Sobre planificaci\IeC {\'o}n din\IeC {\'a}mica para el GPU, sus aplicaciones en computaci\IeC {\'o}n gr\IeC {\'a}fica y m\IeC {\'a}s}{21}% 
-\contentsline {section}{\numberline {3.5}REGM: Un modelo de ejecuci\IeC {\'o}n GPGPU responsivo para soluciones en tiempo de ejecuci\IeC {\'o}n}{22}% 
-\contentsline {section}{\numberline {3.6}Planificaci\IeC {\'o}n conjunta con GPU y aseguramiento de la memoria intra-nodo}{23}% 
-\contentsline {section}{\numberline {3.7}Resumen}{24}% 
-\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o del framework}{25}% 
-\contentsline {section}{\numberline {4.1}Descripci\IeC {\'o}n general del framework}{25}% 
-\contentsline {section}{\numberline {4.2}Puntos Preemptive}{26}% 
-\contentsline {section}{\numberline {4.3}Memoria}{27}% 
-\contentsline {section}{\numberline {4.4}Prioridad y Planificaci\IeC {\'o}n est\IeC {\'a}tica}{27}% 
-\contentsline {section}{\numberline {4.5}Asignaci\IeC {\'o}n de Prioridades y Planificaci\IeC {\'o}n din\IeC {\'a}mica}{28}% 
-\contentsline {section}{\numberline {4.6}Resumen}{28}% 
-\contentsline {chapter}{\numberline {5}Conclusiones y Trabajo Futuro}{29}% 
-\contentsline {section}{\numberline {5.1}Contribuciones}{29}% 
-\contentsline {section}{\numberline {5.2}Trabajo futuro}{29}% 
-\contentsline {chapter}{Anexos}{33}% 
-\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{33}% 
-\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{33}% 
+\contentsline {subsubsection}{\numberline {2.2.3.1}Shortest Job First}{8}% 
+\contentsline {subsubsection}{\numberline {2.2.3.2}Earliest Deadline First}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.3.3}Rate Monotonic}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.3.4}Deadline Monotonic}{9}% 
+\contentsline {subsubsection}{\numberline {2.2.3.5}Least Laxity First}{10}% 
+\contentsline {subsubsection}{\numberline {2.2.3.6}Group Earliest Deadline First}{10}% 
+\contentsline {section}{\numberline {2.3}CPU}{10}% 
+\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{11}% 
+\contentsline {section}{\numberline {2.4}GPU}{11}% 
+\contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{12}% 
+\contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{13}% 
+\contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{14}% 
+\contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{14}% 
+\contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{14}% 
+\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{15}% 
+\contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{15}% 
+\contentsline {subsection}{\numberline {2.4.4}GPGPU}{15}% 
+\contentsline {section}{\numberline {2.5}Sistemas embebidos}{16}% 
+\contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{16}% 
+\contentsline {section}{\numberline {2.6}Material de trabajo}{17}% 
+\contentsline {subsection}{\numberline {2.6.1}Jetson TX2}{17}% 
+\contentsline {section}{\numberline {2.7}Resumen}{19}% 
+\contentsline {subsection}{\numberline {2.7.1}Computaci\IeC {\'o}n preemptive}{19}% 
+\contentsline {subsection}{\numberline {2.7.2}Tipos de ejecuci\IeC {\'o}n de tareas}{19}% 
+\contentsline {chapter}{\numberline {3}Trabajo Relacionado}{21}% 
+\contentsline {section}{\numberline {3.1}Planificaci\IeC {\'o}n de tareas}{21}% 
+\contentsline {section}{\numberline {3.2}Tarjetas gr\IeC {\'a}ficas}{23}% 
+\contentsline {section}{\numberline {3.3}Sistemas embebidos}{27}% 
+\contentsline {section}{\numberline {3.4}Resumen}{28}% 
+\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o del framework}{31}% 
+\contentsline {section}{\numberline {4.1}Descripci\IeC {\'o}n general del framework}{31}% 
+\contentsline {section}{\numberline {4.2}Puntos preemptive}{32}% 
+\contentsline {section}{\numberline {4.3}Memoria}{32}% 
+\contentsline {section}{\numberline {4.4}Planificaci\IeC {\'o}n}{33}% 
+\contentsline {subsection}{\numberline {4.4.1}Planificaci\IeC {\'o}n est\IeC {\'a}tica}{33}% 
+\contentsline {subsection}{\numberline {4.4.2}Planificaci\IeC {\'o}n din\IeC {\'a}mica}{34}% 
+\contentsline {section}{\numberline {4.5}Asignaci\IeC {\'o}n de prioridades }{34}% 
+\contentsline {subsection}{\numberline {4.5.1}Asignaci\IeC {\'o}n est\IeC {\'a}tica de prioridades }{34}% 
+\contentsline {subsection}{\numberline {4.5.2}Asignaci\IeC {\'o}n din\IeC {\'a}mica de prioridades }{34}% 
+\contentsline {section}{\numberline {4.6}Resumen}{34}% 
+\contentsline {chapter}{\numberline {5}Evaluaci\IeC {\'o}n del rendimiento}{35}% 
+\contentsline {section}{\numberline {5.1}M\IeC {\'e}tricas de rendimiento}{35}% 
+\contentsline {subsection}{\numberline {5.1.1}Granularidad de kernel}{35}% 
+\contentsline {subsection}{\numberline {5.1.2}Granularidad de datos}{35}% 
+\contentsline {subsection}{\numberline {5.1.3}Cambio de contexto}{35}% 
+\contentsline {subsection}{\numberline {5.1.4}Rendimiento de multitarea}{35}% 
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{37}% 
+\contentsline {section}{\numberline {6.1}Contribuciones}{37}% 
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{37}% 
+\contentsline {chapter}{Anexos}{41}% 
+\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{41}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{41}% 

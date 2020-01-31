@@ -1,5 +1,126 @@
 %%Capítulo 3 trabajo relacionado 
 
+\section{Planificación de tareas}
+
+La planificación de tareas esta compuesta de diversas técnicas, una clasificación para dar soporte al modo preemptive la podemos encontrar en el artículo \cite{GPUArt}, el cual nos muestra dos tipos:
+
+\begin{itemize}
+\item \textbf{\textit{Basado en Hardware.}} 
+	Aquí se utilizan dispositivos para el cambio o drenado del contexto utilizando políticas preemptive. Este cambio de contexto significa guardar completamente su incluyendo los registros, memoria compartida y el stack SIMT, en alguna memoria. Las tareas suspendidas se reinician más tarde dependiendo de la planificación, y requieren volver a cargar el contexto desde la memoria antes de reanudar su ejecución. Si se trata del drenado de contexto, la GPU deja de alimentar a sus cores con tareas pendientes del kernel interrumpido y espera hasta que se completen las ya enviadas.
+	
+\item \textbf{\textit{Basado en Software.}}
+	\begin{itemize}
+	\item \textbf{\textit{Partición de Kernel.}}
+		Aquí los kernels grandes son partidos en subkernels dividiendo sus grids en fragmentos más pequeños. Es decir, en vez de lanzar todos los Threads por Bloque (TB) de un kernel a la vez, sólo se van lanzando fracciones a la vez. Este enfoque es útil para núcleos con muchos TB, donde cada TB tienen un tiempo de ejecución corto. Sin embargo, para aquellos con tiempos de ejecución largos, se pueden generar retrasos significativos y posiblemente tiempos en que haya inversión de prioridad, lo que no es aceptable en sistemas en tiempo real. Aunado a esto, este método no es aplicable a los kernels que requieren una sincronización global entre TB, ya que el lanzamiento paulatino de los componentes de un grid podrá causar plazos vencidos en las barreras entre cada fragmento.
+	\item \textbf{\textit{Partición en Tareas.}}
+		Es parecida a la anterior, pero los fragmentos no se ven como subkernels, sino como tareas. Esta técnica invoca threads GPU persistentes que lanzan secuencialemente tantas TB de un kernel como puedan estar activas al mismo tiempo. Aquí la GPU y CPU comparten una variable que se utiliza para señalizar las solicitudes de cambio de contexto entre los threads activos y detenidos.
+	\item \textbf{\textit{Entorno de Scripts.}}	
+		Esta técnica permite manejar automáticamente los kernels con una lógica preemptive lo que libera al programador de realizarlo manualmente. Esta aproximación funciona especialmente para entornos con kernels pequeños, porque para aquellos con ejecución larga, la granularidad de los TB limita el retraso máximo de preemption que se puede utilizar.
+	\end {itemize}
+\end {itemize}
+
+\vspace{0.3cm}
+	
+Otra clasificación la encontramos en el trabajo \cite{DynSche} agrupa en tres tipos de algoritmos de planificación en tiempo real.
+
+\begin{itemize}
+\item \textbf{\textit{Colas masivas en paralelo.}}
+	Este apartado está centrado en colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
+\item \textbf{\textit{Administración dinámica de memora.}}
+	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cuál de las que actualmente en ejecución ha abusado de su espacio definido. 
+\item \textbf{\textit{Planificación por prioridad.}}
+	Se utilizan algoritmos de planificación para manejar dinámicamente el cambio de prioridades y maximizar el rendimiento del sistema. La mayoría de las veces este tipo es el más cercano a una implementación completa de tiempo real.
+	
+\end{itemize}
+
+Finalmente, tenemos una clasificación de tipos de planificación que va más enfocada a la forma en que es implementada en el código.
+
+\begin{itemize}
+\item \textbf{\textit{Modificación de código fuente.}}
+	Aquí tenemos que es necesario que el programador modifique el código del kernel para implementar cada una de las acciones que va a seguir la tarea, desde el inicio de la tarea, pasando por su interrupción, y hasta su finalización.
+\item \textbf{\textit{Modificación del API.}}
+	En este apartado, se hace una modificación a nivel de las bibliotecas o el compilador, la ventaja es que la aplicación no es modificada manualmente, pero su utilización muchas veces no está permitida por los administradores.
+\end{itemize}
+
+\section{Tarjetas gráficas}
+
+\begin{enumerate}
+\item \textbf{REGM: Un modelo de ejecución GPGPU responsivo para soluciones en tiempo de ejecución
+	(\textit{REGM: A Responsive GPGPU Execution Model for Runtime Engines})}
+	
+	El artículo \cite{RGEM} es el primer trabajo que genera un framework para utilizar tareas en tiempo real en tarjetas gráficas. Se basa en la partición en fragmentos de memoria a procesar, cada fragmento es agregado a una cola de procesamiento para ser ejecutado. Su solución es dividir las transacciones de copiado de memoria en varios fragmentos para insertar puntos preemptive. Esto también garantiza que sólo las tareas de mayor prioridad se ejecuten en el GPU en cualquier momento, y así evitar interferencias de rendimiento causadas por lanzamientos concurrentes.
+	
+	\vspace{0.3cm}
+	
+	La primer característica de este framework es que se basa en transacciones de datos preemptive, por lo que los tiempos de bloqueo están limitados al tiempo limitado para copiar cada fragmento de dato. La segunda característica es que permite lanzar los kernels de diferentes tareas una por una basadas en su prioridad, lo que evita que las tareas con alta prioridad sean interferidas por la carga simultánea de trabajo una vez iniciadas. Sin embargo el lanzamiento del kernel puede bloquearse al haber un kernel de menor prioridad lanzado anteriormente, esto debido al probable alto uso de memoria global.
+		
+	\item \textbf{Preemption de una función CUDA KERNEL
+	(\textit{Preemption of a CUDA Kernel Function})}
+	
+	El artículo \cite{PreeK} presenta una solución basada en quantums, en donde para sacar una tarea en ejecución se verifica si ha terminado su tiempo. La prioridad de cada tarea esta dada por una estructura \textit{FIFO}. La implementación permite que un kernel sea detenido, guarde su estado y sea reemplazado, liberando los recursos de la GPU para que se ejecuten otras tareas, lo que ayuda a aumentar la eficiencia del sistema. 
+
+Se propone un esquema de puntos de control colocando una directiva tipo \textit{pragma} dentro de las funciones kernel que ayudará a almacenar su estado de ejecución en la memoria del CPU en vez de la del GPU.
+
+La transferencia entre el CPU y GPU permite que ahorre memoria en el GPU, pero a la vez se posibilita que la ejecución se reanude casi como si el kernel nunca se hubiera detenido.
+
+\item \textbf{GPES: Un sistema de ejecución para cómputo gpgpu
+	(\textit{GPES: A preemptive execution system for gpgpu computing})}
+	
+	El articulo \cite{GPES} implementa una serie de funciones para realizar particiones de kernel y de datos, esto realizando subkernels y dividiendo las transacciones de datos en fragmentos. 
+Específicamente, se presenta una técnica de reescritura binaria para reconfigurar de manera transparente el código de los kernel. Mientras que para los kernel un poco más complejos, se desarrolló una técnica de transformación fuente a fuente que compila el código del kernel transformado en binarios CUDA. La prioridad de las tareas esta dada por colas de ejecución. GPES modifica el API de CUDA utilizando las bibliotecas de openCUDA para reconfigurar el código binario de los kernels, esto lo realiza obteniendo un máximo de blocks que se pueden ejecutar por quantum. Para realizar esto, se ayuda de dos implementaciones.
+
+\begin{enumerate}
+\item \textit{Transformación fuente a fuente.}
+Para dar soporte al cómputo paralelo, el hardware mantiene indices continuos en un grid (\textit{blockIdx}), por ejemplo, si un grid consta de 256 blocks, tiene indices desde 0 a 255. Entonces, para hacer que un kernel sea interrumpible en subkernels, se utiliza el concepto de \textit{blockRange}, el cual se define como el número de blocks que se ejecutarán en un subkernel, limitado por un \textit{blockIdx} inicial y otro final. Está granularidad de bloques ayuda a la reconfiguración de puntos de interrupción que auxilien a que las tareas de mayor prioridad puedan usar la GPU en modo preemptive.
+
+\item \textit{Partición de la transferencia de datos.}
+Aunque la transferencia de datos y el cómputo utilizan diferentes motores, la copia de memoria de una aplicación no puede realizarse simultáneamente que el lanzamiento del kernel de otro proceso ya que pertenecen a diferentes contextos. Y una GPU puede contener un contexto a la vez. Por lo tanto en un entorno multitarea, una operación de copia de memoria muy grande de baja prioridad, puede detener a las tareas de alta prioridad. Para evitarlo, GPES busca dividir una transferencia de memoria non-preemptive en múltiples fragmentos más pequeños para volverla preemptive. En el límite de cada fragmento se inserta un punto preemptive, cada fragmento tendrá un tamaño de 4KB.
+
+\end{enumerate}
+	
+	
+\item \textbf{Effisha: Un framework para permitir una planificación preemptive eficiente en gpu 
+	(\textit{Effisha: A software framework for enabling efficient preemptive scheduling of gpu,})}
+	
+\item \textbf{Planificación conjunta con GPU y aseguramiento de la memoria intra-nodo 
+	(\textit{Intra-Node Memory Safe GPU Co-Scheduling})}
+	El artículo \cite{IntraNode} propone la creación del framework schedGPU, el cual utiliza el administrador de trabajo Slurm para planificar las tareas. Este framework administra las múltiples solicitudes para acceder a las GPU de forma segura al garantizar que no se produzcan sobrecargas de memoria durante su ejecución. Este acceso es controlado mediante bloqueos de archivos, señales del sistema y exclusión mutua.
+
+SchedGPU utiliza el patrón de diseño cliente-servidor ya que toma cada tarea que busca ser lanzada en el GPU como un cliente que está solicitando memoria a un Servidor centralizado (en el mismo nodo), el cual permite que se ejecute si hay suficiente memoria, o en caso contrario la bloquea hasta que se encuentre memoria necesaria para su funcionamiento. El servidor crea un nuevo hilo para cada cliente y mantiene una visión global de la memoria utilizada por todos los clientes a través de la biblioteca de administración de NVIDIA (\textbf{NVML}), esto para evitar la creación de un nuevo contexto que consuma memoria.
+
+\vspace{0.3cm}
+
+La tarea es modificada únicamente al llamar explícitamente las funciones de la biblioteca del cliente para previamente asignar la memoria requerida al GPU. Aunque esto acarrea una gran desventaja al considerar tareas donde no siempre es posible conocer la memoria requerida total de GPU, esto porque la memoria de la GPU se asigna en tiempo de ejecución. En el caso en que dos o más tareas se ejecuten al mismo tiempo y ambas aumenten gradualmente el uso de la memoria del GPU, se puede llegar a utilizar completamente la memoria disponible, con lo que podrán requerir más tiempo para completar la ejecución o directamente lanzar un error en tiempo de ejecución.
+	
+	%Al utilizar schedGPU se encontró que el promedio de la aceleración aumenta 10 veces, comparado con no utilizar el framework. Sin embargo, el promedio de utilización de la memoria también incrementó de 5 a 12 veces.
+	
+\item \textbf{Planificación de recursos espaciales compartidos con prioridad para unidades de gráficos embebidos 
+	 (\textit{Priority-driven spatial resource sharing scheduling for embedded graphics processing units})}
+
+El artículo \cite{Pridriven} presenta una técnica para la ejecución en GPUs llamada \textit{"Planificación de recursos compartidos con reserva de presupuesto"} o por sus siglas en inglés \textit{BR-SRS}, la cual limita el número de núcleos de procesamiento de una GPU para una tarea basándose en su prioridad, esto lo realiza modificando las bibliotecas de OpenGL-ES. Así se previene que una tarea que se encuentra en segundo plano retrase a otra que se encuentra en ejecución, también se minimiza la sobrecarga de planificación al invocarse solamente dos veces, en el inicio de la tarea y en su finalización.
+
+\end{enumerate}  
+
+\section{Sistemas embebidos}
+
+\begin{enumerate}
+\item \textbf{Framework para planificación en tiempo de ejecución de aplicaciones con manejo de eventos en sistemas embebidos basados en GPU 
+	(\textit{Run-Time Scheduling Framework for Event-Driven Applications on a GPU-Based Embedded System})}
+	
+	Para poder utilizar varias aplicaciones en sistemas en tiempo real complejos es necesario la utilizar técnicas de preemption. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
+
+\vspace{0.3cm}
+
+En el artículo \cite{RTFG} se propone un framework de planificación que parte los kernels del GPU y genera secuencias de lanzamiento en subkernels dinámicamente para entrar el modo preemptive con la implementación de un divisor de carga de trabajo y de un planificador de tareas. Utiliza un divisor de carga de trabajo que divide el núcleo de la GPU en múltiples subkernels durante el tiempo de ejecución para implementar el modo preemptive. Dependiendo del estado actual de sistema y de la prioridad, el divisor de carga de trabajo decide el número y el tamaño de cada subkernel. 
+
+\vspace{0.3cm}
+
+Se cuenta con un generador de ejecución planificada, el cual, dependiendo del estado actual de uso de los recursos del sistema y del plazo límite del la tarea, lanza una secuencia de tareas para maximizar el numero de aplicaciones cercanas al su plazo vencido.	
+	
+\item \textbf{GpuArt: Un planificador de gpu en tiempo real basado en aplicaciones con preemptive limitado para sistemas embebidos
+	(\textit{GpuArt: An application-based limited preemptive gpu real-time scheduler for embedded systems})}
+\end{enumerate}  	
+
 %----------------------------------------------------------------------
     %RESUMEN
 Este capítulo presenta los trabajos relacionados con el tema de esta tesis, se analizan 
@@ -27,74 +148,6 @@ Este capítulo presenta los trabajos relacionados con el tema de esta tesis, se 
 \vspace{0.3cm}
 Cada sección presenta lo propuesto en el trabajo relacionado, donde se describe el problema, los objetivos y la solución a éste. Brevemente se describe la solución propuesta con los resultados obtenidos y por último se presentan las conclusiones del trabajo.
 
-%Limited Preemption EDF Scheduling of Sporadic Task Systems
-\section{Planificación de EDF preemptive limitado de sistemas con tareas esporádicas}
-
-El algoritmo EDF es un algoritmo óptimo de planificación para sistemas de un sólo procesador, por ello está presente en la mayoría de la literatura de sistemas en tiempo real. Este algoritmo acepta tareas en modo preemptive, pero el resultado puede acarrear un exceso de ejecución, por ello siempre se toma el peor caso para la evaluación de las tareas en modo preemptive.
-
-El comportamiento de la memoria caché puede verse significativamente afectado cada vez que se suspenda una tarea e inicie otra con mayor prioridad, lo que resulta en una mayor probabilidad de fallos en memoria. A lo anterior se le suma que las tareas a menudo necesitarán acceder a recursos compartidos, con lo que deben implementarse medidas necesarias para el arbitraje de acceso a estos recursos.
-
-\vspace{0.3cm}
-
-El artículo \textit{"Limited Preemption EDF Scheduling of Sporadic Task Systems"} \cite{LimPree} presenta una técnica de preemption limitado, la cual mejora la implementación de EDF eliminando los puntos preemptive no necesarios para optimizar la capacidad de planificación del sistema. Esta propuesta mantiene la optimalidad teórica de EDF y también reduce la sobrecarga del sistema, manteniendo un número reducido de cambios de contexto. Con estos pequeños cambios se le da oportunidad a las tareas con poco privilegio ejecutarse y tener acceso a la memoria compartida para consumir recursos.
-
- %Priority-driven spatial resource sharing scheduling for embedded graphics processing units
- \section{Planificación de recursos espaciales compartidos con prioridad para unidades de gráficos embebidos} 
-	
-Debido a que la mayoría de las GPU en sistemas embebidos no son de naturaleza preemptive, es importante programar los recursos de GPU de manera eficiente en múltiples tareas \cite{TX2I} ya sea de planificación o memoria, lo que permite pensar en un framework que ayude a la administración de sus características. 
-
-\vspace{0.3cm}
-
-El artículo \textit{"Priority-driven spatial resource sharing scheduling for embedded graphics processing units"}\cite{Pridriven} presenta una técnica para la ejecución en GPUs llamada \textit{"Planificación de recursos compartidos con reserva de presupuesto"} o por sus siglas en inglés \textit{BR-SRS}, el cual limita el número de núcleos de procesamiento de una GPU para una tarea basándose en su prioridad. Con esto se previene que una tarea que se encuentra en segundo plano retrase a otra que se encuentra en ejecución, también se minimiza la sobre carga de planificación al invocarse solamente dos veces, en el inicio de la tarea y en su finalización.
-
-%Run-Time Scheduling Framework for Event-Driven Applications on a GPU-Based Embedded System
-\section{Framework para planificación en tiempo de ejecución de aplicaciones con manejo de eventos en sistemas embebidos basados en GPU }
-
-Para poder utilizar varias aplicaciones en sistemas en tiempo real complejos es necesario la utilizar técnicas de preemption. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
-
-\vspace{0.3cm}
-
-En el artículo \textit{``Run-Time Scheduling Framework for Event-Driven Applications on a GPU-Based Embedded System"}\cite{RTFG} se propone un Framework de planificación que parte los \textbf{kernels} del GPU y genera secuencias de lanzamiento en \textbf{subkernels} dinámicamente para entrar el modo preemptive con la implementación de un divisor de carga de trabajo y de un planificador de tareas. 
-
-%On Dynamic Scheduling for the GPU and its Applications in Computer Graphics and Beyond
-\section{Sobre planificación dinámica para el GPU, sus aplicaciones en computación gráfica y más}
-
-El trabajo \textit{``On Dynamic Scheduling for the GPU and its Applications in Computer Graphics and Beyond"}\cite{DynSche} surgió por la necesidad que se tiene de acelerar la generación de imágenes, asignando más poder de procesamiento a las regiones más importantes de esta.
-
-\vspace{0.3cm}
-La ruta que siguió esta investigación se basa en que la naturaleza de las colas concurrentes tiene un fuerte enfoque en la exclusión mutua, que a menudo se considera clave para el rendimiento en sistemas concurrentes. Así que se propone un planificador de tareas basado en colas de trabajo que admiten programación y gestión de la memoria dinámicamente. La solución está centrada en colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
-
-Este Framework permite que las tareas accedan a la cola actual de espera, al mismo tiempo que posibilita el acceso a la estructura por medio del uso de banderas, con lo que aseguramos que el bloqueo sólo se produzca cuando la cola se quede sin elementos o sin espacio.
-
-%REGM: A Responsive GPGPU Execution Model for Runtime Engines
-\section{REGM: Un modelo de ejecución GPGPU responsivo para soluciones en tiempo de ejecución}
-
-Por la naturaleza non-preemptive asociada al copiado y transferencia de datos entre el host y el device hace necesario el administrar la ejecución de los recursos para proteger los tiempos de respuesta de tareas con alta prioridad. 
-
-El artículo \textit{``REGM: A Responsive GPGPU Execution Model for Runtime Engines"}\cite{RGEM} presenta como solución el dividir las transacciones de copiado de memoria en varios fragmentos para insertar puntos preemptive. Esto también garantiza que sólo las tareas de mayor prioridad se ejecuten en el device en cualquier momento, y así evitar interferencias de rendimiento causadas por lanzamientos concurrentes.
-
-\vspace{0.3cm}
-
-La mayoría de los Frameworks actualmente acarrean ciertas limitaciones en su configuración para sistemas en tiempo real, principalmente atribuidas al hecho de que las tareas requieren realizar copias de memoria entre el device y el host para efectuar sus cálculos, esta transacción es realizada por el acceso directo a memoria (DMA), y éste al ser non-preemptive puede bloquear otros accesos con una mayor prioridad hasta que se termine la tarea actual, obteniéndose un mayor tiempo de bloqueo y un cuello de botella en la tasa de transferencia de datos.
-
-\vspace{0.3cm}
-
-La principal característica de RGEM es dividir las transacciones de copiado de memoria en varios fragmentos para insertar puntos preemptive que permitan limitar la ejecución de las tareas. Posteriormente lanza los kernels de diferentes tareas basandose en su prioridad, previniendo interferencias de las tareas de mayor prioridad con las que se encuentran actualmente en ejecución.
-
-%Intra-Node Memory Safe GPU Co-Scheduling
-\section{Planificación conjunta con GPU y aseguramiento de la memoria intra-nodo}
-
-El artículo \textit{"Intra-Node Memory Safe GPU Co-Scheduling"}\cite{IntraNode} propone la creación del framework schedGPU, el cual utiliza el algoritmo de planificación Slurm. El marco de trabajo administra de forma segura las múltiples solicitudes de aplicaciones para acceder a las GPU al garantizar que no se produzcan sobrecargas de memoria durante la ejecución de la tarea. Este acceso es controlado mediante bloqueos de archivos, señales del sistema y exclusión mutua.
-
-SchedGPU utiliza el patrón de diseño cliente-servidor ya que toma cada tarea que busca ser lanzada en el GPU como un cliente que está solicitando memoria a un Servidor centralizado (en el mismo nodo), el cual permite que se ejecute si hay suficiente memoria, o en caso contrario la bloquea hasta que se encuentre memoria necesaria para su funcionamiento. El servidor crea un nuevo hilo para cada cliente y mantiene una visión global de la memoria utilizada por todos los clientes a través de la biblioteca de administración de NVIDIA (\textbf{NVML}), esto para evitar la creación de un nuevo contexto que consuma memoria.
-
-\vspace{0.3cm}
-
-La tarea es modificada únicamente al llamar explícitamente las funciones de la biblioteca del cliente para previamente asignar la memoria requerida al GPU. Aunque esto acarrea una gran desventaja al considerar tareas donde no siempre es posible conocer la memoria requerida total de GPU, esto porque la memoria de la GPU se asigna en tiempo de ejecución. En el caso en que dos o más tareas se ejecuten al mismo tiempo y ambas aumenten gradualmente el uso de la memoria del GPU, se puede llegar a utilizar completamente la memoria disponible, con lo que podrán requerir más tiempo para completar la ejecución o directamente lanzar un error en tiempo de ejecución.
-
-%\vspace{0.3cm}
-
-%Al utilizar schedGPU se encontró que el promedio de la aceleración aumenta 10 veces, comparado con no utilizar el framework. Sin embargo, el promedio de utilización de la memoria también incrementó de 5 a 12 veces.
 
 \section{Resumen}
 %%%%%
@@ -107,12 +160,6 @@ Hoy en día, los sistemas embebidos basados en GPU han empezado a considerarse e
 
 Se han propuesto diversos frameworks de última generación para planificación de tareas para aprovechar el rendimiento de los sistemas embebidos basados en GPU y su bajo consumo de energía.
 
-PRUEBAS
-
-\cite{RGEM}
-\cite{GPES}
-\cite{EffiSha}
-\cite{GPUArt}
 %%%%%
 
 %En este capítulo se presenta el resumen de tres trabajos relacionados con la evaluación de los patrones de seguridad. El primer trabajo presenta una métrica de seguridad denominada SC la cual contabiliza el total de amenazas mitigadas por patrones de seguridad entre el total de amenazas. Una de las mejoras que propone es utilizar la aproximación \textit{Twin peaks} que produce una nueva arquitectura en cada ciclo contemplando los mismos casos de uso pero a mayor detalle.
