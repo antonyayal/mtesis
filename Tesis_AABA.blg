@@ -9,70 +9,72 @@ Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bibTesis.bib
 Warning--entry type for "PasGPU" isn't style-file defined
---line 47 of file bibTesis.bib
+--line 52 of file bibTesis.bib
 Warning--entry type for "ArqTX2" isn't style-file defined
---line 57 of file bibTesis.bib
+--line 62 of file bibTesis.bib
 Warning--entry type for "medium" isn't style-file defined
---line 67 of file bibTesis.bib
+--line 72 of file bibTesis.bib
 Warning--entry type for "jtx2dk" isn't style-file defined
---line 264 of file bibTesis.bib
+--line 269 of file bibTesis.bib
 Warning--entry type for "gpgpu" isn't style-file defined
---line 274 of file bibTesis.bib
+--line 279 of file bibTesis.bib
 Warning--entry type for "PasAna" isn't style-file defined
---line 298 of file bibTesis.bib
+--line 303 of file bibTesis.bib
 Warning--entry type for "AnPasc" isn't style-file defined
---line 308 of file bibTesis.bib
+--line 313 of file bibTesis.bib
 Warning--entry type for "GpuCpu" isn't style-file defined
---line 351 of file bibTesis.bib
+--line 356 of file bibTesis.bib
 Warning--entry type for "TX2I" isn't style-file defined
---line 472 of file bibTesis.bib
+--line 477 of file bibTesis.bib
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 Warning--edition ordinal word "Version 2.0" may be too high (or improper) for conversion in NCUDA
 Warning--empty author in IeeeSG
 Warning--edition ordinal word "Second Edition" may be too high (or improper) for conversion in TX2CU
+Warning--empty journal in 18
+Warning--empty journal in 20
 
 Done.
-You've used 32 entries,
+You've used 33 entries,
             4087 wiz_defined-function locations,
-            999 strings with 12335 characters,
-and the built_in function-call counts, 15730 in all, are:
-= -- 1250
-> -- 313
-< -- 74
-+ -- 162
-- -- 61
-* -- 686
-:= -- 2628
-add.period$ -- 61
-call.type$ -- 32
-change.case$ -- 29
-chr.to.int$ -- 159
-cite$ -- 35
-duplicate$ -- 1244
-empty$ -- 1383
-format.name$ -- 76
-if$ -- 3576
+            1007 strings with 12680 characters,
+and the built_in function-call counts, 17032 in all, are:
+= -- 1342
+> -- 360
+< -- 90
++ -- 190
+- -- 69
+* -- 751
+:= -- 2782
+add.period$ -- 63
+call.type$ -- 33
+change.case$ -- 30
+chr.to.int$ -- 201
+cite$ -- 38
+duplicate$ -- 1326
+empty$ -- 1470
+format.name$ -- 85
+if$ -- 3888
 int.to.chr$ -- 0
-int.to.str$ -- 32
-missing$ -- 236
-newline$ -- 139
-num.names$ -- 31
-pop$ -- 625
+int.to.str$ -- 33
+missing$ -- 250
+newline$ -- 142
+num.names$ -- 32
+pop$ -- 662
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 6
-skip$ -- 1224
+skip$ -- 1316
 stack$ -- 0
-substring$ -- 371
-swap$ -- 836
-text.length$ -- 21
+substring$ -- 470
+swap$ -- 921
+text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 32
-warning$ -- 3
-while$ -- 57
-width$ -- 34
-write$ -- 308
-(There were 12 warnings)
+type$ -- 33
+warning$ -- 5
+while$ -- 64
+width$ -- 35
+write$ -- 316
+(There were 14 warnings)

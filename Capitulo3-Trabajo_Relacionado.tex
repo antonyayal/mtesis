@@ -1,46 +1,9 @@
 %%Capítulo 3 trabajo relacionado 
+\section{Clasificación de la planificación de tareas}
 
-\section{Planificación de tareas}
+La clasificación planificación de tareas preemptive esta compuesta de diversos tipos dependiendo de sus técnicas de implementación, cómo se describe en la sección \ref{claspree}. 
 
-La planificación de tareas esta compuesta de diversas técnicas, una clasificación para dar soporte al modo preemptive la podemos encontrar en el artículo \cite{GPUArt}, el cual nos muestra dos tipos:
-
-\begin{itemize}
-\item \textbf{\textit{Basado en Hardware.}} 
-	Aquí se utilizan dispositivos para el cambio o drenado del contexto utilizando políticas preemptive. Este cambio de contexto significa guardar completamente su incluyendo los registros, memoria compartida y el stack SIMT, en alguna memoria. Las tareas suspendidas se reinician más tarde dependiendo de la planificación, y requieren volver a cargar el contexto desde la memoria antes de reanudar su ejecución. Si se trata del drenado de contexto, la GPU deja de alimentar a sus cores con tareas pendientes del kernel interrumpido y espera hasta que se completen las ya enviadas.
-	
-\item \textbf{\textit{Basado en Software.}}
-	\begin{itemize}
-	\item \textbf{\textit{Partición de Kernel.}}
-		Aquí los kernels grandes son partidos en subkernels dividiendo sus grids en fragmentos más pequeños. Es decir, en vez de lanzar todos los Threads por Bloque (TB) de un kernel a la vez, sólo se van lanzando fracciones a la vez. Este enfoque es útil para núcleos con muchos TB, donde cada TB tienen un tiempo de ejecución corto. Sin embargo, para aquellos con tiempos de ejecución largos, se pueden generar retrasos significativos y posiblemente tiempos en que haya inversión de prioridad, lo que no es aceptable en sistemas en tiempo real. Aunado a esto, este método no es aplicable a los kernels que requieren una sincronización global entre TB, ya que el lanzamiento paulatino de los componentes de un grid podrá causar plazos vencidos en las barreras entre cada fragmento.
-	\item \textbf{\textit{Partición en Tareas.}}
-		Es parecida a la anterior, pero los fragmentos no se ven como subkernels, sino como tareas. Esta técnica invoca threads GPU persistentes que lanzan secuencialemente tantas TB de un kernel como puedan estar activas al mismo tiempo. Aquí la GPU y CPU comparten una variable que se utiliza para señalizar las solicitudes de cambio de contexto entre los threads activos y detenidos.
-	\item \textbf{\textit{Entorno de Scripts.}}	
-		Esta técnica permite manejar automáticamente los kernels con una lógica preemptive lo que libera al programador de realizarlo manualmente. Esta aproximación funciona especialmente para entornos con kernels pequeños, porque para aquellos con ejecución larga, la granularidad de los TB limita el retraso máximo de preemption que se puede utilizar.
-	\end {itemize}
-\end {itemize}
-
-\vspace{0.3cm}
-	
-Otra clasificación la encontramos en el trabajo \cite{DynSche} agrupa en tres tipos de algoritmos de planificación en tiempo real.
-
-\begin{itemize}
-\item \textbf{\textit{Colas masivas en paralelo.}}
-	Este apartado está centrado en colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
-\item \textbf{\textit{Administración dinámica de memora.}}
-	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cuál de las que actualmente en ejecución ha abusado de su espacio definido. 
-\item \textbf{\textit{Planificación por prioridad.}}
-	Se utilizan algoritmos de planificación para manejar dinámicamente el cambio de prioridades y maximizar el rendimiento del sistema. La mayoría de las veces este tipo es el más cercano a una implementación completa de tiempo real.
-	
-\end{itemize}
-
-Finalmente, tenemos una clasificación de tipos de planificación que va más enfocada a la forma en que es implementada en el código.
-
-\begin{itemize}
-\item \textbf{\textit{Modificación de código fuente.}}
-	Aquí tenemos que es necesario que el programador modifique el código del kernel para implementar cada una de las acciones que va a seguir la tarea, desde el inicio de la tarea, pasando por su interrupción, y hasta su finalización.
-\item \textbf{\textit{Modificación del API.}}
-	En este apartado, se hace una modificación a nivel de las bibliotecas o el compilador, la ventaja es que la aplicación no es modificada manualmente, pero su utilización muchas veces no está permitida por los administradores.
-\end{itemize}
+Las soluciones basadas en hardware son costosas, ya que debemos desarrollar y construir un dispositivo que auxilie con el cambio de contexto, por ejemplo, en el artículo \cite{18} se utilizan extensiones de hardware a modo de registros que almacenan el contexto y en general las direcciones de memoria que contienen la información necesaria para la restauración de la ejecución de un kernel. En \cite{20} se propone la utilización de extensiones de hardware mediante el intercambio equitativo de recursos entre los núcleos de procesamiento, esto realizando un cambio de contexto aplicando el modo preemptive en el espacio de procesamiento. En lugar de intercambiar el contexto de todo el grid, se pretende intercambiar suficientes TB de un kernel en ejecución para que haya suficientes recursos disponibles para despachar la nueva tarea. Otra solución la observamos en \ciite{8}, en donde se de desarrolló un compilador y que emplea una extensión de hardware para reducir la latencia al implementar el modo preemptive, el compilador inserta puntos preemptive utilizando un análisis del ciclo de vida de los registros. Se utiliza una lógica de compresión descompresión para disminuir el tamaño del contexto de una tarea. Es decir, cuando el valor almacenado en un determinado registro es siempre igual a lo largo de la ejecución de los TB de un kernel, sólo se guardará un valor durante el cambio de contexto.
 
 \section{Tarjetas gráficas}
 

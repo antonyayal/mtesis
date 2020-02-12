@@ -28,11 +28,6 @@ B.~Priambodo, ``Cooperative vs. preemptive: a quest to maximize concurrency
   \url{https://medium.com/traveloka-engineering/cooperative-vs-preemptive-a-quest-to-maximize-concurrency-power-3b10c5a920fe}
 \BIBentrySTDinterwordspacing
 
-\bibitem{ComRTT}
-V.~Shinde and S.~C. Biday, ``Comparison of real time task scheduling
-  algorithms,'' \emph{International Journal of Computer Applications}, vol.
-  158, no.~6, pp. 37--41, enero 2017.
-
 \bibitem{NCUDA}
 NVIDIA, \emph{NVIDIA CUDA Compute Unified Device Architecture: Programming
   Guide}, version 2.0~ed., NVIDIA, Julio 2008.
@@ -77,6 +72,16 @@ J.~Calhoun and H.~J. and, ``Preemption of a cuda kernel function,'' \emph{13th
   ACIS International Conference on Software Engineering, Artificial
   Intelligence, Networking and Parallel/Distributed Computing}, 2012.
 
+\bibitem{GPUArt}
+C.~Hartmann and U.~Margull, ``Gpuart - an application-based limited preemptive
+  gpu real-time scheduler for embedded systems,'' \emph{Journal of Systems
+  Architecture}, 2018.
+
+\bibitem{DynSche}
+M.~Steinberger, ``On dynamic scheduling for the gpu and its applications in
+  computer graphics and beyond,'' \emph{IEEE Computer Graphics and
+  Applications}, vol.~38, no.~3, pp. 119--130, 2018.
+
 \bibitem{Tanenbaum}
 A.~S. Tanenbaum, \emph{Modern Operating Systems}.\hskip 1em plus 0.5em minus
   0.4em\relax Pearson Education, Inc., 2008.
@@ -99,6 +104,11 @@ J.~Lehoczky, L.~Sha, and Y.~Ding, ``he rate monotonic scheduling algorithm:
 W.~Li, K.~Kavi, and R.~Akl, ``A non-preemptive scheduling algorithm for soft
   real-time systems,'' \emph{Computers and Electrical Engineering}, vol. vol
   33, no.~1, pp. 12--29, 2007.
+
+\bibitem{ComRTT}
+V.~Shinde and S.~C. Biday, ``Comparison of real time task scheduling
+  algorithms,'' \emph{International Journal of Computer Applications}, vol.
+  158, no.~6, pp. 37--41, enero 2017.
 
 \bibitem{TX2CU}
 A.~STANCU, E.~CODRES, and M.~M. Guerrero, \emph{Jetson TX2 and CUDA
@@ -149,17 +159,37 @@ M.~Bertogna and S.~Baruah, ``Limited preemption edf scheduling of sporadic task
   systems,'' \emph{IEEE Transactions on Industrial Informatics}, vol.~6, no.~4,
   pp. 579--591, 2010.
 
-\bibitem{GPUArt}
-C.~Hartmann and U.~Margull, ``Gpuart - an application-based limited preemptive
-  gpu real-time scheduler for embedded systems,'' \emph{Journal of Systems
-  Architecture}, 2018.
-
 \bibitem{TX2I}
 \BIBentryALTinterwordspacing
 NVIDIA, ``Nvidia jetson tx2: High performance ai at the edge.'' [Online].
   Available:
   \url{www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-tx2/}
 \BIBentrySTDinterwordspacing
+
+\bibitem{18}
+I.~{Tanasic}, I.~{Gelado}, J.~{Cabezas}, A.~{Ramirez}, N.~{Navarro}, and
+  M.~{Valero}, ``Enabling preemptive multiprogramming on gpus,'' pp. 193--204,
+  June 2014.
+
+\bibitem{20}
+Z.~{Wang}, J.~{Yang}, R.~{Melhem}, B.~{Childers}, Y.~{Zhang}, and M.~{Guo},
+  ``Simultaneous multikernel gpu: Multi-tasking throughput processors via
+  fine-grained sharing,'' pp. 358--369, March 2016.
+
+\bibitem{RGEM}
+S.~Kato, K.~Lakshmanan, A.~Kumar, M.~Kelkar, Y.~Ishikawa, and R.~R. Rajkumar,
+  ``Rgem: A responsive gpgpu execution model for runtime engines,'' \emph{32nd
+  IEEE Real-Time Systems Symposium}, 2011.
+
+\bibitem{GPES}
+H.~Zhou, G.~Tong, and C.~Liu, ``Gpes: A preemptive execution system for gpgpu
+  computing,'' \emph{21st IEEE Real-Time and Embedded Technology and
+  Applications Symposium}, 2015.
+
+\bibitem{IntraNode}
+C.~Rea{\~n}o, F.~Silla, D.~S. Nikolopoulos, and B.~Varghese, ``Intra-node
+  memory safe gpu co-scheduling,'' \emph{IEEE TRANSACTIONS ON PARALLEL AND
+  DISTRIBUTED SYSTEMS}, vol.~29, no.~5, 2018.
 
 \bibitem{Pridriven}
 Y.~Kang, W.~Joo, S.~Lee, and D.~Shin, ``Priority-driven spatial resource
@@ -171,29 +201,5 @@ H.~Lee and M.~A.~A. Faruque, ``Run-time scheduling framework for event-driven
   applications on a gpu-based embedded system,'' \emph{IEEE Transactions on
   Computer-Aided Design of Integrated Circuits and Systems}, vol.~35, no.~12,
   pp. 1956--1967, 2016.
-
-\bibitem{DynSche}
-M.~Steinberger, ``On dynamic scheduling for the gpu and its applications in
-  computer graphics and beyond,'' \emph{IEEE Computer Graphics and
-  Applications}, vol.~38, no.~3, pp. 119--130, 2018.
-
-\bibitem{RGEM}
-S.~Kato, K.~Lakshmanan, A.~Kumar, M.~Kelkar, Y.~Ishikawa, and R.~R. Rajkumar,
-  ``Rgem: A responsive gpgpu execution model for runtime engines,'' \emph{32nd
-  IEEE Real-Time Systems Symposium}, 2011.
-
-\bibitem{IntraNode}
-C.~Rea{\~n}o, F.~Silla, D.~S. Nikolopoulos, and B.~Varghese, ``Intra-node
-  memory safe gpu co-scheduling,'' \emph{IEEE TRANSACTIONS ON PARALLEL AND
-  DISTRIBUTED SYSTEMS}, vol.~29, no.~5, 2018.
-
-\bibitem{GPES}
-H.~Zhou, G.~Tong, and C.~Liu, ``Gpes: A preemptive execution system for gpgpu
-  computing,'' \emph{21st IEEE Real-Time and Embedded Technology and
-  Applications Symposium}, 2015.
-
-\bibitem{EffiSha}
-G.~Chen, Y.~Zhao, X.~Shen, and H.~Zhou, ``Effisha: A software framework for
-  enabling efficient preemptive scheduling of gpu,'' \emph{AMC}, 2017.
 
 \end{thebibliography}

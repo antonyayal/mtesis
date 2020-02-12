@@ -63,49 +63,97 @@ Existen tres tipos de tareas que están presentes en los sistemas en tiempo real
 \begin{itemize}
 \item Tareas periódicas: Se ejecutan en cada intervalo fijo de tiempo conocido. Normalmente, las tareas periódicas tienen restricciones que indican sus plazos de tiempo.
 \item Tareas aperiódicas: Se ejecutan aleatoriamente en cualquier plazo de tiempo y no tienen una secuencia de tiempo predefinida.
-\item Tareas esporádicas: Son una combinación de tareas periódicas y aperiódicas, donde, en tiempo de ejecución actúan como aperiódicas pero la tasa de ejecución es de naturaleza periódica.
+\item Tareas esporádicas: Son una combinación de tareas periódicas y aperiódicas, donde, en tiempo de ejecución actúan como aperiódicas, pero la tasa de ejecución es de naturaleza periódica.
 \end{itemize}   
 
-La mayoría del tiempo los plazos de tiempo se dan por el tiempo límite de una tarea.
+La mayoría del tiempo los intervalos de tiempo se dan por el plazo límite de una tarea.
 
     \subsection{Esquemas de planificación}
     
         \subsubsection{Planificación cooperativa}
 
-En en el esquema de planificación \textit{\textbf{cooperativa}} o non-preemptive las tareas deciden el tiempo que utilizarán los recursos de cómputo, el trabajo del planificador es únicamente el de asignar tareas a los nodos de procesamiento disponibles.      
+En en el esquema de planificación \textit{\textbf{cooperativa}} o \textit{\textbf{non-preemptive}} mostrado en la figura \ref{fig:schedcoo}, el planificador asigna las tareas a los nodos de procesamiento disponibles y estas ocupan los recursos de cómputo durante todo su ciclo de vida.
 
   \begin{figure}[ht]
       \centering
-        \includegraphics[scale=1.5]{img/schedCoo}
+        \includegraphics[scale=1]{img/schedCoo}
         \caption{Planificación cooperativa.\cite{medium}}
         \label{fig:schedcoo}
     \end{figure}
     
-El problema de esto es que una tarea puede absorber todos los recursos del sistema generando plazos vencidos en las demás tareas.
+Este esquema de planificación es sencillo de implementar ya que las tareas se ejecutarán de manera secuencial, y se implementa cuando se tiene un uso predecible de los tiempos de ejecución de todo el sistema. Pero, como observamos en la figura \ref{fig:schedcoodead}, si una tarea ocupa los recursos un tiempo superior al contemplado no se puede interrumpir y puede generar plazos vencidos en las demás tareas.
 
   \begin{figure}[ht]
       \centering
-        \includegraphics[scale=1.5]{img/schedCooDead}
+        \includegraphics[scale=1]{img/schedCooDead}
         \caption{Planificación cooperativa con plazos vencidos.\cite{medium}}
         \label{fig:schedcoodead}
     \end{figure}
     
 \subsubsection{Planificación preemptive}
 
-En este esquema, el planificador es el que tiene la batuta ante las tareas, las asigna a los recursos disponibles, y les define un tiempo de ejecución máximo, comúnmente llamado quantum\cite{PreeK}. Superado este punto, el planificador interrumpe (preempts) la tarea para que otra sea ejecutada en su lugar, y la tarea interrumpida debe esperar hasta que le toque su turno nuevamente.
+En este esquema el planificador asigna las tareas a los recursos disponibles, y les define un tiempo de ejecución máximo, comúnmente llamado quantum\cite{PreeK}. Superado este punto, el planificador interrumpe la tarea para que otra sea ejecutada en su lugar, y la tarea interrumpida debe esperar hasta que le toque su turno nuevamente. Un ejemplo de este esquema, lo tenemos en la figura \ref{fig:schedpree}.
 
   \begin{figure}[ht]
       \centering
-        \includegraphics[scale=1.5]{img/schedPre}
+        \includegraphics[scale=1]{img/schedPre}
         \caption{Planificación preemptive.\cite{medium}}
         \label{fig:schedpree}
     \end{figure}
-    
-    
 
-Debido a que muchas veces se interrumpen tareas a la mitad de un proceso, es necesario almacenar y restaurar el estado que se tenia antes de dicha interrupción para continuar justo en el punto en donde se quedó.
+La mayor diferencia entre la planificación cooperativa y la preemptive es que la primera debe ejecutar la tarea de principio a fin, y la segunda puede interrumpir las tareas si así se requiere.
+    
+Debido a que muchas veces se interrumpen tareas a la mitad de un proceso, es necesario almacenar y restaurar el contexto que se tenia antes de dicha interrupción para continuar justo en el punto en donde se quedó. Este proceso de almacenamiento, intercambio y restauración del contexto de las tareas se denomina \textbf{cambio de contexto} (\textbf{context switch}).
 
-A este proceso de almacenamiento, intercambio y restauración del estado de las tareas se le denomina \textbf{cambio de contexto} (\textbf{context switch}).
+\label{claspree}
+Existen diversas clasificaciones en que se pueden agrupar las soluciones para dar soporte a la planificación de tareas preemptive, una de ellas la podemos encontrar en el artículo \cite{GPUArt}, el cual muestra dos tipos de implementaciones:
+
+\begin{itemize}
+\item \textbf{\textit{Basado en Hardware.}} 
+	Aquí se utilizan dispositivos de e/s para el cambio o drenado del contexto para implementar las políticas preemptive. 	
+\
+item \textbf{\textit{Basado en Software.}}
+	\begin{itemize}
+	\item \textbf{\textit{Partición de Kernel.}}
+		Aquí los kernels grandes son partidos en subkernels dividiendo sus grids en fragmentos más pequeños. Es decir, en vez de lanzar todos los Threads por Bloque (TB) de un kernel a la vez, sólo se van lanzando fracciones de éste a la vez. Este enfoque es útil para núcleos con muchos TB, donde cada TB tienen un tiempo de ejecución corto. Sin embargo, para aquellos con tiempos de ejecución largos, se pueden generar retrasos significativos y posiblemente tiempos en que haya inversión de prioridad, lo que no es aceptable en sistemas en tiempo real. Aunado a esto, este método no es aplicable a los kernels que requieren una sincronización global entre TB, ya que el lanzamiento paulatino de los componentes de un grid podrá causar plazos vencidos en las barreras entre cada fragmento.
+	
+	\item \textbf{\textit{Partición en Tareas.}}
+		Esta técnica es parecida a la anterior, pero los fragmentos se ven como tareas, se invocan tantos TB como sea posible tenerlos activos al mismo tiempo. Aquí la GPU y CPU comparten una variable que se utiliza para señalizar las solicitudes de cambio de contexto entre los threads activos y los detenidos.
+
+	\item \textbf{\textit{Entorno de Scripts.}}	
+		Esta técnica permite manejar automáticamente los kernels dependiendo de ciertos parámetros o puntos de control, liberando al programador de realizarlo manualmente. Esta aproximación funciona especialmente para entornos con kernels pequeños, ya que para aquellos que tienen una ejecución larga es necesario cuidar el nivel de granularidad o podría llegarse a plazos vencidos.
+		
+	\end {itemize}
+\end {itemize}
+
+\vspace{0.3cm}
+	
+Otra clasificación la encontramos en el trabajo \cite{DynSche} que agrupa en tres tipos de algoritmos de planificación en tiempo real.
+
+\begin{itemize}
+
+\item \textbf{\textit{Colas masivas en paralelo.}}
+	Este apartado está centrado en, ya sea una o varias colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
+	
+\item \textbf{\textit{Administración dinámica de memora.}}
+	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cuál de las que actualmente en ejecución ha superado su espacio definido. 
+	
+\item \textbf{\textit{Planificación por prioridad.}}
+	Se utilizan algoritmos de planificación para manejar dinámicamente el cambio de prioridades y maximizar el rendimiento del sistema. La mayoría de las veces este tipo es el más cercano a una implementación completa de tiempo real.
+	
+\end{itemize}
+
+Finalmente, tenemos una clasificación de tipos de planificación que va más enfocada a la forma en que es implementada en el código.
+
+\begin{itemize}
+
+\item \textbf{\textit{Modificación de código fuente.}}
+	Es necesario que el programador modifique el código del kernel para implementar cada una de las acciones que va a seguir la tarea, desde su inicio, pasando por su interrupción, y hasta su finalización.
+	
+\item \textbf{\textit{Modificación del API.}}
+	En este apartado, se hace una modificación a nivel de las bibliotecas o el compilador, la ventaja es que la aplicación no es modificada manualmente, pero su utilización muchas veces no está permitida por los administradores.
+	
+\end{itemize}
 
     \subsection{Algoritmos de planificación}\label{sec:AlgoPlan}. 
     
