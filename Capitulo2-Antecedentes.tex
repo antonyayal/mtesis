@@ -111,8 +111,8 @@ Existen diversas clasificaciones en que se pueden agrupar las soluciones para da
 \begin{itemize}
 \item \textbf{\textit{Basado en Hardware.}} 
 	Aquí se utilizan dispositivos de e/s para el cambio o drenado del contexto para implementar las políticas preemptive. 	
-\
-item \textbf{\textit{Basado en Software.}}
+
+\item \textbf{\textit{Basado en Software.}}
 	\begin{itemize}
 	\item \textbf{\textit{Partición de Kernel.}}
 		Aquí los kernels grandes son partidos en subkernels dividiendo sus grids en fragmentos más pequeños. Es decir, en vez de lanzar todos los Threads por Bloque (TB) de un kernel a la vez, sólo se van lanzando fracciones de éste a la vez. Este enfoque es útil para núcleos con muchos TB, donde cada TB tienen un tiempo de ejecución corto. Sin embargo, para aquellos con tiempos de ejecución largos, se pueden generar retrasos significativos y posiblemente tiempos en que haya inversión de prioridad, lo que no es aceptable en sistemas en tiempo real. Aunado a esto, este método no es aplicable a los kernels que requieren una sincronización global entre TB, ya que el lanzamiento paulatino de los componentes de un grid podrá causar plazos vencidos en las barreras entre cada fragmento.
@@ -143,6 +143,19 @@ Otra clasificación la encontramos en el trabajo \cite{DynSche} que agrupa en tr
 	
 \end{itemize}
 
+En esta clasificación también debemos agregar otro apartado:
+
+\begin{itemize}
+
+\item \textbf{\textit{Administración dinámica de los núcleos de procesamiento.}}
+	Aquí se limita el número de núcleos de procesamiento en tiempo de ejecución de una GPU para una tarea, y el número depende casi siempre de la prioridad de la tarea.
+
+\end{itemize}
+
+Ya que, aunque no esta originalmente contemplado, es necesario discriminar entre la administración de la memoria y la administración de los núcleos que una GPU nos va a prestar para realizar el procesamiento.
+    
+     \vspace{0.3cm}
+     
 Finalmente, tenemos una clasificación de tipos de planificación que va más enfocada a la forma en que es implementada en el código.
 
 \begin{itemize}

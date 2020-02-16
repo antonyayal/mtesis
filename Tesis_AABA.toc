@@ -19,51 +19,51 @@
 \contentsline {subsubsection}{\numberline {2.2.3.2}Earliest Deadline First}{10}% 
 \contentsline {subsubsection}{\numberline {2.2.3.3}Rate Monotonic}{11}% 
 \contentsline {subsubsection}{\numberline {2.2.3.4}Deadline Monotonic}{11}% 
-\contentsline {subsubsection}{\numberline {2.2.3.5}Least Laxity First}{11}% 
+\contentsline {subsubsection}{\numberline {2.2.3.5}Least Laxity First}{12}% 
 \contentsline {subsubsection}{\numberline {2.2.3.6}Group Earliest Deadline First}{12}% 
 \contentsline {section}{\numberline {2.3}CPU}{12}% 
-\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{12}% 
+\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{13}% 
 \contentsline {section}{\numberline {2.4}GPU}{13}% 
 \contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{13}% 
 \contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{15}% 
 \contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{16}% 
 \contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{16}% 
 \contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{16}% 
-\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{16}% 
+\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{17}% 
 \contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{17}% 
 \contentsline {subsection}{\numberline {2.4.4}GPGPU}{17}% 
 \contentsline {section}{\numberline {2.5}Sistemas embebidos}{18}% 
 \contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{18}% 
-\contentsline {section}{\numberline {2.6}Material de trabajo}{18}% 
+\contentsline {section}{\numberline {2.6}Material de trabajo}{19}% 
 \contentsline {subsection}{\numberline {2.6.1}Jetson TX2}{19}% 
 \contentsline {section}{\numberline {2.7}Resumen}{20}% 
-\contentsline {subsection}{\numberline {2.7.1}Computaci\IeC {\'o}n preemptive}{20}% 
+\contentsline {subsection}{\numberline {2.7.1}Computaci\IeC {\'o}n preemptive}{21}% 
 \contentsline {subsection}{\numberline {2.7.2}Tipos de ejecuci\IeC {\'o}n de tareas}{21}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{23}% 
 \contentsline {section}{\numberline {3.1}Clasificaci\IeC {\'o}n de la planificaci\IeC {\'o}n de tareas}{23}% 
-\contentsline {section}{\numberline {3.2}Tarjetas gr\IeC {\'a}ficas}{24}% 
-\contentsline {section}{\numberline {3.3}Sistemas embebidos}{27}% 
-\contentsline {section}{\numberline {3.4}Resumen}{29}% 
-\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o del framework}{31}% 
-\contentsline {section}{\numberline {4.1}Descripci\IeC {\'o}n general del framework}{31}% 
-\contentsline {section}{\numberline {4.2}Puntos preemptive}{32}% 
-\contentsline {section}{\numberline {4.3}Memoria}{32}% 
-\contentsline {section}{\numberline {4.4}Planificaci\IeC {\'o}n}{33}% 
-\contentsline {subsection}{\numberline {4.4.1}Planificaci\IeC {\'o}n est\IeC {\'a}tica}{33}% 
-\contentsline {subsection}{\numberline {4.4.2}Planificaci\IeC {\'o}n din\IeC {\'a}mica}{34}% 
-\contentsline {section}{\numberline {4.5}Asignaci\IeC {\'o}n de prioridades }{34}% 
-\contentsline {subsection}{\numberline {4.5.1}Asignaci\IeC {\'o}n est\IeC {\'a}tica de prioridades }{34}% 
-\contentsline {subsection}{\numberline {4.5.2}Asignaci\IeC {\'o}n din\IeC {\'a}mica de prioridades }{34}% 
-\contentsline {section}{\numberline {4.6}Resumen}{34}% 
-\contentsline {chapter}{\numberline {5}Evaluaci\IeC {\'o}n del rendimiento}{35}% 
-\contentsline {section}{\numberline {5.1}M\IeC {\'e}tricas de rendimiento}{35}% 
-\contentsline {subsection}{\numberline {5.1.1}Granularidad de kernel}{35}% 
-\contentsline {subsection}{\numberline {5.1.2}Granularidad de datos}{35}% 
-\contentsline {subsection}{\numberline {5.1.3}Cambio de contexto}{35}% 
-\contentsline {subsection}{\numberline {5.1.4}Rendimiento de multitarea}{35}% 
-\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{37}% 
-\contentsline {section}{\numberline {6.1}Contribuciones}{37}% 
-\contentsline {section}{\numberline {6.2}Trabajo futuro}{37}% 
-\contentsline {chapter}{Anexos}{41}% 
-\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{41}% 
-\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{41}% 
+\contentsline {section}{\numberline {3.2}Tarjetas gr\IeC {\'a}ficas}{27}% 
+\contentsline {section}{\numberline {3.3}Sistemas embebidos}{31}% 
+\contentsline {section}{\numberline {3.4}Resumen}{32}% 
+\contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o del framework}{35}% 
+\contentsline {section}{\numberline {4.1}Descripci\IeC {\'o}n general del framework}{35}% 
+\contentsline {section}{\numberline {4.2}Puntos preemptive}{36}% 
+\contentsline {section}{\numberline {4.3}Memoria}{36}% 
+\contentsline {section}{\numberline {4.4}Planificaci\IeC {\'o}n}{37}% 
+\contentsline {subsection}{\numberline {4.4.1}Planificaci\IeC {\'o}n est\IeC {\'a}tica}{37}% 
+\contentsline {subsection}{\numberline {4.4.2}Planificaci\IeC {\'o}n din\IeC {\'a}mica}{38}% 
+\contentsline {section}{\numberline {4.5}Asignaci\IeC {\'o}n de prioridades }{38}% 
+\contentsline {subsection}{\numberline {4.5.1}Asignaci\IeC {\'o}n est\IeC {\'a}tica de prioridades }{38}% 
+\contentsline {subsection}{\numberline {4.5.2}Asignaci\IeC {\'o}n din\IeC {\'a}mica de prioridades }{38}% 
+\contentsline {section}{\numberline {4.6}Resumen}{38}% 
+\contentsline {chapter}{\numberline {5}Evaluaci\IeC {\'o}n del rendimiento}{39}% 
+\contentsline {section}{\numberline {5.1}M\IeC {\'e}tricas de rendimiento}{39}% 
+\contentsline {subsection}{\numberline {5.1.1}Granularidad de kernel}{39}% 
+\contentsline {subsection}{\numberline {5.1.2}Granularidad de datos}{39}% 
+\contentsline {subsection}{\numberline {5.1.3}Cambio de contexto}{39}% 
+\contentsline {subsection}{\numberline {5.1.4}Rendimiento de multitarea}{39}% 
+\contentsline {chapter}{\numberline {6}Conclusiones y Trabajo Futuro}{41}% 
+\contentsline {section}{\numberline {6.1}Contribuciones}{41}% 
+\contentsline {section}{\numberline {6.2}Trabajo futuro}{41}% 
+\contentsline {chapter}{Anexos}{45}% 
+\contentsline {section}{\numberline {.1}Glosario de t\IeC {\'e}rminos}{45}% 
+\contentsline {chapter}{\textbf {Bibliograf\IeC {\'\i }a}}{45}% 

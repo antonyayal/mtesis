@@ -26,6 +26,7 @@ Warning--entry type for "GpuCpu" isn't style-file defined
 --line 356 of file bibTesis.bib
 Warning--entry type for "TX2I" isn't style-file defined
 --line 477 of file bibTesis.bib
+Warning--I didn't find a database entry for "REGM"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
@@ -36,45 +37,45 @@ Warning--empty journal in 18
 Warning--empty journal in 20
 
 Done.
-You've used 33 entries,
+You've used 34 entries,
             4087 wiz_defined-function locations,
-            1007 strings with 12680 characters,
-and the built_in function-call counts, 17032 in all, are:
-= -- 1342
-> -- 360
+            1014 strings with 12844 characters,
+and the built_in function-call counts, 17494 in all, are:
+= -- 1376
+> -- 377
 < -- 90
-+ -- 190
-- -- 69
-* -- 751
-:= -- 2782
-add.period$ -- 63
-call.type$ -- 33
-change.case$ -- 30
++ -- 198
+- -- 73
+* -- 772
+:= -- 2860
+add.period$ -- 65
+call.type$ -- 34
+change.case$ -- 31
 chr.to.int$ -- 201
-cite$ -- 38
-duplicate$ -- 1326
-empty$ -- 1470
-format.name$ -- 85
-if$ -- 3888
+cite$ -- 39
+duplicate$ -- 1366
+empty$ -- 1511
+format.name$ -- 90
+if$ -- 3992
 int.to.chr$ -- 0
-int.to.str$ -- 33
-missing$ -- 250
-newline$ -- 142
-num.names$ -- 32
-pop$ -- 662
+int.to.str$ -- 34
+missing$ -- 258
+newline$ -- 145
+num.names$ -- 33
+pop$ -- 685
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 6
-skip$ -- 1316
+skip$ -- 1350
 stack$ -- 0
-substring$ -- 470
-swap$ -- 921
+substring$ -- 471
+swap$ -- 944
 text.length$ -- 23
 text.prefix$ -- 0
 top$ -- 5
-type$ -- 33
+type$ -- 34
 warning$ -- 5
-while$ -- 64
-width$ -- 35
-write$ -- 316
-(There were 14 warnings)
+while$ -- 65
+width$ -- 36
+write$ -- 324
+(There were 15 warnings)
