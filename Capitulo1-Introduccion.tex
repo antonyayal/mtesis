@@ -6,7 +6,19 @@
 
 %Introducción
 
-Aqui va la introducción
+
+Las tecnologías emergentes, en especial la de los vehículos autónomos, requieren de soluciones de cómputo intensivo. Cada vez más empresas aceleran sus aplicaciones embebidas mediante la GPGPU con el fin de solventar estas demandas de recursos. Desafortunadamente, las GPUs carecen de soporte para aplicaciones en tiempo real, por ejemplo de soporte preemtive, el cual limita su aplicabilidad en el dominio de sistemas embebidos.
+
+Las GPU modernas se adoptan ampliamente en muchos entornos multitarea, incluidos los centros de datos y los teléfonos inteligentes. Sin embargo, el soporte actual para la programación de múltiples GPU
+los núcleos (de diferentes aplicaciones) son limitados, formando una gran barrera para que la GPU satisfaga muchas necesidades prácticas.
+
+La administración predeterminada de GPU es a través de los controladores de GPU no revelados y sigue una política de orden de llegada first-come-first-serve.
+
+Los sistemas en tiempo real deben reaccionar dentro de limites de tiempo precisos para garantizar una corrección funcional, satisfacer los criterios de calidad o evitar daños críticos.
+
+Utilizamos la terminología de CUDA para nuestra discusión, pero tenga en cuenta que el problema y la solución discutidos en este documento también se aplican a otros modelos de programación de GPU (por ejemplo, OpenCL).
+
+
 
 \section{Problema y Oportunidad}
 En la mayoría de las organizaciones que emplean sistemas en tiempo real hay una creciente necesidad por la adopción de una tecnología más flexible como lo es la incorporación de sistemas con tareas preemptive.

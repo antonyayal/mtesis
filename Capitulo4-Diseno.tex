@@ -1,4 +1,13 @@
 %\vspace{0.3cm}
+
+%Descripción general del módulo.
+%Precondiciones necesarias.
+%Por qué existe?
+%Qué especificación tiene y cómo se maneja
+%Comparación, como manejan los demás trabajos.
+
+
+
 El objetivo principal de este capítulo es describir el diseño del framework propuesto para planificar tareas preemptive en sistemas embebidos heterogéneos. Se plantea la estructura del mismo junto con la descripción de su solución. 
 
 Aunque se tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, el diseño puede ser aplicado a cualquier dispositivo, siempre y cuando cumpla con la característica de tener memoria unificada, como la descrita en la sección \ref{sec:MemUni}.
@@ -22,6 +31,10 @@ En los siguientes apartados de la tesis se analizarán y desglosarán cada uno d
   
   \section{Puntos preemptive}\label{puntosPreemptive}
 
+
+%%%%%%%%%%%%%%%%%%
+
+
 La mayoría de los trabajos relacionados en el estado del arte colocan puntos preemptive para formar fragmentos (chunks) de memoria.
 
 Con esta solución se colocan puntos preemptive fijos dentro de las funciones kernel de la aplicación. Con esto se nos permite:
@@ -32,6 +45,11 @@ Con esta solución se colocan puntos preemptive fijos dentro de las funciones ke
 \item Modificar la granularidad de los subkernels.
 \item Determinar las directivas para detener y restaurar una tarea.
 \end{itemize}     
+
+
+
+
+
   
   \section{Memoria}
   
