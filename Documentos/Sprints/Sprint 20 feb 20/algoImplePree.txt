@@ -19,8 +19,8 @@ struct Backup{
 //Función kernel modificada
 
 __global__ void kernelFuncition(int* a,.., int* resultados, Backup* backup, 
-										int* quantum_expirado, int* estado)
-	/* Creación de variables */
+										int* quantum_expirado, int* estado){
+	/* Declaración de variables */
 	int temp1;
 	. . .
 	int tempn;
@@ -41,20 +41,20 @@ __global__ void kernelFuncition(int* a,.., int* resultados, Backup* backup,
 			break;
 		case TERMINADO:
 			break;
-	
+	}
 	switch(backup.estado[id_block]){
 		case INICIO:
-			estado[id_block] = EJECUCION;
-			break;
+			backup.estado[id_block] = EJECUCION;
+			// No hay break para que continue al siguiente caso
 		case EJECUCION:
 			//Ejecución del kernel
-			while(!quantum_expirado && !completo){
+			do { 
 				//Procesa 
 				resultados = paso_de_procesamiento;
-			}
+			} while(!quantum_expirado && !completo); <-- Trabajo futuro "merma el preguntar siempre"
 			/* Si se realizó la ejecución completamente */
 			if(completo){
-				estado[id_block] = TERMINADO;
+				backup.estado[id_block] = TERMINADO;
 				break;
 			}
 			/* Si ya expiró el quantum */
@@ -66,6 +66,7 @@ __global__ void kernelFuncition(int* a,.., int* resultados, Backup* backup,
 		case TERMINADO:
 			break;
 	}
+}
 
 //Algoritmo del lado del CPU
 

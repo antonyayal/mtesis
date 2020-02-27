@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  20 FEB 2020 19:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 FEB 2020 10:15
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -2491,7 +2491,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  42283 strings out of 492616
  858919 string characters out of 6129482
- 1093804 words of memory out of 5000000
+ 1093817 words of memory out of 5000000
  45469 multiletter control sequences out of 15000+600000
  548325 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2513,7 +2513,7 @@ e/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (60 pages, 1263104 bytes).
+Output written on Tesis_AABA.pdf (60 pages, 1263114 bytes).
 PDF statistics:
  344 PDF objects out of 1000 (max. 8388607)
  213 compressed objects within 3 object streams
