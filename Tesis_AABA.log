@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  21 FEB 2020 10:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  3 MAR 2020 22:53
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1972,57 +1972,57 @@ Package pdftex.def Info: img/schedPre.png  used on input line 99.
 (pdftex.def)             Requested size: 294.86087pt x 163.32979pt.
  [9 <./img/schedPre.png>]
 [10] [11]
-Overfull \hbox (0.86024pt too wide) in paragraph at lines 196--196
+Overfull \hbox (0.86024pt too wide) in paragraph at lines 191--191
 []|[]\T1/cmr/bx/n/8 Algoritmo| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
 []|\T1/cmr/bx/n/8 Asignaci�n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
 []|\T1/cmr/bx/n/8 Criterio de
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
 []|\T1/cmr/bx/n/8 Preemptive/
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
 \T1/cmr/bx/n/8 Non-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 196--196
+Underfull \hbox (badness 10000) in paragraph at lines 191--191
 []|\T1/cmr/bx/n/8 Utilizaci�n
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 198--198
+Underfull \hbox (badness 10000) in paragraph at lines 193--193
 []|\T1/cmr/m/n/8 Non-
  []
 
 
-Underfull \hbox (badness 1028) in paragraph at lines 200--201
+Underfull \hbox (badness 1028) in paragraph at lines 195--196
 []|\T1/cmr/m/n/8 Eficiente en con-di-cio-
  []
 
 
-Underfull \hbox (badness 1028) in paragraph at lines 202--203
+Underfull \hbox (badness 1028) in paragraph at lines 197--198
 []|\T1/cmr/m/n/8 Eficiente en con-di-cio-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--204
+Underfull \hbox (badness 10000) in paragraph at lines 199--199
 []|\T1/cmr/m/n/8 Plazo L�-mi-te
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 208--208
+Underfull \hbox (badness 10000) in paragraph at lines 203--203
 []|\T1/cmr/m/n/8 Non-
  []
 
@@ -2030,22 +2030,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 208--208
 <img/scatter.png, id=172, 341.1144pt x 105.0324pt>
 File: img/scatter.png Graphic file (type png)
 <use img/scatter.png>
-Package pdftex.def Info: img/scatter.png  used on input line 296.
+Package pdftex.def Info: img/scatter.png  used on input line 291.
 (pdftex.def)             Requested size: 341.11354pt x 105.03214pt.
 <img/gather.png, id=173, 343.0416pt x 105.996pt>
 File: img/gather.png Graphic file (type png)
 <use img/gather.png>
-Package pdftex.def Info: img/gather.png  used on input line 305.
+Package pdftex.def Info: img/gather.png  used on input line 300.
 (pdftex.def)             Requested size: 343.04074pt x 105.99573pt.
- [16]
-<img/repCPUGPU.png, id=177, 888.31876pt x 327.2225pt>
+ [16 <./img/scatter.png>]
+<img/repCPUGPU.png, id=178, 888.31876pt x 327.2225pt>
 File: img/repCPUGPU.png Graphic file (type png)
 <use img/repCPUGPU.png>
-Package pdftex.def Info: img/repCPUGPU.png  used on input line 319.
+Package pdftex.def Info: img/repCPUGPU.png  used on input line 314.
 (pdftex.def)             Requested size: 310.91621pt x 114.52959pt.
- [17 <./img/scatter.png> <./img/gather.png> <./img/repCPUGPU.png>] [18]
+ [17 <./img/gather.png> <./img/repCPUGPU.png>] [18]
 
-./Capitulo2-Antecedentes.tex:352: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:347: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2053,14 +2053,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352     El có
+l.347     El có
                  mputo de propósito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:352: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:347: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2068,14 +2068,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352     El cómputo de propó
+l.347     El cómputo de propó
                                  sito general en unidades de procesamiento d...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:352: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:347: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2083,14 +2083,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352 ...ral en unidades de procesamiento de grá
+l.347 ...ral en unidades de procesamiento de grá
                                                   ficos o GPGPU es utilizado...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:352: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:347: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2098,14 +2098,14 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352 ...realizado tradicionalmente por la CPU ú
+l.347 ...realizado tradicionalmente por la CPU ú
                                                   nicamente, donde la GPU ac...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-./Capitulo2-Antecedentes.tex:352: Package inputenc Error: Unicode character ́ 
+./Capitulo2-Antecedentes.tex:347: Package inputenc Error: Unicode character ́ 
 (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2113,7 +2113,7 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.352 ... la CPU únicamente, donde la GPU actú
+l.347 ... la CPU únicamente, donde la GPU actú
                                                   a como un coprocesador que...
 
 You may provide a definition with
@@ -2122,33 +2122,33 @@ You may provide a definition with
 <img/gpgpu.png, id=187, 247.6452pt x 175.3752pt>
 File: img/gpgpu.png Graphic file (type png)
 <use img/gpgpu.png>
-Package pdftex.def Info: img/gpgpu.png  used on input line 356.
+Package pdftex.def Info: img/gpgpu.png  used on input line 351.
 (pdftex.def)             Requested size: 222.8786pt x 157.83621pt.
-
-Underfull \vbox (badness 2828) has occurred while \output is active []
-
- [19]
-[20 <./img/gpgpu.png>]
-<img/arqutecturaTX2.png, id=196, 1078.78032pt x 630.10406pt>
+[19 <./img/gpgpu.png>]
+<img/arqutecturaTX2.png, id=193, 1078.78032pt x 630.10406pt>
 File: img/arqutecturaTX2.png Graphic file (type png)
 <use img/arqutecturaTX2.png>
-Package pdftex.def Info: img/arqutecturaTX2.png  used on input line 389.
+Package pdftex.def Info: img/arqutecturaTX2.png  used on input line 384.
 (pdftex.def)             Requested size: 485.44666pt x 283.5442pt.
 
-Overfull \hbox (15.69127pt too wide) in paragraph at lines 389--390
+Overfull \hbox (15.69127pt too wide) in paragraph at lines 384--385
  [][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
+Underfull \hbox (badness 10000) in paragraph at lines 412--412
 []|[]\T1/cmr/bx/n/8 Procesador de
  []
 
 
-Underfull \hbox (badness 5345) in paragraph at lines 423--423
+Underfull \hbox (badness 5345) in paragraph at lines 418--418
 []|[]\T1/cmr/bx/n/8 Controlador de
  []
 
+
+Underfull \vbox (badness 1953) has occurred while \output is active []
+
+ [20]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -2161,44 +2161,411 @@ Cap\'{\i }tulo 3.
 Package srcltx Info: Expanded filename `Capitulo3-Trabajo_Relacionado.tex' to `
 Capitulo3-Trabajo_Relacionado.tex' on input line 213.
 :<+ Capitulo3-Trabajo_Relacionado.tex
-(./Capitulo3-Trabajo_Relacionado.tex
-./Capitulo3-Trabajo_Relacionado.tex:18: Undefined control sequence.
-l.18 Otra solución la observamos en \ciite
-                                           {8}, en donde se de desarrolló u...
+(./Capitulo3-Trabajo_Relacionado.tex [25]
+Underfull \vbox (badness 1097) has occurred while \output is active []
+
+ [26]
+Underfull \vbox (badness 3895) has occurred while \output is active []
+
+ [27]
+Underfull \vbox (badness 1097) has occurred while \output is active []
+
+ [28]
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@endenumerate ->\enit@after 
+                                 \endlist \ifx \enit@series \relax \else \if...
+l.84 \end{enumerate}
+                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[25] [26] [27] [28] [29]
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@endenumerate ...\else \ifnum \enit@resuming 
+                                                  =\@ne \enit@setresumekeys ...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
 
-./Capitulo3-Trabajo_Relacionado.tex:102: Package inputenc Error: Unicode charac
-ter ́ (U+0301)
+./Capitulo3-Trabajo_Relacionado.tex:84: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.84 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.84 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+<argument> enit@resume@series@\enit@series 
+                                           
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.84 \end{enumerate}
+                    
+I'm forgetting what you said and using zero instead.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@endenumerate ...t \fi \ifnum \enit@resuming 
+                                                  =\thr@@ \enit@setresumekey...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.84 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...xpandafter {\enit@savekeys 
+                                                  }\xdef \enit@afterlist {#2...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...it@toks }\ifnum \enit@type 
+                                                  =\z@ #3\def \enit@noexcs {...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Missing number, treated as zero.
+<to be read again> 
+                   =
+l.84 \end{enumerate}
+                    
+A number should have been here; I inserted `0'.
+(If you can't figure out why I needed to see a number,
+look up `weird error' in the index to The TeXbook.)
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...me@#1}{\csname c@\@listctr 
+                                                  \endcsname \the \csname c@...
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Undefined control sequence.
+\enit@setresumekeys ...e \the \csname c@\@listctr 
+                                                  \endcsname }\fi }
+l.84 \end{enumerate}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: You can't use `\relax' after \the.
+<recently read> \c@ 
+                    
+l.84 \end{enumerate}
+                    
+I'm forgetting what you said and using zero instead.
+
+
+./Capitulo3-Trabajo_Relacionado.tex:84: LaTeX Error: \begin{document} ended by 
+\end{enumerate}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.84 \end{enumerate}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+./Capitulo3-Trabajo_Relacionado.tex:84: Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.84 \end{enumerate}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 91--91
+[]|\T1/cmr/bx/n/8 Clasificaci�n por
+ []
+
+
+Underfull \hbox (badness 1259) in paragraph at lines 93--93
+\T1/cmr/m/n/8 re: A�a-de re-gis-tros
+ []
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 93--93
+[]|\T1/cmr/m/n/8 Colas ma-si-vas en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--94
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]|\T1/cmr/m/n/8 Basado en Hard-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+\T1/cmr/m/n/8 wa-re: Se-lec-tor de
+ []
+
+
+./Capitulo3-Trabajo_Relacionado.tex:95: Package inputenc Error: Unicode charact
+er ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.102 ...mputing} & Basado en Software: Partició
-                                                  n de kernel & API &Tarjeta...
+l.95 ...úcleos de procesamiento & Administració
+                                                  n dinámica de los núcl...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 102--102
-[]|\T1/cmr/m/n/8 Basado en Soft-wa-re:
+./Capitulo3-Trabajo_Relacionado.tex:95: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ...de procesamiento & Administración diná
+                                                  mica de los núcleos de p...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo3-Trabajo_Relacionado.tex:95: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.95 ... & Administración dinámica de los nú
+                                                  cleos de procesamiento &Mo...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 95--95
+[]|\T1/cmr/m/n/8 Administracion di-
  []
 
 
-Underfull \hbox (badness 1281) in paragraph at lines 104--104
+Underfull \hbox (badness 7203) in paragraph at lines 95--95
+\T1/cmr/m/n/8 cleos de pro-ce-sa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--96
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+./Capitulo3-Trabajo_Relacionado.tex:97: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...clo de vida de registros & Administració
+                                                  n dinámica de memora &Mo...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo3-Trabajo_Relacionado.tex:97: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97 ...ida de registros & Administración diná
+                                                  mica de memora &Modificaci...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 97--97
+[]|\T1/cmr/m/n/8 Administracion di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--98
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+./Capitulo3-Trabajo_Relacionado.tex:99: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 ...omputing} & Basado en Software: Partició
+                                                  n de kernel & Administraci...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo3-Trabajo_Relacionado.tex:99: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 ...e: Partición de kernel & Administració
+                                                  n dinámica de memora &Mo...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo3-Trabajo_Relacionado.tex:99: Package inputenc Error: Unicode charact
+er ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.99 ...ción de kernel & Administración diná
+                                                  mica de memora &Modificaci...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 99--99
+[]|\T1/cmr/m/n/8 Administracion di-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--100
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+Underfull \hbox (badness 1281) in paragraph at lines 101--101
 []|\T1/cmr/bx/n/8 Run-Time Sche-du-ling Fra-me-work for
  []
 
 
-./Capitulo3-Trabajo_Relacionado.tex:104: Package inputenc Error: Unicode charac
+./Capitulo3-Trabajo_Relacionado.tex:101: Package inputenc Error: Unicode charac
 ter ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2206,49 +2573,142 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.104 ... System} & Basado en Software: Partició
-                                                  n en tareas & Código fuen...
+l.101 ...System*} & Basado en Software: Partició
+                                                  n en tareas & Administraci...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 104--104
-[]|\T1/cmr/m/n/8 Basado en Soft-wa-re:
+./Capitulo3-Trabajo_Relacionado.tex:101: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...: Partición en tareas & Administració
+                                                  n dinámica de 	memora &M...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo3-Trabajo_Relacionado.tex:101: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...ión en tareas & Administración diná
+                                                  mica de 	memora &Modificac...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 101--101
+[]|\T1/cmr/m/n/8 Administracion di-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 104--105
-[]|\T1/cmr/m/n/8 Sistemas em-be-bi-
- []
+./Capitulo3-Trabajo_Relacionado.tex:101: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...ón dinámica de 	memora &Modificació
+                                                  n de código fuente\\
+You may provide a definition with
+\DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 6412) in paragraph at lines 106--106
+./Capitulo3-Trabajo_Relacionado.tex:101: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101 ...́mica de 	memora &Modificación de có
+                                                  digo fuente\\
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 103--103
 []|\T1/cmr/bx/n/8 Effisha: A soft-wa-re fra-me-work for
  []
 
 
-Underfull \hbox (badness 4556) in paragraph at lines 106--106
-[]|\T1/cmr/m/n/8 Basado en Soft-wa-re:
+Underfull \hbox (badness 5548) in paragraph at lines 103--103
+[]|\T1/cmr/m/n/8 Colas ma-si-vas en
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 106--106
-[]|\T1/cmr/m/n/8 API y C�-di-go
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+[]|\T1/cmr/m/n/8 Modificaci�n del
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 112--112
+./Capitulo3-Trabajo_Relacionado.tex:105: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.105 ...Engines} & Basado en Software: Partició
+                                                  n de kernel & Colas masiva...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 105--105
+[]|\T1/cmr/m/n/8 Colas ma-si-vas en
+ []
+
+
+./Capitulo3-Trabajo_Relacionado.tex:107: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.107 ...unction} & Basado en Software: Partició
+                                                  n de kernel & Colas masiva...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 5548) in paragraph at lines 107--107
+[]|\T1/cmr/m/n/8 Colas ma-si-vas en
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 109--109
 []|\T1/cmr/bx/n/8 Intra-Node Me-mory Sa-fe GPU Co-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--112
-[]|\T1/cmr/m/n/8 Administraci�n di-n�-
- []
-
-
-./Capitulo3-Trabajo_Relacionado.tex:114: Package inputenc Error: Unicode charac
+./Capitulo3-Trabajo_Relacionado.tex:109: Package inputenc Error: Unicode charac
 ter ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2256,19 +2716,24 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.114 ...} & Administración dinámica de los nú
-                                                  cleos de procesamiento & A...
+l.109 ...heduling} &Basado en Software: Partició
+                                                  n de kernel&Administració...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 114--114
-[]|\T1/cmr/m/n/8 Administraci�n di-n�-
+Underfull \hbox (badness 3271) in paragraph at lines 109--109
+[]|\T1/cmr/m/n/8 Administraci�n di-
  []
 
 
-./Capitulo3-Trabajo_Relacionado.tex:116: Package inputenc Error: Unicode charac
+Underfull \hbox (badness 10000) in paragraph at lines 109--110
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+./Capitulo3-Trabajo_Relacionado.tex:111: Package inputenc Error: Unicode charac
 ter ́ (U+0301)
 (inputenc)                not set up for use with LaTeX.
 
@@ -2276,23 +2741,86 @@ See the inputenc package documentation for explanation.
 Type  H <return>  for immediate help.
  ...                                              
                                                   
-l.116 ...er for embedded systems} & Planificació
-                                                  n por prioridad & Código ...
+l.111 ...g units} & Basado en Software: Partició
+                                                  n en tareas &Administraci�...
 
 You may provide a definition with
 \DeclareUnicodeCharacter 
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 116--117
-[]|\T1/cmr/m/n/8 Sistemas em-be-bi-
+./Capitulo3-Trabajo_Relacionado.tex:111: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.111 ...as &Administración dinámica de los nú
+                                                  cleos de procesamiento & M...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 3271) in paragraph at lines 111--111
+[]|\T1/cmr/m/n/8 Administraci�n di-
  []
 
 
-Overfull \hbox (5.2095pt too wide) in paragraph at lines 92--120
+Underfull \hbox (badness 7203) in paragraph at lines 111--111
+\T1/cmr/m/n/8 cleos de pro-ce-sa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 111--112
+[]|\T1/cmr/m/n/8 Modificaci�n del
+ []
+
+
+./Capitulo3-Trabajo_Relacionado.tex:113: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.113 ...ystems*} & Basado en Software: Partició
+                                                  n de kernel & Planificacio...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+./Capitulo3-Trabajo_Relacionado.tex:113: Package inputenc Error: Unicode charac
+ter ́ (U+0301)
+(inputenc)                not set up for use with LaTeX.
+
+See the inputenc package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.113 ...e: Partición de kernel & Planificació
+                                                  n por prioridad & Modifica...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 113--113
+[]|\T1/cmr/m/n/8 Planificacion por
+ []
+
+
+Overfull \hbox (5.20992pt too wide) in paragraph at lines 89--117
  [][] 
  []
 
-[30])
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[29] [30])
 :<-
 [31] [32
 
@@ -2489,10 +3017,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 42283 strings out of 492616
- 858919 string characters out of 6129482
- 1093817 words of memory out of 5000000
- 45469 multiletter control sequences out of 15000+600000
+ 42285 strings out of 492616
+ 858938 string characters out of 6129482
+ 1096817 words of memory out of 5000000
+ 45471 multiletter control sequences out of 15000+600000
  548325 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  63i,18n,101p,1975b,597s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2513,7 +3041,7 @@ e/2019/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb></usr/local/texlive/
 /texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2019/t
 exmf-dist/fonts/type1/public/cm-super/sfti1095.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on Tesis_AABA.pdf (60 pages, 1263114 bytes).
+Output written on Tesis_AABA.pdf (60 pages, 1263586 bytes).
 PDF statistics:
  344 PDF objects out of 1000 (max. 8388607)
  213 compressed objects within 3 object streams

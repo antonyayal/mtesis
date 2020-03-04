@@ -1,0 +1,99 @@
+//Estructura BackUp
+struct Backup{
+	/* Variables locales */
+	int temp1[id_block];
+	int temp2[id_block];
+	. . .
+	int tempn[id_block];
+	/* Último punto de control */
+	int estado[id_block];
+
+};
+
+//Función kernel modificada
+
+__global__ void kernelFunction(int* a,.., int* resultados,..,
+								struct Backup* backup, int* quantum_expirado){
+	/* Fase de declaración de variables */
+	int temp1;
+	int temp2;
+	. . .
+	int tempn;
+	
+	/* Fase de inicialización */
+	switch(backup.estado[id_block]){
+		case INICIO:
+			//Inicialización de variables iniciales
+			temp1 = 0;
+			temp2 = 0;
+			. . .
+			tempn = 0;
+			break;
+		case EJECUCION:
+			//Inicialización de variables con respecto al backup
+			temp1 = backup->temp1[id_block];
+			temp2 = backup->temp2[id_block];
+			. . .
+			temp3 = backup->tempn[id_block];
+			break;
+		case TERMINADO:
+			break;
+	}
+	
+	/* Fase de procesamiento*/
+	switch(backup.estado[id_block]){
+		case INICIO:
+			backup->estado[id_block] = EJECUCION;
+			// No hay break para que continue al siguiente caso
+		case EJECUCION:
+			//Ejecución del kernel
+			do { 
+				//Procesa 
+				resultados = paso_de_procesamiento;
+			} while(!quantum_expirado && !completo); <-- Trabajo futuro "merma el preguntar siempre"
+			/* Si se realizó la ejecución completamente */
+			if(completo){
+				backup->estado[id_block] = TERMINADO;
+				break;
+			}
+			/* Si ya expiró el quantum */
+			//Almacena contexto en backup
+			backup->temp1[id_block] = temp1;
+			backup->temp2[id_block] = temp2;
+			. . .
+			backup->tempn[id_block] = tempn;
+			break;
+		case TERMINADO:
+			break;
+	}
+}
+
+//Algoritmo del lado del CPU
+
+//Declaración del backup
+struct Backup backup;
+//Duración máxima del quantum en microsegundos
+int quantum_time = //duración del quantum
+//
+bool quantum_expirado = false;
+
+
+/* Ejecución del kernel */
+while(!completo){
+	kernelFuncition<<<blockDim,gridDim >>>(a,.., resultados, 
+											backup,quantum_expirado);
+	/*Espera el tiempo del quantum */
+	usleep(quantum_time);
+	*quantum_expirado = true;
+	cudaDeviceSynchronize();
+
+	/* Si aun no están completos todos los threads */
+	if(!todos_threads_completados){
+		*quantum_expirado = false;
+	}
+}
+
+
+
+
+

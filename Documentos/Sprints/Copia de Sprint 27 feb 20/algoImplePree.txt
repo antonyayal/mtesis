@@ -18,7 +18,7 @@ struct Backup{
 
 //Función kernel modificada
 
-__global__ void kernelFuncition(int* a,.., int* resultados, Backup* backup, 
+__global__ void kernelFunction(int* a,.., int* resultados, Backup* backup, 
 										int* quantum_expirado, int* estado){
 	/* Declaración de variables */
 	int temp1;
@@ -29,9 +29,9 @@ __global__ void kernelFuncition(int* a,.., int* resultados, Backup* backup,
 	switch(backup.estado[id_block]){
 		case INICIO:
 			//Inicialización de variables
-			backup.temp1[id_block] = tempn = 0;
+			tempn = 0;
 			. . .
-			backup.tempn[id_block] = tempn = 0;
+			tempn = 0;
 			break;
 		case EJECUCION:
 			//Inicialización de variables
@@ -42,6 +42,7 @@ __global__ void kernelFuncition(int* a,.., int* resultados, Backup* backup,
 		case TERMINADO:
 			break;
 	}
+	/* Realización del procesamiento*/
 	switch(backup.estado[id_block]){
 		case INICIO:
 			backup.estado[id_block] = EJECUCION;

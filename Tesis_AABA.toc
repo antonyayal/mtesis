@@ -16,32 +16,32 @@
 \contentsline {subsubsection}{\numberline {2.2.2.2}Planificaci\IeC {\'o}n preemptive}{9}% 
 \contentsline {subsection}{\numberline {2.2.3}Algoritmos de planificaci\IeC {\'o}n}{11}% 
 \contentsline {subsubsection}{\numberline {2.2.3.1}Shortest Job First}{12}% 
-\contentsline {subsubsection}{\numberline {2.2.3.2}Earliest Deadline First}{13}% 
+\contentsline {subsubsection}{\numberline {2.2.3.2}Earliest Deadline First}{12}% 
 \contentsline {subsubsection}{\numberline {2.2.3.3}Rate Monotonic}{13}% 
 \contentsline {subsubsection}{\numberline {2.2.3.4}Deadline Monotonic}{13}% 
-\contentsline {subsubsection}{\numberline {2.2.3.5}Least Laxity First}{14}% 
+\contentsline {subsubsection}{\numberline {2.2.3.5}Least Laxity First}{13}% 
 \contentsline {subsubsection}{\numberline {2.2.3.6}Group Earliest Deadline First}{14}% 
 \contentsline {section}{\numberline {2.3}CPU}{14}% 
-\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{15}% 
+\contentsline {subsection}{\numberline {2.3.1}Arquitectura del CPU}{14}% 
 \contentsline {section}{\numberline {2.4}GPU}{15}% 
 \contentsline {subsection}{\numberline {2.4.1}Arquitectura del GPU}{15}% 
 \contentsline {subsection}{\numberline {2.4.2}Manycore y Multicore}{17}% 
 \contentsline {subsection}{\numberline {2.4.3}Arquitectura Pascal}{18}% 
 \contentsline {subsubsection}{\numberline {2.4.3.1}Memoria unificada}{18}% 
 \contentsline {subsubsection}{\numberline {2.4.3.2}Computaci\IeC {\'o}n preemptive}{18}% 
-\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{19}% 
+\contentsline {subsubsection}{\numberline {2.4.3.3}Balanceo de carga din\IeC {\'a}mico}{18}% 
 \contentsline {subsubsection}{\numberline {2.4.3.4}Operaciones at\IeC {\'o}micas}{19}% 
 \contentsline {subsection}{\numberline {2.4.4}GPGPU}{19}% 
 \contentsline {section}{\numberline {2.5}Sistemas embebidos}{20}% 
 \contentsline {subsection}{\numberline {2.5.1}Sistemas embebidos heterog\IeC {\'e}neos}{20}% 
-\contentsline {section}{\numberline {2.6}Material de trabajo}{21}% 
+\contentsline {section}{\numberline {2.6}Material de trabajo}{20}% 
 \contentsline {subsection}{\numberline {2.6.1}Jetson TX2}{21}% 
 \contentsline {section}{\numberline {2.7}Resumen}{22}% 
-\contentsline {subsection}{\numberline {2.7.1}Computaci\IeC {\'o}n preemptive}{23}% 
+\contentsline {subsection}{\numberline {2.7.1}Computaci\IeC {\'o}n preemptive}{22}% 
 \contentsline {subsection}{\numberline {2.7.2}Tipos de ejecuci\IeC {\'o}n de tareas}{23}% 
 \contentsline {chapter}{\numberline {3}Trabajo Relacionado}{25}% 
 \contentsline {section}{\numberline {3.1}Clasificaci\IeC {\'o}n de la planificaci\IeC {\'o}n de tareas}{25}% 
-\contentsline {section}{\numberline {3.2}Resumen}{30}% 
+\contentsline {section}{\numberline {3.2}Resumen}{29}% 
 \contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o del framework}{33}% 
 \contentsline {section}{\numberline {4.1}Descripci\IeC {\'o}n general del framework}{33}% 
 \contentsline {section}{\numberline {4.2}Puntos preemptive}{34}% 

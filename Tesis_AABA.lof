@@ -4,10 +4,10 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Planificaci\IeC {\'o}n cooperativa.\cite {medium}\relax }}{8}% 
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Planificaci\IeC {\'o}n cooperativa con plazos vencidos.\cite {medium}\relax }}{8}% 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Planificaci\IeC {\'o}n preemptive.\cite {medium}\relax }}{9}% 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Escritura en DRAM\cite {NCUDA}.\relax }}{17}% 
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Escritura en DRAM\cite {NCUDA}.\relax }}{16}% 
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Lectura en DRAM\cite {NCUDA}.\relax }}{17}% 
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Representaci\IeC {\'o}n de un CPU y un GPU\cite {NCUDA}.\relax }}{17}% 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Aceleraci\IeC {\'o}n de programas en GPUs\cite {gpgpu}.\relax }}{20}% 
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Aceleraci\IeC {\'o}n de programas en GPUs\cite {gpgpu}.\relax }}{19}% 
 \contentsline {figure}{\numberline {2.8}{\ignorespaces Diagrama de la arquitectura del sistema Jetson TX2\cite {ArqTX2}.\relax }}{21}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
