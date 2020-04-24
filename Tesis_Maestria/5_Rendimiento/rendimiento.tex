@@ -1,0 +1,80 @@
+\chapter{Rendimiento}
+    \label{cha:Rendimiento}
+
+Este capítulo propone posibles métricas para evaluar el rendimiento del framework. 
+
+\section{Métricas de rendimiento por kernel}
+
+Para poder realizar cualquier evaluación del rendimiento es necesario obtener datos importantes sobre las ejecuciones de un kernel, con dicha información se podrá implementar una serie de gráficas que permita valorar la tendencia de los resultados.
+
+\begin{itemize}
+
+\item \textbf{Número total de subkernels}: Denota el número de veces que se suspendió el kernel.
+
+\begin{equation}
+n_{sk} 
+\end{equation}
+
+\item \textbf{Tiempo de ejecución de subkernel}: Duración promedio de la ejecución de un subkernel una vez que es restablecido de una suspensión preemptive.
+
+\begin{equation}
+t_{sk}= \sum_{i=1}^{n_{sk}} \frac{t_{sk}(i) }{ n_{sk} }
+\end{equation}
+
+\item \textbf{Número total de cambios de contexto}: Denota el número de veces que se guardó y extrajo el contexto.
+
+\begin{equation}
+n_{bk}=n_{sk}-1
+\end{equation}
+
+\item \textbf{Tiempo de inserción del backup}: Tiempo promedio que se utiliza para almacenar el contexto de un subkernel en la estructura de backup.
+
+\begin{equation}
+t_{bk[in]}= \sum_{i=1}^{n_{bk}} \frac{t_{bk[in]}(i) }{ n_{sk} }
+\end{equation}
+
+\item \textbf{Tiempo de extracción del backup}: Tiempo promedio que se utiliza para copiar el contexto almacenado en la estructura de backup al subkernel.
+
+\begin{equation}
+t_{bk[ex]}= \sum_{i=1}^{n_{bk}} \frac{t_{bk[ex]}(i) }{ n_{sk} }
+\end{equation}
+
+\item \textbf{Tiempo de cambio de contexto}: Tiempo total que duran las inserciones y extracciones de un kernel.
+
+\begin{equation}
+t_{tbk} = t_{bk[in]} + t_{bk[ex]}
+\end{equation}
+
+\item \textbf{Tiempo de ejecución total con suspensión preemptive}: Nos indica el tiempo total desde que el programa inicia la primera vez, hasta que finaliza completamente, este valor trae consigo el tiempo que estuvo esperando el kernel al ser nuevamente lanzado después de una suspensión preemptive, la mayoría de las veces será mayor a 1 ya que se deben realizar operaciones añadidas al kernel original.
+
+\begin{equation}
+t_p = t_f - t_i 
+\end{equation}
+
+\item \textbf{Tiempo de ejecución total sin suspensión preemptive}: Indica el tiempo total de ejecución del kernel, únicamente el tiempo que está activo dentro del GPU.
+\begin{equation}
+t_{np} = \sum_{i=1}^{n_{sk}}t_{sk}(i)
+\end{equation}
+
+\item \textbf{Tiempo de ejecución real total}: Indica el tiempo real de procesamiento sin contar con el tiempo de cambio de contexto.
+
+\begin{equation}
+t_r = t_{np} - t_{tbk}
+\end{equation}
+
+\item \textbf{Tiempo de ociosidad}: Indica el tiempo que un kernel está fuera de operación.
+
+\begin{equation}
+t_{idle} = t_p - t_{np}
+\end{equation}
+
+\item \textbf{Tasa relativa de ejecución}: Muestra la relación que existe entre el tiempo de ejecución total con suspensión preemptive y el tiempo de ejecución original del kernel.
+
+\begin{equation}
+t_{tr} = \frac{t_{np}}{t_{or}} 
+\end{equation}
+
+\end{itemize} 
+
+\section{Métricas de rendimiento multikernel}
+

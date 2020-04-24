@@ -13,7 +13,7 @@ struct Backup{
 //Función kernel modificada
 
 __global__ void kernelFunction(int* a,.., int* resultados,..,
-								struct Backup* backup, int* quantum_expirado){
+								Backup* backup, int* quantum_expirado){
 	/* Fase de declaración de variables */
 	int temp1;
 	int temp2;
@@ -71,7 +71,7 @@ __global__ void kernelFunction(int* a,.., int* resultados,..,
 //Algoritmo del lado del CPU
 
 //Declaración del backup
-struct Backup backup;
+Backup backup;
 //Duración máxima del quantum en microsegundos
 int quantum_time = //duración del quantum
 //
