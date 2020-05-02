@@ -1,0 +1,135 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{amsmath}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,double]
+
+\tikzstyle{circulo} = [circle, rounded corners, minimum width=1cm, minimum height=1cm,text centered, draw=black, fill=white!30,sloped]
+
+\tikzstyle{pattern} = [rectangle, rounded corners, minimum height=0.6cm,text centered, draw=black, fill=white!30,text width=2cm]
+
+\tikzstyle{pat} = [rectangle, rounded corners, minimum height=0.6cm,text centered, draw=black, fill=white!30,text width=2cm,double]
+
+\tikzstyle{objseg} = [rectangle, rounded corners, minimum height=0.6cm,text centered, draw=black, fill=white!30,text width=2.5cm]
+
+\tikzstyle{amenazas} = [rectangle, rounded corners, minimum height=0.6cm,text centered, draw=black, fill=white!30,text width=2cm]
+
+
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{arrow1} = [thick,<-,>=stealth]
+
+\begin{document}
+
+\begin{tikzpicture}[]
+	
+	\node (Int) [objseg,xshift=-8cm] {Integridad};
+	\node (susInt) [draw=none,fill=none,above of =Int,yshift=1cm] {\textbf{\dots}};
+	\node (req1) [circulo,left of=susInt] {$Req_1$};
+	\node (req2) [circulo,right of=susInt] {$Req_k$};
+	
+	\node (Conf) [objseg] {Confidencialidad};
+	\node (susConf) [draw=none,fill=none,above of=Conf,yshift=1cm] {\textbf{\dots}};
+	\node (req3) [circulo,left of=susConf] {\scriptsize$Req_{k+1}$};
+	\node (req4) [circulo,right of=susConf] {$Req_{j}$};
+	
+	\node (Dis) [objseg,xshift=8cm] {Disponibilidad};
+	\node (susDis) [draw=none,fill=none,above of=Dis,yshift=1cm] {\textbf{\dots}};
+	\node (req5) [circulo,left of=susDis] {\scriptsize$Req_{j+1}$};
+	\node (req6) [circulo,right of=susDis] {$Req_r$};
+	
+	\node (Resp) [objseg,xshift=16cm] {Responsabilidad};
+	\node (susResp) [draw=none,fill=none,above of=Resp,yshift=1cm] {\textbf{\dots}};
+	\node (req7) [circulo,left of=susResp] {\scriptsize$Req_{r+1}$};
+	\node (reqn) [circulo,right of=susResp] {$Req_N$};
+		
+	\node (w1) [draw=none,fill=none,below of=Int,yshift=-1cm] {$w_I$};
+	\node (w2) [draw=none,fill=none,below of=Conf,yshift=-1cm] {$w_C$};
+	\node (w3) [draw=none,fill=none,below of=Dis,yshift=-1cm] {$w_D$};
+	\node (w4) [draw=none,fill=none,below of=Resp,yshift=-1cm] {$w_R$};
+	
+	\draw [thick] (Int) -- (w1);
+	\draw [thick] (Conf) -- (w2);
+	\draw [thick] (Dis) -- (w3);
+	\draw [thick] (Resp) -- (w4);
+		
+	\draw [arrow] (req1) -- (Int);
+	\draw [arrow] (req2) -- node [pos=0.9,right,xshift=1.1cm,yshift=-0.4cm]{$\frac{\sum_{i=1}^{k}Req_i}{N}$} (Int);
+	\draw [arrow] (req3) -- (Conf);
+	\draw [arrow] (req4) -- (Conf);
+	\draw [arrow] (req5) -- (Dis);
+	\draw [arrow] (req6) -- (Dis);
+	\draw [arrow] (req7) -- (Resp);
+	\draw [arrow] (reqn) -- node [pos=0.9,right,xshift=1.1cm,yshift=-0.4cm]{$\frac{\sum_{i=r+1}^{N}Req_i}{N}$} (Resp);
+	
+	\node (susInt_a) [draw=none,fill=none,below of =w1,yshift=-1cm] {\textbf{\dots}};
+	\node (susConf_a) [draw=none,fill=none,below of =w2,yshift=-1cm] {\textbf{\dots}};
+	\node (ame1) [amenazas,left of=susInt_a,xshift=-1cm] {Amenaza$_1$};
+	\node (ame6) [amenazas,right of=susInt_a,xshift=1cm] {Amenaza$_x$};
+	
+	\node (ame4) [amenazas,left of=susConf_a,xshift=-1cm] {Amenaza$_{x+1}$};
+	\node (ame2) [amenazas,right of=susConf_a,xshift=1cm] {Amenaza$_y$};
+	
+	\node (susDis_a) [draw=none,fill=none,below of =w3,yshift=-1cm] {\textbf{\dots}};
+	\node (ame3) [amenazas,left of=susDis_a,xshift=-1cm] {Amenaza$_{y+1}$};
+	\node (ame5) [amenazas,right of=susDis_a,xshift=1cm] {Amenaza$_z$};
+	
+	\node (susResp_a) [draw=none,fill=none,below of =w4,yshift=-1cm] {\textbf{\dots}};
+	\node (ame7) [amenazas,left of=susResp_a,xshift=-1cm] {Amenaza$_{z+1}$};
+	\node (ame8) [amenazas,right of=susResp_a,xshift=1cm] {Amenaza$_M$};
+
+	
+	\draw [arrow1] (w1) -- node[pos=0.8,left]{$\alpha_{1}= \frac{imp_1}{M}$} (ame1);
+	\draw [arrow1] (w1) -- (ame6);
+	\draw [arrow1] (w2) -- node[pos=0.8,right]{$\alpha_{y}= \frac{imp_y}{M}$} (ame2);
+	\draw [arrow1] (w2) -- (ame4);
+	\draw [arrow1] (w3) -- (ame3);
+	\draw [arrow1] (w3) -- (ame5);
+	\draw [arrow1] (w4) -- (ame7);
+	\draw [arrow1] (w4) -- node[pos=0.8,right]{$\alpha_{M}= \frac{imp_M}{M}$}(ame8);
+	
+
+	\node (pat1) [pat,below of=ame1,yshift=-2cm] {$Pat_1$};
+
+	\node (patv) [pat,below of=ame4,yshift=-2.5cm,xshift=0.3cm] {$Pat_i$};
+	\node (pat2) [pat,below of=ame4,yshift=-2cm] {$Pat_2$};
+	\node (pat3) [pat,below of=ame2,yshift=-2cm] {$Pat_{i+1}$};
+	\node (susp1) [draw=none,fill=none,right of=pat3,xshift=3cm] {\textbf{\dots}};
+	\node (pat4) [pat,below of=ame3,yshift=-2cm] {$Pat_{i+2}$};
+	\node (patn) [pat,below of=ame8,yshift=-2cm] {$Pat_P$};
+%	
+	\draw [dotted,thick] (pat1) -- node[pos=0.1,left] {$v_p=1$}(ame1);
+	\draw [dotted,thick] (pat2) -- node[pos=0.1,left] {$v_p=1$}(ame4);
+	\draw [dotted,thick] (pat3) --node[pos=0.1,left] {$v_p=1$} (ame2);
+	\draw [dotted,thick] (pat4) -- node[pos=0.1,left] {$v_p=1$}(ame3);
+	\draw [dotted,thick] (patn) -- node[pos=0.1,left] {$v_p=1$}(ame8);
+
+	\begin{pgfonlayer}{background}
+		\path (ame1.west |- ame1.north)+(-0.5,0.7) node (a) {};
+		\path (ame8.east |- ame8.south)+(+0.5,-0.3) node (c) {};
+            	\path[fill=gris!20,rounded corners, draw=black,double] (a) rectangle (c);  
+    	\end{pgfonlayer}
+
+\end{tikzpicture}
+
+
+
+\end{document}

@@ -1,0 +1,172 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usepackage{pgf-umlcd}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+
+
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered]
+
+\tikzstyle{n1} = [rectangle,rounded corners=7pt,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+\tikzstyle{n2} = [rectangle,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[node distance=1cm]	
+	
+\node (cust) [nodo,text width=5cm,xshift=0cm,yshift=0cm] {Cliente};
+\node (brok) [nodo,text width=5cm,xshift=7cm,yshift=0cm] {Agente};
+
+	
+\fill (0,-0.5) circle (.15cm); %Start
+	
+%Separacion actores
+\draw [linea] (3.5,1) -- (3.5,-22);
+
+	
+	
+\node (creOrd) [n1,text width=2.5cm,xshift=0cm,yshift=-2cm] {Crear \\ orden};
+\draw [flow] (0,-0.5) -- (creOrd);
+	
+\node (ord1) [n2,text width=1.5cm,xshift=7cm,yshift=-3.5cm] {\underline{:Orden} \scriptsize{[abierta]}};
+	
+	
+\draw [linea,line width=2.5pt] (-0.9,-4.5) -- (0.9,-4.5); %fork line
+\node (hn1) [xshift=0cm,yshift=-4.5cm]{}; %helped node
+\draw [flow] (creOrd) -- (hn1);
+	
+\draw [objFlow] (creOrd)-| (ord1);
+	
+\node (proOrd) [n1,text width=2.5cm,xshift=7cm,yshift=-5.5cm] {Procesar orden};
+\draw[flow] (hn1)--(2,-5.5)--(proOrd);
+\draw[objFlow](ord1)--(proOrd);
+	
+\node (ord2) [n2,text width=2cm,xshift=10cm,yshift=-6.8cm] {\underline{:Orden} \scriptsize{[en Proceso]}};
+\draw [objFlow] (proOrd) -| (ord2);
+	
+\node (fillOrd) [n1,text width=2.5cm,xshift=7cm,yshift=-8cm] {Llenar orden};
+\draw [objFlow] (ord2) |- (fillOrd);
+\draw [flow] (proOrd) -- (fillOrd);
+	
+	
+\node (ord3) [n2,text width=2cm,xshift=5cm,yshift=-11cm] {\underline{:Orden} \scriptsize{[procesada]}};
+\draw [objFlow] (fillOrd) -| (ord3);
+	
+
+\draw [linea,line width=2.5pt] (-0.9,-11) -- (0.9,-11); %fork line
+\node (hn2) [xshift=0cm,yshift=-11cm]{}; %helped node
+
+
+\draw[flow](hn1)--(hn2);
+\draw[flow](fillOrd.south)--(5.5,-9)--(2,-9)--(hn2);
+
+	
+\node (notOrd) [n1,text width=2.5cm,xshift=0cm,yshift=-12.5cm] {Notificaci\'on};
+\draw[flow](hn2)--(notOrd);
+\draw[objFlow](ord3.west)--(2,-11)--(notOrd.north);
+	
+\node (ord4) [n2,text width=2cm,xshift=2cm,yshift=-14cm] {\underline{:Orden} \scriptsize{[aceptada]}};
+\draw[objFlow](notOrd)|-(ord4);
+	
+\node (hn4) [xshift=7cm,yshift=-14cm]{}; %helped node
+\draw [linea,line width=2.5pt] (6.1,-14) -- (7.9,-14); %fork line
+\draw[flow](fillOrd)--(hn4);
+\draw[flow] (notOrd)--(5.5,-12.5)--(hn4);	
+	
+
+\node (upAcc) [n1,text width=2.5cm,xshift=7cm,yshift=-16cm] {Actualizar cuenta};
+\node (cloOrd) [n1,text width=2.5cm,xshift=7cm,yshift=-18cm] {Cerrar orden};
+\draw[flow](hn4)--(upAcc);
+\draw[flow](upAcc)--(cloOrd);
+\draw[objFlow](ord4)--(5.5,-14)--(upAcc);
+
+	
+\node (ord5) [n2,text width=2cm,xshift=10cm,yshift=-19cm] {\underline{:Orden} \scriptsize{[cerrada]}};
+\draw[objFlow](cloOrd)-|(ord5);
+	
+\node (acc1) [n2,text width=2cm,xshift=2cm,yshift=-18cm] {\underline{:Cuenta} \scriptsize{[actualizada]}};
+\draw[objFlow](upAcc)-|(acc1);
+	
+\node (hn5) [xshift=7cm,yshift=-21cm,draw,circle,minimum size=.5cm]{}; %helped node
+\fill (7,-21) circle (.15cm);
+\draw[flow](cloOrd)--(hn5) ;
+	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\node (att) [nodo,text width=5cm,xshift=-7cm,yshift=0cm] {Atacante externo};
+\draw [linea] (-3.5,1) -- (-3.5,-22);
+\draw [attFlow] (-7,-0.6) -- (-7,-20);
+
+\path (0,-1) node [circle,draw,red] (x) {}
+(-2,-1) node[red](y) {\scriptsize{Impostor}};
+\draw[attFlow] (x) -- (y);
+
+\path (0,-3) node [circle,draw,red] (x) {}
+(-7,-3) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=1.5cm,fill=white] (y) {\scriptsize{Crear orden\\ falsa}};
+\draw[attFlow] (x) -- (y);
+
+
+\path (7,-20) node [circle,draw,red] (x) {}
+(-7,-20) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=1.5cm,fill=white] (y) {\scriptsize{Leer informaci\'on \\ de orden}};
+\draw[attFlow] (x) -- (y);
+
+\path (7,-16.5)node [circle,draw,red] (x) {}
+(-7,-16.5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=1.5cm,fill=white] (y) {\scriptsize{Transferir dinero}};
+\draw[attFlow] (x) --(y);
+
+\path (7,-19) node [circle,draw,red] (x) {}
+(4.8,-19) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Distribuci\'on \\ ilegal}};
+\draw[attFlow] (x) -- (y);
+
+\path (4.5,-5.5) node [circle,draw,red] (x) {}
+(4.5,-4) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=1.5cm,fill=white] (y) {\scriptsize{Modificar \\ orden}};
+\draw[attFlow] (x) -- (y);
+
+\path (7,-6.5) node [circle,draw,red] (x) {}
+(10,-3.5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2.5cm,fill=white] (y) {\scriptsize{Ignorar regulaciones \\ gubernamentales}};
+\draw[attFlow] (x) --(8.7,-6.5)--(8.7,-5)-| (y);
+
+\path (7,-9.5) node [circle,draw,red] (x) {}
+(10,-9.5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=1.5cm,fill=white] (y) {\scriptsize{Modificar \\ orden}};
+\draw[attFlow] (x) -- (y);
+
+\end{tikzpicture}
+
+\end{document}

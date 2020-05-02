@@ -1,10 +1,5 @@
 //Planificador
 
-getTaskMayorPrioridad(K_listo); // Función del módulo Asignación 
-                                                //de prioridad
-ejecutarKernels(K_run); //Función Planificador
-kernelsSinCompletar(K_run) //Función módulo Planificador
-
 #define SM 2; //Número de SM
 #define TSM 2048 //Número de threads por SM
 
@@ -15,9 +10,9 @@ int tokenAsignados;
 
 Task task;
 
-K_rdy[numKernels] = #todos los kernels; //Set de kernels pendientes
-K_run[numKernels] = NULL; //Set de kernels en ejecución
-K_jmp[numKernels] = NULL; //Set de kernels saltados de ejecución
+Task K_rdy[numKernels] = #todos los kernels; //Set de kernels pendientes
+Task K_run[numKernels] = NULL; //Set de kernels a ejecutar
+Task K_jmp[numKernels] = NULL; //Set de kernels saltados de ejecución
 
 while(K_rdy != NULL){
 	tokenAsignados = 0;

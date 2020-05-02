@@ -1,0 +1,129 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usepackage{pgf-umlcd}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{shapes}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+
+
+
+
+\tikzstyle{nodo} = [minimum height=0.6cm, text centered]
+
+\tikzstyle{n1} = [rectangle,rounded corners=7pt,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+\tikzstyle{n2} = [rectangle,draw=black, minimum height=0.6cm,text centered, text width=1.5cm]
+
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+\tikzstyle{decisionFlow} = [-{Diamond [open,length=5mm,width=5mm]}]
+
+
+
+\begin{document}
+
+
+
+\begin{tikzpicture}[node distance=1cm]	
+	
+\node (cust) [nodo,text width=5cm,xshift=0cm,yshift=0cm] {Customer};
+\node (manag) [nodo,text width=5cm,xshift=7cm,yshift=0cm] {Manager};
+
+\fill (0,-0.5) circle (.15cm); %Start
+	
+%%%Separacion actores
+\draw [linea] (3.5,1) -- (3.5,-13.5);
+	
+\node (proInfo) [n1,text width=2.5cm,xshift=0cm,yshift=-2cm] {Provide \\ account info};
+\draw [flow] (0,-0.5) -- (proInfo);
+	
+\node (cus1) [n2,text width=1.8cm,yshift=-0.2cm,xshift=5cm, below of=proInfo] {\underline{:Customer} \scriptsize{[]}};
+\draw[objFlow](proInfo.east)--(2,-3.2)--(cus1);
+	
+\node (cheAcc) [n1,text width=2.5cm,below of = manag,yshift=-3.5cm] {Check \\ account info};
+
+\node (acc1) [n2,text width=1.8cm,yshift=-0.2cm,xshift=-2.2cm, below of=cheAcc] {\underline{id:Account} \scriptsize{[]}};
+\draw[objFlow](cheAcc)-|(acc1);
+\draw[objFlow](cus1.east)--(cheAcc.north);
+\draw[flow](proInfo)-|(cheAcc);
+
+
+\node (cloAcc) [n1,text width=2.5cm,below of = cheAcc,yshift=-2cm] {Close \\  account};
+\node (acc2) [n2,text width=1.8cm,yshift=-1cm,xshift=2cm, below of=cloAcc] {\underline{id:Account} \scriptsize{[Closed]}};
+
+\draw[flow](cheAcc)--(cloAcc);
+\draw[objFlow](acc1)|-(cloAcc);
+\draw[objFlow](cloAcc)-|(acc2);
+
+\draw [linea,line width=2.5pt] (-0.9,-9.5) -- (0.9,-9.5); %fork line
+\node (hn1) [xshift=0cm,yshift=-9.5cm]{}; %hn2
+\draw[flow](cloAcc)|-(2,-8.5)--(hn1) ;
+\draw[flow](proInfo)--(hn1);
+\node (notif) [n1,text width=2.5cm,below of = proInfo,yshift=-8cm] {Notification};
+
+\draw[flow](hn1)--(notif);
+
+
+\node (hn3) [xshift=0cm,yshift=-12.5cm,draw,circle,minimum size=.5cm]{}; %hn1
+\fill (0,-12.5) circle (.15cm);
+
+\draw[flow](notif)--(hn3);
+
+	
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\node (att) [nodo,text width=5cm,xshift=-7cm,yshift=0cm] {External attacker};
+%\draw [linea] (-3.5,1) -- (-3.5,-13.5);
+%\draw [thick,dotted,red] (-7,-0.6) -- (-7,-6.5);
+%
+%\path (0,-1) node [circle,draw,red] (x) {}
+%(-2,-1) node[red](y) {\scriptsize{Impostor}};
+%\draw[attFlow] (x) -- (y);
+%
+%\path (7,-2.3) node [circle,draw,red] (x) {}
+%(10,-2.3) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Illegal \\ dissemination}};
+%\draw[attFlow] (x) -- (y);
+%
+%\path (2.2,-2) node [circle,draw,red] (x) {}
+%(2.2,-5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Provide false info}};
+%\draw[attFlow] (x) -- (y);
+%
+%\path (6,-8.5) node [circle,draw,red] (x) {}
+%(6,-10) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Do not close account}};
+%\draw[attFlow] (x) -- (y);
+%
+%\path (7,-6.5) node [circle,draw,red] (x) {}
+%(-7,-6.5) node [rectangle,rounded corners=7pt,draw,dashed,red,text centered, text width=2cm,fill=white] (y) {\scriptsize{Read account info}};
+%\draw[attFlow] (x) --(y);
+
+
+\end{tikzpicture}
+
+\end{document}

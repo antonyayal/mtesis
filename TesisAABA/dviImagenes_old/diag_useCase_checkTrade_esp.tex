@@ -1,0 +1,74 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+\usepackage{graphicx}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{amsmath}
+
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows.meta}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,double]
+
+\tikzstyle{useCase} = [ellipse,  minimum width=2cm, minimum height=1cm,text centered, draw=black, fill=white,text width=2cm]
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+\begin{document}
+
+\begin{tikzpicture}[node distance=2cm]	
+
+	%Actores
+	
+%	\node(auditor) [inner sep=0pt,xshift=-5cm,yshift=-1cm]{\includegraphics[width=0.2\textwidth]{actor}};
+
+	\draw (-4,2) node[draw,circle,minimum width=0.4cm,fill=white,xshift=0cm,yshift=-3cm] (auditor) {} (auditor.south) node[]() {}--++(0,-15pt)--++(6pt,-4pt)--++(-6pt,4pt)--++(-6pt,-4pt)--++(6pt,4pt)--++(0,10pt)-++(6pt,0)--++(-7pt,0);%opt5
+	\node()[draw=none,fill=none,yshift=1cm,below of = auditor] {Auditor};
+	\node (act1) [right of=auditor,yshift=-0.5cm,xshift=-1.5cm]{};
+	
+	
+	
+
+
+	%Casos de uso
+	\node(title)[draw=none,fill=none] {\textbf{Auditoria de ordenes de comercio}};
+	
+	\node (uc1) [useCase,yshift=-1.5cm]{Inspeccionar orden};
+	
+	\node (uc2) [useCase,below of = uc1,yshift=-0.5cm]{Generar informe};
+	
+	
+	%\draw [arrow] (ac1) -- node[ near end,below] {UC1} (uc1) ;
+	\draw [draw] (act1) -- (uc1);
+	\draw[objFlow] (uc1)--node [pos=0.5,right]{\scriptsize{$<<$include$>>$}}(uc2);
+
+	\begin{pgfonlayer}{background}
+		\path (title.north |- title.west)+(3,0.3) node (f) {};
+		\path (uc2.south |- uc2.east)+(-3,-1.3) node (g) {};
+            	\path[rectangle, draw=black] (f) rectangle (g);  
+    	\end{pgfonlayer}
+\end{tikzpicture}
+
+
+
+\end{document}

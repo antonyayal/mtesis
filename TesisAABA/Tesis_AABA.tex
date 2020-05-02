@@ -1,0 +1,250 @@
+% Tengo como objetivo realizar una CONTRIBUCIÓN ORIGINAL AL CONOCIMIENTO, la tesis es un documento formal cuyo único propósito es mostrar el aporte realizado. 
+
+
+%TITLE: 
+%Design of a Framework for preemptive task planning in heterogeneous embedded systems
+%
+%
+%ABSTRACT:
+%
+%Security patterns have become relevant in the goal to build secure systems because they describe solutions directly related to a threat. If a system is built using security patterns it can be said that has security. However, measuring the security level of systems is a topic under research but we can define a kind of security level through the inherent components on the system. This work presents an approach to evaluate the security of a system that has been built using security patterns: This metric joins the coverage of threats by security patterns using a refined systematic threat enumeration and the security requirements that have been attended by patterns using a similar enumeration.  
+%
+%
+%BIOGRAPHY:
+%
+%My name is José Antonio Ayala Barbosa, I study the master degree in Science and Computer Engineering at Universidad Nacional Autónoma de México. My research is on High Performance Computing and Heterogeneous Computing under the leadership of PhD Paul Erick Méndez Monroy
+
+\documentclass[12pt,spanish]{book}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{amsmath}
+\geometry{verbose,tmargin=2.54cm,bmargin=2.54cm,lmargin=2.54cm,rmargin=2.54cm}
+\setlength{\parskip}{\smallskipamount}
+\setlength{\parindent}{0pt}
+\usepackage[active]{srcltx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[numbers]{natbib}
+\usepackage{lipsum} % Párrafo de relleno
+\usepackage{tabularx}
+\usepackage{xtab, paralist}
+\usepackage{rotating}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{color}
+\usepackage{emptypage}
+\usepackage{appendix}
+\usepackage{pdfpages}
+\usepackage{textcomp}
+\usepackage{colortbl}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{marginnote}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{xr}
+\usepackage{url}
+\usepackage{paralist}
+
+\usepackage[toc]{glossaries}
+
+\makeglossaries
+
+\decimalpoint
+
+
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+\definecolor{morado}{RGB}{172,6,111}
+\definecolor{lightgray}{rgb}{0.83, 0.83, 0.83}
+\definecolor{ballblue}{rgb}{0.13, 0.67, 0.8}
+\definecolor{ufogreen}{rgb}{0.24, 0.82, 0.44}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,double]
+
+\tikzstyle{objective} = [rectangle, rounded corners, minimum width=3cm, minimum height=2.5cm,text centered, draw=black, fill=white!30]
+
+\tikzstyle{pattern} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=white!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\def\checkmark{\tikz\fill[scale=0.35](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+
+
+\newcommand{\tabitem}{~~\llap{\textbullet}~~}
+\renewcommand{\baselinestretch}{1.5} %Espaciado de 1.5 puntos entre lineas
+\setlength{\parindent}{7pt}
+
+
+\renewcommand\spanishtablename{Tabla}
+\renewcommand{\thefootnote}{\arabic{footnote}}
+
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+
+%Cambio de lugar de numero de pagina
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[RO]{\chaptermark}
+\fancyhead[LO]{}
+\fancyhead[RE]{}
+\fancyhead[LE]{\chaptermark}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[C]{}
+
+%Configuracion de numeracion roman
+\def\@roman#1{\romannumeral #1}
+
+%Configuracion apendices
+\addto\captionsspanish{\renewcommand\appendixname{Anexo}\renewcommand\appendixpagename{Anexos}}
+
+%Contador de subsubsecciones
+\setcounter{secnumdepth}{3} %numerar las subsubsecciones
+\setcounter{tocdepth}{3} % añadir al I­ndice
+
+%Centrado de tablas
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+%Configuracion de listas en pie de pagina
+\usepackage{enumitem}
+
+%Definicion de colores para codigo
+\definecolor{verde}{rgb}{0,0.6,0}
+\definecolor{gris}{rgb}{0.5,0.5,0.5}
+\definecolor{morado}{rgb}{0.58,0,0.82}
+\definecolor{fondo}{rgb}{0.94,0.97,1.0}
+\lstdefinestyle{codeStyle}{
+	backgroundcolor=\color{fondo},
+	commentstyle=\color{verde},
+	keywordstyle=\color{magenta},
+	numberstyle=\tiny\color{gris},
+	stringstyle=\color{morado},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,
+	breaklines=true,
+	captionpos=b,
+	keepspaces=true,
+	numbers=left,
+	numbersep=5pt,
+	showspaces=false,
+	showstringspaces=false,
+	showtabs=false,
+	tabsize=2
+}
+
+\lstset{style=codeStyle}
+
+\makeatletter
+
+\@ifundefined{date}{}{\date{}}
+\usepackage[center,font=small,format=plain,labelfont=bf,up,textfont=it,up]{caption}
+\captionsetup[figure]{labelformat=simple, labelsep=period}
+\captionsetup[table]{labelformat=simple, labelsep=period}
+\@ifundefined{showcaptionsetup}{}{
+\PassOptionsToPackage{caption=false}{subfig}}
+\usepackage{subfig}
+
+\makeatother
+
+\addto\shorthandsspanish{\spanishdeactivate{~<>}}
+
+%Comienzo del documento
+\begin{document}
+
+\includepdf{portada_Oficial.pdf}
+
+\newpage{}
+\cleardoublepage
+
+%INDICES
+\pagenumbering{roman} 
+\tableofcontents
+\renewcommand{\listfigurename}{Índice de Figuras}
+\renewcommand{\listtablename}{Índice de Tablas}
+\listoffigures
+\listoftables
+
+%%--------------CAPITULO : PREVIOS-----------
+\newpage
+%Máximo 3 párrafos donde incluya contexto problema.y solución. 
+\chapter*{Resumen}
+\addcontentsline{toc}{section}{\textbf{Resumen}}
+%\input{Resumen.tex}
+
+\newpage
+\cleardoublepage
+
+\pagenumbering{arabic} 
+
+%% Todo lo que necesita saber el lector debe de estar en los primeros tres capítulos 
+
+
+%%--------------CAPITULO : Introducción-----------
+\chapter{Introducción}\label{cap:Intro}
+% Brevemente resuma la pregunta, describa algunas de las razones porqué es una pregunta que vale la pena e incluya una apreciación global de sus principales resultados. La introducción es una vista panorámica acerca de las respuestas a las principales preguntas contestadas en la tesis.
+\input{Capitulo1-Introduccion.tex}
+
+%%--------------CAPITULO : Antecedentes-----------
+\chapter{Antecedentes}
+% Puede ser necesario incluir una sección breve dando información de antecedentes, sobre todo si el trabajo abarca dos o más campos.  Aquí van los conceptos básicos y colocar un título descriptivo
+
+\input{Capitulo2-Antecedentes.tex}\label{ch:antecedentes}
+
+%%--------------CAPITULO : Trabajo relacionado-----------
+\chapter{Trabajo Relacionado}
+
+% Incluirse las novedades recientes relacionadas con el área de la tesis. La idea es presentar las principales ideas existentes en la actualidad, no se deben incluir ideas propias. 
+
+% Proponer algo, no necesariamente una métrica, puede ser hacia un nivel de seguridad. Buscar como quiero que se vea el resultado. detección de intrusos, inyección de código. Debo juzgar un problema. 
+
+\input{Capitulo3-Trabajo_Relacionado.tex}
+
+%%--------------CAPITULO : Diseño del framework-----------
+\chapter{Diseño del framework}\label{cap:Diseño}
+\input{Capitulo4-Diseno.tex}
+
+%%--------------CAPITULO : Diseño del framework-----------
+\chapter{Evaluación del rendimiento}\label{cap:Rend}
+\input{Capitulo5-Rendimiento.tex}
+
+\chapter{Conclusiones y Trabajo Futuro}
+\input{Capitulo6-Conclusiones.tex}
+
+%%Asignación de un nivel de seguridad a un patrón de seguridad con una métrica asociada. 
+
+
+\appendixpage
+\addcontentsline{toc}{chapter}{Anexos}
+%--------------APÉNDICES: Apéndice A-----------
+\begin{appendices}
+\section{Glosario de términos}
+%\backmatter
+\input{ApendiceA.tex}
+%\printglossary
+%\clearpage
+\end{appendices}
+
+
+
+%%--------------APARTADO : Referencias-----------
+
+\addcontentsline{toc}{chapter}{\textbf{Bibliografía}} 
+%\chapter{Referencias}
+\bibliographystyle{IEEEtran}
+\bibliography{bibTesis}
+
+
+\end{document}

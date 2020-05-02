@@ -1,0 +1,75 @@
+\documentclass[letter,10pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+\usepackage{xcolor}
+\usepackage{color}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+
+\usetikzlibrary{shapes,arrows}
+\usetikzlibrary{arrows.meta}
+\usetikzlibrary{calc, decorations.pathmorphing}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+
+
+\tikzstyle{actor} = [minimum height=0.6cm, text centered] %actor
+
+\tikzstyle{actividad} = [rectangle,rounded corners,draw=black, fill=white,minimum width=1cm, minimum height=0.5cm] %activity
+
+\tikzstyle{activMalUso} = [rectangle,rounded corners,draw=red, fill=white,minimum width=1cm, minimum height=0.5cm,dotted,thick] %activity
+
+\tikzstyle{objeto} = [rectangle,draw=black,fill=white,minimum width=1cm, minimum height=0.5cm] %object
+
+\tikzstyle{decision} = [diamond,draw=black, minimum height=0.6cm] %decision
+
+\tikzstyle{flow} = [-{Straight Barb[length=3mm,width=2mm]},thin,color=black] %flow
+\tikzstyle{objFlow} = [thin,-{Straight Barb[length=3mm,width=2mm]},dashed,color=black]%object flow
+\tikzstyle{linea} = [line width=1pt,-,color=black]
+\tikzstyle{attFlow} = [thick,dotted,red,-{Straight Barb[length=3mm,width=2mm]}]%external attacker flow
+
+
+\begin{document}
+	\begin{tikzpicture}[node distance=0.8cm]
+	
+		\node(sim)[draw=none,fill=none] {\textbf{Simbolog\'ia}};
+		
+		\node (acti) [actividad,below of = sim] {};
+		\node[draw=none,fill=none, right of = acti,xshift=0.7cm] {Actividad};
+		
+		\node (obj) [objeto,below of=acti] {};
+		\node[draw=none,fill=none, right of = obj,xshift=0.5cm] {Objeto};
+		
+		\draw [flow] node (actFlow) [minimum width=1cm, minimum height=0.5cm,below of=obj]{}(actFlow.west)--(actFlow.east);
+		\node[draw=none,fill=none, right of = actFlow,xshift=1.2cm] {Flujo de control};
+		
+		\draw [objFlow] node (objeFlow) [minimum width=1cm, minimum height=0.5cm,below of=actFlow]{}(objeFlow.west)--(objeFlow.east);
+		\node[draw=none,fill=none, right of = objeFlow,xshift=1.1cm] {Flujo de datos};
+		
+		\node (actiMal) [activMalUso,below of = objeFlow] {};
+		\node[draw=none,fill=none, right of = actiMal,xshift=1.6cm] (nodo1) {Actividad de mal uso};
+		
+		\draw [attFlow] node (misusFl) [minimum width=1cm, minimum height=0.5cm,below of=actiMal]{}(misusFl.west)--(misusFl.east);
+		\node[draw=none,fill=none, right of = misusFl,xshift=1.3cm] (fin) {Flujo de mal uso};
+
+		
+
+
+\begin{pgfonlayer}{background}
+		\path (acti.west |- acti.north)+(-0.5,0.3) node (a) {};
+		\path (nodo1.east |- fin.south)+(+0.5,-0.5) node (b) {};
+            	\path[fill=gris!50,rounded corners, draw=black] (a) rectangle (b);  
+
+\end{pgfonlayer}
+
+	\end{tikzpicture}
+
+
+\end{document}

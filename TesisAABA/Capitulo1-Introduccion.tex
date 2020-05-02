@@ -1,0 +1,45 @@
+%%Latín
+% e.g.    -> por ejemplo (analogias o ejemplos para generar contexto)
+% et al. -> y otros (para autores)
+% i.e.    -> es decir  (explicación más detallada)
+
+
+%Introducción
+
+
+Las tecnologías emergentes, en especial la de los vehículos autónomos, requieren de soluciones de cómputo intensivo. Cada vez más empresas aceleran sus aplicaciones embebidas mediante la GPGPU con el fin de solventar estas demandas de recursos. Desafortunadamente, las GPUs carecen de soporte para aplicaciones en tiempo real, por ejemplo de soporte preemtive, el cual limita su aplicabilidad en el dominio de sistemas embebidos.
+
+Las GPU modernas se adoptan ampliamente en muchos entornos multitarea, incluidos los centros de datos y los teléfonos inteligentes. Sin embargo, el soporte actual para la programación de múltiples GPU
+los núcleos (de diferentes aplicaciones) son limitados, formando una gran barrera para que la GPU satisfaga muchas necesidades prácticas.
+
+La administración predeterminada de GPU es a través de los controladores de GPU no revelados y sigue una política de orden de llegada first-come-first-serve.
+
+Los sistemas en tiempo real deben reaccionar dentro de limites de tiempo precisos para garantizar una corrección funcional, satisfacer los criterios de calidad o evitar daños críticos.
+
+Utilizamos la terminología de CUDA para nuestra discusión, pero tenga en cuenta que el problema y la solución discutidos en este documento también se aplican a otros modelos de programación de GPU (por ejemplo, OpenCL).
+
+
+
+\section{Problema y Oportunidad}
+En la mayoría de las organizaciones que emplean sistemas en tiempo real hay una creciente necesidad por la adopción de una tecnología más flexible como lo es la incorporación de sistemas con tareas preemptive.
+
+Aunque dicha implementación es poco investigada actualmente en la literatura, este trabajo de tesis nos brinda la oportunidad de idear las bases de un framework que facilite el diseño y/o desarrollos de aplicaciones en tiempo real, y específicamente, con tareas preemptive.
+
+\section{Hipótesis}
+La hipótesis del presente trabajo es:
+
+\begin{quote}
+\textit{Es posible diseñar un framework que permita la ejecución de tareas en modo preemptive sobre sistemas embebidos heterogéneos para una mejor administración de sus recursos de cómputo.}
+\end{quote}
+
+\section{Aproximación}
+
+Mediante el análisis de los elementos inherentes a la estructura de ejecución de procesos híbridos (CPU + GPU) que corren sobre un sistema embebido heterogéneo en particular, se realiza un diseño de la arquitectura del framework que permite la utilización de tareas preemptive.
+
+\section{Contribuciones}
+Tener las bases del diseño de un framework que permita planificar la ejecución de tareas preemptive, ya que al implementar puntos preemptive en planificación estática y dinámica se pueden disminuir los plazos vencidos de tareas con alta prioridad y mejorar el desempeño general del sistema.
+
+\section {Estructura de la tesis}
+
+El presente trabajo se estructura en cinco capítulos, en el capítulo \textbf{Antecedentes}, se da una introducción a los conceptos que forman partes del marco teórico, y que son necesarios para entender el contexto en el que se desenvuelve el trabajo. En el capítulo \textbf{Trabajo Relacionado}, se da un breve resumen sobre los textos que contienen información pertinente del estado del arte del tema. Posteriormente, se encuentra el capítulo \textbf{Diseño del framework} en donde se describe puntualmente la propuesta de solución. Finalmente, en el capítulo \textbf{Conclusiones y Trabajo Futuro} se recapitulan los alcances del trabajo y se mencionan los puntos que se dejaron para un trabajo futuro,
+

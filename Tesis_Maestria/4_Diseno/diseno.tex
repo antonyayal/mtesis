@@ -14,12 +14,24 @@ Aunque se tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, el
 
 \section{Descripción general del framework}
 
-En la Figura \ref{fig:diagramabase} se muestra el diagrama a bloques que representa los elementos del framework propuesto. El primer bloque es el módulo de Puntos Preemptive, donde se plantea la propuesta para implementar el modo preemptive en las tareas, se contempla desde las directivas que se deben implementar hasta el manejo del contexto y sus variables. Justo después se describe un módulo en el que se engloban todos los aspectos del manejo de memoria entre el CPU y el GPU. Finalmente, se tienen los módulos para la la planificación y la asignación de prioridades a cada tarea, las cuales son un complemento una de la otra para la correcta implementación de alguno de los algoritmos descritos en la sección \ref{sec:AlgoPlan}.
+La solución propuesta se encuentra dentro de las siguientes clasificaciones:
+\begin{itemize}
+
+\item \textbf{Clasificación por implementación}: \textit{Basado en Software. Partición de Kernel.}
+\item \textbf{Clasificación por planificación}: \textit{Planificación por prioridad.}
+\item \textbf{Clasificación por modificación}: \textit{Modificación de código fuente.}
+
+
+
+En la Figura \ref{fig:diagramabase} se muestra un diagrama de bloques sobre la arquitectura del framework propuesto. Cada uno de los bloques agrupa las bases necesarias para el funcionamiento del framework.
 \newline
 
-En los siguientes apartados de la tesis se analizarán y desglosarán cada uno de los módulos.
-\newline 
- 
+El framework está dividido en dos zonas de implementación, la primera tiene que ver con aquellas actividades que son propias con del Host, como lo es el protocolo de lanzamiento de los kernel (ver \ref{secc:lanzamientoKernel}. En el caso del manejo de la memoria, debido a que la tarjeta Jetson TX2 utiliza una arquitectura Pascal (ver \ref{secc:arqPas}), se cuenta con una memoria unificada con lo que se simplifican el manejo de las copias de memoria entre el en Host y el Device, resultando en que el módulo \textbf{Memoria} (ver \ref{secc:memoria}) pertenezca a ambas zonas, también se presenta el almacenamiento de los contextos de cada una de las tareas.
+
+En la zona de implementación Device encontramos con el módulo \textbf{Puntos Preemptive} ver \ref{secc:puntosPreemptive}), como su nombre lo indica, se plantea la forma en que el framework implementa las suspensiones y reactivaciones de las tareas una vez alcanzado cada uno de los puntos. 
+
+Un componente fundamental del framework es el módulo \textbf{Planificador} (ver \ref{secc:planificador}), ya que es en donde se dan las pautas para realizar la planificación de las tareas que se ejecutarán en un determinado momento en el Device. Pero para poder realizar dicha prioridad, se plantea el módulo \textbf{Asignación de prioridades} (ver \ref{secc:asigPrioridad}) el cual se encargará de seleccionar dentro de un conjunto de tareas aquella que tiene la mayor prioridad en un momento especifico de tiempo.
+
   \begin{figure}[ht]
       %\centering
      % \flushleft
@@ -37,21 +49,28 @@ Como se detallará más adelante, esta solución no es transparente al programad
 Entonces s necesario modificar el código fuente, con esto también no debemos pensar en seleccionar los puntos más cercanos al óptimo para colocar directivas de precompilación.
 \newline 
 
-La solución propuesta se encuentra dentro de las siguientes clasificaciones:
-\begin{itemize}
-
-\item \textbf{Clasificación por implementación}: \textit{Basado en Software. Partición de Kernel.}
-\item \textbf{Clasificación por planificación}: \textit{Planificación por prioridad.}
-\item \textbf{Clasificación por modificación}: \textit{Modificación de código fuente.}
 
 \end{itemize}   
 
-\subsection{Precondiciones necesarias}
-La precondición más importante es que el framework debe ser implementado en un programa que funciona correctamente, ya que se realizará una modificación en su código fuente para la implmentación del modo preemptive.
+  \begin{figure}[ht]
+      \centering
+     % \flushleft
+        \includegraphics[scale=.6]{flujo}
+        \caption{Diagrama del flujo del framework.}
+        \label{fig:flujo}
+    \end{figure}
+
+\subsection{Precondiciones necesarias} \label{secc:precondiciones}
+La precondición más importante es que el framework debe ser implementado en un programa que funciona correctamente, ya que se realizará una modificación en su código fuente para la implementación del modo preemptive.
 No se permite la memoria dinámica ni compartida entre kernels.
 No se permiten apuntadores complejos basados en objetos.
 %No se permiten los GPU streams.
 No se permite el llamado a funciones no rastreables.
+El quantum de las tareas debe ser similar para que aquellas que estén en ejecución terminen en tiempos similares.
+
+El número de threads por block debe ser menor o igual a la cantidad de threads disponibles en cada SM.
+
+Los contextos de cada kernel deben poder coexistir en la memoria al mismo tiempo para que se puedan ejecutar y suspender en cada punto preempetive.
 
 \section{Puntos preemptive}\label{secc:puntosPreemptive}
 
@@ -82,7 +101,7 @@ Al inicio del algoritmo \ref{lst:declara} la función kernel está ligeramente m
 Como se mencionó anteriormente, esta solución es completamente basada en software, por lo que se debe modificar la función kernel, para mantener una convención que ayude a mitigar posibles problemas, todas las declaraciones de variables se deberán realizar en la primer fase, la cual se encuentra en las primeras lineas del kernel.
 \newline
 
-Las únicas declaraciones con inicialización permitidas en esta fase son aquellas que designan la posición tanto de los thread como de los block dentro de un grid, esto porque  su información es necesaria en cada una de las siguientes fases. La única variable que es necesaria para todos kernels es \textit{id\_block}, el que servirá para en las siguientes fases para extraer la información de la estructura \textit{Backup}.
+Las únicas declaraciones con inicialización permitidas en esta fase son aquellas que designan la posición tanto de los thread como de los blocks dentro de un grid, esto porque  su información es necesaria en cada una de las siguientes fases. La única variable que es necesaria para todos kernels es \textit{id\_block}, el que servirá para en las siguientes fases para extraer la información de la estructura \textit{Backup}.
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:declara,  basicstyle=\ttfamily\footnotesize, caption=Fase de declaración de variables.]{algorithms/fase_declaracion.c}
 
@@ -166,34 +185,49 @@ Finalmente, debemos incluir un arreglo más que nos ayude a guardar el estado en
   \subsection{Variables compartidas}
   
   Al momento de realizar una solución de GPGPU, se debe tener en cuenta que existirán variables que se deben mantener visibles tanto para el host como para el device. En el algoritmo \ref{lst:lanzamiento} de la sección \ref{secc:lanzamientoKernel} tenemos ciertas variables que deben ser compartidas entre ambos lados. 
-  \newline
+    \newline
   
   Aparte de los parámetros que originalmente tiene la funcion kernel, se agregan dos más, una estructura \textit{backup} que almacena el contexto cuando se presenta una suspensión preemptive, y la bandera \textit{quantum\_expirado}, que nos indica si ya terminó el tiempo máximo de ejecución. Como estamos en el dominio de la memoria unificada, ambos parámetros existirán en la memoria global para que estén disponibles para ambos dispositivos.
   
   
-  %%%%%%%%%%%%%%%%%%%%%%%
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Lanzamiento del kernel}\label{secc:lanzamientoKernel}
 
-Para poder lanzar el kernel modificado, es necesario también hacerlo desde el lado del host para que se lance con todos los requerimientos. En el algoritmo \ref{lst:lanzamiento} observamos como se requiere declara la estructura \textit{Backup} que se utilizará para el kernel, se requiere que se declare e inicialice el tiempo máximo del quantum en microsegundos que tendrá cada una de las suspensiones preemptive del kernel, esto en la variable \textit{quantum\_time}.
+Dos precodiciones que plantea el framework (ver \ref{secc:precondiciones}) estrechamente relacionadas son que el framework planificará un número estático de kernels conocidos desde el inicio, y la segunda es que el código fuente esté disponible para su adecuación al sistema.
 \newline
 
-También es necesaria una bandera que nos ayude a saber si el quantum ya ha expirado, debe inicializarse en \textit{\textbf{false}}, debido a que será la primera vez que se ejecutará. 
+Cada una de las aplicaciones GPGPU que se ejecutarán en el sistema embebido deberán estar agrupadas en cabeceras de C. Al inicio de la ejecución del framework, se ejecutarán las aplicaciones de forma concurrente (Figura \ref{fig:appN_h}) para que todas alcancen el punto en que requieren realizar cálculos en la GPU.
+
+  \begin{figure}[ht]
+      \centering
+     % \flushleft
+        \includegraphics[scale=.3]{appN_h}
+        \caption{Aplicaciones en ejecución concurrente.}
+        \label{fig:appN_h}
+    \end{figure}
+
+Código de cada una de las aplicaciones se le debe añadir una serie de variables y parámetros para que el planificador pueda programar su ejecución. 
 \newline
 
-La modificación más densa se presenta cuando el kernel se implementa dentro de un ciclo \textit{while} que pregunta si el trabajo del kernel ya se completo, en caso negativo, se lanzará el kernel, y se esperará el tiempo definido para el quantum, terminado este tiempo, se cambiará el estado de \textit{quantum\_expirado} a \textit{\textbf{true}} y se sincronizarán todos los TB del kernel con \textit{cudaDeviceSynchronize()}, esto para sincronizar la finalización de del grid completo y estar seguros de que se termino la ejecución completa del kernel.
+Se debe encapsular la llamada a la función kernel para que el planificador permita dar el orden de lanzamientos. Dentro de cada enclave se debe implementar una serie de variables y banderas para que el contexto pueda ser almacenado al alcanzar a cada punto preemptive. 
 \newline
 
-Finalmente, se pregunta si todos los blocks completaron su trabajo, en caso que no lo hayan hecho, se cambiará el valor de \textit{quantum\_expirado} a  \textit{\textbf{false}}, con lo que volvemos a realizar una nueva iteración del ciclo \textit{while}. En caso que todos los blocks hayan completado su trabajo, se rompe el ciclo y se continua con el código del host.
+Es necesaria la definición de la estructura \textit{backup} especifica del kernel, también se debe indicar la duración del quantum con \textit{quantum\_time}, una bandera de control para verificar si ya ha expirado el quantum y una bandera que indicará si ya se ha ejecutado completamente el kernel. Finalmente, el planificador dará permiso de que se ejecute el kernel con la variable de control \textit{continuar\_eje}.
+
+Ahora bien, una vez que se han definido las variables de control, se debe implementar un ciclo que terminará hasta que el kernel sea completado. Dentro debemos inicializar \textit{quantum\_expirado} en \textbf{\textit{false}} para indicar que se tiene tiempo de ejecución. La bandera \textit{continuar\_eje} será modificada por el planificador para permitir la ejecución del kernel. Una vez que sea planificado para su ejecución, se lanzará el kernel  y se esperará el tiempo definido para el quantum. Terminado este tiempo, se cambiará el estado de \textit{quantum\_expirado} a \textit{\textbf{true}} y se sincronizarán todos los threads del kernel con \textit{cudaDeviceSynchronize()} para cerciorarnos de que se terminó la ejecución del grid.
+\newline
+
+Ahora debemos cambiar el estado de \textit{continuar\_eje} a \textbf{\textit{false}} para que la tarea permanezca suspendida hasta que el planificador permita una nueva ejecución. Finalmente, se pregunta si todos los blocks completaron su trabajo.
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:lanzamiento,  basicstyle=\ttfamily\footnotesize, caption=Algoritmo para lanzamiento del kernel en el lado del host.]{algorithms/lanza_kernel.c}
 
-Para poder determinar si un kernel ha terminado completamente su procesamiento, nos auxiliamos de la función \textit{kc} que se encuentra en el algoritmo \ref{lst:funcionkc}. Simplemente se pasa como parámetro el arreglo \textit{estado} de la estructura \textit{backup} y se pregunta si su estado es \textit{\textbf{TERMINADO}}, de ser así, se incrementa en uno un contador. Finalmente, si el valor del contador es igual a la cantidad de bloques que se tienen, quiere decir que todos ellos han concluido su procesamiento completamente. 
+Para poder determinar si un kernel ha terminado completamente su procesamiento, nos auxiliamos de la función \textit{kc} (Algoritmo \ref{lst:funcionkc}). Simplemente se pasa como parámetro el arreglo \textit{estado} de la estructura \textit{backup} y se pregunta si el estado de todos los blocks es \textit{\textbf{TERMINADO}}, de ser así, regresa \textbf{\textit{true}}.
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:funcionkc,  basicstyle=\ttfamily\footnotesize, caption=Función kernel completo.]{algorithms/funcion_kc.c}
 
 
-\subsection{Planificador}
+\subsection{Planificador} \label{secc:planificador}
 
 La GPU de la Jetson TX2 consta de dos SM con 128 cores cada uno\cite{SMJetson}.
 
@@ -213,7 +247,7 @@ Estructura Task
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:Task,  basicstyle=\ttfamily\footnotesize, caption=Estructura task.]{algorithms/Task.c}
     	
-\section{Asignación de prioridades}
+\section{Asignación de prioridades} \label{secc:asigPrioridad}
 
 La asignación de prioridades se realiza aplicando los algoritmos de tiempo real que se trataron en la sección \ref{sec:AlgoPlan}.
 

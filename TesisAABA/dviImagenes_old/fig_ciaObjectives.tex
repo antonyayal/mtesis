@@ -1,0 +1,51 @@
+\documentclass[letter,12pt]{article}
+
+\usepackage{tikz,pgflibraryshapes}
+\usetikzlibrary{arrows, calc, decorations.pathmorphing}
+\usepackage[psfixbb,graphics,tightpage,active]{preview}
+
+\PreviewEnvironment{tikzpicture}
+\newlength{\imagewidth}
+\newlength{\imagescale}
+
+\usepackage{xcolor}
+\usepackage{color}
+
+
+\definecolor{orange}{RGB}{255,127,0}
+\definecolor{gris}{RGB}{230,230,230}
+
+\usetikzlibrary{shapes,arrows}
+\pgfdeclarelayer{background}
+\pgfdeclarelayer{foreground}
+\pgfsetlayers{background,main,foreground}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,double]
+
+\tikzstyle{objective} = [rectangle, rounded corners, minimum width=3cm, minimum height=1.5cm,text centered, draw=black, fill=white!30,text width=2.5cm]
+
+\tikzstyle{pattern} = [rectangle, rounded corners, minimum width=2.5cm, minimum height=1cm,text centered, draw=black, fill=white!30]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\begin{document}
+
+\begin{tikzpicture}
+%% vertices
+\draw[fill=black] (0,0) circle (3pt);
+\draw[fill=black] (4,0) circle (3pt);
+\draw[fill=black] (2,3) circle (3pt);
+%% vertex labels
+\node at (-1.5,0) {Disponibilidad};
+\node at (5.2,0) {Integridad};
+\node at (2,3.3) {Confidencialidad};
+
+\node at (2,1.2) {\textit{\tiny Informaci\'on}};
+\node at (2,0.8) {\textit{\tiny y servicios}};
+%%% edges
+\draw[thick] (0,0) -- (4,0) --  (0,0) -- (2,3) -- (4,0) -- (2,3);
+\end{tikzpicture}
+
+
+
+
+\end{document}
