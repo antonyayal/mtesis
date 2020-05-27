@@ -43,7 +43,7 @@ Un componente fundamental del framework es el módulo \textbf{Planificador} (ver
 
   %Pero en el momento en el que se requiera tener un método de asignación de prioridades personalizado, es necesario tener un módulo que lo permita. Aunado a esto, si por alguna razón se solicita agregar tareas dinámicamente con el sistema en ejecución, se deben tener mecanismos para manejar cualquier interrupción o actualización de información del planificador. Ambos elementos son necesarios en un framework, pero sus componentes internos se dejarán para ser resueltos como trabajo futuro.
   
-  %Clasficación y tipo de modificación.
+  %Clasificación y tipo de modificación.
 
 Como se detallará más adelante, esta solución no es transparente al programador, es necesaria la modificación del código fuente, aunque en un inicio parecería que el rendimiento sería inferior al realizar comprobaciones continuas del estado del quantum, el modificar las bibliotecas del API de CUDA o el compilador del dispositivo ni tampoco la implementación de analizadores sintácticos para la lectura de directivas precompiladas está dentro de las posibilidades de acción del proyecto. 
 Entonces s necesario modificar el código fuente, con esto también no debemos pensar en seleccionar los puntos más cercanos al óptimo para colocar directivas de precompilación.
@@ -187,7 +187,7 @@ Finalmente, debemos incluir un arreglo más que nos ayude a guardar el estado en
   Al momento de realizar una solución de GPGPU, se debe tener en cuenta que existirán variables que se deben mantener visibles tanto para el host como para el device. En el algoritmo \ref{lst:lanzamiento} de la sección \ref{secc:lanzamientoKernel} tenemos ciertas variables que deben ser compartidas entre ambos lados. 
     \newline
   
-  Aparte de los parámetros que originalmente tiene la funcion kernel, se agregan dos más, una estructura \textit{backup} que almacena el contexto cuando se presenta una suspensión preemptive, y la bandera \textit{quantum\_expirado}, que nos indica si ya terminó el tiempo máximo de ejecución. Como estamos en el dominio de la memoria unificada, ambos parámetros existirán en la memoria global para que estén disponibles para ambos dispositivos.
+  Aparte de los parámetros que originalmente tiene la función kernel, se agregan dos más, una estructura \textit{backup} que almacena el contexto cuando se presenta una suspensión preemptive, y la bandera \textit{quantum\_expirado}, que nos indica si ya terminó el tiempo máximo de ejecución. Como estamos en el dominio de la memoria unificada, ambos parámetros existirán en la memoria global para que estén disponibles para ambos dispositivos.
   
   
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -222,12 +222,201 @@ Ahora debemos cambiar el estado de \textit{continuar\_eje} a \textbf{\textit{fal
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:lanzamiento,  basicstyle=\ttfamily\footnotesize, caption=Algoritmo para lanzamiento del kernel en el lado del host.]{algorithms/lanza_kernel.c}
 
-Para poder determinar si un kernel ha terminado completamente su procesamiento, nos auxiliamos de la función \textit{kc} (Algoritmo \ref{lst:funcionkc}). Simplemente se pasa como parámetro el arreglo \textit{estado} de la estructura \textit{backup} y se pregunta si el estado de todos los blocks es \textit{\textbf{TERMINADO}}, de ser así, regresa \textbf{\textit{true}}.
+Para poder determinar si un kernel ha terminado completamente su procesamiento, nos auxiliamos de la función \textit{kc} (Algoritmo \ref{lst:funcionkc}). Simplemente se pasa como parámetro el arreglo \textit{estado} de la estructura \textit{backup} y se pregunta si el estado de todos los blocks es \textit{\textbf{TERMINADO}}, regresando \textbf{\textit{true}}.
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:funcionkc,  basicstyle=\ttfamily\footnotesize, caption=Función kernel completo.]{algorithms/funcion_kc.c}
 
 
 \subsection{Planificador} \label{secc:planificador}
+
+El módulo principal del framework es el de el \textbf{Planificador}, porque es aquí donde se realiza toda la calendarización de las tareas a ser ejecutadas en la GPU, trabaja muy estrechamente con el módulo de la asignación de prioridades, el cual le da la pauta para poder elegir aquella tarea que tenga más relevancia en un momento determinado en el tiempo. 
+\newline
+%En la sección \ref{secc:precondiciones} se enumera una serie de precondiciones necesarias 
+
+Para poder planificar un conjunto de tareas en la GPU, es necesario conocer las particularidades de la arquitectura del sistema embebido en el que se implementará el framework. Esto es especialmente necesario para que conozcamos el número máximo de threads que pueden estar en ejecución concurrentemente.
+\newline
+
+Los lanzamientos de kernels realizados del lado del host se realizan por medio de streams, y aquellos kernels que son encolados en el mismo stream serán ejecutados secuencialmente, y aquellos de diferentes streams son ejecutados concurrentemente.
+\newline
+
+Cada GPU contiene un arreglo de Streaming Multiprocesor (SM), dependiendo del modelo o arquitectura, en donde cada SM puede procesar concurrentemente una misma cantidad de threads. Como ya se mencionó en la sección \ref{secc:hidden}, las empresas que producen el hardware de las tarjetas gráficas no revelan mucho sobre las peculiaridades de como se realiza el reparto de recursos para ejecutar las peticiones, únicamente sabemos que el GPU distribuye los blocks pendientes dentro de los SM en grupos de 32 threads, estos grupos son llamados warps. Un warp es una entidad planificable de un SM.
+Un block puede ser asignado únicamente a un SM y si este tiene suficientes recursos para recibirlo, si no, esperará hasta que pueda ser lanzado, el como realiza esta espera tampoco es revelado por las compañías.
+\newline
+
+Para nuestro caso de estudio con el sistema Jeston TX2, el cual cuenta con 2 SM, y cada uno puede procesar concurrentemente 2048 threads. Ahora bien, tomando en cuenta esto, cada SM puede manejar un máximo de 64 warps.
+
+Por ejemplo, quisiéramos ejecutar un kernel con  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{table}[h!]
+      \begin{center}
+            \scriptsize
+        \begin{tabular}{|m{1.5cm}|m{1cm}|m{1cm}|m{1.5cm}|m{1.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1.5cm}|}
+         \hline
+         \cellcolor{lightgray}\textbf{Escenario} &
+         \cellcolor{lightgray}\textbf{Kernel} & 
+         \cellcolor{lightgray}\textbf{Blocks} &
+         \cellcolor{lightgray}\textbf{Threads por block} &
+         \cellcolor{lightgray}\textbf{Threads Totales} &
+         \cellcolor{lightgray}\textbf{Blocks SM0} &
+         \cellcolor{lightgray}\textbf{Warps SM0} &
+         \cellcolor{lightgray}\textbf{Blocks SM1} &
+         \cellcolor{lightgray}\textbf{Warps SM1} &
+         \cellcolor{lightgray}\textbf{Threads utilizados}\\ 
+         \hline
+         a) & K1 & 16 & 265 & 4096 & 8 & 64 & 8 & 64 & 4096\\ 
+         \hline
+         b) & K2 & 4 & 512 & 2048 & 4 & 64 & 0 & 0 & 2048\\ 
+         \hline
+         c) & K3 & 9 & 350 & 3150 & 5 & 55 & 4 & 44 & 3168\\ 
+         \hline
+           \end{tabular}
+        \caption{Asignación de un solo kernel a los SM.}
+        \label{tab:asigUnKernelSM}
+      \end{center}
+    \end{table}
+    
+    En el kernel c deberían ser 54.6 warps en el SM0 utilizando 1750 threads, pero en realidad se utilizan 55 warps, con lo que el trabajo de 10 threads se desperdician. En el SM1, deberían ocuparse 43.75 warps, pero se usan 44, dejando 8 threads sin poderse utilizar.
+
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.24]{asigBlock}
+        \caption{Diagrama de asignación de un kernel a los SM.}
+        \label{fig:asigBlock}
+    \end{figure}
+
+    \begin{table}[h!]
+      \begin{center}
+            \scriptsize
+        \begin{tabular}{|m{1.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+         \hline
+         \cellcolor{lightgray}\textbf{Escenario} & 
+         \cellcolor{lightgray}\textbf{Kernel} & 
+         \cellcolor{lightgray}\textbf{Blocks} &
+         \cellcolor{lightgray}\textbf{Threads por block} &
+         \cellcolor{lightgray}\textbf{Threads por kernel} &
+         \cellcolor{lightgray}\textbf{Threads en concurrente} &
+         \cellcolor{lightgray}\textbf{Warps} &
+         \cellcolor{lightgray}\textbf{Warps aportados a SM0} &
+         \cellcolor{lightgray}\textbf{Warps SM0} &
+         \cellcolor{lightgray}\textbf{Warps aportados a SM1} &
+         \cellcolor{lightgray}\textbf{Warps SM1} \\ 
+         \hline
+         \multirow{2}{1cm}{d)} & K1 & 3  & 512 & 1536 & \multirow{2}{1cm}{4096} & 48 & 48 & \multirow{2}{1cm}{64} & 0  & \multirow{2}{1cm}{64}\\ 
+                              & K2 & 10 & 256 & 2560 &                         & 80 & 16 &                       & 64 & \\ 
+         \hline \hline
+        \multirow{3}{1cm}{e)} & K1 & 1 & 1024 & 1024 & \multirow{3}{1cm}{2304} & 32 & 32 & \multirow{3}{1cm}{64} & 0  & \multirow{3}{1cm}{8}\\ 
+                             & K2 & 1 & 768  & 768  &                         & 24 & 24 &                      & 0 & \\ 
+                             & K3 & 2 & 256  & 512  &                         & 16 & 8 &                       & 8 & \\ 
+         \hline \hline
+        \multirow{3}{1cm}{f)} & K1 & 1 & 768  & 768  & \multirow{3}{1cm}{3072} & 24 & 24 & \multirow{3}{1cm}{24} & 0  & \multirow{3}{1cm}{48}\\ 
+                             & K2 & 1 & 1536 & 1536 &                         & 48 & 0  &                       & 48 & \\ 
+                             & K3 & 1 & 768  & 768  &                         & 24 & 0  &                       & 0 & \\ 
+         \hline
+           \end{tabular}
+        \caption{Asignación de varios kernels a los SM.}
+        \label{tab:asigVariosKernelsSM}
+      \end{center}
+    \end{table}
+
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.24]{KernelSM}
+        \caption{Diagrama de asignación de varios kernels a los SM.}
+        \label{fig:KernelSM}
+    \end{figure}
+    
+\subsubsection{Balanceador}
+
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.45]{Balanceador}
+        \caption{Diagrama de flujo del balanceador de carga.}
+        \label{fig:Balanceador}
+    \end{figure}
+
+        \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.24]{Balanceo}
+        \caption{Diagrama de balanceo de carga de kernels en los SM.}
+        \label{fig:Balanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C1Balanceo}
+        \caption{Caso I.}
+        \label{fig:C1Balanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C2Balanceo}
+        \caption{Caso II.}
+        \label{fig:C2Balanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C3aBalanceo}
+        \caption{Caso IIIa.}
+        \label{fig:C3aBalanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C3bBalanceo}
+        \caption{Caso IIIb.}
+        \label{fig:C3bBalanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C4Balanceo}
+        \caption{Caso IV.}
+        \label{fig:C4Balanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C5aBalanceo}
+        \caption{Caso Va.}
+        \label{fig:C5aBalanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C5bBalanceo}
+        \caption{Caso Vb.}
+        \label{fig:C5bBalanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C5cBalanceo}
+        \caption{Caso Vc.}
+        \label{fig:C5cBalanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C5dBalanceo}
+        \caption{Caso Vd.}
+        \label{fig:C5dBalanceo}
+    \end{figure}
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.26]{C6Balanceo}
+        \caption{Caso VI.}
+        \label{fig:C6Balanceo}
+    \end{figure}
+    
+    
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 La GPU de la Jetson TX2 consta de dos SM con 128 cores cada uno\cite{SMJetson}.
 
