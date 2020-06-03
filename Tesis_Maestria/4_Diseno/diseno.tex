@@ -9,6 +9,7 @@
 \chapter{Diseño}\label{cha:Diseño}
 
 El objetivo principal de este capítulo es describir el diseño del framework propuesto para planificar tareas preemptive en sistemas embebidos heterogéneos. Se plantea la estructura del mismo junto con la descripción de su solución. 
+\newline
 
 Aunque se tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, el diseño puede ser aplicado a cualquier dispositivo, siempre y cuando cumpla con la característica de tener memoria unificada, como la descrita en la sección \ref{sec:MemUni}.
 
@@ -16,21 +17,22 @@ Aunque se tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, el
 
 La solución propuesta se encuentra dentro de las siguientes clasificaciones:
 \begin{itemize}
-
-\item \textbf{Clasificación por implementación}: \textit{Basado en Software. Partición de Kernel.}
-\item \textbf{Clasificación por planificación}: \textit{Planificación por prioridad.}
-\item \textbf{Clasificación por modificación}: \textit{Modificación de código fuente.}
-
-
+    \item \textbf{Clasificación por implementación}: \textit{Basado en Software. Partición de Kernel.}
+    \item \textbf{Clasificación por planificación}: \textit{Planificación por prioridad.}
+    \item \textbf{Clasificación por modificación}: \textit{Modificación de código fuente.}
+\end{itemize}
 
 En la Figura \ref{fig:diagramabase} se muestra un diagrama de bloques sobre la arquitectura del framework propuesto. Cada uno de los bloques agrupa las bases necesarias para el funcionamiento del framework.
 \newline
 
 El framework está dividido en dos zonas de implementación, la primera tiene que ver con aquellas actividades que son propias con del Host, como lo es el protocolo de lanzamiento de los kernel (ver \ref{secc:lanzamientoKernel}. En el caso del manejo de la memoria, debido a que la tarjeta Jetson TX2 utiliza una arquitectura Pascal (ver \ref{secc:arqPas}), se cuenta con una memoria unificada con lo que se simplifican el manejo de las copias de memoria entre el en Host y el Device, resultando en que el módulo \textbf{Memoria} (ver \ref{secc:memoria}) pertenezca a ambas zonas, también se presenta el almacenamiento de los contextos de cada una de las tareas.
+\newline
 
 En la zona de implementación Device encontramos con el módulo \textbf{Puntos Preemptive} ver \ref{secc:puntosPreemptive}), como su nombre lo indica, se plantea la forma en que el framework implementa las suspensiones y reactivaciones de las tareas una vez alcanzado cada uno de los puntos. 
+\newline
 
 Un componente fundamental del framework es el módulo \textbf{Planificador} (ver \ref{secc:planificador}), ya que es en donde se dan las pautas para realizar la planificación de las tareas que se ejecutarán en un determinado momento en el Device. Pero para poder realizar dicha prioridad, se plantea el módulo \textbf{Asignación de prioridades} (ver \ref{secc:asigPrioridad}) el cual se encargará de seleccionar dentro de un conjunto de tareas aquella que tiene la mayor prioridad en un momento especifico de tiempo.
+\newline
 
   \begin{figure}[ht]
       %\centering
@@ -49,9 +51,6 @@ Como se detallará más adelante, esta solución no es transparente al programad
 Entonces s necesario modificar el código fuente, con esto también no debemos pensar en seleccionar los puntos más cercanos al óptimo para colocar directivas de precompilación.
 \newline 
 
-
-\end{itemize}   
-
   \begin{figure}[ht]
       \centering
      % \flushleft
@@ -67,8 +66,10 @@ No se permiten apuntadores complejos basados en objetos.
 %No se permiten los GPU streams.
 No se permite el llamado a funciones no rastreables.
 El quantum de las tareas debe ser similar para que aquellas que estén en ejecución terminen en tiempos similares.
+\newline
 
 El número de threads por block debe ser menor o igual a la cantidad de threads disponibles en cada SM.
+\newline
 
 Los contextos de cada kernel deben poder coexistir en la memoria al mismo tiempo para que se puedan ejecutar y suspender en cada punto preempetive.
 
@@ -95,7 +96,7 @@ Al momento de lanzar la tarea siguiente en ejecución se inicializaran todas las
 \newline
 %Qué especificación tiene y cómo se maneja?
 
-Al inicio del algoritmo \ref{lst:declara} la función kernel está ligeramente modificada en sus parametros, ya que es necesario que reciba la estructura \textit{Backup} en donde se almacenará su contexto cuando se presente una suspensión preemptive, y se recibirá el apuntador al estado del quantum, dicho valor arrojará \textbf{\textit{true}} cuando se haya concluido el tiempo del quantum.
+Al inicio del algoritmo \ref{lst:declara} la función kernel está ligeramente modificada en sus parámetros, ya que es necesario que reciba la estructura \textit{Backup} en donde se almacenará su contexto cuando se presente una suspensión preemptive, y se recibirá el apuntador al estado del quantum, dicho valor arrojará \textbf{\textit{true}} cuando se haya concluido el tiempo del quantum.
 \newline
 
 Como se mencionó anteriormente, esta solución es completamente basada en software, por lo que se debe modificar la función kernel, para mantener una convención que ayude a mitigar posibles problemas, todas las declaraciones de variables se deberán realizar en la primer fase, la cual se encuentra en las primeras lineas del kernel.
@@ -105,7 +106,7 @@ Las únicas declaraciones con inicialización permitidas en esta fase son aquell
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:declara,  basicstyle=\ttfamily\footnotesize, caption=Fase de declaración de variables.]{algorithms/fase_declaracion.c}
 
-Enseguida pasamos a la fase de la inicialización de cada una de estas variables y como se muestra en el algoritmo \ref{lst:inicializa} nos apoyamos apoyándonos de una estructura \textit{switch-case} con tres casos dependiendo del estado de cada block. Para seleccionar cada uno de los casos debemos leer el valor que se encuentra en la estructura de copia de seguridad, esto por que hay que recordar que el kernel por si solo no sabe si es la primera vez que se ejecuta o es el producto de un cambio de contexto dentro del sistema.
+Enseguida pasamos a la fase de la inicialización (ver algoritmo \ref{lst:declara}) de cada una de estas variables y como se muestra en el algoritmo \ref{lst:inicializa} nos apoyamos apoyándonos de una estructura \textit{switch-case} con tres casos dependiendo del estado de cada block. Para seleccionar cada uno de los casos debemos leer el valor que se encuentra en la estructura de copia de seguridad, esto por que hay que recordar que el kernel por si solo no sabe si es la primera vez que se ejecuta o es el producto de un cambio de contexto dentro del sistema.
 \newline
 
 Cada uno de estos tres diferentes estados es:
@@ -120,7 +121,7 @@ Cada uno de estos tres diferentes estados es:
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:inicializa,  basicstyle=\ttfamily\footnotesize, caption=Fase de inicialización.]{algorithms/fase_inicializa.c}
 
-Una vez inicializadas todas las variables podemos realizar el procesamiento objetivo del kernel. Para ello nuevamente preguntamos a la estructura de copia de seguridad el estado individual de cada block, dependiendo de lo que responda a cada uno, se realiza:
+Una vez inicializadas todas las variables podemos realizar el procesamiento objetivo del kernel (ver algoritmo \ref{lst:inicializa}). Para ello nuevamente preguntamos a la estructura de copia de seguridad el estado individual de cada block, dependiendo de lo que responda a cada uno, se realiza:
 
 \begin{itemize}
 \item \textit{\textbf{INICIO}}: Como se acaba de lanzar el kernel por primera vez, únicamente se cambia el estado del block a \textit{EJECUCION}, y como ahora se tiene un nuevo valor se puede ingresar al siguiente estado dentro del mismo switch.
@@ -236,105 +237,25 @@ El módulo principal del framework es el de el \textbf{Planificador}, porque es 
 Para poder planificar un conjunto de tareas en la GPU, es necesario conocer las particularidades de la arquitectura del sistema embebido en el que se implementará el framework. Esto es especialmente necesario para que conozcamos el número máximo de threads que pueden estar en ejecución concurrentemente.
 \newline
 
-Los lanzamientos de kernels realizados del lado del host se realizan por medio de streams, y aquellos kernels que son encolados en el mismo stream serán ejecutados secuencialmente, y aquellos de diferentes streams son ejecutados concurrentemente.
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.5]{Planificador}
+        \caption{Diagrama de flujo del planificador.}
+        \label{fig:Planificador}
+    \end{figure}
+
+Cada uno de los kernels que soliciten recurso de cómputo en la tarjeta gráfica al planificador deberá ser mapeado a una estructura (algoritmo \ref{lst:Task}), la cual tendrá almacenados algunos de sus parámetros para ejecución, así como información relevante para la asignación de su prioridad en un instante de tiempo.
+
+\lstinputlisting[style=CStyle, frame=single,label=lst:Task,  basicstyle=\ttfamily\footnotesize, caption=Estructura task.]{algorithms/Task.c}
+
+
+\subsubsection{Balanceador de carga} \label{secc:balanceador}
+
+Como se vió en la el capítulo \ref{cha:TrabajoRelacionado} el orden de lanzamiento de los kernel a la GPU afecta la forma en que serán asignados a los SM, por ejemplo en el escenario a) (ver figura \ref{fig:Balanceo} primero se lanzo \textbf{K1}, seguido de \textbf{K2} y al final \textbf{K3}, derivando en que se desperdicien recursos y no sea posible ejecutar un kernel. Pero si se modifica este orden, se puede optimizar la asignación de tareas en las localidades, como lo vemos en el ejemplo b).
 \newline
 
-Cada GPU contiene un arreglo de Streaming Multiprocesor (SM), dependiendo del modelo o arquitectura, en donde cada SM puede procesar concurrentemente una misma cantidad de threads. Como ya se mencionó en la sección \ref{secc:hidden}, las empresas que producen el hardware de las tarjetas gráficas no revelan mucho sobre las peculiaridades de como se realiza el reparto de recursos para ejecutar las peticiones, únicamente sabemos que el GPU distribuye los blocks pendientes dentro de los SM en grupos de 32 threads, estos grupos son llamados warps. Un warp es una entidad planificable de un SM.
-Un block puede ser asignado únicamente a un SM y si este tiene suficientes recursos para recibirlo, si no, esperará hasta que pueda ser lanzado, el como realiza esta espera tampoco es revelado por las compañías.
+Por esta razón, se ideó un balanceador de carga que permitirá la maximización de la planificación de tareas ejecutables en un quantum.
 \newline
-
-Para nuestro caso de estudio con el sistema Jeston TX2, el cual cuenta con 2 SM, y cada uno puede procesar concurrentemente 2048 threads. Ahora bien, tomando en cuenta esto, cada SM puede manejar un máximo de 64 warps.
-
-Por ejemplo, quisiéramos ejecutar un kernel con  
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  \begin{table}[h!]
-      \begin{center}
-            \scriptsize
-        \begin{tabular}{|m{1.5cm}|m{1cm}|m{1cm}|m{1.5cm}|m{1.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1.5cm}|}
-         \hline
-         \cellcolor{lightgray}\textbf{Escenario} &
-         \cellcolor{lightgray}\textbf{Kernel} & 
-         \cellcolor{lightgray}\textbf{Blocks} &
-         \cellcolor{lightgray}\textbf{Threads por block} &
-         \cellcolor{lightgray}\textbf{Threads Totales} &
-         \cellcolor{lightgray}\textbf{Blocks SM0} &
-         \cellcolor{lightgray}\textbf{Warps SM0} &
-         \cellcolor{lightgray}\textbf{Blocks SM1} &
-         \cellcolor{lightgray}\textbf{Warps SM1} &
-         \cellcolor{lightgray}\textbf{Threads utilizados}\\ 
-         \hline
-         a) & K1 & 16 & 265 & 4096 & 8 & 64 & 8 & 64 & 4096\\ 
-         \hline
-         b) & K2 & 4 & 512 & 2048 & 4 & 64 & 0 & 0 & 2048\\ 
-         \hline
-         c) & K3 & 9 & 350 & 3150 & 5 & 55 & 4 & 44 & 3168\\ 
-         \hline
-           \end{tabular}
-        \caption{Asignación de un solo kernel a los SM.}
-        \label{tab:asigUnKernelSM}
-      \end{center}
-    \end{table}
-    
-    En el kernel c deberían ser 54.6 warps en el SM0 utilizando 1750 threads, pero en realidad se utilizan 55 warps, con lo que el trabajo de 10 threads se desperdician. En el SM1, deberían ocuparse 43.75 warps, pero se usan 44, dejando 8 threads sin poderse utilizar.
-
-    \begin{figure}[ht]
-      \centering
-        \includegraphics[scale=.24]{asigBlock}
-        \caption{Diagrama de asignación de un kernel a los SM.}
-        \label{fig:asigBlock}
-    \end{figure}
-
-    \begin{table}[h!]
-      \begin{center}
-            \scriptsize
-        \begin{tabular}{|m{1.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
-         \hline
-         \cellcolor{lightgray}\textbf{Escenario} & 
-         \cellcolor{lightgray}\textbf{Kernel} & 
-         \cellcolor{lightgray}\textbf{Blocks} &
-         \cellcolor{lightgray}\textbf{Threads por block} &
-         \cellcolor{lightgray}\textbf{Threads por kernel} &
-         \cellcolor{lightgray}\textbf{Threads en concurrente} &
-         \cellcolor{lightgray}\textbf{Warps} &
-         \cellcolor{lightgray}\textbf{Warps aportados a SM0} &
-         \cellcolor{lightgray}\textbf{Warps SM0} &
-         \cellcolor{lightgray}\textbf{Warps aportados a SM1} &
-         \cellcolor{lightgray}\textbf{Warps SM1} \\ 
-         \hline
-         \multirow{2}{1cm}{d)} & K1 & 3  & 512 & 1536 & \multirow{2}{1cm}{4096} & 48 & 48 & \multirow{2}{1cm}{64} & 0  & \multirow{2}{1cm}{64}\\ 
-                              & K2 & 10 & 256 & 2560 &                         & 80 & 16 &                       & 64 & \\ 
-         \hline \hline
-        \multirow{3}{1cm}{e)} & K1 & 1 & 1024 & 1024 & \multirow{3}{1cm}{2304} & 32 & 32 & \multirow{3}{1cm}{64} & 0  & \multirow{3}{1cm}{8}\\ 
-                             & K2 & 1 & 768  & 768  &                         & 24 & 24 &                      & 0 & \\ 
-                             & K3 & 2 & 256  & 512  &                         & 16 & 8 &                       & 8 & \\ 
-         \hline \hline
-        \multirow{3}{1cm}{f)} & K1 & 1 & 768  & 768  & \multirow{3}{1cm}{3072} & 24 & 24 & \multirow{3}{1cm}{24} & 0  & \multirow{3}{1cm}{48}\\ 
-                             & K2 & 1 & 1536 & 1536 &                         & 48 & 0  &                       & 48 & \\ 
-                             & K3 & 1 & 768  & 768  &                         & 24 & 0  &                       & 0 & \\ 
-         \hline
-           \end{tabular}
-        \caption{Asignación de varios kernels a los SM.}
-        \label{tab:asigVariosKernelsSM}
-      \end{center}
-    \end{table}
-
-    \begin{figure}[ht]
-      \centering
-        \includegraphics[scale=.24]{KernelSM}
-        \caption{Diagrama de asignación de varios kernels a los SM.}
-        \label{fig:KernelSM}
-    \end{figure}
-    
-\subsubsection{Balanceador}
-
-    \begin{figure}[ht]
-      \centering
-        \includegraphics[scale=.45]{Balanceador}
-        \caption{Diagrama de flujo del balanceador de carga.}
-        \label{fig:Balanceador}
-    \end{figure}
 
         \begin{figure}[ht]
       \centering
@@ -343,68 +264,117 @@ Por ejemplo, quisiéramos ejecutar un kernel con
         \label{fig:Balanceo}
     \end{figure}
     
-    \begin{figure}[ht]
+    Como se ha visto a lo largo de este trabajo, la asignación de recursos para la ejecución de kernels en la tarjeta gráfica no es algo trivial, por lo que fue necesario diseñar un balanceador de carga (ver figura \ref{fig:Balanceador}) que tomara en cuenta las características propias del sistema utilizado como caso de estudio.
+    \newline
+    
+    Debido a que las tareas que se ejecutarán sobre el sistema se presuponen embebidas, se considera que probablemente se podrán ejecutar al menos dos kernels en concurrente en la tarjeta, por lo que es imprescindible que ellas siempre tengan recursos suficientes para su ejecución, en caso de que la tarea de mayor prioridad absorba todos los recursos, no será necesario ejecutar la segunda tarea en ese quantum.
+\newline
+
+    \begin{figure}[p]
+      \centering
+        \includegraphics[scale=.41]{Balanceador}
+        \caption{Diagrama de flujo del balanceador de carga.}
+        \label{fig:Balanceador}
+    \end{figure}
+
+La lógica de asignación de tareas a los SM se basa en colocar la mayor cantidad posible de kernels en concurrente para que se puedan realizar más cálculos en menor tiempo.
+\newline
+
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C1Balanceo}
-        \caption{Caso I.}
+        \caption{Caso I Kernels mantienen su prioridad en la siguiente iteración.}
         \label{fig:C1Balanceo}
     \end{figure}
+
+A continuación se mostraran algunos de los diversos escenarios en forma de casos de estudio que pudieran aparecer al recurrir al balanceador de carga. Cada uno está representado en un diagrama, dicho diagrama poseerá en la parte superior la lista ordenada por prioridad (mayor a menor), cada tarea contiene el nombre del kernel así como el número de blocks que se requieren lanzar seguido del número de threads que los comprende. Se sombrea aquellas tareas que lograron ejecutarse en cada iteración, también se tiene una división en la lista, de lado izquierdo se comprenden las tareas que pudieran correr en concurrente en un punto en el tiempo de ejecución, de lado derecho aquellas que salen de dicha cuenta, justo en la última tarea de la primera mitad se tiene las suma de los threads que hipotéticamente pudieran ejecutarse en concurrente.
+\newline
+
+El Caso I (ver figura \ref{fig:C1Balanceo}), representa un escenario en donde la totalidad de las tareas que estaban ejecutándose en la iteración anterior a) vuelven a quedar en la posición de mayor prioridad en la lista en b), puesto que ninguna tarea tuvo que ser sacada de ejecución, se les dará oportunidad de un siguiente quantum sin necesidad de detenerse guardar su contexto y relanzarse.
+    \newline
     
-    \begin{figure}[ht]
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C2Balanceo}
-        \caption{Caso II.}
+        \caption{Caso II Kernels de baja prioridad deben relanzarse.}
         \label{fig:C2Balanceo}
     \end{figure}
     
-    \begin{figure}[ht]
+    Una vez terminado el quantum de la iteración y recalculando la lista de prioridades observamos que se presenta el Caso II (ver figura \ref{fig:C2Balanceo}) donde algunos de las tareas ahora cambiaron el orden en la lista. Procedemos a calcular el rango de las tareas que pudieran correr en concurrente, y encontramos que la mayoría puede continuar en ejecución por que se encuentran del lado derecho, aquella que quedaron de lado derecho se deben sacar de la lista de ejecución y ser insertadas en la lista de paro de actividades para dar oportunidad de ejecución a aquellas que tienen mayor prioridad, para este caso serían los kernel \textbf{KE}, \textbf{KF} y \textbf{KI}. Y procedemos a agregar las del lado derecho por orden de prioridad, \textbf{Kk} y \textbf{KL}. Una vez agregadas las tareas de mayor prioridad, se observa que aún queda espacio y se pregunta a las tareas de menor prioridad si sus características cumplen con los requisitos para que puedan ser ejecutadas en esa iteración, con lo que encontramos que la tarea \textbf{KE} puede ingresar a ejecutarse.     
+    \newline
+    
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C3aBalanceo}
-        \caption{Caso IIIa.}
+        \caption{Caso IIIa Kernels que completaron su ejecución.}
         \label{fig:C3aBalanceo}
     \end{figure}
     
-    \begin{figure}[ht]
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C3bBalanceo}
-        \caption{Caso IIIb.}
+        \caption{Caso IIIb Kernels que completaron su ejecución.}
         \label{fig:C3bBalanceo}
     \end{figure}
     
+    Después de terminada la iteración d), se ha encontrado con que las tareas \textbf{KA}, \textbf{KD} y \textbf{KH} han completado su ejecución, por lo que son eliminados de la lista de peticiones, por ello la lista de prioridades para esta ejecución se modificó tanto en orden, como en longitud. Una vez calculado el rango de las posibles tareas en concurrente, se encuentra que varias de ellas ya no existen o bien deben ser quitas de ejecución para dar lugar a otras con mayor prioridad. En esta ocasión nos quedamos únicamente con \textbf{KB}, \textbf{KC}, \textbf{KG} y \textbf{KL}. Y procedemos a rellenar el espacio existente con las tareas según su orden de prioridad. 
+    \newline
+    
+    Pero en el Caso III (ver figura \ref{fig:C3aBalanceo}), debido a la forma en que están dispuestas las tareas, teóricamente la tarea \textbf{KI} debería poder ejecutarse por que hay suficientes threads para su ejecución, pero el hecho de que no estén contiguos imposibilita esta acción. Por ello se salta y se decide agregar tareas de menor prioridad, incluso \textbf{KE} que está del lado derecho de la lista de prioridad. Debido a que nuevamente tenia una baja prioridad y tuvo que ser quitada de ejecución, y se le dio oportunidad de ejecutarse, sin importar si fuera en su misma ubicación, debe detener su ejecución, guardar su contexto y volver a ejecutarse.
+\newline
+
+    Siguiendo con el flujo del planificador, (ver figura \ref{fig:C3bBalanceo}) se vuelve a obtener una nueva lista de ejecución, en donde el lado derecho nos indica que se podrían lanzar sus tareas y se podrían utilizar los 4096 threads de los SM, pero al momento de llenar la cola de ejecución por priridad, nuevamente la tarea \textbf{KI} se queda fuera de ejecución, pero ganamos recursos para 3 tareas de menor prioridad \textbf{KG}, \textbf{KK} y \textbf{KE}, y como dichas tareas se encontraban en ejecución en la iteración pasada, pero ahora son de baja prioridad, se deben detener para ser lanzadas nuevamente.
+\newline
+
     \begin{figure}[ht]
       \centering
         \includegraphics[scale=.26]{C4Balanceo}
-        \caption{Caso IV.}
+        \caption{Caso IV Kernels muy grandes.}
         \label{fig:C4Balanceo}
     \end{figure}
-    
-    \begin{figure}[ht]
+    En el Caso IV (ver figura \ref{fig:C4Balanceo}) se tiene que la lista ordenada de prioridad de lado izquierdo contiene tareas que no ocupan por completo los recursos aportados por los SM, pero la primer tarea del lado derecho por sus características no puede ser ejecutada, por ello no fue seleccionada en primer lugar, por ello es necesario empezar a llenar el espacio sobrante con las tareas de baja prioridad. En este caso maximizamos la totalidad de los recursos de los SM y ejecutamos toda la lista de prioridad a excepción de la tarea \textbf{KJ}. Y nuevamente como inicialmente no estaban planeadas para su ejecución en esta iteración, se debe detener y relanzar las tareas \textbf{KG}, \textbf{KK} y \textbf{KE}.
+\newline
+
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C5aBalanceo}
-        \caption{Caso Va.}
+        \caption{Caso Va Kernels de mayor prioridad que no estaban en ejecución.}
         \label{fig:C5aBalanceo}
     \end{figure}
     
-    \begin{figure}[ht]
+        \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C5bBalanceo}
-        \caption{Caso Vb.}
+        \caption{Caso Vb Kernels de mayor prioridad que no estaban en ejecución.}
         \label{fig:C5bBalanceo}
     \end{figure}
     
-    \begin{figure}[ht]
+    Después de diversas iteraciones del ciclo de vida del planificador, nos encontramos con el escenario k) (ver figura \ref{fig:C5aBalanceo}), donde tenemos que se encuentran en ejecución un cierto número de tareas esparcidas por los los SM que utilizan solamente una fracción de sus recursos. Justo después que se acaba el quantum de su iteración, se calcula nuevamente la lista de prioridad en l) y ahora han aparecido 2 tareas en la cabeza de la cola que solicitan recursos, debido a que la de mayor prioridad no puede recibir recursos contiguos para su ejecución, se procede a sacar la tarea de menor prioridad actualmente en ejecución \textbf{KP}, y pregunta si ahora puede entrar en ejecución.
+\newline
+
+    Como no es posible que ingrese, se vuelve a quitar de ejecución la tarea con la menor prioridad (ver figura  \ref{fig:C5bBalanceo}), y así sucesivamente hasta que se reúnan las características que se requiere. Una vez liberado el espacio en ñ), se añade la tarea con la mayor prioridad en o), y se pregunta ahora por el espacio requerido por la tarea con la segunda mayor prioridad, como nuevamente no se puede agregar a ejecución, se eliminan las tareas de menor prioridad hasta que sea posible colocarla.
+\newline
+
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C5cBalanceo}
-        \caption{Caso Vc.}
+        \caption{Caso Vc Kernels de mayor prioridad que no estaban en ejecución.}
         \label{fig:C5cBalanceo}
     \end{figure}
     
-    \begin{figure}[ht]
+    \begin{figure}[]
       \centering
         \includegraphics[scale=.26]{C5dBalanceo}
-        \caption{Caso Vd.}
+        \caption{Caso Vd Kernels de mayor prioridad que no estaban en ejecución.}
         \label{fig:C5dBalanceo}
     \end{figure}
+    
+    Una vez liberado el espacio contiguo necesario para la tarea \textbf{KT}(ver figura  \ref{fig:C5cBalanceo}), y así sucesivamente hasta que se reúnan las características que se requiere. Una vez liberado el espacio en ñ), se añade la tarea con la mayor prioridad en o), y se pregunta ahora por el espacio requerido por la tarea con la segunda mayor prioridad, como nuevamente no se puede agregar a ejecución, se eliminan las tareas de menor prioridad hasta que sea posible colocarla.
+\newline
+
+   Liberado el espacio necesario (ver figura  \ref{fig:C5dBalanceo}), se procede a colocar la tarea \textbf{KU} y posteriormente se rellena el espacio con las tareas de la lista ordenada. Como se sacaron de ejecución las tareas \textbf{KW}, \textbf{KS}, \textbf{KY}, \textbf{KR} y \textbf{KP}, y posteriromente entraron nuevamente a la lista, es necesario relanzarlas.
+\newline
+
     
     \begin{figure}[ht]
       \centering
@@ -413,40 +383,19 @@ Por ejemplo, quisiéramos ejecutar un kernel con
         \label{fig:C6Balanceo}
     \end{figure}
     
-    
-    
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    En el Caso VI (ver figura  \ref{fig:C6Balanceo}), nos encontramos en q) que la tarea \textbf{KZ} ya se encontraba en ejecución, pero en la siguiente ejecución, se presenta la tarea \textbf{KW} con una prioridad menor, aunque teóricamente ambas tareas podrían ejecutarse concurrentemente, una tarea con menor prioridad no puede mover a una de mayor, por lo que en esta iteración únicamente se quedará en ejecución la tarea con la mayor prioridad.
+\newline
 
-
-La GPU de la Jetson TX2 consta de dos SM con 128 cores cada uno\cite{SMJetson}.
-
-Función Planificador
-
-\lstinputlisting[style=CStyle, frame=single,label=lst:scheduler,  basicstyle=\ttfamily\footnotesize, caption=Función principal del planificador.]{algorithms/scheduler.c}
-  
-Función Ejecutar cola de Kernels
-
-\lstinputlisting[style=CStyle, frame=single,label=lst:ejecutarKernels,  basicstyle=\ttfamily\footnotesize, caption=Función que ejecuta kernels encolados.]{algorithms/ejecutarKernels.c}
-
-Función Busca kernels sin completar
-
-\lstinputlisting[style=CStyle, frame=single,label=lst:kernelsSinCompletar,  basicstyle=\ttfamily\footnotesize, caption=Función busca kernels sin completar.]{algorithms/kernelsSinCompletar.c}
-
-Estructura Task
-
-\lstinputlisting[style=CStyle, frame=single,label=lst:Task,  basicstyle=\ttfamily\footnotesize, caption=Estructura task.]{algorithms/Task.c}
     	
 \section{Asignación de prioridades} \label{secc:asigPrioridad}
 
-La asignación de prioridades se realiza aplicando los algoritmos de tiempo real que se trataron en la sección \ref{sec:AlgoPlan}.
+Al tener como módulos separado tanto el planificador como la asignación de prioridades, nos da la la flexibilidad de poder implementar diferentes algoritmos de tiempo real (ver \ref{sec:AlgoPlan}).
 
-Función getTaskMayorPrioridad
+Dependiendo de las particularidades de cada algoritmo, se requerirá diferente información sobre la tarea a planificar, dichos parámetros podrán modificarse en la estructura (algoritmo \ref{lst:Task}) que mapea a las tareas.
 
-\lstinputlisting[style=CStyle, frame=single,label=lst:getTaskMayorPrioridad,  basicstyle=\ttfamily\footnotesize, caption=Función que regresa la tarea con la mayor prioridad de un conjunto.]{algorithms/getTaskMayorPrioridad.c}
+%\lstinputlisting[style=CStyle, frame=single,label=lst:getTaskMayorPrioridad,  basicstyle=\ttfamily\footnotesize, caption=Función que regresa la tarea con la mayor prioridad de un conjunto.]{algorithms/getTaskMayorPrioridad.c}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Resumen}
-
+Este módulo generará una lista de prioridad ordenando las tareas de mayor a menor, según sea el caso.
 
 
 

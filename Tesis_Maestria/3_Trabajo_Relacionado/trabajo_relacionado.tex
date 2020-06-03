@@ -1,11 +1,128 @@
 %%Capítulo 3 trabajo relacionado 
  \chapter{Trabajo Relacionado}
     \label{cha:TrabajoRelacionado}
-\section{Clasificación de la planificación de tareas}
-	
-	Para poder utilizar varias aplicaciones en sistemas en tiempo real complejos es necesario la utilizar técnicas de implementación preemptive. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
+    
+Al momento de realizar la revisión de la literatura se encontró que existe muy poca bibliografía sobre el tema, el problema es atribuible a la poca información que las empresas manofactureras de las tarjetas gráficas liberan al publico en general.
+\newline
 
-\vspace{0.3cm}
+El trabajo \cite{TX2-H} realizó un estudio con base en la documentación y pruebas de caja negra sobre la arquitectura arquitectura Pascal. Como caso de estudio utilizaron el sistema NVIDIA Jetson TX2, que es precisamente el se tubo disponible al realizar esta tesis.
+\newline
+
+El artículo tiene como objetivo dar las pautas para realizar normas oficiales de seguridad a los sistemas embebidos heterogéneos y así pueda certificarse su uso en ambientes críticos, pero  debido a que sus diseños no están documentados o se describen a un muy alto nivel que no revelan los detalles técnicos cruciales.
+\newline
+
+Cada GPU contiene un arreglo de Streaming Multiprocesor (SM), dependiendo del modelo o arquitectura, en donde cada SM puede procesar concurrentemente una misma cantidad de threads. Como ya se mencionó anteriormente, las empresas que producen el hardware no revelan mucho sobre las peculiaridades de como se realiza el reparto de recursos para ejecutar las peticiones, únicamente sabemos que el GPU distribuye los blocks pendientes dentro de los SM en grupos de 32 threads, estos grupos son llamados warps. Un warp es una entidad planificable de un SM.
+Un block puede ser asignado únicamente a un SM y si este tiene suficientes recursos para recibirlo, si no, esperará hasta que pueda ser lanzado, el como realiza esta espera tampoco es revelado por las compañías.
+\newline
+
+Para nuestro caso de estudio con el sistema Jeston TX2, el cual cuenta con 2 SM, y cada uno cuenta con 128 cores que juntos pueden procesar concurrentemente 2048 threads\cite{SMJetson}. Ahora bien, tomando en cuenta esto, cada SM puede manejar un máximo de 64 warps.
+\newline
+
+Por ejemplo, en la tabla \ref{tab:asigUnKernelSM} se muestran diversos escenarios en los que se desea agregar kernels para procesar a la tarjeta gráfica.
+\newline
+
+  \begin{table}[h!]
+      \begin{center}
+            \scriptsize
+        \begin{tabular}{|m{1.5cm}|m{1cm}|m{1cm}|m{1.5cm}|m{1.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1.5cm}|}
+         \hline
+         \cellcolor{lightgray}\textbf{Escenario} &
+         \cellcolor{lightgray}\textbf{Kernel} & 
+         \cellcolor{lightgray}\textbf{Blocks} &
+         \cellcolor{lightgray}\textbf{Threads por block} &
+         \cellcolor{lightgray}\textbf{Threads Totales} &
+         \cellcolor{lightgray}\textbf{Blocks SM0} &
+         \cellcolor{lightgray}\textbf{Warps SM0} &
+         \cellcolor{lightgray}\textbf{Blocks SM1} &
+         \cellcolor{lightgray}\textbf{Warps SM1} &
+         \cellcolor{lightgray}\textbf{Threads utilizados}\\ 
+         \hline
+         a) & K2 & 4 & 512 & 2048 & 4 & 64 & 0 & 0 & 2048\\ 
+         \hline
+         b) & K1 & 16 & 265 & 4096 & 8 & 64 & 8 & 64 & 4096\\ 
+         \hline
+         c) & K3 & 9 & 350 & 3150 & 5 & 55 & 4 & 44 & 3168\\ 
+         \hline
+           \end{tabular}
+        \caption{Asignación de un solo kernel a los SM.}
+        \label{tab:asigUnKernelSM}
+      \end{center}
+    \end{table}
+    
+    En el escenario a) (ver figura \ref{fig:asigBlock}) tenemos un kernel con 4 block y cada uno de 512 threads. La primer condición para poder agregarlo recae en que la totalidad del kernel debe poder ser ejecutado en concurrente en la tarjeta gráfica en un instante de tiempo. En este caso recordemos que un SM tiene un máximo de 64 warps disponible, y el kernel justamente está constituido por esa cantidad, por lo que el planificador de hardware de la tarjeta asigna secuencialmente los blocks a las localidades.
+    \newline
+    
+    En el escenario b) se agrega un kernel que comprende de 16 blocks y cada uno consta de 256 threads por block. En este caso, al lanzarlo se utilizará la totalidad de los recursos del GPU y los blocks se irán asignando secuencialmente empezando desde la primer localidad del SM0 y así sucesivamente hasta que se terminen sus recursos. Cuando esto suceda, se continuará con las primeras localidades de SM1, y así sucesivamente hasta terminar de lanzar todos los blocks del kernel. En de que existan recursos para colocar blocks de un kernel al final de SM0 pero no los suficientes para colocarlo al inicio de SM1, el kernel no se podrá lanzar, y el planificador por hardware saltará la tarea y asignará otra que ocupe menos recursos.
+    \newline
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.24]{asigBlock}
+        \caption{Diagrama de asignación de un kernel a los SM.}
+        \label{fig:asigBlock}
+    \end{figure}
+    
+    Finalmente, en el escenario c deberían ser 54.6 warps en el SM0 utilizando 1750 threads, pero en realidad se utilizan 55 warps, con lo que el trabajo de 10 threads se desperdician. En el SM1, deberían ocuparse 43.75 warps, pero se usan 44, dejando 8 threads sin poderse utilizar.
+    \newline
+    
+Habitualmente en sistemas GPGPU se requieren lanzar más de un kernel a la vez, en la tabla \ref{tab:asigVariosKernelsSM} se tienen 3 situaciones en lo que esto podría ocurrir.
+\newline
+
+    \begin{table}[h!]
+      \begin{center}
+            \scriptsize
+        \begin{tabular}{|m{1.5cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|m{1cm}|}
+         \hline
+         \cellcolor{lightgray}\textbf{Escenario} & 
+         \cellcolor{lightgray}\textbf{Kernel} & 
+         \cellcolor{lightgray}\textbf{Blocks} &
+         \cellcolor{lightgray}\textbf{Threads por block} &
+         \cellcolor{lightgray}\textbf{Threads por kernel} &
+         \cellcolor{lightgray}\textbf{Threads en concurrente} &
+         \cellcolor{lightgray}\textbf{Warps} &
+         \cellcolor{lightgray}\textbf{Warps aportados a SM0} &
+         \cellcolor{lightgray}\textbf{Warps SM0} &
+         \cellcolor{lightgray}\textbf{Warps aportados a SM1} &
+         \cellcolor{lightgray}\textbf{Warps SM1} \\ 
+         \hline
+         \multirow{2}{1cm}{d)} & K1 & 3  & 512 & 1536 & \multirow{2}{1cm}{4096} & 48 & 48 & \multirow{2}{1cm}{64} & 0  & \multirow{2}{1cm}{64}\\ 
+                              & K2 & 10 & 256 & 2560 &                         & 80 & 16 &                       & 64 & \\ 
+         \hline \hline
+        \multirow{3}{1cm}{e)} & K1 & 1 & 1024 & 1024 & \multirow{3}{1cm}{2304} & 32 & 32 & \multirow{3}{1cm}{64} & 0  & \multirow{3}{1cm}{8}\\ 
+                             & K2 & 1 & 768  & 768  &                         & 24 & 24 &                      & 0 & \\ 
+                             & K3 & 2 & 256  & 512  &                         & 16 & 8 &                       & 8 & \\ 
+         \hline \hline
+        \multirow{3}{1cm}{f)} & K1 & 1 & 768  & 768  & \multirow{3}{1cm}{3072} & 24 & 24 & \multirow{3}{1cm}{24} & 0  & \multirow{3}{1cm}{48}\\ 
+                             & K2 & 1 & 1536 & 1536 &                         & 48 & 0  &                       & 48 & \\ 
+                             & K3 & 1 & 768  & 768  &                         & 24 & 0  &                       & 0 & \\ 
+         \hline
+           \end{tabular}
+        \caption{Asignación de varios kernels a los SM.}
+        \label{tab:asigVariosKernelsSM}
+      \end{center}
+    \end{table}
+    
+    En el escenario d) (ver figura \ref{fig:KernelSM}) se desea asignar dos kernels, uno de 3 blocks y otro de 10. Recordemos que la restricción es que un kernel sólo puede ser asignado si existen suficientes recursos para warps en secuencia. La primer tarea utiliza 48 warps, y la segunda 80, por lo que en el primer SM podemos asignar los 48 warps del primer kernel más 16 del segundo, y en el SM colocamos los 64 restantes, ocupando así la totalidad de localidades de la GPU.
+    \newline
+    
+    Continuando con el caso e), ahora tenemos 3 kernels, dos de un block con 1024 threads y otro con 768, respectivamente y uno con 2 blocks de 256 threads, en conjunto ocupan 72 warps en total, por lo que podemos asignar los 32 warps del \textbf{K1} al SM0, justo después los 24 del \textbf{K2} y aún sobran 8 warps que muy bien sirven para ejecutar la mitad de warps del \textbf{K3}, y como las localidades del inicio de SM1 están disponibles, se sigue con la asignación de los 8 restantes.
+    \newline
+    
+    El escenario f) presenta un caso en que se tienen 3 kerneles que en su conjunto representan 3072 threads, lo que nos hace pensar que muy bien pueden ser ejecutados en concurrente dentro del GPU, pero el orden de lanzamiento influye de primera mano en la repartición de los recursos. Primero se lanza el kernel \textbf{K1} que constituye 24 warps, después se recibe la petición de  \textbf{K2} con 48, pero como no es posible asignarlo en el SM0, se le asignan las localidades de SM1. Finalmente, desea despachar a \textbf{K3} con 24 warps, pero como la asignación de recursos se realiza de forma secuencial, se empieza a preguntar justo en la siguiente localidad de la última asignada, con lo que ya no es posible lanzar esa tarea, y se deberá esperar a que terminen su ejecución las tareas actuales. Aunque en el SM0 sobran recursos que muy bien se podrían aprovechar, la documentación actual no permite realizarlo, por ello se recurrió a una solución en la sección \ref{secc:balanceador}.
+    
+    \begin{figure}[ht]
+      \centering
+        \includegraphics[scale=.24]{KernelSM}
+        \caption{Diagrama de asignación de varios kernels a los SM.}
+        \label{fig:KernelSM}
+    \end{figure}
+   
+   Ahora bien, teniendo una referencia por medio de pruebas de software, se puede conocer un poco sobre funcionamiento de la asignación de kernel a la tarjeta gráfica, se puede afirmar que es posible gestionar las peticiones de recursos a la GPU.
+\newline
+    
+%Clasificación
+Para poder utilizar varias aplicaciones en sistemas en tiempo real complejos es necesario la utilizar técnicas de implementación preemptive. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
+\newline
 
 La clasificación planificación de tareas preemptive esta compuesta de diversos tipos dependiendo de sus técnicas de implementación, cómo se describe en la sección \ref{claspree}. 
 %Basado en hardware
@@ -148,20 +265,20 @@ Este capítulo presenta los trabajos relacionados con el tema de esta tesis, se 
  \end{itemize}
 %----------------------------------------------------------------------
 
-\vspace{0.3cm}
-Cada sección presenta lo propuesto en el trabajo relacionado, donde se describe el problema, los objetivos y la solución a éste. Brevemente se describe la solución propuesta con los resultados obtenidos y por último se presentan las conclusiones del trabajo.
+%\vspace{0.3cm}
+%Cada sección presenta lo propuesto en el trabajo relacionado, donde se describe el problema, los objetivos y la solución a éste. Brevemente se describe la solución propuesta con los resultados obtenidos y por último se presentan las conclusiones del trabajo.
 
 
 
 
 
-The earliest deadline first (EDF) scheduling algorithm is a typical representative of the dynamic priority scheduling algorithm. However, once the system is overloaded, the deadline miss rate increases and the scheduling performance deteriorates sharply, which causes a reduction in system resource utilization.
+%The earliest deadline first (EDF) scheduling algorithm is a typical representative of the dynamic priority scheduling algorithm. However, once the system is overloaded, the deadline miss rate increases and the scheduling performance deteriorates sharply, which causes a reduction in system resource utilization.
 
-En la práctica, ambas visiones de planificación, tanto preemptive, como non-preemptive, tienen ventajas y desventajas comparadas entre sí, por lo que ninguna es superior a la otra. Pero el patrón encontrado es que es necesario en pensar en un Framework qué brinde ayuda a la ejecución de tareas y que permita guardar el contexto en un tiempo específico. 
+%En la práctica, ambas visiones de planificación, tanto preemptive, como non-preemptive, tienen ventajas y desventajas comparadas entre sí, por lo que ninguna es superior a la otra. Pero el patrón encontrado es que es necesario en pensar en un Framework qué brinde ayuda a la ejecución de tareas y que permita guardar el contexto en un tiempo específico. 
 
-Hoy en día, los sistemas embebidos basados en GPU han empezado a considerarse esenciales debido a su alta programabilidad y capacidad de desarrollo con técnicas de alto rendimiento, sumado a su bajo consumo energético. Estos exigen una mayor potencia de cálculo y deben responder a muchos eventos, por lo que se han buscado estrategias, y ahora comparten la memoria entre el CPU y el GPU, lo que resulta en una latencia muy cercana a cero.
+%Hoy en día, los sistemas embebidos basados en GPU han empezado a considerarse esenciales debido a su alta programabilidad y capacidad de desarrollo con técnicas de alto rendimiento, sumado a su bajo consumo energético. Estos exigen una mayor potencia de cálculo y deben responder a muchos eventos, por lo que se han buscado estrategias, y ahora comparten la memoria entre el CPU y el GPU, lo que resulta en una latencia muy cercana a cero.
 
-Se han propuesto diversos frameworks de última generación para planificación de tareas para aprovechar el rendimiento de los sistemas embebidos basados en GPU y su bajo consumo de energía.
+%Se han propuesto diversos frameworks de última generación para planificación de tareas para aprovechar el rendimiento de los sistemas embebidos basados en GPU y su bajo consumo de energía.
 
 %%%%%
 
