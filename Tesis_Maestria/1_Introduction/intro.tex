@@ -10,29 +10,28 @@
 
 \graphicspath{{figures/}}
 
-
-Actualmente las organizaciones requieren de la utilización de aplicaciones con tareas específicas, por lo que se puede valer de los sistemas embebidos en vez de gastar en computadoras de propósito general. Es común encontrar que estas aplicaciones requieren trabajar con tiempos de respuesta relativamente cortos, comúnmente llamados sistemas en tiempo real, que deben reaccionar dentro de limites de tiempo precisos para garantizar una corrección funcional, satisfacer los criterios de calidad o evitar daños críticos.
+Los sistemas embebidos tienen el fin de cumplir con tareas especificas, están programados en lenguajes nativos para satisfacer necesidades con una pronta respuesta, por ello son los candidatos óptimos para la integración de aplicaciones en tiempo real. Éstas deben reaccionar dentro de límites de tiempo precisos para garantizar una corrección funcional, satisfacer los criterios de calidad o evitar daños críticos. Por esta razón, actualmente las organizaciones de los sistemas embebidos en vez de gastar en computadoras de propósito general.
 \newline
 
-Las tecnologías emergentes están requiriendo de soluciones cada vez más intensivo, por lo existe una creciente migración de paradigma en las empresas para acelerar sus aplicaciones embebidas mediante la utilización dele cómputo general en unidades de cómputo gráfico (GPGPU) con el fin de solventar estas demandas de recursos.
+Las tecnologías emergentes requieren de soluciones cada vez más intensivas, por ello, existe una creciente migración de paradigma en las empresas para acelerar sus aplicaciones embebidas mediante la utilización del cómputo general en unidades de cómputo gráfico (GPGPU) con el fin de solventar estas demandas de recursos.
 \newline
 
-Las GPU modernas de adaptan ampliamente a entornos multitarea desde centros de datos hasta teléfonos inteligentes. Sin embargo, el soporte actual para su programación está limitado, formando una barrera para que la tarjeta gráfica satisfaga las necesidades de las organizaciones.
+Las GPU modernas se adaptan ampliamente a entornos multitarea desde centros de datos hasta teléfonos inteligentes. Sin embargo, el soporte actual para su programación está limitado, formando una barrera para que la tarjeta gráfica satisfaga las necesidades de las organizaciones.
 \newline
 
-A pesar de que las empresas que manofacturan las tarjetas gráficas están haciendo un gran esfuerzo por generalizar el uso de sus plataformas, no es suficiente debido a que no se conoce completamente la arquitectura de operación, por lo que se requiere buscar nuevas formas de administrar los sistemas que correrán sobre ellas.
+A pesar del gran esfuerzo que las empresas manufactureras de tarjetas gráficas están haciendo por generalizar el uso de sus plataformas, no es suficiente debido a que no se conoce completamente la arquitectura de operación, por esta razón se requiere buscar nuevas formas de administrar los sistemas que correrán sobre ellas.
 \newline
 
-El objetivo principal de esta tesis es la definición del diseño de un framework que facilite la planificación de tareas preemptive, específicamente, en sistemas embebidos heterogéneos, aquellos que integran tanto una Unidad Central de Procesamiento (CPU) y una Unidad de Procesamiento Gráfico (GPU). La solución que se presenta estará orientada a aplicaciones cuyos requisitos de ejecución cumplen con las características de procesamiento embebido y puedan ser manejadas por un planificador de sistemas en tiempo real.
+El objetivo principal de esta tesis es definir el diseño de un framework que facilite la planificación de tareas preemptive, específicamente, en sistemas embebidos heterogéneos, es decir, aquellos que integran tanto una Unidad Central de Procesamiento (CPU) y una Unidad de Procesamiento Gráfico (GPU). La solución que se presenta está orientada a aplicaciones cuyos requisitos de ejecución cumplen con las características de procesamiento embebido y pueden ser manejadas por un planificador de sistemas en tiempo real.
 \newline
 
-Tener las bases del diseño de un framework que permita planificar la ejecución de tareas preemptive, permite disminuir los plazos vencidos de tareas con alta prioridad y mejorar el desempeño general del sistema.
+Tener las bases del diseño de un framework que permita planificar la ejecución de tareas preemptive facilitará la disminución de los plazos vencidos de tareas con alta prioridad y mejorará el desempeño general del sistema.
 \newline
 
-El principal problema al que nos enfrentamos a la hora de implementar aplicaciones embebidas heterogéneas es la poca investigación con la que actualmente cuenta la literatura. Este trabajo de tesis nos brinda la oportunidad de idear las bases de un framework que facilite el diseño y/o desarrollos de aplicaciones en tiempo real que utilice tareas con suspensión preemptive.
+El problema principal  al que nos enfrentamos a la hora de implementar aplicaciones embebidas heterogéneas es la poca investigación con la que actualmente cuenta la literatura. Este trabajo de tesis nos brinda la oportunidad de idear las bases de un framework que facilite el diseño y/o desarrollo de aplicaciones en tiempo real que utilice tareas con suspensión preemptive.
 
 \section {Estructura de la tesis}
 
 El presente trabajo se estructura en seis capítulos.
-En el capítulo \textbf{Antecedentes}, se da una introducción a los conceptos que forman parte del marco teórico, y que son necesarios para entender el contexto en el que se desenvuelve el trabajo. En seguida, en el capítulo \textbf{Trabajo Relacionado}, se da un breve resumen sobre los textos que contienen información pertinente del estado del arte del tema. Posteriormente, se encuentra el capítulo \textbf{Diseño del framework} en donde se describe puntualmente la propuesta de solución. Una vez conocida la solución, en el capítulo \textbf{Rendimiento} se anexan algunas métricas de rendimiento que se le podrán aplicar al framework cuando en un futuro se encuentre implementado. Finalmente, en el capítulo \textbf{Conclusiones y Trabajo Futuro} se recapitulan los alcances del trabajo y se mencionan los puntos que se dejaron para un trabajo futuro,
+En el capítulo \textbf{Antecedentes}, se da una introducción a los conceptos que forman parte del marco teórico, y que son necesarios para entender el contexto en el que se desenvuelve el trabajo. En seguida, en el capítulo \textbf{Trabajo Relacionado}, se da un breve resumen sobre los textos que contienen información pertinente del estado del arte del tema. Posteriormente, se encuentra el capítulo \textbf{Diseño del framework} donde se describe puntualmente la propuesta de solución. Una vez conocida la solución, en el capítulo \textbf{Rendimiento} se anexan algunas métricas de rendimiento que se le podrán aplicar al framework cuando en un futuro se encuentre implementado. Finalmente, en el capítulo \textbf{Conclusiones y Trabajo Futuro} se recapitulan los alcances del trabajo y se mencionan los puntos a desarrollar para un trabajo futuro.
 

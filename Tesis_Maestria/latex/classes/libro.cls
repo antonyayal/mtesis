@@ -65,6 +65,7 @@
 \usepackage[acronym]{glossaries}
 %\usepackage[table]{xcolor}
 
+\usepackage{comment}
 
 \definecolor{lightgray}{gray}{0.9}
 \definecolor{orange}{RGB}{145,204,243}

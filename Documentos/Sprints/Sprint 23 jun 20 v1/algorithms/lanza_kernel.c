@@ -1,4 +1,3 @@
-//kernelN.h
 
 . . .
 	//Declaración del backup
