@@ -94,7 +94,7 @@ Este módulo permite gestionar la actividad de un kernel a nivel de aplicación,
 Se propone una serie de puntos de control que se incluirán explícitamente dentro del código que se desea implementar en modo preemptive, esto durante básicamente tres etapas iterativas del ciclo de vida de un kernel a)inicio, b)en ejecución y c)finalización. 
 \newline
 
-Este elemento tiene como objetivo que cada que se alcance alguno de los puntos de control dentro de un kernel y sea necesario detener su ejecución, se guarde una copia de su contexto actual en una estructura de datos para que cuando sea nuevamente su oportunidad de ejecución se reanude como si nunca se hubiera detenido. 
+El objetivo de este bloque es guardar una copia del contexto actual en una estructura de datos cada que se alcance algún punto de control dentro de un kernel y sea necesario detener su ejecución. De esta manera, cuando se  presente una nueva oportunidad de ejecución sea reanudado como si no se hubiera detenido.
 \newline
 
 Una vez que una tarea, independientemente del momento de su ciclo de vida en que se encuentre, seguirá ejecutándose en la GPU hasta que complete su cálculo o termine su quantum.
@@ -122,7 +122,7 @@ Los tres estados son:
 \begin{itemize}
 \item \textit{\textbf{INICIO}}: Es el primer estado, y se presenta la primera vez que es lanzado un kernel, por lo que el valor inicial debe ser almacenado tanto en la variable local como en su espacio correspondiente en la estructura de copia de seguridad.
 
-\item \textit{\textbf{EJECUCION}}: Este estado es el que se presenta una vez que ya se han inicializado las variables en el estado anterior, o cuando el planificador le da otra vez la oportunidad de ejecutarse para terminar el procesamiento. Aquí se realiza una transacción de memoria con los datos de la estructura de copia de información a las variables locales para trabajar con la información como si nunca se hubiera suspendido el kernel.
+\item \textit{\textbf{EJECUCION}}: Este estado se presenta una vez inicializadas las variables en el caso anterior, o cuando el planificador da nuevamente oportunidad de ejecución para terminar el procesamiento. Aquí se realiza una transacción de memoria con los datos de la estructura de copia de información a las variables locales para trabajar con la información como si nunca se hubiera suspendido el kernel.
 
 \item \textit{\textbf{TERMINADO}}: Debido a que muchas veces dentro de un kerel hay blocks que finalizan su procesamiento antes que otros, es necesario indicar que esa sección ya terminó y no requiere hacer ningún cálculo.
 \end{itemize}
@@ -152,7 +152,7 @@ La fase de procesamiento (ver algoritmo \ref{lst:procesamiento}) es un procedimi
 Por esta razón, en el \textit{case INICIO} únicamente el \textit{thread0} de cada block está habilitado para modificar el estado que se guarda en el \textit{backup}. Justo después del cambio de estado se debe esperar en una barrera para que todos los thread conozcan la actualización y no terminen abruptamente su procesamiento.
 \newline
 
-Lo anterior se repite en el \textit{case EJECUCION}, cuando se termina el procesamiento, nuevamente sólo el \textit{thread0} está autorizado para editar el contenido del arreglo \textit{estado} en la estructura de copia de estado.
+Lo anterior se repite en el \textit{case EJECUCION}, cuando se termina el procesamiento, nuevamente sólo el \textit{thread0} está autorizado para editar el contenido del arreglo \textit{estado} en la estructura de copia de información.
 \newline
 
 Finalmente, si el procesamiento se realiza con ayuda de contadores, al momento de que expire el quantum, todos los threads deberán suspenderse cuando lleguen al mismo valor, así que, lo más conveniente (en términos de memoria) es guardar sólo una copia de dicho contador. Entonces, una vez más el \textit{thread0} será quien almacene la información en su correspondiente lugar dentro de \textit{thread0}.
@@ -167,7 +167,7 @@ Finalmente, si el procesamiento se realiza con ayuda de contadores, al momento d
 Es necesario crear una estructura de datos que guarde las copias de seguridad de los datos pertinentes que en conjunto formen el contexto de un kernel.
 \newline
 
-Todos los parámetros y variables que se encuentren dentro de una función kernel deben almacenarse en una una estructura, por lo que para cada uno de los kernel, se debe crear una estructura \textit{ad hoc}.
+Todos los parámetros y variables que se encuentren dentro de una función kernel deben almacenarse en memoria, por lo que para cada uno de los kernel, se debe crear una estructura \textit{ad hoc}.
 \newline
 
 \lstinputlisting[style=CStyle, frame=single,label=lst:backup,  basicstyle=\ttfamily\footnotesize, caption=Estructura Backup para almacenar el contexto.]{algorithms/backup.c}
@@ -256,20 +256,20 @@ Se esperará un quantum \textit{x} (el estudio del quantum más apropiado queda 
 Bajo suposición y asignación de una carga de trabajo, todas las tareas son preemptive debido a que por decisiones del hardware muchas veces no podrán asignarse aunque haya espacio para su ejecución.
 \newline
 
-Como se mencionó en el capítulo \ref{cha:TrabajoRelacionado} el orden de lanzamiento de los kernel a la GPU afecta la forma en que serán asignados a los SM. Por ejemplo, en el escenario a) (ver figura \ref{fig:Balanceo}. Primero se lanza \textbf{K1}, seguido de \textbf{K2} y al final \textbf{K3}, dando como resultado el desperdicio de recursos y que no sea posible ejecutar un kernel. Sin embargo, si se modifica este orden, se puede optimizar la asignación de tareas en las localidades, como lo vemos en el ejemplo b).
+Como se mencionó en el capítulo \ref{cha:TrabajoRelacionado} el orden de lanzamiento de los kernel a la GPU afecta la forma en que serán asignados a los SM. Por ejemplo, en el escenario a) (ver figura \ref{fig:Balanceo}). Primero se lanza \textbf{K1}, seguido de \textbf{K2} y al final \textbf{K3}, dando como resultado el desperdicio de recursos y que no sea posible ejecutar un kernel. Sin embargo, si se modifica este orden, se puede optimizar la asignación de tareas en las localidades, como lo vemos en el ejemplo b).
 \newline
 
-Por esta razón, se ideó un balanceador de carga que permitirá la maximización de la planificación de tareas ejecutables en un quantum.
+Por esta razón, se ideó un balanceador de carga (ver algoritmo \ref{lst:Balanceador}) que permitirá la maximización de la planificación de tareas ejecutables en un quantum.
 \newline
 
-        \begin{figure}[!]
+        \begin{figure}[!h]
       \centering
         \includegraphics[scale=.24]{Balanceo}
         \caption{Diagrama de balanceo de carga de kernels en los SM.}
         \label{fig:Balanceo}
     \end{figure}
     
-    Como se ha visto a lo largo de este trabajo, la asignación de recursos para la ejecución de kernels en la tarjeta gráfica no es algo trivial, por lo que fue necesario diseñar un balanceador de carga (ver figura \ref{fig:Balanceador}) que tomará en cuenta las características propias del sistema utilizado como caso de estudio.
+    Como se ha visto a lo largo de este trabajo, la asignación de recursos para la ejecución de kernels en la tarjeta gráfica no es algo trivial, por lo que fue necesario diseñar un balanceador de carga (ver figuras \ref{fig:Balanceador1} y \ref{fig:Balanceador2}) que tomará en cuenta las características propias del sistema utilizado como caso de estudio.
     \newline
     
     Debido a que las tareas que serán ejecutadas sobre el sistema se presuponen embebidas, se considera que probablemente podrán ejecutarse al menos dos kernels en concurrente sobre la tarjeta, por lo que es imprescindible que ellas siempre tengan recursos suficientes para su ejecución. En caso de que la tarea de mayor prioridad absorba todos los recursos, no será necesario ejecutar la segunda tarea en ese quantum.
@@ -277,10 +277,19 @@ Por esta razón, se ideó un balanceador de carga que permitirá la maximizació
 
     \begin{figure}[!]
       \centering
-        \includegraphics[scale=.41]{Balanceador}
-        \caption{Diagrama de flujo del balanceador de carga.}
-        \label{fig:Balanceador}
+        \includegraphics[scale=.7]{Balanceador1}
+        \caption{Diagrama de flujo del balanceador de carga parte 1.}
+        \label{fig:Balanceador1}
     \end{figure}
+    
+    \begin{figure}[!]
+      \centering
+        \includegraphics[scale=.7]{Balanceador2}
+        \caption{Diagrama de flujo del balanceador de carga parte 2.}
+        \label{fig:Balanceador2}
+    \end{figure}
+
+    \lstinputlisting[style=CStyle, frame=single,label=lst:Balanceador,  basicstyle=\ttfamily\footnotesize, caption=Balanceador de carga.]{algorithms/balanceoCargav3.c}
 
 La lógica de asignación de tareas a los SM se basa en colocar la mayor cantidad posible de kernels en concurrente para que se puedan realizar más cálculos en menor tiempo.
 \newline
@@ -362,7 +371,7 @@ El Caso I (ver figura \ref{fig:C1Balanceo}), representa un escenario en donde la
     Debido a que la de mayor prioridad no puede recibir recursos contiguos para su ejecución, se procede a sacar la tarea de menor prioridad actualmente en ejecución \textbf{KP}, y la de mayor prioridad pregunta nuevamente si ahora puede entrar en ejecución.
 \newline
 
-    Como no es posible que ingrese, se vuelve a quitar de ejecución la tarea con la menor prioridad (ver figura  \ref{fig:C5bBalanceo}), y así sucesivamente hasta que se reúnan las características que se requiere. Una vez liberado el espacio en ñ), se añade la tarea con la mayor prioridad en o), y se pregunta ahora por el espacio requerido por la tarea con la segunda mayor prioridad. Como nuevamente no se puede agregar a ejecución, se eliminan las tareas de menor prioridad hasta que sea posible colocarla.
+    Como no es posible que ingrese, se vuelve a quitar de ejecución la tarea con la menor prioridad (ver figura  \ref{fig:C5bBalanceo}), y así sucesivamente hasta que se reúnan las características que se requieren. Una vez liberado el espacio en ñ), se añade la tarea con la mayor prioridad en o), y se pregunta ahora por el espacio requerido por la tarea con la segunda mayor prioridad. Como nuevamente no se puede agregar a ejecución, se eliminan las tareas de menor prioridad hasta que sea posible colocarla.
 \newline
 
     \begin{figure}[!]

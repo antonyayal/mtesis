@@ -16,28 +16,34 @@ SMn[]=//Arreglo de tareas balanceadas en SMn
 				SMn.remove(r[i])
 		}
 	#Tarea mayor prioridad
-		if(!SM0.contiene(r[0]) && !SM1.contiene(r[0]) ... 
-								&&!SMn.contiene(r[0])){
-			//if Cabe en cola de SM0?
-				//Coloca r0
-			//else if Cabe en cola de SM1
-				//Coloca r1
-			. . .
-			//else if Cabe en cola de SMn
-				//Coloca rn
-			//else quita tarea con menor prioridad en ejecución
-		}
+		if(i=0)
+			if(!SM0.contiene(r[0]) && !SM1.contiene(r[0]) ... 
+									&&!SMn.contiene(r[0])){
+				//if Cabe en cola de SM0?
+					//Coloca r0
+				//else if Cabe en cola de SM1
+					//Coloca r0
+				. . .
+				//else if Cabe en cola de SMn
+					//Coloca r0
+				//else quita tarea con menor prioridad en ejecución
+			}
 	#Tarea segunda mayor prioridad
+		else if (i=1)
 			if(!SM0.contiene(r[1]) && !SM1.contiene(r[1]) ... 
 									&&!SMn.contiene(r[1])){
 			//if Cabe en cola de SM0?
-				//Coloca r0
+				//Coloca r1
 			//else if Cabe en cola de SM1
 				//Coloca r1
 			. . .
 			//else if Cabe en cola de SMn
-				//Coloca rn
-			//else quita tarea con menor prioridad en ejecución
+				//Coloca r1
+			//else quita tarea con menor prioridad que ella en ejecución
+			}
+	#Tareas con menor prioridad
+		else{
+
 		}
 	}
 	

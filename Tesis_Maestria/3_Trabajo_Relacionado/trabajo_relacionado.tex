@@ -2,13 +2,13 @@
  \chapter{Trabajo Relacionado}
     \label{cha:TrabajoRelacionado}
    
-  Durante la revisión de la literatura se encontró que existe muy poca bibliografía sobre el tema debido a que las empresas manufactureras de las tarjetas gráficas no liberan suficiente información al público en general, ya que sus diseños no están documentados o se describen a alto nivel que no revelan los detalles técnicos cruciales.
+  Durante la revisión de la literatura referida a este estado del arte, se encontró que existe muy poca bibliografía sobre el tema debido a que las empresas manufactureras de las tarjetas gráficas no liberan suficiente información al público en general, ya que sus diseños no están documentados o se describen a alto nivel que no revelan los detalles técnicos cruciales.
 \newline
 
-Se realizó un estudio\cite{TX2-H} con base en la documentación y pruebas de caja negra sobre la arquitectura Pascal. Como caso de estudio utilizaron el sistema NVIDIA Jetson TX2, que es precisamente el que se tuvo disponible al realizar esta tesis.
-\newline
+Se realizó un estudio en \cite{TX2-H} con base en la documentación y pruebas de caja negra sobre la arquitectura Pascal. Como caso de estudio utilizaron el sistema NVIDIA Jetson TX2, que es precisamente el que se tuvo disponible al realizar esta tesis.
+%\newline
 
-El artículo tiene como objetivo dar las pautas para realizar normas oficiales de seguridad a los sistemas embebidos heterogéneos y así poder certificar su uso en ambientes críticos. 
+El estudio tiene como objetivo dar las pautas para realizar normas oficiales de seguridad a los sistemas embebidos heterogéneos y así poder certificar su uso en ambientes críticos. 
 \newline
 
 Cada GPU contiene un arreglo de Streaming Multiprocesor (SM) dependiendo del modelo o arquitectura, en donde cada SM puede procesar concurrentemente una misma cantidad de threads. Como ya se mencionó anteriormente, las empresas que producen el hardware no revelan mucho sobre las peculiaridades de cómo se realiza el reparto de recursos para ejecutar las peticiones. Únicamente sabemos que la GPU distribuye los blocks pendientes dentro de los SM en grupos de 32 threads, estos grupos son llamados warps. Un warp es una entidad planificable de un SM.
@@ -121,7 +121,7 @@ Habitualmente en sistemas GPGPU se requiere lanzar más de un kernel a la vez, e
 \newline
     
 %Clasificación
-Para poder utilizar varias aplicaciones en sistemas en tiempo real complejos es necesario utilizar técnicas de implementación preemptive. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
+Para poder utilizar varias aplicaciones con sistemas en tiempo real complejos es necesario utilizar técnicas de implementación preemptive. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
 \newline
 
 La clasificación de la planificación de tareas preemptive esta compuesta de diversos tipos dependiendo de sus técnicas de implementación, cómo se describe en la sección \ref{claspree}. 
@@ -179,7 +179,7 @@ El artículo \cite{IntraNode} propone la creación del framework schedGPU, el cu
 Este acceso es controlado mediante bloqueos de archivos, señales del sistema y exclusión mutua.
 \newline
 
-SchedGPU utiliza el patrón de diseño cliente-servidor ya que toma cada tarea que busca ser lanzada en la GPU como un cliente que está solicitando memoria a un Servidor centralizado (en el mismo nodo), el cual permite que se ejecute si hay suficiente memoria; o en caso contrario, la bloquea hasta que se encuentre memoria necesaria para su funcionamiento. 
+SchedGPU utiliza el patrón de diseño cliente-servidor ya que toma cada tarea que busca ser lanzada en la GPU como un cliente que está solicitando memoria a un servidor centralizado (en el mismo nodo), el cual permite que se ejecute si hay suficiente memoria; o en caso contrario, la bloquea hasta que se encuentre memoria necesaria para su funcionamiento. 
 El servidor crea un nuevo hilo para cada cliente y mantiene una visión global de la memoria utilizada por todos los clientes a través de la biblioteca de administración de NVIDIA (\textit{NVML}), esto para evitar la creación de un nuevo contexto que consuma memoria.
 \newline
 
@@ -198,13 +198,13 @@ El único trabajo que utiliza algoritmos para la planificación de tareas en tie
 Permite la implementación preemptive dentro de los TB y cada uno de estos subkernels se pueden planificar bajo las políticas de Earliest Deadline First (EDF) y de aquellos algoritmos que mantengan la prioridad de las tareas fijas.
 \newline
 
-GPUart se centra en las GPU integradas, es decir, en las GPU que se colocan en la misma placa que el CPU. Esto porque permiten tener cero copias de memoria, lo que hace que las transferencias entre CPU y GPU sean nulas al compartir fisicamente una memoria común. 
-Por ello, GPUart no considera la planificación de transferencias de memoria a través del DMA.
+GPUart se centra en las GPU integradas, es decir, en las GPU que se colocan en la misma placa que el CPU. Esto porque permiten tener cero copias de memoria, lo que hace que las transferencias entre CPU y GPU sean nulas al compartir físicamente una memoria común. 
+Por ello, GPUart no considera la planificación de transferencias de memoria a través del acceso directo a memoria (DMA).
 \newline
  	
   \begin{table}[h!]
       \begin{center}
-            \scriptsize
+            \footnotesize
         \begin{tabular}{|m{.6cm}|m{6cm}|m{2.7cm}|m{2.6cm}|m{2.6cm}|}
          \hline
         \cellcolor{lightgray}\textbf{Ref.} & \cellcolor{lightgray} \textbf{Artículo} & \cellcolor{lightgray} \textbf{Clasificación por implementación} & \cellcolor{lightgray} \textbf{Clasificación por planificación} & \cellcolor{lightgray} \textbf{Clasificación por Modificación}  \\ 
@@ -236,8 +236,12 @@ Por ello, GPUart no considera la planificación de transferencias de memoria a t
         \caption{Matriz de clasificación de trabajos relacionados.}
         \label{tab:table2}
       \end{center}
+      \begin{tablenotes}
+      \small
+      \item \textit{* Artículos que fueron diseñados específicamente para sistemas embebidos.}
+    \end{tablenotes}
     \end{table}
-    \textit{* Artículos que fueron diseñados específicamente para sistemas embebidos.}
+    
     
     \begin{comment}
 \section{Resumen}

@@ -12,7 +12,7 @@
  El Instituto de Ingeniería Eléctrica y Electrónica (Institute of Electrical and Electronics Engineers – IEEE) define a la Ingeniería de Software como:
 
 \begin{quote}
-\textit{"La Ingeniería de Software\cite{IeeeSG} es la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento de software; es decir, la aplicación de la ingeniería al software."}
+\textit{"La Ingeniería de Software es la aplicación de un enfoque sistemático, disciplinado y cuantificable al desarrollo, operación y mantenimiento de software; es decir, la aplicación de la ingeniería al software.\cite{IeeeSG}"}
 \end{quote}
 
 La Ingeniería de Software aplica diferentes técnicas, normas y métodos que permiten obtener mejores resultados al desarrollar y usar piezas software, al tratar con muchas de las áreas de Ciencias de la Computación es posible llegar a cumplir de manera satisfactoria con los objetivos fundamentales de la Ingeniería de Software. Entre los objetivos de la Ingeniería de Software están\cite{enSWE}:
@@ -29,7 +29,7 @@ La Ingeniería de Software aplica diferentes técnicas, normas y métodos que pe
      \subsection{Framework}
 Un framework o marco de trabajo es la estructura y metodología que se establece para normalizar, controlar y organizar, ya sea, una aplicación completa, o bien, una parte de ella. 
 Esto representa una ventaja para los participantes en el desarrollo del sistema, ya que automatiza procesos y funciones habituales, además agiliza la codificación de ciertos mecanismo ya implementados al reutilizar código.
-Un framework puede ser considerada como un molde configurable, al que podemos añadirle atributos especiales para finalmente construir una solución completa.
+Un framework puede ser considerada como un molde configurable, al que podemos añadirle atributos especiales para finalmente construir una solución integrada.
 \newline
 
 La utilización de un framework siempre conlleva una curva de aprendizaje, pero a largo plazo facilita la programación, escalabilidad y el mantenimiento de los sistemas.
@@ -161,7 +161,7 @@ Otra clasificación se obtiene de acuerdo a la forma en que se planifican las ta
 	Este apartado está centrado en, ya sea una o varias colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
 	
 \item \textbf{\textit{Administración dinámica de memoria.}}
-	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cuál de las que actualmente se encuentra en ejecución ha superado su espacio definido. 
+	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cual de las que actualmente se encuentra en ejecución ha superado su espacio definido. 
 	
 \item \textbf{\textit{Administración dinámica de los núcleos de procesamiento.}}
 	Aquí se limita el número de núcleos de procesamiento en tiempo de ejecución de una GPU para una tarea, y el número depende casi siempre de la prioridad de la tarea.
@@ -226,7 +226,7 @@ Finalmente, podemos encontrar una clasificación enfocada en la forma en que se 
     Shortest Job First (SJF) es el algoritmo de planificación que asigna la prioridad mayor a la tarea con el menor tiempo de ejecución. SJF es el algoritmo más utilizado cuando se comienzan a estudiar los sistemas en tiempo real debido a su simplicidad, ya que minimiza la cantidad promedio de tiempo que cada tarea debe esperar hasta que se complete su ejecución \cite{Tanenbaum}. Este algoritmo funciona únicamente con tareas non-preemptive, por lo que fácilmente puede llegarse a un estado de inanición de tareas que requieren mucho tiempo para completarse si se agregan continuamente tareas pequeñas.
     
     \subsubsection{Earliest Deadline First} 
-    Earliest deadline First (EDF) es un algoritmo con prioridad dinámica, en el que la tarea con el plazo fijo más próximo tiene la mayor prioridad. Este algoritmo es óptimo para implementación sobre un único procesador, y cuando el sistema se encuentra en bajos y moderados niveles de contención de recursos y datos\cite{Liu}.
+    Earliest Deadline First (EDF) es un algoritmo con prioridad dinámica, en el que la tarea con el plazo fijo más próximo tiene la mayor prioridad. Este algoritmo es óptimo para implementación sobre un único procesador, y cuando el sistema se encuentra en bajos y moderados niveles de contención de recursos y datos\cite{Liu}.
     %Ya que cuando se sobrecarga el sistema, la mayoría de las tareas obtienen una alta prioridad, lo que termina en un rendimiento disminuido.
 \newline
      
@@ -234,10 +234,10 @@ Finalmente, podemos encontrar una clasificación enfocada en la forma en que se 
     %Por ello es necesario buscar alternativas de algoritmos que tengan un mejor desempeño en tareas específicas.
     
      \subsubsection{Rate Monotonic}
-    Rate Monotonic (RM) es un algoritmo de planificación preemptive con prioridad estática para un solo procesador\cite{Liu}. RM asigna la prioridad más alta a la tarea con el periodo más corto, suponiendo que los periodos sean igual a los plazos \( (P_{i} = D_{i}) \), esto porque si la tasa de demanda es mayor, el periodo sería más corto y por ende, la prioridad aumentaría. Por ello es óptimo para usarse en tareas periódicas. La mayor limitación de su implementación, es que al utilizar tareas de prioridad fija no siempre se utiliza el 100\%  del CPU, lo que conlleva al posible desperdicio de recursos\cite{RM}.
+    Rate Monotonic (RM) es un algoritmo de planificación preemptive con prioridad estática para un solo procesador\cite{Liu}. RM asigna la prioridad más alta a la tarea con el periodo más corto, suponiendo que los periodos sean igual a los plazos \( (P_{i} = D_{i}) \). En caso de que la tasa de demanda sea mayor el periodo sería más corto y, por ende, la prioridad aumentaría. Por ello es óptimo para usarse en tareas periódicas. La mayor limitación de su implementación, es que al utilizar tareas de prioridad fija no siempre se utiliza el 100\%  del CPU, lo que conlleva al posible desperdicio de recursos\cite{RM}.
 
 \subsubsection{Deadline Monotonic}
-Deadline Monotonic (DM) es el algoritmo óptimo de planificación con prioridad fija donde las prioridades son asignadas inversamente proporcionales a los plazos fijos, es decir, cuando se cumple que el plazo es menor al tiempo de la tarea (D < T) y el periodo es igual al plazo limite (P = D) podemos ver a RM como un caso especial de DM \cite{NPr}. DM ejecuta en cada instante de tiempo la tarea con el plazo más corto, por lo que si dos o más tareas tienen el mismo plazo límite, la siguiente en ejecutarse debe elegirse aleatoriamente.
+Deadline Monotonic (DM) es el algoritmo óptimo de planificación con prioridad fija donde las prioridades son asignadas inversamente proporcionales a los plazos fijos, es decir, cuando se cumple que el plazo es menor al tiempo de la tarea \( (P_{i} < T_{i}) \) y el periodo es igual al plazo limite \( (P_{i} = D_{i}) \) podemos ver a RM como un caso especial de DM \cite{NPr}. DM ejecuta en cada instante de tiempo la tarea con el plazo más corto, por lo que si dos o más tareas tienen el mismo plazo límite, la siguiente en ejecutarse debe elegirse aleatoriamente.
 
 \subsubsection{Least Laxity First}
 Least Laxity First (LLF) es un algoritmo óptimo de planificación con prioridad dinámica. La laxitud de una tarea está definida como el plazo límite menos el tiempo de ejecución restante, esta laxitud es la cantidad máxima de tiempo que un trabajo puede esperar cumpliendo su plazo límite. En este algoritmo, se otorga la máxima prioridad al trabajo con la menor laxitud, se permite que la tarea actualmente en ejecución sea intercambiada por otra con menor laxitud en cualquier momento \cite{NPr}.
@@ -267,11 +267,11 @@ Un CPU está compuesto principalmente por:
 \item Unidad de entrada-salida (I/O): soporta la comunicación con las memoria de la computadora y permite el acceso a los periféricos.
 \end{itemize}   
 
-\subsection{Manycore y Multicore}
-    Es necesario destacar que los \textit{manycore} y los \textit{multicore} son utilizados para etiquetar a los CPU y los GPU, pero entre ellos existen diferencias. Un core de CPU es relativamente más potente, está diseñado para realizar un control lógico muy complejo para buscar y optimizar la ejecución secuencial de programas.
+\subsection{Núcleos de procesamiento CPU y GPU}
+    Es necesario destacar que los núcleos o cores de un CPU y un GPU en principio son similares, pero entre ellos existen diferencias. Un núcleo de CPU es relativamente más potente, está diseñado para realizar un control lógico muy complejo para buscar y optimizar la ejecución secuencial de programas.
 \newline
     
-    En cambio un core de GPU es más ligero y está optimizado para realizar tareas de paralelismo de datos como un control lógico simple enfocándose en la tasa de transferencia de los programas paralelos.
+    En cambio un núcleo de GPU es más ligero y está optimizado para realizar tareas de paralelismo de datos como un control lógico simple enfocándose en la tasa de transferencia de los programas paralelos.
  \newline
  
         \begin{figure}[ht]
@@ -311,7 +311,7 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
 	\item Kernel: Tratamiento aplicado a cada elemento del stream.
 	\item Thread: Tratamiento ejecutado por procesador aplicado a un elemento del stream.
 	\end{itemize} 
-	\item Gather y Scatter: Cuando se aplica un kernel a un stream, este aplica todas sus instrucciones a cada elemento, por lo que cada elemento se almacena en un una posición bien definida dentro de la memoria utilizando índices que auxilian a localizarlo, a esta acción se le conoce como Scatter. 
+%	\item Gather y Scatter: Cuando se aplica un kernel a un stream, este aplica todas sus instrucciones a cada elemento, por lo que cada elemento se almacena en un una posición bien definida dentro de la memoria utilizando índices que auxilian a localizarlo, a esta acción se le conoce como Scatter. 
 
   %      \begin{figure}[ht]
    %   \centering
@@ -320,7 +320,7 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
       %  \label{fig:scatter}
 %    \end{figure}
    
-En cambio, el Gather es la lectura o recolección de un stream en memoria para ser procesado por una unidad de procesamiento.
+%En cambio, el Gather es la lectura o recolección de un stream en memoria para ser procesado por una unidad de procesamiento.
 
 %        \begin{figure}[ht]
  %     \centering
@@ -332,7 +332,7 @@ En cambio, el Gather es la lectura o recolección de un stream en memoria para s
 \end{itemize} 
     
     \subsection{Arquitectura CUDA}
-    CUDA es el acrónimo en inglés de Compute Unified Device Architecture, el cual es una arquitectura de hardware y de software que permite ejecutar programas en las tarjetas gráficas de la marca NVIDIA\cite{CUDAP}.
+    CUDA es el acrónimo en inglés de \underline{C}ompute \underline{U}nified \underline{D}evice \underline{A}rchitecture, el cual es una arquitectura de hardware y de software que permite ejecutar programas en las tarjetas gráficas de la marca NVIDIA\cite{CUDAP}.
     \newline
    
     CUDA C es una extensión del estándar ANSI C con varios complementos del lenguaje para utilizar la programación heterogénea, añadiendo APIs sencillas para administrar los dispositivos e/s, memoria y otras tareas. También es un modelo de programación escalable que permite a los programas trabajar transparentemente con un número variable de núcleos de procesamiento.
@@ -345,7 +345,7 @@ En cambio, el Gather es la lectura o recolección de un stream en memoria para s
         
   \subsubsection{Perspectiva del programador}
    
-    La tabla \ref{tab:CUDAcomp} muestra sus componentes principales: 
+    La tabla \ref{tab:CUDAcomp} muestra sus componentes principales de CUDA desde la perspectiva del programador, y la figura \ref{fig:grid} muestra esquemáticamente el como se conforma el grid de un kernel.
     
      \begin{table}[h!]
       \begin{center}
@@ -366,7 +366,7 @@ En cambio, el Gather es la lectura o recolección de un stream en memoria para s
       \end{center}
     \end{table}
     
-    La figura \ref{fig:grid} muestra esquemáticamente el como se conforma el grid de un kernel.
+    Muchas veces es necesario conocer el ID tanto del thread como del block con los que se está trabajando. En la figura \ref{fig:grid} se observa la configuración de la posición secuencial de cada elemento.
     
     \begin{figure}[ht]
       \centering
@@ -374,12 +374,10 @@ En cambio, el Gather es la lectura o recolección de un stream en memoria para s
         \caption{Representación de los componentes de un grid\cite{CUDAP}.}
         \label{fig:grid}
     \end{figure}
-    
-    Muchas veces es necesario conocer el ID tanto del thread como del block con los que se está trabajando. En la figura \ref{fig:grid} se observa la configuración de la posición secuencial de cada elemento.
 
     Para obtener ambos datos se aplica el algoritmo \ref{lst:idgb}:
     
-    \begin{lstlisting}[style=CStyle, frame=single,label=lst:idgb,  basicstyle=\ttfamily\footnotesize, caption=Transformación para obtener id del thread y del block.] 
+    \begin{lstlisting}[style=CStyle, frame=single,label=lst:idgb,  basicstyle=\ttfamily\footnotesize, caption=Transformación para obtener el id del thread y del block.] 
     id_block = blockIdx.y * gridDim.x + blockId.x
     
     id_thread = threadIdx.y * blockDim.x + threadIdx.x
@@ -491,7 +489,7 @@ Una vez que se lanza un TB en un SM, todos los warps permanecen en ejecución ha
      \begin{figure}[ht]
       \centering
         \includegraphics[scale=0.9]{gpgpu}
-        \caption{Aceleración de programas en GPUs\cite{gpgpu}.}
+        \caption{Aceleración de programas en GPU\cite{gpgpu}.}
         \label{fig:gpgpu}
     \end{figure}
                 
@@ -528,19 +526,19 @@ En la figura \ref{fig:arqutecturaTX2} se muestra diagrama de bloques de la arqui
 
       \begin{figure}[ht]
       \centering
-        \includegraphics[scale=.45]{arqutecturaTX2}
+        \includegraphics[scale=.44]{arqutecturaTX2}
         \caption{Diagrama de la arquitectura del sistema Jetson TX2\cite{ArqTX2}.}
         \label{fig:arqutecturaTX2}
     \end{figure}
 
  \subsection{Jetson TX2}
  
-    Las especificaciones del sistema están descritas en la tabla \ref{tab:jetson}.
+    Las especificaciones del sistema se están descritas en la tabla \ref{tab:jetson}.
 
     \begin{table}[h!]
       \begin{center}
-            \scriptsize
-        \begin{tabular}{|m{2.5cm}|m{6cm}|m{6.5cm}|}
+            \small
+        \begin{tabular}{|m{3cm}|m{5.5cm}|m{6.5cm}|}
          \hline
         \cellcolor{lightgray}\textbf{Elemento} & \cellcolor{lightgray} \textbf{Componentes} & \cellcolor{lightgray} \textbf{Descripción}\\ 
          \hline

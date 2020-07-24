@@ -1,22 +1,24 @@
-\chapter{Conclusiones y\\ Trabajo Futuro}
+\chapter{Conclusiones}
     \label{cha:Conclusiones}
     
 En este trabajo se ha hablado de los sistemas embebidos, y principalmente de los heterogéneos, de cómo han sido adoptados en la industria para realizar tareas específicas que requieren cada vez más un aumento y aceleración de su procesamiento.
 Tener las bases del diseño de un framework permitirá planificar la ejecución de tareas preemptive, facilitará la disminución de los plazos vencidos de tareas con alta prioridad y mejorará el desempeño general del sistema.
 \newline
 
+La principal contribución de este trabajo es el generar un framework que facilite la planificación de tareas preemptive de la GPU en sistemas embebidos heterogéneos contemplando del cómputo general en unidades de procesamiento de gráficos y la arquitectura del sistema.
+\newline
+
 El diseño del framework tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, aunque puede ser aplicado a cualquier dispositivo, siempre y cuando cumpla con ciertas características, como la memoria unificada.
 \newline
 
 El framework se posiciona dentro de las siguientes clasificaciones para la implementación del modo preemptive:
-
 \begin{itemize}
     \item \textbf{Clasificación por implementación}: \textit{Basado en Software. Partición de Kernel.}
     \item \textbf{Clasificación por planificación}: \textit{Planificación por prioridad.}
     \item \textbf{Clasificación por modificación}: \textit{Modificación de código fuente.}
 \end{itemize}
     
-El framework está integrado por 5 bloques que describen el funcionamiento de los componentes necesarios para realizar desde la implementación del modo preemptive hasta su planificación y lanzamiento dentro de la GPU. 
+El framework está integrado por cinco bloques que describen el funcionamiento de los componentes necesarios para realizar desde la implementación del modo preemptive hasta su planificación y lanzamiento dentro de la GPU. 
 Los módulos que se presentaron fueron:
 
 \begin{itemize}
@@ -28,15 +30,12 @@ Los módulos que se presentaron fueron:
 \end{itemize}
 
 Finalmente, se presentó una serie de métricas para evaluar el rendimiento del sistema una vez implementado, logrando dar la pauta para conocer el desempeño de un conjunto específico de aplicaciones, o en dado caso, mejorar el diseño del framework.
-\newline
 
-La principal contribución de este trabajo es el generar un framework que facilite la planificación de tareas preemptive de la GPU en sistemas embebidos heterogéneos contemplando del cómputo general en unidades de procesamiento de gráficos y la arquitectura del sistema.
-
-\subsection{Trabajo Futuro}
+\section{Trabajo Futuro}
 Aunque se realizó un análisis exhaustivo para llegar a la  realización del diseño del framework, es necesaria su futura implementación para poder corroborar su eficacia en ambientes reales.
-\newline
+%\newline
 
 Otro apartado que se trabajará en un futuro es la modificación de los módulos para trabajar nativamente con algoritmos de asignación de prioridad específicos para multiprocesadores con subconjuntos de tareas, ya que actualmente sólo se asegura la ejecución de las dos tareas con mayor prioridad a cada iteración del planificador.  
-\newline
+%\newline
 
 Finalmente, también podría generarse una actualización en algunas herramientas del framework para poder implementar programación orientada a objetos, y con ello, tener un mayor campo de acción e impacto con aplicaciones de la industria que utilizan este paradigma. 
