@@ -37,11 +37,11 @@ Por ejemplo, en la tabla \ref{tab:asigUnKernelSM} se muestran diversos escenario
          \cellcolor{lightgray}\textbf{Warps SM1} &
          \cellcolor{lightgray}\textbf{Threads utilizados}\\ 
          \hline
-         a) & K2 & 4 & 512 & 2048 & 4 & 64 & 0 & 0 & 2048\\ 
+         A & K2 & 4 & 512 & 2048 & 4 & 64 & 0 & 0 & 2048\\ 
          \hline
-         b) & K1 & 16 & 265 & 4096 & 8 & 64 & 8 & 64 & 4096\\ 
+         B & K1 & 16 & 265 & 4096 & 8 & 64 & 8 & 64 & 4096\\ 
          \hline
-         c) & K3 & 9 & 350 & 3150 & 5 & 55 & 4 & 44 & 3168\\ 
+         C & K3 & 9 & 350 & 3150 & 5 & 55 & 4 & 44 & 3168\\ 
          \hline
            \end{tabular}
         \caption{Asignación de un solo kernel a los SM.}
@@ -49,20 +49,20 @@ Por ejemplo, en la tabla \ref{tab:asigUnKernelSM} se muestran diversos escenario
       \end{center}
     \end{table}
     
-    En el escenario a) (ver figura \ref{fig:asigBlock}) tenemos un kernel con 4 blocks y cada uno de 512 threads. La primera condición para poder agregarlo recae en que la totalidad del kernel debe poder ejecutarse en concurrente en la tarjeta gráfica durante un  instante de tiempo. En este caso, recordemos que un SM tiene un máximo de 64 warps disponibles, y el kernel justamente está constituido por esa cantidad, por lo que el planificador de hardware de la tarjeta asigna secuencialmente los blocks a las localidades.
+    En el escenario \textbf{(A)} (ver figura \ref{fig:asigBlock}) tenemos el kernel \textbf{K2} con 4 blocks y cada uno de 512 threads. La primera condición para poder agregarlo recae en que la totalidad del kernel debe poder ejecutarse en concurrente en la tarjeta gráfica durante un  instante de tiempo. En este caso, recordemos que un SM tiene un máximo de 64 warps disponibles, y el kernel justamente está constituido por esa cantidad, por lo que el planificador de hardware de la tarjeta asigna secuencialmente los blocks a las localidades.
     \newline
     
-    En el escenario b) se agrega un kernel que comprende 16 blocks y cada uno consta de 256 threads por block. En este caso, al lanzarlo se utilizará la totalidad de los recursos de la GPU y los blocks se irán asignando secuencialmente empezando desde la primer localidad del SM0 y así sucesivamente hasta que se terminen sus recursos. Cuando esto suceda, se continuará con las primeras localidades de SM1 hasta terminar de lanzar todos los blocks del kernel. En caso de que existan recursos para colocar blocks de un kernel al final de SM0 pero no los suficientes para colocarlo al inicio de SM1, el kernel no se podrá lanzar, y el planificador por hardware saltará la tarea y asignará otra que ocupe menos recursos.
+    En el escenario \textbf{(B)} se agrega un kernel que comprende 16 blocks y cada uno consta de 256 threads por block. En este caso, al lanzarlo se utilizará la totalidad de los recursos de la GPU y los blocks se irán asignando secuencialmente empezando desde la primer localidad del \textbf{SM0} y así sucesivamente hasta que se terminen sus recursos. Cuando esto suceda, se continuará con las primeras localidades de \textbf{SM1} hasta terminar de lanzar todos los blocks del kernel. En caso de que existan recursos para colocar blocks de un kernel al final de \textbf{SM0} pero no los suficientes para colocarlo al inicio de \textbf{SM1}, el kernel no se podrá lanzar, y el planificador por hardware saltará la tarea y asignará otra que ocupe menos recursos.
     \newline
     
     \begin{figure}[ht]
       \centering
-        \includegraphics[scale=.24]{asigBlock}
+        \includegraphics[scale=.275]{asigBlock}
         \caption{Diagrama de asignación de un kernel a los SM.}
         \label{fig:asigBlock}
     \end{figure}
     
-    Finalmente, en el escenario c deberían ser 54.6 warps en el SM0 utilizando 1750 threads, pero en realidad se utilizan 55 warps, con lo que el trabajo de 10 threads se desperdicia. En el SM1, deberían ocuparse 43.75 warps, pero se usan 44, dejando 8 threads sin poderse utilizar.
+    Finalmente, en el escenario \textbf{(C)} deberían ser 54.6 warps en el \textbf{SM0} utilizando 1750 threads, pero en realidad se utilizan 55 warps, con lo que el trabajo de 10 threads y 9 warps se desperdician. En el \textbf{SM1}, deberían ocuparse 43.75 warps, pero se usan 44, dejando 8 threads y 20 warps sin poderse utilizar.
     \newline
     
 Habitualmente en sistemas GPGPU se requiere lanzar más de un kernel a la vez, en la tabla \ref{tab:asigVariosKernelsSM} se tienen 3 situaciones en las que esto podría ocurrir.
@@ -85,14 +85,14 @@ Habitualmente en sistemas GPGPU se requiere lanzar más de un kernel a la vez, e
          \cellcolor{lightgray}\textbf{Warps aportados a SM1} &
          \cellcolor{lightgray}\textbf{Warps SM1} \\ 
          \hline
-         \multirow{2}{1cm}{d)} & K1 & 3  & 512 & 1536 & \multirow{2}{1cm}{4096} & 48 & 48 & \multirow{2}{1cm}{64} & 0  & \multirow{2}{1cm}{64}\\ 
+         \multirow{2}{1cm}{D} & K1 & 3  & 512 & 1536 & \multirow{2}{1cm}{4096} & 48 & 48 & \multirow{2}{1cm}{64} & 0  & \multirow{2}{1cm}{64}\\ 
                               & K2 & 10 & 256 & 2560 &                         & 80 & 16 &                       & 64 & \\ 
          \hline \hline
-        \multirow{3}{1cm}{e)} & K1 & 1 & 1024 & 1024 & \multirow{3}{1cm}{2304} & 32 & 32 & \multirow{3}{1cm}{64} & 0  & \multirow{3}{1cm}{8}\\ 
+        \multirow{3}{1cm}{E} & K1 & 1 & 1024 & 1024 & \multirow{3}{1cm}{2304} & 32 & 32 & \multirow{3}{1cm}{64} & 0  & \multirow{3}{1cm}{8}\\ 
                              & K2 & 1 & 768  & 768  &                         & 24 & 24 &                      & 0 & \\ 
                              & K3 & 2 & 256  & 512  &                         & 16 & 8 &                       & 8 & \\ 
          \hline \hline
-        \multirow{3}{1cm}{f)} & K1 & 1 & 768  & 768  & \multirow{3}{1cm}{3072} & 24 & 24 & \multirow{3}{1cm}{24} & 0  & \multirow{3}{1cm}{48}\\ 
+        \multirow{3}{1cm}{F} & K1 & 1 & 768  & 768  & \multirow{3}{1cm}{3072} & 24 & 24 & \multirow{3}{1cm}{24} & 0  & \multirow{3}{1cm}{48}\\ 
                              & K2 & 1 & 1536 & 1536 &                         & 48 & 0  &                       & 48 & \\ 
                              & K3 & 1 & 768  & 768  &                         & 24 & 0  &                       & 0 & \\ 
          \hline
@@ -102,26 +102,27 @@ Habitualmente en sistemas GPGPU se requiere lanzar más de un kernel a la vez, e
       \end{center}
     \end{table}
     
-    En el escenario d) (ver figura \ref{fig:KernelSM}) se desea asignar dos kernels, uno de 3 blocks y otro de 10. Recordemos que la restricción es que un kernel sólo puede ser asignado si existen suficientes recursos para warps en secuencia. La primer tarea utiliza 48 warps, y la segunda 80, por lo que en el primer SM podemos asignar los 48 warps del primer kernel más 16 del segundo, y en el SM colocamos los 64 restantes, ocupando así la totalidad de localidades de la GPU.
+    En el escenario \textbf{(D)} (ver figura \ref{fig:KernelSM}) se desea asignar dos kernels, uno de 3 blocks y otro de 10. Recordemos que la restricción es que un kernel sólo puede ser asignado si existen suficientes recursos para warps en secuencia. La primer tarea utiliza 48 warps, y la segunda 80, por lo que en \textbf{SM0} podemos asignar los 48 warps del primer kernel más 16 del segundo, y en el \textbf{SM1} colocamos los 64 restantes, ocupando así la totalidad de localidades de la GPU.
     \newline
     
-    Continuando con el caso e), ahora tenemos 3 kernels, dos de un block con 1024 threads y otro con 768, respectivamente y uno con 2 blocks de 256 threads, en conjunto ocupan 72 warps en total, por lo que podemos asignar los 32 warps del \textbf{K1} al SM0, justo después los 24 del \textbf{K2} y aún sobran 8 warps que sirven perfectamente para ejecutar la mitad de warps del \textbf{K3} y, como las localidades del inicio de SM1 están disponibles, se sigue con la asignación de los 8 restantes.
+    Continuando con el caso \textbf{(E)}, ahora tenemos 3 kernels, dos de un block con 1024 threads y otro con 768, respectivamente y uno con 2 blocks de 256 threads, en conjunto ocupan 72 warps en total, por lo que podemos asignar los 32 warps del \textbf{K1} al \textbf{SM0}, justo después los 24 del \textbf{K2} y aún sobran 8 warps que sirven perfectamente para ejecutar la mitad de warps del \textbf{K3} y, como las localidades del inicio de \textbf{SM1} están disponibles, se sigue con la asignación de los 8 restantes.
     \newline
     
-    El escenario f) presenta un caso en que se tienen 3 kernels que en conjunto representan 3072 threads, lo que nos hace pensar que muy bien pueden ser ejecutados en concurrente dentro de la GPU, pero el orden de lanzamiento influye de primera mano en la repartición de los recursos. Primero se lanza el kernel \textbf{K1} que constituye 24 warps, después se recibe la petición de  \textbf{K2} con 48, pero como no es posible asignarlo en el SM0, se le asignan las localidades de SM1. Finalmente, desea despachar a \textbf{K3} con 24 warps, pero como la asignación de recursos se realiza de forma secuencial, se empieza a preguntar justo en la siguiente localidad de la última asignada, con lo que ya no es posible lanzar esa tarea, y se deberá esperar a que terminen su ejecución las tareas actuales. Aunque en el SM0 sobran recursos que bien podrían aprovecharse, la documentación actual no permite realizarlo, por ello se recurrió a una solución en la sección \ref{secc:balanceador}.
+    El escenario \textbf{(F)} presenta un caso en que se tienen 3 kernels que en conjunto representan 3072 threads, lo que nos hace pensar que muy bien pueden ser ejecutados en concurrente dentro de la GPU, pero el orden de lanzamiento influye de primera mano en la repartición de los recursos. Primero se lanza el kernel \textbf{K1} que constituye 24 warps, después se recibe la petición de  \textbf{K2} con 48, pero como no es posible asignarlo en el \textbf{SM0}, se le asignan las localidades de \textbf{SM1}. Finalmente, desea despachar a \textbf{K3} con 24 warps, pero como la asignación de recursos se realiza de forma secuencial, se empieza a preguntar justo en la siguiente localidad de la última asignada, con lo que ya no es posible lanzar esa tarea, y se deberá esperar a que terminen su ejecución las tareas actuales. Aunque en el \textbf{SM0} sobran recursos que bien podrían aprovecharse, la documentación actual no permite realizarlo, por ello se recurrió a una solución en la sección \ref{secc:balanceador}.
+    \newline
     
     \begin{figure}[ht]
       \centering
-        \includegraphics[scale=.24]{KernelSM}
+        \includegraphics[scale=.275]{KernelSM}
         \caption{Diagrama de asignación de varios kernels a los SM.}
         \label{fig:KernelSM}
     \end{figure}
-   
-   Ahora bien, teniendo una referencia por medio de pruebas de software, se puede conocer un poco sobre el funcionamiento de la asignación de kernel a la tarjeta gráfica. Se puede afirmar que es posible gestionar las peticiones de recursos a la GPU.
+
+   Ahora bien, teniendo una referencia por medio de pruebas de software, se puede conocer un poco sobre el funcionamiento de la asignación de kernel a la tarjeta gráfica. Se puede afirmar que es posible gestionar las peticiones de recursos a la GPU, y el programador debe cuidar que tamaño de los bloques de threads sean múltiplos de 32 o al menos potencia de 2 para optimizar los recursos de la tarjeta gráfica y así ejecutar la mayor cantidad posible de tareas concurrentemente.
 \newline
     
 %Clasificación
-Para poder utilizar varias aplicaciones con sistemas en tiempo real complejos es necesario utilizar técnicas de implementación preemptive. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros.
+Para poder utilizar varias aplicaciones con sistemas en tiempo real complejos es necesario utilizar técnicas de implementación preemptive\cite{RGEM}. Algunos trabajos han utilizado estas técnicas para mejorar el rendimiento de las aplicaciones gráficas en tiempo real, principalmente para la reconstrucción de imágenes en 3D y la detección de rostros\cite{DynSche}.
 \newline
 
 La clasificación de la planificación de tareas preemptive esta compuesta de diversos tipos dependiendo de sus técnicas de implementación, cómo se describe en la sección \ref{claspree}. 
@@ -134,73 +135,71 @@ Se ha propuesto\cite{20} la utilización de extensiones de hardware mediante el 
 
 \vspace{0.3cm}
 
-Otra solución la observamos en \cite{8}, donde se desarrolló un compilador que emplea una extensión de hardware para reducir la latencia al implementar el modo preemptive. El compilador inserta puntos preemptive utilizando un análisis del ciclo de vida de los registros. Se utiliza una lógica de compresión descompresión para disminuir el tamaño del contexto de una tarea. Es decir, cuando el valor almacenado en un determinado registro es siempre igual a lo largo de la ejecución de los TB de un kernel, sólo se guardará un valor durante el cambio de contexto.
+Otra solución la observamos en \cite{8}, donde se desarrolló un compilador que emplea una extensión de hardware para reducir la latencia al implementar el modo preemptive. El compilador inserta puntos preemptive utilizando un análisis del ciclo de vida de los registros. Se utiliza una lógica de compresión-descompresión para disminuir el tamaño del contexto de una tarea. Es decir, cuando el valor almacenado en un determinado registro es siempre igual a lo largo de la ejecución de los TB de un kernel, sólo se guardará un valor durante el cambio de contexto.
 \newline
 %Para aquellas basadas en software, 
 
 %tenemos por una parte las que parten el kernel como
 %Basado en Software : Partición de kernel
-El articulo \cite{GPES} implementa una serie de funciones para realizar particiones de kernel y de datos, esto realizando subkernels y dividiendo las transacciones de datos en fragmentos. 
+El articulo \cite{GPES} implementa \textit{GPES}, una serie de funciones para realizar particiones de kernel y de datos, esto realizando subkernels y dividiendo las transacciones de datos en fragmentos. 
 Específicamente, se presenta una técnica de reescritura binaria para reconfigurar de manera transparente el código de los kernel. Mientras que para los kernel un poco más complejos, se desarrolló una técnica de transformación fuente a fuente que compila el código del kernel transformado en binarios CUDA. La prioridad de las tareas esta dada por colas de ejecución. GPES modifica el API de CUDA utilizando las bibliotecas de  \textit{openCUDA} para reconfigurar el código binario de los kernels, esto lo realiza obteniendo un máximo de blocks que se pueden ejecutar por quantum. Para llevarlo a cabo se realiza una transformación fuente a fuente apoyándose en la partición de la transferencia de datos.
 \newline
 
 En el artículo \cite{RTFG} se propone un framework de planificación que parte los kernels de la GPU y genera secuencias de lanzamiento en subkernels dinámicamente para entrar en el modo preemptive con la implementación de un divisor de carga de trabajo y de un planificador de tareas. 
-Utiliza un divisor de carga de trabajo que divide el kernel GPU en múltiples subkernels durante el tiempo de ejecución para implementar el modo preemptive. Dependiendo del estado actual del sistema y de la prioridad, el divisor de carga de trabajo decide el número y el tamaño de cada subkernel. 
-\newline
+Utiliza un divisor de carga de trabajo que fracciona el kernel GPU en múltiples subkernels en tiempo de ejecución para implementar el modo preemptive. Dependiendo del estado actual del sistema y de la prioridad, el divisor de carga de trabajo decide el número y el tamaño de cada subkernel. 
 
-Se cuenta con un generador de ejecución planificada, el cual, dependiendo del estado actual de uso de los recursos del sistema y del plazo límite de la tarea, lanza una secuencia de tareas para maximizar el número de aplicaciones cercanas a su plazo vencido.	
+También cuenta con un generador de ejecución planificada, el cual, dependiendo del estado actual de uso de los recursos del sistema y del plazo límite de la tarea, lanza una secuencia de tareas para maximizar el número de aplicaciones cercanas a su plazo vencido.	
 \newline
 
 El trabajo \cite{Effisha} describe el framework EffiSha que se basa en un entorno de scripts que permite convertir los kernels automáticamente a modo preemptive. Esta solución consta de componentes que funcionan tanto en tiempo de compilación como en el de ejecución. 
 En tiempo de compilación realiza una transformación de fuente a fuente que transforma un programa para la gestión y planificación oportuna de su tiempo de ejecución.
-En el código del CPU, reemplaza las llamadas a función de la GPU con las del API de EffiSha, así modifica los kernel GPU para que puedan acelerar el cambio o drenado de contexto durante el tiempo de ejecución.También se analizan e identifican aquellos datos que no se volverán a utilizar después de la restauración de contexto, con lo que ahorra el tiempo de las transacciones de memoria innecesarias.
-\newline
+En el código del CPU, reemplaza las llamadas a función de la GPU con las del API de EffiSha, así modifica los kernel GPU para que puedan acelerar el cambio o drenado de contexto durante el tiempo de ejecución. También se analizan e identifican aquellos datos que no se volverán a utilizar después de la restauración de contexto, con lo que ahorra el tiempo de las transacciones de memoria innecesarias.
+%\newline
 
-La fase de ejecución consiste en un daemon en el lado del CPU y un proxy de éste en el lado de la GPU. Dicho daemon planifica el momento en que los kernel deben comenzar, reanudarse o detenerse en la GPU, y dependiendo de la acción se notifica el proceso del CPU que lanzó el kernel.
-\newline
+La fase de ejecución consiste en un daemon en el lado del CPU y un proxy de éste en el lado de la GPU. Dicho daemon gestiona el momento en que los kernel deben comenzar, reanudarse o detenerse en la GPU, y dependiendo de la acción se notifica al proceso del CPU que fue lanzado.
+%\newline
 
 Como muestran los resultados del trabajo, esta solución funciona bien para kernels con ejecución pequeña porque al tener en el sistema aquellos que salen de la media, la granularidad del TB limita el retraso mínimo preemptive que se puede lograr, resultando muy seguramente en plazos vencidos.
-\newline
+%\newline
  
  Es importante mencionar que el artículo \cite{RGEM} es el primer trabajo que genera un framework para utilizar tareas en tiempo real en tarjetas gráficas. 
  Este trabajo entra dentro de la categoría de colas masivas en paralelo, ya que se basa en la partición en fragmentos de memoria a procesar y cada fragmento es agregado a una cola de procesamiento para ser ejecutado. Su solución es dividir las transacciones de copiado de memoria en varios fragmentos para insertar puntos preemptive. 
  Esto también garantiza que sólo las tareas de mayor prioridad se ejecuten en la GPU en cualquier momento, y así evitar interferencias de rendimiento causadas por lanzamientos concurrentes.
-\newline
-	
+
 	La primera característica de este framework es que se basa en transacciones de datos preemptive, por lo que los tiempos de bloqueo están limitados para copiar cada fragmento de dato. La segunda característica es que permite lanzar los kernels de diferentes tareas una por una basadas en su prioridad, lo que evita que las tareas con alta prioridad sean interferidas por la carga simultánea de trabajo una vez iniciadas. 
 	Sin embargo el lanzamiento del kernel puede bloquearse al haber un kernel de menor prioridad lanzado anteriormente, esto debido al probable alto uso de memoria global.
 \newline
 
-El artículo \cite{PreeK} se basa en preguntar continuamente si ha terminado el quantum de una tarea, en caso afirmativo la saca de ejecución e ingresa la siguiente. Las tareas son almacenadas en una cola, por lo que todas tienen la misma prioridad durante la vida del sistema. Se propone un esquema de puntos de control donde se almacena el estado de un kernel en ejecución en la memoria del CPU en vez de la GPU. Para ello, se apoya de una estructura donde se almacena el contexto completo de la tarea. 
-Para disminuir la latencia entre cada punto preemptive, se le avisa al framework que se debe tener preparada la estructura de seguridad con directivas \textit{pragma}, antes y después de la ejecución parcial de un kernel. Para ello fue necesario implementar un analizador sintáctico.
+El artículo \cite{PreeK} se basa en preguntar continuamente si ha terminado el quantum de una tarea, en caso afirmativo detiene la ejecución e ingresa la siguiente. Las tareas son almacenadas en una cola, por lo que todas tienen la misma prioridad durante la vida del sistema. Se propone un esquema de puntos de control donde se almacena el estado de un kernel en ejecución en la memoria del CPU en vez de la GPU. Para ello, se apoya de una estructura donde se almacena el contexto completo de la tarea. 
+Para disminuir la latencia entre cada punto preemptive, se le avisa al framework que se debe tener preparada la estructura de seguridad con directivas \textit{pragma}, antes y después de la ejecución parcial de un kernel. Para ello fue necesario implementar un analizador sintáctico que ayudara al compilador a verificar las modificaciones del código.
 \newline
 
-El artículo \cite{IntraNode} propone la creación del framework schedGPU, el cual utiliza el administrador de trabajo Slurm para planificar las tareas. Este framework administra las múltiples solicitudes para acceder a las GPU de forma segura al garantizar que no se produzcan sobrecargas de memoria durante su ejecución. 
+El artículo \cite{IntraNode} propone la creación del framework schedGPU, el cual utiliza el administrador de trabajo Slurm para planificar las tareas. Este framework administra las múltiples solicitudes para acceder a la GPU de forma segura al garantizar que no se produzcan sobrecargas de memoria durante su ejecución. 
 Este acceso es controlado mediante bloqueos de archivos, señales del sistema y exclusión mutua.
 \newline
 
 SchedGPU utiliza el patrón de diseño cliente-servidor ya que toma cada tarea que busca ser lanzada en la GPU como un cliente que está solicitando memoria a un servidor centralizado (en el mismo nodo), el cual permite que se ejecute si hay suficiente memoria; o en caso contrario, la bloquea hasta que se encuentre memoria necesaria para su funcionamiento. 
-El servidor crea un nuevo hilo para cada cliente y mantiene una visión global de la memoria utilizada por todos los clientes a través de la biblioteca de administración de NVIDIA (\textit{NVML}), esto para evitar la creación de un nuevo contexto que consuma memoria.
-\newline
+El servidor crea un nuevo hilo para cada cliente y mantiene una visión global de la memoria utilizada por todos los clientes a través de la biblioteca de administración de NVIDIA (\textit{NVML})\cite{TORQUE}, esto para evitar la creación de un nuevo contexto que consuma memoria.
 
 La tarea es modificada únicamente al llamar  de manera explícita las funciones de la biblioteca del cliente para previamente asignar la memoria requerida al GPU. Esto acarrea una gran desventaja al considerar tareas donde no siempre es posible conocer la memoria requerida total de GPU, ya que la memoria de la GPU se asigna en tiempo de ejecución. 
-En el caso en que dos o más tareas se ejecuten al mismo tiempo y ambas aumenten gradualmente, el uso de la memoria de la GPU se puede llegar a utilizar completamente , con lo que podrán requerir más tiempo para completar la ejecución o directamente lanzar un error en tiempo de ejecución.
+En el caso en que dos o más tareas se ejecuten al mismo tiempo y ambas aumenten gradualmente, el uso de la memoria de la GPU se puede llegar a utilizar completamente, con lo que podrán requerir más tiempo para completar la ejecución o directamente lanzar un error de desbordamiento de memoria en tiempo de ejecución.
 \newline	
 	%Al utilizar schedGPU se encontró que el promedio de la aceleración aumenta 10 veces, comparado con no utilizar el framework. Sin embargo, el promedio de utilización de la memoria también incrementó de 5 a 12 veces.
 	
 	%Administración dinámica de los núcleos de procesamiento.
 	El artículo \cite{Pridriven} presenta una técnica para la ejecución en GPUs llamada \textit{"Planificación de recursos compartidos con reserva de presupuesto"} o por sus siglas en inglés \textit{BR-SRS}, la cual limita el número de núcleos de procesamiento de una GPU para una tarea basándose en su prioridad, esto lo realiza modificando las bibliotecas de  \textit{OpenGL-ES}. 
 	Así se previene que una tarea que se encuentra en segundo plano retrase a otra que se encuentra en ejecución, también se minimiza la sobrecarga de planificación al invocarse solamente dos veces, en el inicio de la tarea y en su finalización.
-\newline
+%\newline
 %Planificación por prioridad
 
 El único trabajo que utiliza algoritmos para la planificación de tareas en tiempo real, hasta el momento de la revisión del estado del arte es GPUart \cite{GPUArt}. 
 Permite la implementación preemptive dentro de los TB y cada uno de estos subkernels se pueden planificar bajo las políticas de Earliest Deadline First (EDF) y de aquellos algoritmos que mantengan la prioridad de las tareas fijas.
-\newline
 
-GPUart se centra en las GPU integradas, es decir, en las GPU que se colocan en la misma placa que el CPU. Esto porque permiten tener cero copias de memoria, lo que hace que las transferencias entre CPU y GPU sean nulas al compartir físicamente una memoria común. 
+GPUart se centra en las GPUs integradas, es decir, en las GPU que se colocan en la misma placa que el CPU. Esto porque permiten tener cero copias de memoria, lo que hace que las transferencias entre CPU y GPU sean nulas al compartir físicamente una memoria común. 
 Por ello, GPUart no considera la planificación de transferencias de memoria a través del acceso directo a memoria (DMA).
 \newline
+
+A continuación se muestra la tabla \ref{tab:clasifTrabajos} con los trabajos relacionados y la clasificación en la que entran dependiendo de las características con que se ejecutan, así como su referencia en el bibliografía.
  	
   \begin{table}[h!]
       \begin{center}
@@ -234,7 +233,7 @@ Por ello, GPUart no considera la planificación de transferencias de memoria a t
           
                 \end{tabular}
         \caption{Matriz de clasificación de trabajos relacionados.}
-        \label{tab:table2}
+        \label{tab:clasifTrabajos}
       \end{center}
       \begin{tablenotes}
       \small

@@ -6,6 +6,17 @@
 \chapter{Antecedentes}
     \label{cha:Antecedentes}
 
+En este capítulo se presentan conceptos que forman parte del marco teórico, y son importantes para entender el contexto en el que se desenvuelve el trabajo. 
+\newline
+
+Se inicia mostrando tendencia de organizar los componentes de un sistema y la necesidad de creación de estructuras metodologías para facilitar el desarrollo de software. 
+
+Se continúa con los sistemas en tiempo real, su clasificación, componentes y la planificación de tareas. 
+
+Enseguida se definen las características y arquitectura del procesador y la tarjeta gráfica para introducir el concepto de cómputo de propósito general en unidades de procesamiento gráfico y su utilización en sistemas embebidos heterogéneos. 
+
+Finalmente, se presenta en el material de trabajo con el que se realizó el análisis y las pruebas del presente trabajo.
+
      %INGENIERIA DE SOFTWARE
      \section{Ingeniería de Software}
 
@@ -28,19 +39,25 @@ La Ingeniería de Software aplica diferentes técnicas, normas y métodos que pe
 
      \subsection{Framework}
 Un framework o marco de trabajo es la estructura y metodología que se establece para normalizar, controlar y organizar, ya sea, una aplicación completa, o bien, una parte de ella. 
-Esto representa una ventaja para los participantes en el desarrollo del sistema, ya que automatiza procesos y funciones habituales, además agiliza la codificación de ciertos mecanismo ya implementados al reutilizar código.
+Esto representa una ventaja para los participantes en el desarrollo del sistema, ya que automatiza procesos y funciones habituales, además agiliza la codificación de ciertos mecanismos ya implementados al reutilizar código.
 Un framework puede ser considerada como un molde configurable, al que podemos añadirle atributos especiales para finalmente construir una solución integrada.
 \newline
 
 La utilización de un framework siempre conlleva una curva de aprendizaje, pero a largo plazo facilita la programación, escalabilidad y el mantenimiento de los sistemas.
+\newline
+
+El objetivo de este trabajo es el diseño del framework propuesto para planificar tareas preemptive en sistemas embebidos heterogéneos.
 		
     %SISTEMAS EN TIEMPO REAL
     \section{Sistemas en tiempo real}\label{sec:sistr}
 
-    Los sistemas en tiempo real son sistemas de cómputo cuyas tareas deben actuar dentro de limitaciones de tiempo precisas ante eventos en su entorno. Por lo que el comportamiento del sistema depende, no sólo del resultado del cálculo, sino también del momento (tiempo) en que se produce \cite{Buta2011}.
+    Los sistemas en tiempo real son sistemas de cómputo cuyas tareas deben actuar dentro de limitaciones de tiempo precisas ante eventos en su entorno. Por lo que el comportamiento del sistema depende, no sólo del resultado del cálculo, sino también del momento (tiempo) en que se produce \cite{Buta2011}. 
     \newline 
     
-    Un sistema en tiempo real debe  responder a entradas generadas dentro de un periodo de tiempo específico para evitar posibles fallas. El deadline o plazo límite es el momento justo antes en que la tarea debe completar su ejecución. Existen tres tipos de plazos: 
+    Un sistema en tiempo real debe  responder a entradas generadas dentro de un periodo de tiempo específico para evitar posibles fallas. Se vale de un planificador, el cual asigna las tareas pendientes a los recursos de procesamiento, brinda una jerarquía de prioridad y define un tiempo de ejecución máximo.
+    \newline
+    
+    El deadline o plazo límite es el momento crítico en que la tarea debe completar su ejecución. Existen tres tipos de deadlines: 
 %time constrains: plazos de tiempo
 %deadline: plazo límite
 \begin{itemize}
@@ -57,28 +74,29 @@ Existen tres tipos de tareas que están presentes en los sistemas en tiempo real
 \item Tareas periódicas: Se ejecutan en cada intervalo fijo de tiempo conocido. Normalmente, las tareas periódicas tienen restricciones que indican sus plazos de tiempo.
 \item Tareas aperiódicas: Se ejecutan aleatoriamente en cualquier plazo de tiempo y no tienen una secuencia de tiempo predefinida.
 \item Tareas esporádicas: Son una combinación de tareas periódicas y aperiódicas, donde, en tiempo de ejecución actúan como aperiódicas, pero la tasa de ejecución es de naturaleza periódica.
-\end{itemize}   
+\end{itemize}  
 
-La mayoría del tiempo los intervalos de tiempo se dan por el plazo límite de una tarea.
+En general, los intervalos de tiempo se dan por el plazo límite de una tarea.
+
+  \begin{figure}[h!]
+      \centering
+        \includegraphics[scale=.4]{schedCoo}
+        \caption{Planificación cooperativa.\cite{medium}}
+        \label{fig:schedcoo}
+    \end{figure}
 
     \subsection{Esquemas de planificación}
     
         \subsubsection{Planificación cooperativa}
 
 En el esquema de planificación \textit{\textbf{cooperativa}} o \textit{\textbf{non-preemptive}} mostrado en la figura \ref{fig:schedcoo}, el planificador asigna las tareas a los nodos de procesamiento disponibles y éstas ocupan los recursos de cómputo durante todo su ciclo de vida.
+\newline
 
-  \begin{figure}[ht]
-      \centering
-        \includegraphics[scale=1]{schedCoo}
-        \caption{Planificación cooperativa.\cite{medium}}
-        \label{fig:schedcoo}
-    \end{figure}
-    
 Este esquema de planificación es sencillo de implementar ya que las tareas se ejecutarán de manera secuencial, y se implementa cuando se tiene un uso predecible de los tiempos de ejecución de todo el sistema. Pero, como observamos en la figura \ref{fig:schedcoodead}, si una tarea ocupa los recursos en un tiempo superior al contemplado no se puede interrumpir y puede generar plazos vencidos en las demás tareas.
 
-  \begin{figure}[ht]
+  \begin{figure}[h!]
       \centering
-        \includegraphics[scale=1]{schedCooDead}
+        \includegraphics[scale=.4]{schedCooDead}
         \caption{Planificación cooperativa con plazos vencidos.\cite{medium}}
         \label{fig:schedcoodead}
     \end{figure}
@@ -87,14 +105,14 @@ Este esquema de planificación es sencillo de implementar ya que las tareas se e
 
 En este esquema el planificador asigna las tareas a los recursos disponibles, y les define un tiempo de ejecución máximo, comúnmente llamado quantum\cite{PreeK}. Superado este punto, el planificador interrumpe la tarea para que otra sea ejecutada en su lugar, y la tarea interrumpida debe esperar hasta que le toque su turno nuevamente. Un ejemplo de este esquema, lo tenemos en la figura \ref{fig:schedpree}.
 
-  \begin{figure}[ht]
+  \begin{figure}[h!]
       \centering
-        \includegraphics[scale=1]{schedPre}
+        \includegraphics[scale=.4]{schedPre}
         \caption{Planificación preemptive.\cite{medium}}
         \label{fig:schedpree}
     \end{figure}
 
-La mayor diferencia entre la planificación cooperativa y la preemptive es que la primera debe ejecutar la tarea de principio a fin, y la segunda puede interrumpir las tareas si así se requiere.
+La mayor diferencia entre la planificación cooperativa y la preemptive es que la primera debe ejecutar la tarea de principio a fin, y la segunda puede interrumpir las tareas si así es requerido por el planificador.
 \newline
 
 Debido a que muchas veces se interrumpen tareas a la mitad de un proceso, es necesario almacenar y restaurar el contexto que se tenia antes de dicha interrupción para continuar justo en el punto en donde se quedó. Este proceso de almacenamiento, intercambio y restauración del contexto de las tareas se denomina \textit{cambio de contexto}.
@@ -111,91 +129,27 @@ Esta solución permite que una tarea deshabilite la suspensión preemptive depen
     \item \textbf{\textit{Planificación de suspensiones preemptive diferidas}}.
     Cada tarea puede ser ejecutada en un periodo non-preemptive. Aquí cada suspensión se pospone por un periodo determinado de tiempo, en vez de estar específicamente en un lugar en el código. Dependiendo de su implementación puede encontrarse en dos clasificaciones:
         \begin{itemize}
-        \item \textbf{\textit{Modelo flotante}}. En este modelo, las regiones non-preemptive son definidas por el programador insertando primitivas específicas en el código que habilitan y deshabilitan el modo preemptive. Dado que el tiempo inicio de ejecución en cada región no se especifica en el modelo, se considera que los puntos están flotando en el código, aunque cumpliendo con una duración que no excede a su quantum.
+        \item \textbf{\textit{Modelo flotante}}. En este modelo, las regiones preemptive son definidas por el programador insertando primitivas específicas en el código que habilitan y deshabilitan las suspensiones. 
+        Debido a que el tiempo de activación de cada región no está predefinido, se considera que los puntos preemptive están flotando en el código.
        
-        \item \textbf{\textit{Modelo de activación por triggers}}: Las regiones non-preemptive son activadas por la llegada de una tarea con mayor prioridad y planificadas por un temporizador para durar exactamente su quantum (a menos que terminen antes), después de lo cual se habilita el modo preemptive. Si la tarea en la cola es de menor prioridad, no se interrumpe la que se encuentra en ejecución hasta que termine el siguiente quantum, con lo que se decide si se suspende o continua en ejecución.
+        \item \textbf{\textit{Modelo de activación por triggers}}: Se divide en dos regiones, la región non-preemptive es activada por la llegada de una tarea con mayor prioridad y planificadas por un temporizador para durar exactamente su quantum (a menos que terminen antes), después de lo cual se habilita el modo preemptive. Si la tarea en la cola es de menor prioridad, no se interrumpe la que se encuentra en ejecución hasta que termine el siguiente quantum, con lo que se decide si se suspende o continua en ejecución.
         \end{itemize}
     \item \textbf{\textit{Puntos preemptive fijos}}. Una tarea se ejecuta implícitamente en modo non-preemptive y la suspensión sólo se permite dentro de ubicaciones predefinidas dentro del código de la tarea, llamadas puntos preemptive. De esta manera una tarea se divide en varios fragmentos non-preemptive (también llamados subjobs). Si llega una tarea de mayor prioridad entre dos puntos de la que está actualmente en ejecución, la suspensión se pospone hasta el siguiente punto preemptive. 
     \end{itemize}
 \end{itemize}
 
 
-\subsubsection{Clasificación de soporte preemptive}
-
-\label{claspree}
-Existen diversas clasificaciones en que se pueden agrupar las soluciones para dar soporte a la planificación de tareas preemptive, una de ellas se basa en el tipo de implementación:
-
-\begin{itemize}
-\item \textbf{\textit{Basado en Hardware.}} 
-	Aquí se utilizan dispositivos de e/s para el cambio o drenado del contexto para implementar las políticas preemptive. 	
-
-\item \textbf{\textit{Basado en Software.}}
-	\begin{itemize}
-	\item \textbf{\textit{Partición de Kernel.}}
-		Aquí los kernels grandes son partidos en subkernels dividiendo sus grids en fragmentos más pequeños. Es decir, en vez de lanzar todos los Threads por Bloque (TB) de un kernel a la vez, sólo se van lanzando fracciones de éste. Este enfoque es útil para núcleos con muchos TB, donde cada TB tienen un tiempo de ejecución corto. Cuando se tienen diversas especificaciones a resolver por un kernel y estas son necesariamente tareas secuenciales por la dependencia de resultados, se implementan puntos preemptive para dividir el kernel en tareas a completar.  
-		%Sin embargo, para aquellos con tiempos de ejecución largos, se pueden generar retrasos significativos y posiblemente tiempos en que haya inversión de prioridad, lo que no es aceptable en sistemas en tiempo real. Aunado a esto, este método no es aplicable a los kernels que requieren una sincronización global entre \gls{TB}, ya que el lanzamiento paulatino de los componentes de un grid podrá causar plazos vencidos en las barreras entre cada fragmento.
-	
-	\item \textbf{\textit{Partición en Trabajos.}}
-		Esta técnica es parecida a la anterior, pero los fragmentos se ven como trabajos, se invocan tantos TB como sea posible tenerlos activos al mismo tiempo. Aquí GPU y CPU comparten una variable que se utiliza para señalizar las solicitudes de cambio de contexto entre los threads activos y los detenidos.
-
-	\item \textbf{\textit{Entorno de Scripts.}}	
-		Esta técnica permite manejar automáticamente los kernels dependiendo de ciertos parámetros o puntos de control, liberando al programador de realizarlo manualmente. Esta aproximación funciona especialmente para entornos con kernels pequeños, ya que para aquellos que tienen una ejecución larga es necesario cuidar el nivel de granularidad o podría llegarse a plazos vencidos.
-		
-	\end{itemize}
-	%En esta clasificación también debemos agregar otro apartado:
-
-%\begin{itemize}
-
-%\item \textbf{\textit{Partición en Tareas.}}
-%	Es similar a la técnica de partición de Kernel, ya que efectivamente se divide el kernel en fragmentos más pequeños de procesamiento de datos. Cuando se tienen diversas especificaciones a resolver por un kernel y estas son necesariamente tareas secuenciales por la dependencia de resultados, se implementan puntos preemptive para dividir el kernel en tareas a completar.  
-
-%\end{itemize}
-
-\end{itemize}
-	
-Otra clasificación se obtiene de acuerdo a la forma en que se planifican las tareas:
-
-\begin{itemize}
-
-\item \textbf{\textit{Colas masivas en paralelo.}}
-	Este apartado está centrado en, ya sea una o varias colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
-	
-\item \textbf{\textit{Administración dinámica de memoria.}}
-	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cual de las que actualmente se encuentra en ejecución ha superado su espacio definido. 
-	
-\item \textbf{\textit{Administración dinámica de los núcleos de procesamiento.}}
-	Aquí se limita el número de núcleos de procesamiento en tiempo de ejecución de una GPU para una tarea, y el número depende casi siempre de la prioridad de la tarea.
-
-	
-\item \textbf{\textit{Planificación por prioridad.}}
-	Se utilizan algoritmos de planificación para manejar dinámicamente el cambio de prioridades y maximizar el rendimiento del sistema. La mayoría de las veces este tipo es el más cercano a una implementación completa de tiempo real.
-	
-\end{itemize}
-%Aunque no esta originalmente contemplado, es necesario discriminar entre la administración de la memoria y la administración de los núcleos que una GPU nos va a prestar para realizar el procesamiento. 
-%\newline
-     
-Finalmente, podemos encontrar una clasificación enfocada en la forma en que se implementa la planificación en el código.
-
-\begin{itemize}
-
-\item \textbf{\textit{Modificación de código fuente.}}
-	Es necesario que el programador modifique el código del kernel para implementar cada una de las acciones que va a seguir la tarea, desde su inicio, pasando por su interrupción, y hasta su finalización.
-	
-\item \textbf{\textit{Modificación del API.}}
-	En este apartado, se hace una modificación a nivel de las bibliotecas o el compilador, la ventaja es que la aplicación no es modificada manualmente; sin embargo, su utilización muchas veces no está permitida por los administradores.
-	
-\end{itemize}
-
-    \subsection{Algoritmos de planificación}\label{sec:AlgoPlan}. 
+    \subsection{Algoritmos de planificación}\label{sec:AlgoPlan} 
     
     Un algoritmo de planificación es una estrategia en la cual un sistema decide ejecutar una tarea en un momento dado, debe garantizar que se asigne el tiempo suficiente a todas las tareas del sistema para que puedan cumplir su plazo límite en la medida de lo posible.
     
     La planificación en tiempo real se puede dividir en:
     \begin{itemize}
-    \item Estática o Fixed Task Priority (FTP):  Todas las prioridades se asignan al diseñar el sistema y éstas se mantienen constantes durante el tiempo de vida de una tarea.
-    \item Dinámica o Dyamic Task Priority (DTP): Se asignan prioridades en el tiempo de ejecución, en función de los parámetros de las tareas. Su objetivo es adaptarse al progreso del sistema para buscar la configuración óptima de planificación.
+    \item Estática (Fixed Task Priority):  Todas las prioridades se asignan al diseñar el sistema y éstas se mantienen constantes durante el tiempo de vida de una tarea.
+    \item Dinámica (Dyamic Task Priority): Se asignan prioridades en el tiempo de ejecución, en función de los parámetros de las tareas. Su objetivo es adaptarse al progreso del sistema para buscar la configuración óptima de planificación.
     \end{itemize}   
     
+    A través de la literatura del estado del arte se generó la tabla \ref{tab:algoTR} que contiene los principales algoritmos de planificación, así como algunas de sus características de operación.
     
         \begin{table}[h!]
       \begin{center}
@@ -226,21 +180,21 @@ Finalmente, podemos encontrar una clasificación enfocada en la forma en que se 
     Shortest Job First (SJF) es el algoritmo de planificación que asigna la prioridad mayor a la tarea con el menor tiempo de ejecución. SJF es el algoritmo más utilizado cuando se comienzan a estudiar los sistemas en tiempo real debido a su simplicidad, ya que minimiza la cantidad promedio de tiempo que cada tarea debe esperar hasta que se complete su ejecución \cite{Tanenbaum}. Este algoritmo funciona únicamente con tareas non-preemptive, por lo que fácilmente puede llegarse a un estado de inanición de tareas que requieren mucho tiempo para completarse si se agregan continuamente tareas pequeñas.
     
     \subsubsection{Earliest Deadline First} 
-    Earliest Deadline First (EDF) es un algoritmo con prioridad dinámica, en el que la tarea con el plazo fijo más próximo tiene la mayor prioridad. Este algoritmo es óptimo para implementación sobre un único procesador, y cuando el sistema se encuentra en bajos y moderados niveles de contención de recursos y datos\cite{Liu}.
+    Earliest Deadline First (EDF) es un algoritmo con prioridad dinámica, en el que la tarea con el plazo límite más próximo tiene la mayor prioridad. Este algoritmo es óptimo para implementación sobre un único procesador, y cuando el sistema se encuentra en bajos y moderados niveles de contención de recursos y datos\cite{Liu}.
     %Ya que cuando se sobrecarga el sistema, la mayoría de las tareas obtienen una alta prioridad, lo que termina en un rendimiento disminuido.
 \newline
      
-    Es un algoritmo muy extendido en sistemas en tiempo real debido a su optimalidad teórica en el campo no-preemptive, aunque al momento de implementarlo en un planificador preemptive el resultado puede acarrear un exceso de ejecución si se toma el peor caso \cite{EmbSysDes}. Es el algoritmo más extendido al momento de realizar los primeros bosquejos de un sistema en tiempo real.
+    Es un algoritmo muy extendido en sistemas en tiempo real debido a su optimalidad teórica en el campo no-preemptive, aunque al momento de implementarlo en un planificador con soporte preemptive el resultado puede acarrear un exceso de ejecución si se toma el peor caso \cite{EmbSysDes}. Es el algoritmo más extendido al momento de realizar los primeros bosquejos de un sistema en tiempo real.
     %Por ello es necesario buscar alternativas de algoritmos que tengan un mejor desempeño en tareas específicas.
     
      \subsubsection{Rate Monotonic}
-    Rate Monotonic (RM) es un algoritmo de planificación preemptive con prioridad estática para un solo procesador\cite{Liu}. RM asigna la prioridad más alta a la tarea con el periodo más corto, suponiendo que los periodos sean igual a los plazos \( (P_{i} = D_{i}) \). En caso de que la tasa de demanda sea mayor el periodo sería más corto y, por ende, la prioridad aumentaría. Por ello es óptimo para usarse en tareas periódicas. La mayor limitación de su implementación, es que al utilizar tareas de prioridad fija no siempre se utiliza el 100\%  del CPU, lo que conlleva al posible desperdicio de recursos\cite{RM}.
+    Rate Monotonic (RM) es un algoritmo de planificación preemptive con prioridad estática para un solo procesador\cite{Liu}. RM asigna la prioridad más alta a la tarea con el periodo más corto, suponiendo que los periodos sean igual a los plazos límites \( (P_{i} = D_{i}) \). En caso de que la tasa de demanda sea mayor el periodo sería más corto y, por ende, la prioridad aumentaría. Por ello es óptimo para usarse en tareas periódicas. La mayor limitación de su implementación, es que al utilizar tareas de prioridad fija no siempre se utiliza el 100\%  del CPU, lo que conlleva al posible desperdicio de recursos\cite{RM}.
 
 \subsubsection{Deadline Monotonic}
 Deadline Monotonic (DM) es el algoritmo óptimo de planificación con prioridad fija donde las prioridades son asignadas inversamente proporcionales a los plazos fijos, es decir, cuando se cumple que el plazo es menor al tiempo de la tarea \( (P_{i} < T_{i}) \) y el periodo es igual al plazo limite \( (P_{i} = D_{i}) \) podemos ver a RM como un caso especial de DM \cite{NPr}. DM ejecuta en cada instante de tiempo la tarea con el plazo más corto, por lo que si dos o más tareas tienen el mismo plazo límite, la siguiente en ejecutarse debe elegirse aleatoriamente.
 
 \subsubsection{Least Laxity First}
-Least Laxity First (LLF) es un algoritmo óptimo de planificación con prioridad dinámica. La laxitud de una tarea está definida como el plazo límite menos el tiempo de ejecución restante, esta laxitud es la cantidad máxima de tiempo que un trabajo puede esperar cumpliendo su plazo límite. En este algoritmo, se otorga la máxima prioridad al trabajo con la menor laxitud, se permite que la tarea actualmente en ejecución sea intercambiada por otra con menor laxitud en cualquier momento \cite{NPr}.
+Least Laxity First (LLF) es un algoritmo óptimo de planificación con prioridad dinámica. La laxitud de una tarea está definida como el plazo límite menos el tiempo de ejecución restante, esta laxitud es la cantidad máxima de tiempo que un trabajo puede esperar cumpliendo su plazo límite. En este algoritmo, que tiene soporte preemptive, se otorga la máxima prioridad al trabajo con la menor laxitud y se permite que la tarea actualmente en ejecución sea intercambiada por otra con menor laxitud en cualquier momento \cite{NPr}.
 \newline
   
   El punto débil de este algoritmo se presenta cuando dos tareas presentan la misma laxitud, ya que un proceso se ejecutará durante un período corto de tiempo y luego será reemplazado por el otro y viceversa. Con ello, se obtienen numerosos cambios de contexto durante la vida útil de las tareas y el rendimiento del sistema en general se ve reducido. Este algoritmo es óptimo para sistemas con tareas periódicas \cite{ComRTT}.
@@ -254,7 +208,7 @@ El parámetro rango de grupo (Gr) es un porcentaje de la tarea al comienzo del p
     %----------------------------------------------------------------------
     %GPU
         \section{CPU}
-    La unidad de procesamiento central o CPU es un procesador de propósito general, lo cual significa que puede hacer una variedad de cálculos pero está diseñado para realizar el procesamiento de información en serie y consta de pocos núcleos de propósito general. Aunque se pueden utilizar bibliotecas para realizar concurrencia y paralelismo, el hardware \textit{per se} no tiene esa implementación.
+    La unidad de procesamiento central o CPU es un procesador de propósito general, lo cual significa que puede hacer una gran variedad de cálculos pero está diseñado para realizar el procesamiento de información en serie y consta de pocos núcleos de propósito general. Aunque se pueden utilizar bibliotecas para realizar concurrencia y paralelismo, el hardware \textit{per se} no tiene esa implementación.
 
      \subsection{Arquitectura del CPU}
 
@@ -264,14 +218,14 @@ Un CPU está compuesto principalmente por:
 \item ALU (Unidad lógica y aritmética): como su nombre lo indica, soporta pruebas lógicas y cálculos aritméticos, y puede procesar varias instrucciones a la vez.
 \item Unidad de Control: se encarga de sincronizar los diversos componentes del procesador.
 \item Registros: memorias de tamaño pequeño, del orden de bytes, y que son lo suficientemente rápidas para que el ALU manipule su contenido en cada ciclo de reloj.
-\item Unidad de entrada-salida (I/O): soporta la comunicación con las memoria de la computadora y permite el acceso a los periféricos.
+\item Unidad de entrada-salida (I/O): soporta la comunicación con las memorias de la computadora y permite el acceso a los periféricos.
 \end{itemize}   
 
 \subsection{Núcleos de procesamiento CPU y GPU}
     Es necesario destacar que los núcleos o cores de un CPU y un GPU en principio son similares, pero entre ellos existen diferencias. Un núcleo de CPU es relativamente más potente, está diseñado para realizar un control lógico muy complejo para buscar y optimizar la ejecución secuencial de programas.
 \newline
     
-    En cambio un núcleo de GPU es más ligero y está optimizado para realizar tareas de paralelismo de datos como un control lógico simple enfocándose en la tasa de transferencia de los programas paralelos.
+    En cambio un núcleo de GPU es más ligero y está optimizado para realizar tareas de paralelismo de datos con un control lógico simple enfocándose en la tasa de transferencia de los programas paralelos.
  \newline
  
         \begin{figure}[ht]
@@ -288,11 +242,13 @@ Un CPU está compuesto principalmente por:
     La unidad de procesamiento gráfico o GPU es un procesador especializado para tareas que requieren de un alto grado de paralelismo. Su uso más extendido es el procesamiento de instrucciones aplicadas a campo de imágenes 2D y 3D, realizando cálculos con pixeles y texeles\cite{TX2CU}.
 \newline
    
-   La tarjeta gráfica en su interior puede contener una cantidad de núcleos de un orden de cientos hasta miles de unidades que son más pequeñas y que por ende, individualmente realizan un menor número de operaciones. Esto hace que la GPU esté optimizada para procesar cantidades enormes de datos pero con programas más específicos\cite{gpgpu}. Lo más común al utilizar la aceleración por GPU es ejecutar una misma instrucción a múltiples datos para aprovechar su arquitectura.
+   La tarjeta gráfica en su interior puede contener una cantidad de núcleos del orden de cientos hasta miles de unidades que son más pequeñas y que por ende, individualmente realizan un menor número de operaciones. Esto hace que la GPU esté optimizada para procesar cantidades enormes de datos pero con programas más específicos\cite{gpgpu}. Lo más común al utilizar la aceleración por GPU es ejecutar una misma instrucción a múltiples datos para aprovechar su arquitectura.
    
     \subsection{Arquitectura GPU}
 
-La arquitectura de las tarjetas gráficas ha experimentado ciertas evoluciones en su desarrollo para permitir a los programadores hacer un uso más eficiente de su poder de procesamiento. Una tarjeta gráfica es básicamente un multiprocesador compuesto de una gran cantidad de núcleos de procesamiento que trabajan en paralelo, junto con los componentes de un CPU. Las GPU incorporan:
+La arquitectura de las tarjetas gráficas ha experimentado ciertas evoluciones en su desarrollo para permitir a los programadores hacer un uso más eficiente de su poder de procesamiento. 
+%Una tarjeta gráfica es básicamente un multiprocesador compuesto de una gran cantidad de núcleos de procesamiento que trabajan en paralelo, junto con los componentes de un CPU. 
+Las GPU incorporan:
 
 \begin{itemize}
 \item Memoria: cuentan con diferentes tipos de memoria y principalmente compuesta por el tipo DRAM (Memoria dinámica de acceso aleatorio).
@@ -345,7 +301,7 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
         
   \subsubsection{Perspectiva del programador}
    
-    La tabla \ref{tab:CUDAcomp} muestra sus componentes principales de CUDA desde la perspectiva del programador, y la figura \ref{fig:grid} muestra esquemáticamente el como se conforma el grid de un kernel.
+    La tabla \ref{tab:CUDAcomp} muestra sus componentes principales de CUDA desde la perspectiva del programador, y la figura \ref{fig:grid} muestra esquemáticamente como se conforma el grid de un kernel.
     
      \begin{table}[h!]
       \begin{center}
@@ -354,7 +310,7 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
          \hline
          \cellcolor{lightgray}\textbf{kernel} & Funciones paralelas escritas en el programa que indican que operaciones se realizaran en la GPU.\\ 
          \hline
-          \cellcolor{lightgray}\textbf{thread} & Unidad mínima que ejecuta una instancia de un kernel. Tiene su propio id dentro un block, su propio contador de programa, registros, memoria privada, entradas y salidas.\\ 
+          \cellcolor{lightgray}\textbf{thread} & Unidad mínima que ejecuta una instancia de un kernel. Tiene su propio id, su propio contador de programa, registros, memoria privada, entradas y salidas.\\ 
          \hline  
          \cellcolor{lightgray}\textbf{block} & La agrupación de threads que utilizan memoria compartida.\\ 
          \hline
@@ -367,6 +323,7 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
     \end{table}
     
     Muchas veces es necesario conocer el ID tanto del thread como del block con los que se está trabajando. En la figura \ref{fig:grid} se observa la configuración de la posición secuencial de cada elemento.
+    \newline
     
     \begin{figure}[ht]
       \centering
@@ -390,7 +347,7 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
         \label{fig:threadOrden}
     \end{figure}
     
-    Existe una jerarquía memoria para las variables que se utilicen, la tabla \ref{tab:memoriaCUDA} muestra el lugar donde se almacenan y el alcance que tienen.
+    Existe una jerarquía de memoria para las variables que se utilicen, la tabla \ref{tab:memoriaCUDA} muestra el lugar donde se almacenan y el alcance que tienen.
     
          \begin{table}[h!]
          \footnotesize
@@ -418,6 +375,20 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
     
     \subsubsection{Perspectiva del hardware}
     
+    Cada modelo de tarjeta gráfica contiene una cantidad variable de SM dependiendo de su tamaño y/o propósito. Cada uno puede ejecutar un número limitado de TB en concurrente. 
+    Cada vez que un SM ejecuta un TB, cada uno de sus Threads se ejecuta al mismo tiempo, por lo tanto, para liberar los recursos ocupados y darle la oportunidad a un nuevo kernel de la cola de ejecución, es fundamental que todos los hilos de ese TB concluyan completamente su ejecución \cite{CuLect2}.
+    \newline
+            \begin{figure}[!h]
+      \centering
+        \includegraphics[scale=.55]{DiagramaWarp}
+        \caption{Componentes de la arquitectura en perspectiva del hardware\cite{DiagramaWarp}.}
+        \label{fig:DiagramaWarp}
+    \end{figure}
+    
+    Un warp es la entidad mínima ejecutable dentro de la GPU y es un conjunto de 32 threads dentro de un TB, por lo que todos los hilos en su interior ejecutan la misma instrucción, y son seleccionados serialmente por el SM que los ejecutará. \cite{WarpLvl}
+    \newline
+    
+        
      \begin{table}[h!]
       \begin{center}
             \footnotesize
@@ -437,17 +408,15 @@ Donde las memorias constantes y de textura son de acceso más rápidas que la me
       \end{center}
     \end{table}
     
-    Cada modelo de tarjeta gráfica contiene una cantidad variable de SM dependiendo de su tamaño y/o propósito. Cada uno puede ejecutar un número limitado de TB en concurrente. 
-    Cada vez que un SM ejecuta un TB, cada uno de sus Threads se ejecuta al mismo tiempo, por lo tanto, para liberar los recursos ocupados y darle la oportunidad a un nuevo kernel de la cola de ejecución, es fundamental que todos los hilos de ese TB concluyan completamente su ejecución \cite{CuLect2}.
+    Una vez que se lanza un TB en un SM, todos los warps permanecen en ejecución hasta que todos sus threads completen su ejecución. Por lo que un TB nuevo no puede iniciarse dentro de un SM hasta que no haya un número suficiente de registros libres para que todos los warps de un TB puedan iniciar su ejecución.
     \newline
     
-    Un warp es la entidad mínima ejecutable dentro de la GPU y es un conjunto de 32 threads dentro de un TB, por lo que todos los hilos en su interior ejecutan la misma instrucción, y son seleccionados serialmente por el SM que los ejecutará. \cite{WarpLvl}
-Una vez que se lanza un TB en un SM, todos los warps permanecen en ejecución hasta que todos sus threads completen su ejecución. Por lo que un TB nuevo no puede iniciarse dentro de un SM hasta que no haya un número suficiente de registros libres para que todos los warps de un TB puedan iniciar su ejecución.
-    
+    La figura \ref{fig:DiagramaWarp} muestra el diagrama de la arquitectura de una tarjeta gráfica desde la perspectiva del hardware. La tabla \ref{tab:CUDAcompHW} enlista los componentes de la arquitectura.
 
     \subsection{Arquitectura Pascal}\label{secc:arqPas}
-
-    La principal ventaja de la arquitectura Pascal está en su construcción ya que está implementada con transistores FinFET\cite{PasGPU}, los cuales al ser de un tamaño de 16 nanómetros, permiten tener un tamaño reducido, proporcionar un rendimiento alto y obtener una gran eficiencia energética. Dicha combinación la hacen ideal para ser implementada en dispositivos embebidos que requieran ejecutar tareas híbridas.
+    
+     Pascal es el nombre de una versión actualizada de la arquitectura de tarjetas gráficas manufacturadas por la empresa NVIDIA. Su principal ventaja está en su construcción, ya que está implementada con transistores de menor tamaño\cite{PasGPU}, lo que permite proporcionar un rendimiento alto y obtener una gran eficiencia energética en un pequeño espacio. Dicha combinación la hacen ideal para ser implementada en dispositivos embebidos que requieran ejecutar tareas híbridas.
+    %Pascal es el nombre de una versión actualizada de la arquitectura de tarjetas gráficas manufacturadas por la empresa NVIDIA. Su principal ventaja está en su construcción ya que está implementada con transistores FinFET\cite{PasGPU}, los cuales al ser de un tamaño de 16 nanómetros, permiten tener un tamaño reducido, proporcionar un rendimiento alto y obtener una gran eficiencia energética. Dicha combinación la hacen ideal para ser implementada en dispositivos embebidos que requieran ejecutar tareas híbridas.
     \newline
    
    En esta arquitectura se implementaron dos cambios significativos que ayudan a mejorar el rendimiento de los sistemas. La primera la encontramos en la memoria unificada, la cual proporciona un único espacio de direcciones virtuales para la memoria de el CPU y GPU, permitiendo la migración transparente de datos entre los espacios de direcciones virtuales completos tanto de la tarjeta gráfica como del procesador. Esto simplifica la programación en GPUs y su portabilidad ya que, como programador, no es necesario el  preocuparse por administrar el intercambio de datos entre dos sistemas de memoria virtual diferentes\cite{WPNV}.
@@ -484,20 +453,83 @@ Una vez que se lanza un TB en un SM, todos los warps permanecen en ejecución ha
     Mientras que las GPU actuales ofrecen una gran potencia de procesamiento, a menudo es difícil aprovecharla. Por ello se han realizado esfuerzos que incluyen nuevos modelos de procesamiento con varios grados de paralelismo.
     \newline
    
-    El cómputo  de propósito general en unidades de procesamiento de gráficos o GPGPU es utilizado para acelerar el procesamiento realizado tradicionalmente por el CPU únicamente, donde la GPU actúa como un coprocesador que puede aumentar la velocidad del trabajo \cite{GpuCpu}.
+    El cómputo de propósito general en unidades de procesamiento gráfico o GPGPU es utilizado para acelerar el procesamiento realizado tradicionalmente por el CPU únicamente (ver figura \ref{fig:gpgpu}, donde la GPU actúa como un coprocesador que puede aumentar la velocidad del trabajo \cite{GpuCpu}.
+    \newline
     
-     \begin{figure}[ht]
+     \begin{figure}[!h]
       \centering
         \includegraphics[scale=0.9]{gpgpu}
         \caption{Aceleración de programas en GPU\cite{gpgpu}.}
         \label{fig:gpgpu}
     \end{figure}
-                
-   \vspace{0.3cm}
    
     La unificación de los espacios de memoria facilita el GPGPU ya que no hay necesidad de transferencias explícitas de memoria entre el host y el dispositivo.
-    
-     %----------------------------------------------------------------------
+
+\subsection{Clasificación de soporte preemptive}
+
+\label{claspree}
+Existen diversas clasificaciones en que se pueden agrupar las soluciones para dar soporte a la planificación de tareas preemptive \cite{GPUArt,DynSche,GPES,RGEM}, una de ellas se basa en el tipo de implementación:
+
+\begin{itemize}
+\item \textbf{\textit{Basado en Hardware.}} 
+	Aquí se utilizan dispositivos de e/s para el cambio o drenado del contexto para implementar las políticas preemptive. 	
+
+\item \textbf{\textit{Basado en Software.}}
+	\begin{itemize}
+	\item \textbf{\textit{Partición de Kernel.}}
+		Aquí los kernels grandes son partidos en subkernels dividiendo sus grids en fragmentos más pequeños. Es decir, en vez de lanzar todos los Threads por Bloque (TB) de un kernel a la vez, sólo se van lanzando fracciones de éste. Este enfoque es útil para núcleos con muchos TB, donde cada TB tienen un tiempo de ejecución corto. Cuando se tienen diversas especificaciones a resolver por un kernel y estas son necesariamente tareas secuenciales por la dependencia de resultados, se implementan puntos preemptive para dividir el kernel en tareas a completar.  
+		%Sin embargo, para aquellos con tiempos de ejecución largos, se pueden generar retrasos significativos y posiblemente tiempos en que haya inversión de prioridad, lo que no es aceptable en sistemas en tiempo real. Aunado a esto, este método no es aplicable a los kernels que requieren una sincronización global entre \gls{TB}, ya que el lanzamiento paulatino de los componentes de un grid podrá causar plazos vencidos en las barreras entre cada fragmento.
+	
+	\item \textbf{\textit{Partición en Trabajos.}}
+		Esta técnica es parecida a la anterior, pero los fragmentos se ven como trabajos, se invocan tantos TB como sea posible tenerlos activos al mismo tiempo. Aquí GPU y CPU comparten una variable que se utiliza para señalizar las solicitudes de cambio de contexto entre los threads activos y los detenidos.
+
+	\item \textbf{\textit{Entorno de Scripts.}}	
+		Esta técnica permite manejar automáticamente los kernels dependiendo de ciertos parámetros o puntos de control, liberando al programador de realizarlo manualmente. Esta aproximación funciona especialmente para entornos con kernels pequeños, ya que para aquellos que tienen una ejecución larga es necesario cuidar el nivel de granularidad o podría llegarse a plazos vencidos.
+		
+	\end{itemize}
+	%En esta clasificación también debemos agregar otro apartado:
+
+%\begin{itemize}
+
+%\item \textbf{\textit{Partición en Tareas.}}
+%	Es similar a la técnica de partición de Kernel, ya que efectivamente se divide el kernel en fragmentos más pequeños de procesamiento de datos. Cuando se tienen diversas especificaciones a resolver por un kernel y estas son necesariamente tareas secuenciales por la dependencia de resultados, se implementan puntos preemptive para dividir el kernel en tareas a completar.  
+
+%\end{itemize}
+
+\end{itemize}
+	
+Otra clasificación se obtiene de acuerdo a la forma en que se planifican las tareas:
+
+\begin{itemize}
+
+\item \textbf{\textit{Colas masivas en paralelo.}}
+	Este apartado está centrado en, ya sea una o varias colas concurrentes que recopilan y distribuyen el trabajo siguiendo la regla \textit{FIFO}, el primero en entrar, el primero en salir. 
+	
+\item \textbf{\textit{Administración dinámica de memoria.}}
+	Se tiene un administrador de memoria que verifica si es posible asignar memoria para una nueva tarea, o cual de las que actualmente se encuentra en ejecución ha superado su espacio definido. 
+	
+\item \textbf{\textit{Administración dinámica de los núcleos de procesamiento.}}
+	Aquí se limita el número de núcleos de procesamiento en tiempo de ejecución de una GPU para una tarea, y el número depende casi siempre de la prioridad de la tarea.
+
+	
+\item \textbf{\textit{Planificación por prioridad.}}
+	Se utilizan algoritmos de planificación para manejar dinámicamente el cambio de prioridades y maximizar el rendimiento del sistema. La mayoría de las veces este tipo es el más cercano a una implementación completa de tiempo real.
+	
+\end{itemize}
+%Aunque no esta originalmente contemplado, es necesario discriminar entre la administración de la memoria y la administración de los núcleos que una GPU nos va a prestar para realizar el procesamiento. 
+
+Finalmente, podemos encontrar una clasificación enfocada en la forma en que se implementa la planificación en el código.
+
+\begin{itemize}
+
+\item \textbf{\textit{Modificación de código fuente.}}
+	Es necesario que el programador modifique el código del kernel para implementar cada una de las acciones que va a seguir la tarea, desde su inicio, pasando por su interrupción, y hasta su finalización.
+	
+\item \textbf{\textit{Modificación del API.}}
+	En este apartado, se hace una modificación a nivel de las bibliotecas o el compilador, la ventaja es que la aplicación no es modificada manualmente; sin embargo, su utilización muchas veces no está permitida por los administradores.
+	
+\end{itemize}
+
     %SISTEMAS EMBEBIDOS
     \section{Sistemas embebidos}
 
@@ -522,7 +554,7 @@ Para realizar la presente tesis, se tuvo acceso al sistema embebido heterogéneo
             
    \vspace{0.3cm}
    
-En la figura \ref{fig:arqutecturaTX2} se muestra diagrama de bloques de la arquitectura del sistema Jetson TX2.
+En la figura \ref{fig:arqutecturaTX2} se muestra el diagrama de bloques de la arquitectura del sistema Jetson TX2.
 
       \begin{figure}[ht]
       \centering
