@@ -1,4 +1,3 @@
-//Estructura BackUp
 struct Backup{
 
 	/* Variables locales */

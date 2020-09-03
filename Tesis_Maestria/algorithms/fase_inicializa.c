@@ -1,5 +1,4 @@
     . . .
-	
 	/* Fase de inicialización */
 	switch(backup.estado[id_block]){
 		case INICIO:
@@ -20,7 +19,7 @@
 			temp1 = backup->temp1[id_block * blockDim.x + id_thread];
 			temp2 = backup->temp2[id_block * blockDim.x + id_thread];
 			. . .
-			temp3 = backup->tempn[id_block * blockDim.x + id_thread];
+			tempn = backup->tempn[id_block * blockDim.x + id_thread];
 
 			//Inicialización de contadores con respecto al backup
 			i = backup->i[id_block];

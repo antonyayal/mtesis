@@ -1,11 +1,11 @@
 \chapter{Rendimiento}
     \label{cha:Rendimiento}
 
-Este capítulo propone posibles métricas para evaluar el rendimiento del framework. Para poder realizar cualquier evaluación del rendimiento es necesario obtener datos importantes sobre las ejecuciones de un kernel, con dicha información se podrá implementar una serie de gráficas que permitan valorar la tendencia de los resultados.
+Este capítulo propone métricas para evaluar el rendimiento del framework. Para poder realizar cualquier evaluación del rendimiento es necesario obtener datos importantes sobre las ejecuciones de un kernel, con dicha información se podrá implementar una serie de gráficas que permitan valorar la tendencia de los resultados.
 \newline
 
-Como ejemplo tomaremos a Earliest Deadline First (algoritmo \ref{alg:edf}), un algoritmo de planificación dinámica que selecciona un conjunto de tareas \textit{$R=\{\tau_1,\tau_2,...,\tau_n\}$} de acuerdo a sus plazos absolutos \textit{d}. Las tareas con plazos más próximos se ejecutarán con una prioridad más alta\cite{Buta2011}. 
-Debido a que el plazo límite absoluto de una tarea periódica \textit{$\tau_i$} depende de la actual instancia \textit{$\tau_j$}, plazo límite relativo \textit{D}, un periodo de activación \textit{T} y una fase o tiempo de activación de la primera instancia \textit{$\Phi$}, tenemos que:
+Como ejemplo tomaremos a Earliest Deadline First (algoritmo \ref{alg:edf}), un algoritmo de planificación dinámica que ordena un conjunto de tareas \textit{$R=\{\tau_1,\tau_2,...,\tau_n\}$} de acuerdo a sus plazos absolutos \textit{d}. Las tareas con plazos más próximos se ejecutarán con una prioridad más alta\cite{Buta2011}. 
+Debido a que el plazo límite absoluto de una tarea periódica \textit{$\tau_i$} depende de la actual instancia \textit{$\tau_j$}, plazo límite relativo \textit{D}, un periodo de activación \textit{T} y una fase o tiempo de activación de la primera instancia \textit{$\Phi$}, tenemos el plazo límite absoluto:
 
 \begin{equation}
 d_{i,j} = \Phi_i + (j-1)T_i + D_i
@@ -15,38 +15,46 @@ EDF no realiza ninguna suposición sobre si las tareas son periódicas o aperió
 
 \lstinputlisting[style=CStyle, frame=single,label=alg:edf,  basicstyle=\ttfamily\footnotesize, caption=Algoritmo de planificación EDF.]{algorithms/alg_edf.c}
 
-Al ejecutarse normalmente en escenarios preemptive, la tarea que se está ejecutando actualmente realiza una suspensión preemptive y se da lugar a cualquier otra que posea una fecha límite más próxima. Por esta flexibilidad es el algoritmo más extendido a la hora de pensar en implementar un planificador.
+Al ejecutarse normalmente en escenarios preemptive, la tarea que se está ejecutando actualmente realiza una suspensión preemptive y se da lugar a cualquier otra que posea el plazo límite más próximo. Por esta flexibilidad es el algoritmo más extendido a la hora de pensar en implementar un planificador.
 \newline
 
-Para conocer si un conjunto de tareas es planificable se utiliza la función de utilidad \textit{U}, la cual describe el consumo de cómputo \textit{$C_i$} de las tareas entre su periodo \textit{$T_i$}. Para evitar perder los tiempos límite debemos mantenerla inferior a 1.
+La primera métrica a considerar para el diseño del framework es conocer si un conjunto de tareas es planificable se utiliza la función de utilidad \textit{U}, la cual describe el consumo de cómputo \textit{$C_i$} de las tareas entre su periodo \textit{$T_i$}. Para evitar perder los tiempos límite de las tareas debemos mantenerla inferior a 1.
 
 \begin{equation}
 U=\sum_{i=1}^{n} \frac{C_i}{T_i} \leq 1
 \end{equation}
 
-Para evitar que una tarea pierda su plazo límite es necesario prevenir que esté bloqueada por más de \textit{$D_i - C_i$} unidades de tiempo, asegurando que a regreso a línea no se presente el plazo vencido $dm$.
+Para evitar que una tarea pierda su plazo límite es necesario prevenir que esté bloqueada por más de \textit{$D_i - C_i$} unidades de tiempo, asegurando que la tarea concluya antes de que se presente el plazo vencido $dm$.
+\newline
 
 %El conocer la cantidad de plazos vencidos \textit{$n_{dm}$} es importante para evitar sobrecargar el sistema y darle la oportunidad a todas las tareas de consumir recursos eventualmente. 
 %Es necesaria una métrica que nos permita visualizar el número de plazos vencidos \textit{$\tau_{i[dlmss]}$} debido al tiempo invertido en los cambios de contexto, es decir, de aquellas tareas que estuvieron en backup y que regresaron a linea, pero con plazos ya vencidos.
-La métrica que nos permite evaluar el rendimiento del sistema en cuanto al número de plazos vencidos \textit{$n_{dm}$} es:
+Adentrándonos en la medición del desempeño del planificador GPU preemptive, una métrica que nos permite evaluar el rendimiento del sistema en cuanto al número de plazos vencidos \textit{$n_{dm}$}, cuyo objetivo principal es reducirlo mediante los módulos del framework.
 \begin{equation}
 n_{dm}=\sum_{i=1}^{n} dm_{i}
 \end{equation}
 
-Una tarea tiene un número total de subkernels \textit{$n_{sk}$}, y \textit{$n_{bk}$} cambios de contexto, donde  \textbf{$n_{bk} = n_{sk}-1$}.
+Durante la descripción del framework se ha establecido que una tarea puede sufrir un determinado número de suspensiones preemptive generando \textit{$n_{bk}$} cambios de contexto. 
 
-Al sumar el tiempo total de inserciones en la estructura backup \textit{$t_{bk[in]}$} con el de las extracciones \textit{$t_{bk[ex]}$} obtenemos el tiempo total del cambio del contexto \textit{$t_{bk}$}.
+El cambio de contexto tiene un costo de tiempo computacional debido a la inserción \textit{$t_bk[in]$} y extracción \textit{$t_bk[in]$} de este en el backup. Dicho tiempo también puede representar una métrica de desempeño donde el objetivo es minimizar el costo de los cambios de contexto \textit{$t_{bk}$} que involucran el manejo de la memoria.
+%Una tarea tiene un número total de subkernels \textit{$n_{sk}$}, y \textit{$n_{bk}$} cambios de contexto, donde  \textbf{$n_{bk} = n_{sk}-1$}.
+%Al sumar el tiempo total de inserciones en la estructura backup \textit{$t_{bk[in]}$} con el de las extracciones \textit{$t_{bk[ex]}$} obtenemos el tiempo total del cambio del contexto \textit{$t_{bk}$}.
 
 \begin{equation}
 t_{bk}=t_{bk[in]}+t_{bk[ex]}
 \end{equation}
 
-El tiempo de ejecución total con suspensión preemptive \textit{$t_p$} nos indica el tiempo total que utiliza el programa tomando en cuenta el tiempo que se utiliza en los cambios de contexto. 
-En ocasiones es importante conocer el tiempo total del cálculo \textit{$t_{np}$} de cada tarea en el ambiente preemptive, para comparar la variación \textit{$S(p)$} que pudiera existir con el tiempo original \textit{$t_{or}$} en un ambiente sin planificador, donde \textit{$S(p) > 1$} significa una mejora en la ejecución de la tarea.
+El tiempo de ejecución total con suspensión preemptive \textit{$t_p$} nos indica el tiempo total que utiliza el programa tomando en cuenta el tiempo empleado en los cambios de contexto. 
+\newline
+
+Finalmente, una de las métricas empleadas para decidir si un sistema es factible para ser paralelizado es la aceleración (speedup en ingles) que mide las cantidad de veces que es más rápido una aplicación paralela a su contraparte serial. En este caso considerándolo al caso preemptive.
+
+Para esto, en ocasiones es importante conocer el tiempo total del cálculo \textit{$t_{np}$} de cada tarea en el ambiente preemptive, para comparar la variación \textit{$S(p)$} que pudiera existir con el tiempo original \textit{$t_{or}$} en un ambiente sin planificador preemptive, donde \textit{$S(p) > 1$} significa una mejora en la ejecución de la aplicación.
 
 \begin{equation}
 S(p)=\frac{t_{or}}{t_{np}}
 \end{equation}
 
-El tiempo fuera de línea o de ociosidad \textit{$t_{idle}$} indica el tiempo en que un kernel está fuera de operación, y es necesario mantenerlo en un nivel bajo, para que se garantice el eventual consumo de recursos, y se eliminen los posibles plazos vencidos.
+En cuanto a la maximización de los recursos se puede definir el tiempo fuera de línea o de ociosidad \textit{$t_{idle}$} que indica el tiempo en que un kernel está fuera de operación y, si sumamos todos los tiempos de ociosidad de los kernels, se podrían
+establecer estrategias más complejas de planificación o balanceo de cargas para que se garantice el eventual consumo de recursos, y se eliminen los posibles plazos vencidos.
 \newline

@@ -22,7 +22,7 @@
 			}
 			_syncthreads();//TB sincronizan para llegar al mismo valor de contador
 			
-            /* Si ya expiró el quantum almacena contexto en backup */
+          /* Si ya expiró el quantum almacena contexto en backup */
 			//Variables locales
 			backup->temp1[id_block * blockDim.x + id_thread] = temp1;
 			backup->temp2[id_block * blockDim.x + id_thread] = temp2;

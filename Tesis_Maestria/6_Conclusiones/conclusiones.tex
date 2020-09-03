@@ -2,13 +2,13 @@
     \label{cha:Conclusiones}
     
 En este trabajo se ha hablado de los sistemas embebidos, y principalmente de los heterogéneos, de cómo han sido adoptados en la industria para realizar tareas específicas que requieren cada vez más un aumento y aceleración de su procesamiento.
-Tener las bases del diseño de un framework permitirá planificar la ejecución de tareas preemptive, facilitará la disminución de los plazos vencidos de tareas con alta prioridad y mejorará el desempeño general del sistema.
+Tener las bases del diseño de este framework permitirá planificar la ejecución de tareas preemptive, facilitará la disminución de los plazos vencidos de tareas con alta prioridad y mejorará el desempeño general del sistema.
 \newline
 
-La principal contribución de este trabajo es el generar un framework que facilite la planificación de tareas preemptive de la GPU en sistemas embebidos heterogéneos contemplando del cómputo general en unidades de procesamiento de gráficos y la arquitectura del sistema.
+La principal contribución de este trabajo es el generar un framework que facilite la planificación de tareas preemptive de la GPU en sistemas embebidos heterogéneos contemplando del cómputo general en unidades de procesamiento gráfico y la arquitectura del sistema.
 \newline
 
-El diseño del framework tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, aunque puede ser aplicado a cualquier dispositivo, siempre y cuando cumpla con ciertas características, como la memoria unificada.
+El diseño del framework tomó como base el sistema embebido heterogéneo NVIDIA Jetson TX2, aunque puede ser aplicado a otros dispositivos, siempre y cuando cumpla con ciertas características, como la memoria unificada.
 \newline
 
 El framework se posiciona dentro de las siguientes clasificaciones para la incorporación del modo preemptive:
@@ -19,14 +19,14 @@ El framework se posiciona dentro de las siguientes clasificaciones para la incor
 \end{itemize}
     
 El framework está integrado por cinco bloques que describen el funcionamiento de los componentes necesarios para realizar desde la implementación del modo preemptive hasta su planificación y lanzamiento dentro de la GPU. 
-Los módulos que se presentaron fueron:
+Los módulos que se presentan son:
 
 \begin{itemize}
 \item Lanzamiento de kernel. Presenta las herramientas para manejar los lanzamientos de kernels desde el CPU pidiendo permiso al Planificador.
-\item Memoria. Implementa las directivas para utilizar la memoria unificada del sistema embebido y así ahorrar y optimizar el tiempo de programación con respecto a las transferencias de memoria.
+\item Memoria. Implementa las directivas para utilizar la memoria unificada del sistema embebido y así optimizar el tiempo de programación con respecto a las transferencias de memoria.
 \item Puntos Preemptive. Metodología para localizar e implementar los puntos clave que ayudarán a realizar suspensiones preemptive en el código de las aplicaciones.
-\item Planificador. Módulo para planificar y balancear la carga de los núcleos de procesamiento de la tarjeta gráfica. 
-\item Asignación de prioridades. Presenta el modo de empleo de un algoritmo en tiempo real para la creación de una lista de prioridades.
+\item Planificador GPU. Módulo para planificar y balancear la carga de los núcleos de procesamiento de la tarjeta gráfica. 
+\item Asignación de prioridades. Sección donde se debe emplear el algoritmo en tiempo real para la creación de las listas de prioridades en el tiempo.
 \end{itemize}
 
 Finalmente, se presentó una serie de métricas para evaluar el rendimiento del sistema una vez implementado, logrando dar la pauta para conocer el desempeño de un conjunto específico de aplicaciones, o en dado caso, mejorar el diseño del framework.
@@ -35,7 +35,7 @@ Finalmente, se presentó una serie de métricas para evaluar el rendimiento del 
 Aunque se realizó un análisis exhaustivo para llegar a la  realización del diseño del framework, es necesaria su futura implementación para poder corroborar su eficacia en ambientes reales.
 %\newline
 
-Otro apartado que se trabajará en un futuro es la modificación de los módulos para trabajar nativamente con algoritmos de asignación de prioridad específicos para multiprocesadores con subconjuntos de tareas, ya que actualmente sólo se asegura la ejecución de las dos tareas con mayor prioridad a cada iteración del planificador.  
+Otro apartado que se trabajará en un futuro es la modificación de los módulos para trabajar nativamente con algoritmos de asignación de prioridad específicos para multiprocesadores con subconjuntos de tareas, ya que actualmente sólo se asegura la ejecución de las dos tareas con mayor prioridad a cada iteración del planificador GPU.  
 %\newline
 
 Finalmente, también podría generarse una actualización en algunas herramientas del framework para poder implementar programación orientada a objetos, y con ello, tener un mayor campo de acción e impacto con aplicaciones de la industria que utilizan este paradigma. 

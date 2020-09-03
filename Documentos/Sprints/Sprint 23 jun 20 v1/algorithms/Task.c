@@ -1,4 +1,3 @@
-//Estructura Task
 struct Task{
 	int id;
 	int costo;
