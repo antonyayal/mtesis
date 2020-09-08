@@ -262,8 +262,8 @@ Se esperará un determinado número de quantums (el estudio del quantum más apr
     
 \subsection{Balanceador de carga} \label{secc:balanceador}
 
-Bajo suposición y asignación de una carga de trabajo, todas las tareas son preemptive debido a que por decisiones inherentes del hardware muchas veces no podrán asignarse aunque haya espacio para su ejecución.
-%\newline
+Bajo suposición de la asignación de carga de trabajo, todas las tareas son preemptive debido a que por decisiones inherentes del hardware muchas veces no podrán asignarse aunque haya espacio para su ejecución.
+\newline
 
 Como se mencionó en el capítulo \ref{cha:TrabajoRelacionado} el orden de lanzamiento de los kernel a la GPU afecta la forma en que serán asignados a los SM. Por ejemplo, en el escenario \textbf{a)} (ver figura \ref{fig:Balanceo}). Primero se lanza \textbf{K1}, seguido de \textbf{K2} y al final \textbf{K3}, dando como resultado el desperdicio de recursos y que no sea posible ejecutar el kernel \textbf{K3}. Sin embargo, si se modifica el orden de asignación a los SM, se puede optimizar el reparto de tareas en las localidades, como lo vemos en el ejemplo \textbf{b)}.
 %\newline
@@ -271,188 +271,148 @@ Como se mencionó en el capítulo \ref{cha:TrabajoRelacionado} el orden de lanza
 Por esta razón, se ideó un balanceador de carga (ver algoritmo \ref{lst:Balanceador}) que permitirá la maximización de la planificación de tareas ejecutables en un quantum rellenando los SM hasta que se asigne la mayor cantidad de tareas posibles para su operación en concurrente.
 \newline
 
-    Como se ha visto a lo largo de este trabajo, la asignación de recursos para la ejecución de kernels en la tarjeta gráfica no es algo trivial, por lo que fue necesario diseñar un balanceador de carga (ver figuras \ref{fig:Balanceador1} y \ref{fig:Balanceador2}) que tomará en cuenta las características propias del sistema utilizado como caso de estudio.
-    \newline
-    
-    Debido a que las tareas que serán ejecutadas sobre el sistema se presuponen embebidas, se considera que probablemente podrán ejecutarse al menos dos kernels en concurrente sobre la tarjeta, por lo que es imprescindible que estas siempre tengan recursos suficientes para su ejecución. En caso de que la tarea de mayor prioridad absorba todos los recursos, no será necesario ejecutar la segunda tarea en ese quantum.
+Como se ha visto a lo largo de este trabajo, la asignación de recursos para la ejecución de kernels en la tarjeta gráfica no es algo trivial, por lo que fue necesario diseñar un balanceador de carga (ver figura \ref{fig:Balanceador1}) que tomara en cuenta las características propias del sistema utilizado como caso de estudio.
+\newline
+
+La lógica de asignación de tareas a los SM se basa en colocar la mayor cantidad posible de kernels en concurrente pero sin realizar muchos cambios de contexto.
 \newline
 
     \begin{figure}[!]
       \centering
-        \includegraphics[scale=.75]{Balanceador1}
-        \caption{Diagrama de flujo del balanceador de carga parte 1.}
+        \includegraphics[scale=.75]{Balanceador}
+        \caption{Diagrama de flujo del balanceador de carga.}
         \label{fig:Balanceador1}
     \end{figure}
-    
-    \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.7]{Balanceador2}
-        \caption{Diagrama de flujo del balanceador de carga parte 2.}
-        \label{fig:Balanceador2}
-    \end{figure}
 
-    \lstinputlisting[style=CStyle, frame=single,label=lst:Balanceador,  basicstyle=\ttfamily\footnotesize, caption=Balanceador de carga.]{algorithms/balanceoCargav3.c}
+\lstinputlisting[style=CStyle, frame=single,label=lst:Balanceador,  basicstyle=\ttfamily\footnotesize, caption=Balanceador de carga.]{algorithms/balanceoCargav4.c}
 
-La lógica de asignación de tareas a los SM se basa en colocar la mayor cantidad posible de kernels en concurrente para que se puedan realizar más cálculos en menor tiempo.
+El balanceador obtendrá de la lista de prioridad \textbf{r} el rango de tareas que en caso hipotético pueden ser ejecutadas en los SM en concurrente.
+La lista de prioridad ahora estará dividida en 3 secciones. La primera estará compuesta por las \textbf{n} tareas que encabezan la lista, donde \textbf{n} es un parámetro de diseño que dependiendo de las características deseadas propias del sistema a implementar. 
+La segunda sección contiene las tareas de mediana prioridad, aquellas que no se encuentran dentro de las primeras \textbf{n}, pero que se encuentran dentro del rango de posible ejecución. 
+Finalmente, las tareas de baja prioridad, aquellas que quedaron fuera del rango.
 \newline
 
+El balanceador primero verificará si existen warps disponibles para la ejecución de las tareas de la lista de prioridad. Siempre lo hará en orden, de mayor a menor prioridad. Si alguna tarea ya se encuentra en ejecución, se tratará de dejarla en su posición dentro de los SM para evitar, en la medida de lo posible, los cambios de contexto que son los eventos que mayor tiempo requieren para su ejecución.
+\newline
 
- \begin{table}[!]
+\lstinputlisting[style=CStyle, frame=single,label=lst:BalanceadorBloques,  basicstyle=\ttfamily\footnotesize, caption=Bloques del balanceador.]{algorithms/balanceoBloques.c}
+
+Si la tarea no se encuentra actualmente en ejecución y está catalogada como de alta prioridad, se le buscará espacio dentro de las tareas de baja prioridad primero. En primera instancia (ver algoritmo \ref{lst:BalanceadorBloques}), se pregunta si existe una tarea de baja prioridad con la misma cantidad de warps, si es así, se intercambia el contexto de las tareas para que la que tiene mayor prioridad se ejecute en su lugar. 
+En caso que no encuentre un par, se buscará alguna otra que ocupe un número mayor de warps (siempre prefiriendo aquella más cercana en número de warps). Si no se encuentra, ahora se pregunta si existen tareas de baja prioridad vecinas que sumadas tengan mayor o igual cantidad de warps. 
+
+En caso que la tarea no hubiera podido entrar en los warps ocupados por las de baja prioridad, se comienza a preguntar con las de prioridad media. Si existe un tarea de mediana prioridad con misma cantidad warps, realiza el cambio de contexto, si no, busca aquellas tareas con una cantidad mayor de warps, recordando siempre que se preferirá la tarea más cercana en warps pero que sea de menor prioridad, ya que una de menor prioridad no puede solicitar los recursos de una tarea de mayor prioridad. 
+El último paso es preguntar por la existencia de una tarea de media prioridad que como vecina a una tarea de baja prioridad, y que sumadas posean una cantidad mayor o igual de warps.
+\newline
+
+Para el caso de la asignación de tareas de mediana prioridad, se realizará únicamente las evaluaciones con las de baja prioridad. Y, con el fin de maximizar la utilización de los recursos de GPU, los warps disponibles se repartirán entre las tareas de menor prioridad, siempre en orden de prioridad.
+\newline
+
+A continuación se muestran algunos de los diversos escenarios en forma de casos de estudio que pueden aparecer durante la planificación. Cada caso ilustra el balanceo de cargas a ejecutar en un quantum. 
+\newline
+
+ \begin{table}[h!]
       \begin{center}
             \footnotesize
-        \begin{tabular}{|m{2cm}|m{8.5cm}|}
+        \begin{tabular}{|m{2cm}|m{9cm}|}
          \hline
          \cellcolor{lightgray}\textbf{Caso I} & El planificador permite que las tareas continuen con su ejecución otro quantum sin ser interrumpidas.\\ 
          \hline
-          \cellcolor{lightgray}\textbf{Caso II} & Planificador debe relanzar un kernel para dar oportunidad de balnceo de recursos de GPU.\\ 
+          \cellcolor{lightgray}\textbf{Caso II} & Se modifica la lista de prioridad y kernels de baja prioridad ahora son de mediana prioridad.\\ 
          \hline  
          \cellcolor{lightgray}\textbf{Caso III} & Kernels han completado su ejecución y deben ser sacados de la lista de prioridad.\\ 
          \hline
-         \cellcolor{lightgray}\textbf{Caso IV} & Kernels con alta prioridad no pueden ser ejecutados por no haber recursos contiguos.\\ 
+         \cellcolor{lightgray}\textbf{Caso IV} & Kernels de alta prioridad tienen preferencia sobre los de mediana prioridad.\\ 
          \hline
-         \cellcolor{lightgray}\textbf{Caso V} & Kernels grandes bloques acortan la lista de posibles ejecuciones.\\ 
-         \hline
-         \cellcolor{lightgray}\textbf{Caso VI} & Kernels de mayor prioridad que no estaban originalmente en ejecución realizan una gran cantidad de movimientos para asegurar su ejecución.\\ 
-         \hline
-         \cellcolor{lightgray}\textbf{Caso VII} & Kernels de baja prioridad no pueden reubicar a los de mayor prioridad.\\
+         \cellcolor{lightgray}\textbf{Caso V} & Kernels de alta prioridad que no estaban originalmente en ejecución realizan una gran cantidad de movimientos para asegurar su ejecución.\\ 
          \hline
            \end{tabular}
         \caption{Descripción de casos del balanceador de carga.}
         \label{tab:Casos}
       \end{center}
     \end{table}
-    
 
-    \begin{figure}[!]
+    \begin{figure}[h!]
       \centering
-        \includegraphics[scale=.33]{C1Balanceo}
+        \includegraphics[scale=.35]{C1Balanceo}
         \caption{Caso I Kernels mantienen su prioridad en la siguiente iteración.}
         \label{fig:C1Balanceo}
     \end{figure}
 
-A continuación se muestran algunos de los diversos escenarios en forma de casos de estudio que pueden aparecer al recurrir al balanceador de carga. Cada uno está representado en un diagrama, el cual posee en la parte superior la cola ordenada por prioridad (mayor a menor), cada tarea contiene el nombre del kernel así como el número de bloques que se requieren lanzar seguido del número de threads que los comprende. Se sombrean aquellas tareas que lograron ejecutarse en cada iteración, también se tiene una división en la lista. A la izquierda se comprenden las tareas que pudieran correr en concurrente en un punto en el tiempo de ejecución. A la derecha, aquellas que salen de dicha cuenta.
+La tabla \ref{tab:Casos} muestra una descripción de lo que cada caso pretende ilustrar. Para los ejemplos se tiene \textbf{n = 2} tareas de alta prioridad.
+\newline
+   
+El diagrama cuenta con la lista de prioridad ordenada y dividida en las tres secciones de prioridad, y al final de la segunda la cuenta de threads que entraron en el rango de posible ejecución.
 
-La tabla \ref{tab:Casos} muestra los casos que se presentarán y que son ejemplos de lo que podría suceder en determinando momento con el planificador.
+Se utiliza un código de color para facilitar la visualización de los eventos ocurridos, se sombrean de gris aquellas tareas que originalmente estaban en ejecución y resultaron nuevamente como posible ejecución, en color verde aquellas que entraron como posible ejecución pero no lo estaban en el quantum anterior, y como amarillo aquellas que salieron del rango de posible ejecución para el nuevo quantum. 
+También se sombrearon de rojo aquellas tareas que después del balanceo de carga lograrán ejecutarse en el quantum actual.
 \newline
 
-El \textbf{Caso I} (ver figura \ref{fig:C1Balanceo}), representa un escenario en donde la totalidad de las tareas que estaban ejecutándose en la iteración anterior \textbf{(A)} no terminaron durante su quantum y vuelven a quedar en la posición de mayor prioridad en la lista en \textbf{(B)}, puesto que ninguna tarea tuvo que ser sacada de ejecución, se les dará oportunidad de un siguiente quantum sin necesidad de detenerse, guardar su contexto y relanzarse.
-    \newline
-    
-    \begin{figure}[!]
+El \textbf{Caso I} (ver figura \ref{fig:C1Balanceo}), representa un escenario en donde la totalidad de las tareas que estaban ejecutándose en el quantum anterior no terminaron terminaron su ejecución, pero vuelven a quedar en la posición de mayor prioridad en la lista. Puesto que ninguna tarea tuvo que ser sacada de ejecución, se les dará oportunidad de un siguiente quantum sin necesidad de detenerse, guardar su contexto y relanzarse.
+\newline
+
+    \begin{figure}[h!]
       \centering
-        \includegraphics[scale=.33]{C2Balanceo}
-        \caption{Caso II Kernels de baja prioridad deben relanzarse.}
+        \includegraphics[scale=.35]{C2Balanceo}
+        \caption{Caso II Kernels suben de prioridad.}
         \label{fig:C2Balanceo}
     \end{figure}
     
-    \begin{figure}[!]
+Una vez terminado el quantum de la iteración y recalculando la lista de prioridades, observamos que se presenta el \textbf{Caso II} (ver figura \ref{fig:C2Balanceo}), donde algunas de las tareas ahora cambiaron el orden en la lista de prioridad. 
+Ahora entraron a la sección de posible ejecución las tareas \textbf{KK} y \textbf{KL}, mientras que salieron las tareas \textbf{KE}, \textbf{KF} y \textbf{KI}. El kernel \textbf{KK} comienza a buscar un lugar dentro de loa SM para ser ejecutada, y la tarea de baja prioridad que más se ajusta a sus características es \textbf{KF}, por lo que se mapean sus recursos en su nueva posición. 
+La siguiente tarea en busca de recursos ahora es \textbf{KL}, y justo empata con la posición de \textbf{KI}, intercambiando así el mapeo de sus recursos. Finalmente, \textbf{KE} como no tuvo que ser movida de su posición tiene oportunidad de ejecutarse nuevamente en este quantum a pesar de ser de baja prioridad.
+\newline
+
+    \begin{figure}[h!]
       \centering
-        \includegraphics[scale=.33]{C3Balanceo}
+        \includegraphics[scale=.35]{C3Balanceo}
         \caption{Caso III Kernels que completaron su ejecución.}
         \label{fig:C3Balanceo}
     \end{figure}
-    
-    Una vez terminado el quantum de la iteración y recalculando la lista de prioridades, observamos que se presenta el \textbf{Caso II} (ver figura \ref{fig:C2Balanceo}), donde algunas de las tareas ahora cambiaron el orden en la lista de prioridad. Procedemos a calcular el rango de las tareas que pudieran ejecutarse en concurrente, y encontramos que la mayoría puede continuar en ejecución porque se encuentran del lado izquierdo junto con las tareas \textbf{KK} y \textbf{KL} que subieron de prioridad. Aquellas que quedaron del lado derecho, porque exceden en el acumulado de kernels máximo por orden de prioridad y no terminaron en el caso anterior, se deben considerar como posible suspensión (\textbf{KE}, \textbf{KF} y \textbf{KI}) y ser insertadas en la cola de espera para dar oportunidad de ejecución a aquellas que tienen mayor prioridad.
-    Una vez agregadas las tareas de mayor prioridad, se observa que aún queda espacio y se busca en las estructuras Task a las tareas de menor prioridad que cumplan con los requisitos para que puedan ser ejecutadas en ese quantum, con ello la única tarea puede ingresar a la cola de ejecución es \textbf{KE}, pero como cambia de posición, es necesario detenerla y ser relanzada para que tome el lugar indicado dentro de los SM.     
-    \newline
-    
-             \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.33]{C4Balanceo}
-        \caption{Caso IV Kernels que completaron su ejecución.}
-        \label{fig:C4Balanceo}
-    \end{figure}
-    
-    Continuando con los cálculos para el siguiente quantum, en \textbf{Caso III} (ver figura \ref{fig:C3Balanceo}) del paso \textbf{(D)} al paso \textbf{(E)} las tareas \textbf{KA}, \textbf{KD} y \textbf{KH} han completado su ejecución, por lo que son eliminadas de la lista de ejecución. Con esto, la cola de ejecución ha sido modificada tanto en orden, como en longitud quedamos únicamente \textbf{KB}, \textbf{KC}, \textbf{KG} y \textbf{KL}  en ejecución Procediendo a rellenar el espacio existente con las tareas faltantes según su orden de prioridad. 
-    \newline
 
-    
-    El \textbf{Caso III} (ver figura \ref{fig:C3Balanceo}) presenta un particularidad debido a la forma en que están dispuestas las tareas, teóricamente la tarea \textbf{KI} (2:256) debería poder ejecutarse porque hay suficientes threads para su ejecución, pero el hecho de que los TB disponibles no estén contiguos, por restricciones del hardware, imposibilita esta acción. 
-    Por ello, se descarta \textbf{KI} y se continua agregando tareas de menor prioridad. Aquí, aunque \textbf{KE} nuevamente tenía una baja prioridad y tuvo que ser establecida como posible suspensión, puede entrar a ejecución pero en diferente posición, por lo que debe ser suspendida y relanzada.
+Continuando con el ciclo de vida del planificador, se presenta un posible \textbf{Caso III} (ver figura \ref{fig:C3Balanceo}) donde las tareas \textbf{KA}, \textbf{KD} y \textbf{KH} han completado su ejecución, por lo que son eliminadas de la lista de ejecución. Con esto, la cola de ejecución ha sido modificada tanto en orden como en longitud. Las tareas \textbf{KM}, \textbf{KJ}, \textbf{KF} y \textbf{KI} ahora figuran dentro del rango de las posibles ejecuciones. 
+La tarea \textbf{KM} se ajusta perfectamente en los recursos liberados por \textbf{KA} por lo que es mapeada sin problemas. Ocurre lo mismo con \textbf{KJ} ya que quedan libres los warps que ocupaba \textbf{KD} y también \textbf{KF} ocupa los que originalmente pertenecían a \textbf{KH}.
+Pero no así con \textbf{KI}, ya que después de preguntar, no se encuentra una ranura para su ejecución, con lo que en este quantum se queda en la lista de espera.
 \newline
 
-    \begin{figure}[h]
+\begin{figure}[h!]
+  \centering
+    \includegraphics[scale=.35]{C4Balanceo}
+    \caption{Caso IV Kernels de alta prioridad tienen preferencia.}
+    \label{fig:C4Balanceo}
+\end{figure}
+
+En el caso \textbf{Caso IV} (ver figura \ref{fig:C4Balanceo}) la tarea \textbf{KN} ahora se encuentra dentro de las tareas de las tareas de alta prioridad, \textbf{KI} dentro de las de mediana prioridad y las tareas \textbf{KG}, \textbf{KL} y \textbf{KK} ahora son de baja prioridad. Debido a que \textbf{KN} es de alta prioridad, intercambio sus recursos con \textbf{KJ} ya que no hubo otra opción para su mapeo. 
+
+Todas las demás tareas mantuvieron su posición, incluso siendo de baja prioridad, pero imposibilitando a \textbf{KI} ejecutarse.
+\newline
+
+\begin{figure}[h!]
       \centering
-        \includegraphics[scale=.33]{C5Balanceo}
-        \caption{Caso V Kernels muy grandes.}
+        \includegraphics[scale=.35]{C5Balanceo}
+        \caption{Caso V Kernels de alta prioridad que no estaban en ejecución.}
         \label{fig:C5Balanceo}
-    \end{figure} 
-    
-    Siguiendo con el flujo del planificador, en el \textbf{Caso IV} (ver figura \ref{fig:C4Balanceo}) se vuelve a obtener una nueva lista de ejecución (nótese que del lado izquierdo se indica que se podrían utilizar los 4096 threads de los SM). En esta ocasión se observa que no terminó ninguna tarea y se procede a seleccionar las posibles suspensiones \textbf{KG}, \textbf{KL}, \textbf{KK} y \textbf{KE} por tener una prioridad más baja.
-    
-    Quedando recursos libres, se sigue rellenando los espacios con las tareas de la lista según su prioridad. Pero nuevamente se llega a un escenario como en el \textbf{Caso III} en que la tarea \textbf{KI}, aunque  teóricamente tiene alta prioridad, no posee recursos contiguos para su ejecución, por lo que nuevamente se queda en la lista de espera, pero gracias a eso ganamos recursos para 3 de menor prioridad \textbf{KG}, \textbf{KK} y \textbf{KE}. 
-    Y una vez más debido a que estas tareas tuvieron que cambiar de posición de el quantum anterior a este, deben detener su ejecución y ser relanzadas.
+    \end{figure}
+
+En \textbf{Caso V} podemos observar en la figura \ref{fig:C5Balanceo} que en el quantum anterior existen kernels muy dispersos por los SM, pero al momento de obtener la lista de prioridad las tareas \textbf{KT} y \textbf{KU} encabezan la cola, ambas siendo de alta prioridad. 
+Al momento de seguir con la metodología de balanceo de carga, se intercambian las tareas \textbf{KW}, \textbf{KS}, \textbf{KY} y \textbf{KR} por las de mayor prioridad, y como fueron desplazadas a una nueva posición, deben ser relanzadas para que tomen los nuevo recursos que se les asignaron.  
 \newline
 
-    Continuando con el siguiente quantum, se presenta el \textbf{Caso V} (ver figura \ref{fig:C5Balanceo}) donde después de calculada la lista de prioridad, las tareas del lado izquierdo no ocupan por completo los recursos aportados por los SM debido a que \textbf{KJ} es demasiado grande, con lo que queda fuera de las posibles ejecuciones.
-    Se comienza con el balanceo de cargas poniendo en posible suspensión las tareas del lado derecho de la lista \textbf{KG}, \textbf{KK} y \textbf{KE}. Ahora se comienza a rellenar los recursos con las tareas fuera de ejecución por prioridad, y precisamente \textbf{KG}, \textbf{KK} y \textbf{KE} terminan en la misma posición, por lo que no es necesario suspender y relanzar.
-\newline
+Finalmente, se presentará en la siguiente sección el procedimiento para asignar la prioridad a las tareas y generar la lista de prioridad que recibe el Módulo Planificador GPU
 
-   Ahora bien, después de n iteraciones del ciclo de vida del planificador nos encontramos el \textbf{Caso VIa} (ver figura \ref{fig:C6aBalanceo}) con el escenario \textbf{(K)} justo terminado su quantum de ejecución y teniendo en ejecución un cierto número de tareas esparcidas por los SM utilizando solamente una fracción de los recursos. 
-   \newline
-   
-   Una vez calculada la lista de prioridad en \textbf{(L)}, se observa que han aparecido dos tareas en la cabeza de la cola que solicitan recursos pero no pueden ser asignadas a los SM porque no hay recursos contiguos para su ejecución, así que se procede a sacar la tarea de menor prioridad actualmente en ejecución \textbf{KP}, con lo que la tarea \textbf{KT} pregunta nuevamente si ahora puede entrar en ejecución.
-
-    \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.33]{C6aBalanceo}
-        \caption{Caso VIa Kernels de mayor prioridad que no estaban en ejecución.}
-        \label{fig:C6aBalanceo}
-    \end{figure}
-    
-    \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.33]{C6bBalanceo}
-        \caption{Caso VIb Kernels de mayor prioridad que no estaban en ejecución.}
-        \label{fig:C6bBalanceo}
-    \end{figure}
-
- Como no es posible que ingrese, se vuelve a quitar de ejecución la tarea con la menor prioridad (ver figura  \ref{fig:C6bBalanceo}), y así sucesivamente hasta que se reúnan los bloques contiguos para ejecutar la tarea de máxima prioridad \textbf{KT} (liberando el espacio de \textbf{KY} y \textbf{KR}). Una vez liberado el espacio en el escenario \textbf{(N)}, se añade la tarea con la mayor prioridad \textbf{KT} en el escenario \textbf{(O)}, y se pregunta ahora por el espacio requerido por la tarea con la segunda mayor prioridad \textbf{KP}. Como nuevamente no se puede agregar a ejecución por su dimensión, se eliminan las tareas de menor prioridad hasta que sea posible colocarla en \textbf{(P)} (\textbf{KS} y \textbf{KW}).
-\newline
-
-    \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.33]{C6cBalanceo}
-        \caption{Caso VIc Kernels de mayor prioridad que no estaban en ejecución.}
-        \label{fig:C6cBalanceo}
-    \end{figure}
-
-   % Una vez liberado el espacio contiguo necesario para la tarea \textbf{KT}(ver figura  \ref{fig:C5cBalanceo}), y así sucesivamente hasta que se reúnan las características que se requiere. Una vez liberado el espacio en \textbf{(Ñ)}, se añade la tarea con la mayor prioridad en \textbf{(O)}, y se pregunta ahora por el espacio requerido por la tarea con la segunda mayor prioridad, como nuevamente no se puede agregar a ejecución, se eliminan las tareas de menor prioridad hasta que sea posible colocarla.
-%\newline
-    
-    \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.33]{C6dBalanceo}
-        \caption{Caso VId Kernels de mayor prioridad que no estaban en ejecución.}
-        \label{fig:C6dBalanceo}
-    \end{figure}
-
-   Liberado el espacio necesario, en \textbf{(Q)} (ver figura \ref{fig:C6dBalanceo}) se coloca la tarea \textbf{KU} y, posteriormente, se rellena el espacio con las tareas de la lista ordenada como se muestra en el escenario \textbf{(R)}. 
-   Como se sacaron de ejecución las tareas \textbf{KW}, \textbf{KS}, \textbf{KY}, \textbf{KR} y \textbf{KP}, y después entraron nuevamente a la lista, pero en distinta posición, es necesario suspenderlas y relanzarlas, obteniendo esta ocasión la oportunidad de ejecución de la totalidad de las tareas en la lista de prioridad.
-\newline
-
-    En el \textbf{Caso VII} (ver figura \ref{fig:C7Balanceo}), encontrándonos en \textbf{(S)} el final de un quantum m, que la tarea de mayor prioridad \textbf{KZ} se encontraba en ejecución, calculando el orden de la lista de prioridad, nuevamente sale a la cabeza seguida de \textbf{KW}. Aunque teóricamente ambas tareas podrían ejecutarse concurrentemente, una tarea con menor prioridad no puede mover a una de mayor, por lo que en esta iteración únicamente se quedará en ejecución la tarea con la mayor prioridad.
-    
-    \begin{figure}[!]
-      \centering
-        \includegraphics[scale=.33]{C7Balanceo}
-        \caption{Caso VII Kernels de menor prioridad no pueden desplazar a kernels de mayor prioridad.}
-        \label{fig:C7Balanceo}
-    \end{figure}
-    
+%----------------------------------------    
 \section{Asignación de prioridades} \label{secc:asigPrioridad}
 
 Al tener como módulos separados tanto el planificador como la asignación de prioridades, nos da la flexibilidad de poder implementar diferentes algoritmos de tiempo real (ver sección \ref{sec:AlgoPlan}).
 \newline
 
 Para el diseño de este framework, se tomó como base el uso de algoritmos de asignación de prioridades en tiempo real de soporte monoprocesador, aunque no se descarta la posible implementación de aquellos que trabajan con multiprocesadores y subconjuntos de tareas. En este caso se asegura la ejecución de al menos dos tareas en concurrente en la tarjeta gráfica.
-%\newline
+\newline
 
 Dependiendo de las particularidades de cada algoritmo, se requerirá diferente información sobre la tarea a planificar, dichos parámetros podrán modificarse en la estructura (algoritmo \ref{lst:Task}) que mapea a las tareas.
 \newline
 
 Este módulo generará una lista de prioridad ordenando las tareas de mayor a menor, según sea el caso.
-%\newline
+\newline
 
 A cada iteración del planificador se asigna una prioridad a las tareas que actualmente están solicitando recursos de la GPU dependiendo de variables temporales. La planificación de las tareas del CPU pudieran ser manejadas por el sistema operativo o algún otro componente, pero su estudio está fuera del contexto de esta tesis.
 \newline
